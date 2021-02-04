@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { IBirthday } from './definitions'
 import Birthday from './Birthday'
-// import birthdaydata from './birthdaydata.json'
-
 
 export interface IProps {
     birthday_array: IBirthday[]
