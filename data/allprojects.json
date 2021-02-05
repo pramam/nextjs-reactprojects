@@ -1,0 +1,32 @@
+[
+    {
+        "image": "/screenshots/Screenshot-Bubblewrap.png",
+        "name": "Bubble Wrap",
+        "url": "https://nextjs-reactprojects.vercel.app/projects"
+    },
+    {
+        "image": "/screenshots/Screenshot-Birthdays.png",
+        "name": "Birthday Reminder",
+        "url": "https://nextjs-reactprojects.vercel.app/birthday"
+    },
+    {
+        "image": "/screenshots/Screenshot-Bubblewrap.png",
+        "name": "Bubble Wrap",
+        "url": "https://nextjs-reactprojects.vercel.app/projects"
+    },
+    {
+        "image": "/screenshots/Screenshot-Bubblewrap.png",
+        "name": "Bubble Wrap",
+        "url": "https://nextjs-reactprojects.vercel.app/projects"
+    },
+    {
+        "image": "/screenshots/Screenshot-Birthdays.png",
+        "name": "Birthday Reminder",
+        "url": "https://nextjs-reactprojects.vercel.app/birthday"
+    },
+    {
+        "image": "/screenshots/Screenshot-Bubblewrap.png",
+        "name": "Bubble Wrap",
+        "url": "https://nextjs-reactprojects.vercel.app/projects"
+    }
+]
