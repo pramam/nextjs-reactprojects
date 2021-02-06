@@ -4,10 +4,10 @@ export default function Counter() {
     const [counter, setCounter] = useState(0)
 
     const decrementHandler = () => {
-        setCounter(counter => counter - 1)
+        setCounter(prevCounter => prevCounter - 1)
     }
     const incrementHandler = () => {
-        setCounter(counter => counter + 1)
+        setCounter(prevCounter => prevCounter + 1)
     }
     return (
         <div className="mt-5 flex justify-center shadow-lg max-w-xs mx-auto">
@@ -29,6 +29,13 @@ export default function Counter() {
                         Increment
                     </button>
                 </div>
+                <button
+                    type="button"
+                    className="mt-5 text-base px-2 py-2 mr-2 rounded-md text-sm bg-green-400 text-white focus:outline-none border border-transparent"
+                    onClick={() => setTimeout(incrementHandler, 2000)}
+                >
+                    Increment in 2 seconds
+                    </button>
             </div>
         </div>
     )
