@@ -16,14 +16,14 @@ export default function Counter() {
                 <div className="flex flex-row">
                     <button
                         type="button"
-                        className="text-base px-2 py-2 mr-2 rounded-md text-sm bg-green-400 text-white focus:outline-none border border-transparent"
+                        className="text-base px-2 py-2 mr-2 rounded-md bg-green-400 text-white focus:outline-none border border-transparent"
                         onClick={decrementHandler}
                     >
                         Decrement
                     </button>
                     <button
                         type="button"
-                        className="text-base px-2 py-2 mr-2 rounded-md text-sm bg-green-400 text-white focus:outline-none border border-transparent"
+                        className="text-base px-2 py-2 mr-2 rounded-md  bg-green-400 text-white focus:outline-none border border-transparent"
                         onClick={incrementHandler}
                     >
                         Increment
@@ -31,7 +31,7 @@ export default function Counter() {
                 </div>
                 <button
                     type="button"
-                    className="mt-5 text-base px-2 py-2 mr-2 rounded-md text-sm bg-green-400 text-white focus:outline-none border border-transparent"
+                    className="mt-5 text-base px-2 py-2 mr-2 rounded-md bg-green-400 text-white focus:outline-none border border-transparent"
                     onClick={() => setTimeout(incrementHandler, 2000)}
                 >
                     Increment in 2 seconds
