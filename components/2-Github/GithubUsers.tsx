@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const url = "https://api.github.com/users"
+
 // Display github users like cards
 export default function GithubUsers() {
     const [users, setUsers] = useState([]);
@@ -8,15 +9,29 @@ export default function GithubUsers() {
     const clickHandler = () => console.log('clicked')
 
     const getUsers = async () => {
-        const response = await fetch(url);
-        const gotusers = await response.json();
 
-        console.log('hello')
-        setUsers(gotusers);
+        const response = await fetch(url)
+        const getusers = await response.json();
+
+        // https://advancedweb.hu/how-to-use-async-functions-with-array-map-in-javascript/
+        // All threads will be concurrent, could be a memory issuse. Fix later; Have 30 users
+        // for now.
+        const withrepos = await Promise.all(getusers.map(async (u) => {
+            const response4 = await fetch(u.repos_url);
+            const getrepos4 = await response4.json();
+            // console.log(`4: repos_len: ${getrepos4.length}`)
+            return { ...u, repos_len: getrepos4.length }
+        }))
+
+        // console.log(JSON.stringify(withrepos))
+        // console.log('hello')
+        setUsers(withrepos);
     }
+
 
     useEffect(() => {
         getUsers();
+
     }, []) // call useEffect only on the first render
 
     // This does not work
@@ -38,13 +53,15 @@ export default function GithubUsers() {
                                 <img className="flex rounded-md w-16 h-16 justify-center items-center"
                                     src={obj.avatar_url}
                                     alt="photo" />
-                                <h2 className="ml-4 mt-2 text-sm font-medium hover:text-gray-600 text-gray-900">{obj.login}</h2>
+                                <div className="flex flex-col">
+                                    <h2 className="ml-4 mt-2 text-sm font-medium hover:text-gray-600 text-gray-900">{obj.login}</h2>
+                                    <h4 className="ml-4 mt-2 text-xs font-medium text-gray-500">Repos: {obj.repos_len}</h4>
+                                </div>
                             </div>
                         </li>
                     )
                 })}
             </ul>
-            {/* <button type="button" onClick={clickHandler}>click me</button> */}
         </div>
     )
 }
