@@ -17,14 +17,14 @@ export default function AllBirthdays({ birthday_array }: IProps) {
                     <div className="flex mb-5 px-5 mt-5">
                         <h3 className="text-2xl text-gray-900 mb-2">{birthdays.length} Birthdays today</h3>
                     </div>
-                    {birthdays.map((obj, index) => (
-                        <ul className="px-5 items-center">
-                            <Birthday birthday={obj} />
-                        </ul>
-                    ))}
+                    <ul className="px-5 items-center">
+                        {birthdays.map((obj, index) => (
+                            <Birthday key={index} birthday={obj} />
+                        ))}
+                    </ul>
                     <div className="flex justify-center mb-5">
                         <button
-                            className="justify-center px-32 rounded-md bg-pink-400 text-white py-2 focus:outline-none border border-transparent rounded"
+                            className="justify-center px-32 rounded-md bg-pink-400 text-white py-2 focus:outline-none border border-transparent"
                             type="button"
                             onClick={clickHandler}>
                             Clear all
