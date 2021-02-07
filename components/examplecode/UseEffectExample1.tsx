@@ -24,7 +24,7 @@ export default function UseEffectExample1() {
                     <h3 className="flex justify-center">{counter}</h3>
                     <button
                         type="button"
-                        className="mt-5 mb-5 text-base rounded-md text-sm bg-pink-400 text-white focus:outline-none border border-transparent"
+                        className="mt-5 mb-5 text-base rounded-md bg-pink-400 text-white focus:outline-none border border-transparent"
                         onClick={incrementHandler}
                     >
                         Increment
