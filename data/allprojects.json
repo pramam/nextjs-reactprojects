@@ -2,7 +2,22 @@
     {
         "image": "/screenshots/Screenshot-Bubblewrap.png",
         "name": "Bubble Wrap",
-        "url": "https://nextjs-reactprojects.vercel.app/projects"
+        "url": "https://nextjs-reactprojects.vercel.app/bubblewrap"
+    },
+    {
+        "image": "/screenshots/Screenshot-Birthdays.png",
+        "name": "Birthday Reminder",
+        "url": "https://nextjs-reactprojects.vercel.app/birthday"
+    },
+    {
+        "image": "/screenshots/Screenshot-Githubusers.png",
+        "name": "Github users",
+        "url": "https://nextjs-reactprojects.vercel.app/githubusers"
+    },
+    {
+        "image": "/screenshots/Screenshot-Bubblewrap.png",
+        "name": "Bubble Wrap",
+        "url": "https://nextjs-reactprojects.vercel.app/bubblewrap"
     },
     {
         "image": "/screenshots/Screenshot-Birthdays.png",
@@ -12,21 +27,6 @@
     {
         "image": "/screenshots/Screenshot-Bubblewrap.png",
         "name": "Bubble Wrap",
-        "url": "https://nextjs-reactprojects.vercel.app/projects"
-    },
-    {
-        "image": "/screenshots/Screenshot-Bubblewrap.png",
-        "name": "Bubble Wrap",
-        "url": "https://nextjs-reactprojects.vercel.app/projects"
-    },
-    {
-        "image": "/screenshots/Screenshot-Birthdays.png",
-        "name": "Birthday Reminder",
-        "url": "https://nextjs-reactprojects.vercel.app/birthday"
-    },
-    {
-        "image": "/screenshots/Screenshot-Bubblewrap.png",
-        "name": "Bubble Wrap",
-        "url": "https://nextjs-reactprojects.vercel.app/projects"
+        "url": "https://nextjs-reactprojects.vercel.app/bubblewrap"
     }
 ]

@@ -26,8 +26,8 @@ export default function GithubUsers() {
 
     return (
         <div className="container bg-indigo-50">
-            <h1 className="flex justify-center text-gray-500 text-lg font-medium uppercase tracking-wide">Github users</h1>
-            <ul className="mt-3 p-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <h1 className="p-4 flex justify-center text-gray-500 text-lg font-medium uppercase tracking-wide">Github users</h1>
+            <ul className="mt-3 p-5 grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {users.map((obj, index) => {
                     return (
                         <li className="bg-gray-50 col-span-1 flex shadow-md rounded-xl"
