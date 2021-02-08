@@ -16,9 +16,9 @@ export default function Tour({ tour }: IProps) {
     // }
     return (
         <div className="flex flex-col justify-center">
-            <div className="max-w-2xl shadow-md mb-5 bg-gray-50">
+            <div className="max-w-sm sm:max-w-2xl shadow-md mb-5 bg-gray-50">
                 <img
-                    className="w-full flex rounded-t-md justify-center items-center"
+                    className="w-full h-80 object-cover flex rounded-t-md justify-center items-center"
                     src={tour.image}
                     alt="tour photo"
                 />
