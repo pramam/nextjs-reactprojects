@@ -15,9 +15,9 @@
         "url": "https://nextjs-reactprojects.vercel.app/githubusers"
     },
     {
-        "image": "/screenshots/Screenshot-Bubblewrap.png",
-        "name": "Bubble Wrap",
-        "url": "https://nextjs-reactprojects.vercel.app/bubblewrap"
+        "image": "/screenshots/Screenshot-Tours.png",
+        "name": "Tours",
+        "url": "https://nextjs-reactprojects.vercel.app/tours"
     },
     {
         "image": "/screenshots/Screenshot-Birthdays.png",
