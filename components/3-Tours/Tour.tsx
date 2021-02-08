@@ -1,13 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ITour } from './definitions'
 
 export interface IProps {
     tour: ITour
 }
 export default function Tour({ tour }: IProps) {
-    const [tourinfo, setTourinfo] = useState(tour.info);
-    // const [textsize, setTextsize] = useState(250);
-    // const [isreduced, setReduced] = useState(true)
+    const [textsize, setTextsize] = useState(200);
+    const [readmore, setReadmore] = useState(false)
+
+    useEffect(() => {
+        // everytime I click Read More, change text size
+        // useEffect causes a rerender, and the new textsize is picked
+        // up by the JSX.
+        readmore ? `${setTextsize(tour.info.length)}` :
+            `${setTextsize(200)}`
+    }, [readmore])
+
+    const clickHandler = () => {
+        // console.log(`readmore before: ${readmore}`)
+        // console.log(`textsize before: ${textsize}`)
+        setReadmore(!readmore);
+
+        // This console.log is not working, setState is asynchronous
+        // console.log(`readmore after: ${readmore}`)
+        // console.log(`textsize after: ${textsize}`)
+    }
     // const clickHandler = () => {
     //     isreduced ? `${setTextsize(500)} ${setReduced(false)}`
     //         :
@@ -27,8 +44,15 @@ export default function Tour({ tour }: IProps) {
                         <h1 className="ml-5 text-md font-bold text-gray-800">{tour.name}</h1>
                         <h1 className="mr-5 text-md font-bold text-blue-400 bg-blue-100 rounded-full px-2.5 py-0.5">${tour.price}</h1>
                     </div>
-                    <p className="ml-5 mb-5 mr-5"> {tourinfo.slice(0, 200)}...
-                    <button className="inline-block text-blue-500" type="button" >Read more</button>
+                    <p className="ml-5 mb-5 mr-5"> {tour.info.slice(0, textsize)}
+                        {!readmore ? `...` : ``}
+                        <button
+                            type="button"
+                            onClick={clickHandler}
+                            className="inline-block text-blue-500"
+                        >
+                            {!readmore ? `Read more` : `Read less`}
+                        </button>
                     </p>
                 </span>
             </div>
