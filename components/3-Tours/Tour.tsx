@@ -25,12 +25,7 @@ export default function Tour({ tour }: IProps) {
         // console.log(`readmore after: ${readmore}`)
         // console.log(`textsize after: ${textsize}`)
     }
-    // const clickHandler = () => {
-    //     isreduced ? `${setTextsize(500)} ${setReduced(false)}`
-    //         :
-    //         `${setTextsize(250)} ${setReduced(true)}`;
-    //     setTourinfo(tour.info.slice(0, textsize));
-    // }
+
     return (
         <div className="flex flex-col justify-center">
             <div className="max-w-sm sm:max-w-2xl shadow-md mb-7 bg-gray-50 rounded-b-md">
@@ -55,16 +50,14 @@ export default function Tour({ tour }: IProps) {
                         </button>
                     </p>
                 </span>
+                <div className="flex justify-center mb-5">
+                    <button type="button"
+                        className="px-12 py-1 text-lg rounded-md justify-center text-red-700 border border-red-700"
+                    >
+                        Not interested
+                </button>
+                </div>
             </div>
-
-            {/* <div className="max-w-2xl shadow-md mb-5 bg-gray-50">
-                <img
-                    className="flex max-w-2xl h-92 rounded-t-md object-cover justify-center items-center"
-                    src={tour.image}
-                    alt="tour photo"
-                />
-                <p> {tour.info.slice(0, 50)}</p>
-            </div> */}
         </div>
     )
 }
