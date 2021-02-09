@@ -7,6 +7,11 @@ const tours_url = "https://course-api.com/react-tours-project"
 export default function Tours() {
     const [tours, setTours] = useState([]);
 
+    const childDeleteHandler = (id) => {
+        // alert(`Delete ${id}`)
+        const newtours = tours.filter(item => item.id != id)
+        setTours(newtours)
+    }
     const getTours = async () => {
         const response = await fetch(tours_url);
         const mytours = await response.json();
@@ -29,7 +34,7 @@ export default function Tours() {
             <div className="flex justify-center">
                 <div className="flex flex-col">
                     {tours.map((obj, index) =>
-                        <Tour key={index} tour={obj} />
+                        <Tour key={index} tour={obj} deleteHandler={childDeleteHandler} />
                     )}
                 </div>
             </div>

@@ -3,8 +3,9 @@ import { ITour } from './definitions'
 
 export interface IProps {
     tour: ITour
+    deleteHandler: (id: string) => void
 }
-export default function Tour({ tour }: IProps) {
+export default function Tour({ tour, deleteHandler }: IProps) {
     const [textsize, setTextsize] = useState(200);
     const [readmore, setReadmore] = useState(false)
 
@@ -52,7 +53,9 @@ export default function Tour({ tour }: IProps) {
                 </span>
                 <div className="flex justify-center mb-5">
                     <button type="button"
-                        className="px-12 py-1 text-lg rounded-md justify-center text-red-700 border border-red-700"
+                        className="px-12 py-1 text-lg rounded-md justify-center text-red-700 border border-red-700 focus:outline-none focus:border-red-700"
+                        // delete this tour from parent's array of Tours
+                        onClick={() => deleteHandler(tour.id)}
                     >
                         Not interested
                 </button>
