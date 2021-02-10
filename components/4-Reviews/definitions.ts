@@ -4,5 +4,5 @@ export interface IReview {
     job: string
     image: string
     text: string
-    color: string
+    bgcolor: string
 }

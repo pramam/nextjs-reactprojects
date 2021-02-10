@@ -1,23 +1,38 @@
 import SVGChevronLeft from '../svgicons/SVGChevronLeft'
 import SVGChevronRight from '../svgicons/SVGChevronRight'
-
+import FancyImage from './FancyImage'
 import { IReview } from './definitions'
 
 export interface IProps {
     review: IReview
 }
 export default function Review({ review }: IProps) {
+    // const fancyimageprops = {
+    //     className: "mx-auto"
+    // }
     return (
         <div className="flex flex-col justify-center">
             <div className="max-w-sm sm:max-w-2xl shadow-md mb-7 bg-gray-50 rounded-md">
                 <div className="flex flex-col">
-                    <div className="flex justify-center mb-2 mt-6">
-                        <img
-                            className="rounded-full h-36 w-36 object-cover"
-                            src={review.image}
-                            alt="photo"
-                        />
-                    </div>
+                    <FancyImage
+                        // {...fancyimageprops}
+                        image={review.image}
+                        bgcolor={review.bgcolor} />
+                    {/* <div className="flex justify-center mb-2 mt-6">
+                        <div className="flex justify-center">
+                            <div className="flex relative z-0 -space-x-36">
+                                <span className="z-30 inline-block">
+                                <img
+                                        className="rounded-full h-36 w-36 object-cover"
+                                    src={review.image}
+                                    alt="photo"
+                                    /></span>
+                                <span className="z-20 transform translate-x-2 h-36 w-36  inline-block rounded-full bg-blue-700 border"></span>
+                                <span className="z-40 transform translate-y-1 block h-9 w-9 rounded-full bg-blue-700 text-gray-700">"</span>
+
+                            </div>
+                        </div>
+                    </div> */}
                     <p className="flex justify-center capitalize font-medium">{review.name}</p>
                     <p className="uppercase text-sm text-blue-600 flex justify-center">{review.job}</p>
 
