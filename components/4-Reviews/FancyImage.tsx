@@ -4,6 +4,9 @@ export interface IProps {
 }
 
 export default function FancyImage({ image, bgcolor }: IProps) {
+    // For dynamic colors to work, postcss needs the full class name so as not to purge it
+    // Add the colors here so they don't get purged:
+    //const bg_colors = "bg-pink-500 bg-yellow-500 bg-blue-500 bg-green-500"
     const bigcircle_props = {
         className: `z-20 transform translate-x-2.5 -translate-y-0.5 h-36 w-36  inline-block rounded-full ${bgcolor} border`
     }
