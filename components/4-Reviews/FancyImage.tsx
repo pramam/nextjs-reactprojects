@@ -4,7 +4,12 @@ export interface IProps {
 }
 
 export default function FancyImage({ image, bgcolor }: IProps) {
-
+    const bigcircle_props = {
+        className: `z-20 transform translate-x-2.5 -translate-y-0.5 h-36 w-36  inline-block rounded-full ${bgcolor} border`
+    }
+    const smallcircle_props = {
+        className: `z-40 transform translate-y-1 block h-9 w-9 rounded-full ${bgcolor}`
+    }
     return (
         <div className="mb-2 mt-6">
             <div className="flex justify-center">
@@ -16,9 +21,11 @@ export default function FancyImage({ image, bgcolor }: IProps) {
                                 src={image}
                                 alt="photo"
                             /></span>
-                        <span className="z-20 transform translate-x-2.5 -translate-y-0.5 h-36 w-36  inline-block rounded-full bg-blue-500 border"></span>
-                        <span className="z-40 transform translate-y-1 block h-9 w-9 rounded-full bg-blue-500">
-                            <h2 className="flex mx-auto italic text-white font-extrabold text-4xl">
+                        {/* <span className="z-20 transform translate-x-2.5 -translate-y-0.5 h-36 w-36  inline-block rounded-full bg-blue-500 border"></span> */}
+                        <span {...bigcircle_props}></span>
+                        {/* <span className="z-40 transform translate-y-1 block h-9 w-9 rounded-full bg-blue-500"> */}
+                        <span {...smallcircle_props}>
+                            <h2 className="flex mx-auto my-1 italic text-white font-extrabold text-4xl">
                                 &#8221;
                                 {/* &#xe01a; */}
                                 {/* “ ” */}
