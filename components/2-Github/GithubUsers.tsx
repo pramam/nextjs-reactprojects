@@ -8,8 +8,6 @@ export default function GithubUsers() {
     const [urlcounter, setUrlcounter] = useState(0);
     const [reposcounter, setReposcounter] = useState(0);
 
-    const clickHandler = () => console.log('clicked')
-
     const getUsers = async () => {
 
         try {
@@ -75,7 +73,7 @@ export default function GithubUsers() {
     return (
         <div>
             <h1 className="p-4 flex justify-center text-gray-500 text-lg font-medium uppercase tracking-wide">Github users</h1>
-            <ul className="mt-3 p-5 grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="mt-3 p-5 grid grid-cols-1 gap-2 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {users.map((obj, index) => {
                     const repo_url = obj.html_url + "?tab=repositories";
 
