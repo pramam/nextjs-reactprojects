@@ -5,7 +5,7 @@ import Bubble from '../components/0-Bubbles/Bubble'
 export default function projects() {
 
     return (
-        <body className="h-full bg-pink-400">
+        <body className="min-h-screen bg-pink-400">
         < AllBirthdays birthday_array={birthdayData} />
         </body>
     )
