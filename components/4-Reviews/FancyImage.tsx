@@ -11,7 +11,7 @@ export default function FancyImage({ image, bgcolor }: IProps) {
     // Add the colors here so they don't get purged:
     //const bg_colors = "bg-pink-500 bg-yellow-500 bg-blue-500 bg-green-500"
     const bigcircle_props = {
-        className: `z-20 transform translate-x-2.5 -translate-y-0.5 h-36 w-36  inline-block rounded-full ${bgcolor} border`
+        className: `z-20 transform translate-x-2.5 -translate-y-1.5 h-36 w-36  inline-block rounded-full ${bgcolor} border`
     }
     const smallcircle_props = {
         className: `z-40 transform translate-y-1 block h-9 w-9 rounded-full ${bgcolor}`
