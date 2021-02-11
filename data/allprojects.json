@@ -2,31 +2,31 @@
     {
         "image": "/screenshots/Screenshot-Bubblewrap.png",
         "name": "Bubble Wrap",
-        "url": "https://nextjs-reactprojects.vercel.app/bubblewrap"
+        "url": "/bubblewrap"
     },
     {
         "image": "/screenshots/Screenshot-Birthdays.png",
         "name": "Birthday Reminder",
-        "url": "https://nextjs-reactprojects.vercel.app/birthday"
+        "url": "/birthday"
     },
     {
         "image": "/screenshots/Screenshot-Githubusers.png",
         "name": "Github users",
-        "url": "https://nextjs-reactprojects.vercel.app/githubusers"
+        "url": "/githubusers"
     },
     {
         "image": "/screenshots/Screenshot-Tours.png",
         "name": "Tours",
-        "url": "https://nextjs-reactprojects.vercel.app/tours"
+        "url": "/tours"
     },
     {
         "image": "/screenshots/Screenshot-Reviews.png",
         "name": "Reviews",
-        "url": "https://nextjs-reactprojects.vercel.app/reviews"
+        "url": "/reviews"
     },
     {
         "image": "/screenshots/Screenshot-Bubblewrap.png",
         "name": "Bubble Wrap",
-        "url": "https://nextjs-reactprojects.vercel.app/bubblewrap"
+        "url": "/bubblewrap"
     }
 ]
