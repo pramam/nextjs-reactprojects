@@ -6,21 +6,34 @@ export default function Reviews() {
     const [current, setCurrent] = useState(reviewData.length - 1);
 
     const clickPrevHandler = () => {
-        console.log(`clicked Prev, current: ${current}`)
+        // console.log(`clicked Prev, current: ${current}`)
         current === 0 ?
             setCurrent(reviewData.length - 1) : setCurrent(prevCurrent => prevCurrent - 1)
-        console.log(`after clicked Prev, current: ${current}`)
+        // console.log(`after clicked Prev, current: ${current}`)
 
     }
 
     const clickNextHandler = () => {
-        console.log(`clicked Next, current: ${current}`)
+        // console.log(`clicked Next, current: ${current}`)
         current === reviewData.length - 1 ?
             setCurrent(0) : setCurrent(prevCurrent => prevCurrent + 1)
-        console.log(`after clicked Next, current: ${current}`)
-
+        // console.log(`after clicked Next, current: ${current}`)
     }
 
+    const randomNumber = (min, max) => {
+        return Math.floor(Math.random() * (max - min) + min)
+    }
+    const clickSurpriseMeHandler = () => {
+        // console.log(`clicked SurpriseMe, current: ${current}`)
+        const random = randomNumber(0, reviewData.length)
+        // console.log(`random: ${random}`)
+        random != current ?
+            setCurrent(random)
+            :
+            clickNextHandler();
+        
+        // console.log(`after SurpriseMe, current: ${current}`)
+    }
     useEffect(() => {
         // Every time current changes, re-render
     }, [current])
@@ -36,6 +49,7 @@ export default function Reviews() {
                     <Review review={reviewData[current]}
                         prevHandler={clickPrevHandler}
                         nextHandler={clickNextHandler}
+                        surpriseHandler={clickSurpriseMeHandler}
                     />
                     {/* {reviewData.map((obj, index) => {
                         return <Review review={obj} key={index} />

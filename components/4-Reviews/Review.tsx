@@ -7,8 +7,9 @@ export interface IProps {
     review: IReview
     prevHandler: () => void
     nextHandler: () => void
+    surpriseHandler: () => void
 }
-export default function Review({ review, prevHandler, nextHandler }: IProps) {
+export default function Review({ review, prevHandler, nextHandler, surpriseHandler }: IProps) {
     // const fancyimageprops = {
     //     className: "mx-auto"
     // }
@@ -58,6 +59,7 @@ export default function Review({ review, prevHandler, nextHandler }: IProps) {
                     </div>
                     <div className="flex justify-center mb-5">
                         <button type="button"
+                            onClick={surpriseHandler}
                             className="px-4 py-1 text-lg rounded-md justify-center text-blue-600 hover:bg-blue-300 border border-transparent focus:outline-none"
                         >
                             Surprise Me
