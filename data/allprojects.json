@@ -20,9 +20,9 @@
         "url": "https://nextjs-reactprojects.vercel.app/tours"
     },
     {
-        "image": "/screenshots/Screenshot-Birthdays.png",
-        "name": "Birthday Reminder",
-        "url": "https://nextjs-reactprojects.vercel.app/birthday"
+        "image": "/screenshots/Screenshot-Reviews.png",
+        "name": "Reviews",
+        "url": "https://nextjs-reactprojects.vercel.app/reviews"
     },
     {
         "image": "/screenshots/Screenshot-Bubblewrap.png",
