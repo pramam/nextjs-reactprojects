@@ -29,7 +29,7 @@ export default function Tour({ tour, deleteHandler }: IProps) {
 
     return (
         <div className="flex flex-col justify-center">
-            <div className="max-w-sm sm:max-w-2xl shadow-md mb-7 bg-gray-50 rounded-b-md">
+            <div className="max-w-xs sm:max-w-2xl shadow-md mb-7 bg-gray-50 rounded-b-md">
                 <img
                     className="w-full h-80 object-cover flex rounded-t-md justify-center items-center"
                     src={tour.image}
@@ -38,7 +38,7 @@ export default function Tour({ tour, deleteHandler }: IProps) {
                 <span>
                     <div className="mt-5 mb-5 flex flex-row justify-between">
                         <h1 className="ml-5 text-md font-bold text-gray-800">{tour.name}</h1>
-                        <h1 className="mr-5 text-md font-bold text-blue-400 bg-blue-100 rounded-full px-2.5 py-0.5">${tour.price}</h1>
+                        <h1 className="mr-5 text-md font-bold text-blue-400 bg-blue-100 rounded-lg sm:rounded-full sm:px-2.5 sm:py-0.5">${tour.price}</h1>
                     </div>
                     <p className="ml-5 mb-5 mr-5"> {tour.info.slice(0, textsize)}
                         {!readmore ? `...` : ``}
