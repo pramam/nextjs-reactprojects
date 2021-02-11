@@ -13,6 +13,7 @@ export default function Tours() {
         setTours(newtours)
     }
     const getTours = async () => {
+        try {
         const response = await fetch(tours_url);
         const mytours = await response.json();
 
@@ -20,6 +21,9 @@ export default function Tours() {
         // console.log(`Tours: ${JSON.stringify(mytours)}`)
 
         setTours(mytours);
+        } catch (e) {
+            console.log(e)
+        }
     }
     useEffect(() => {
         getTours()

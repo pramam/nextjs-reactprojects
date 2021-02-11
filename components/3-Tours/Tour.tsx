@@ -47,7 +47,7 @@ export default function Tour({ tour, deleteHandler }: IProps) {
                             onClick={clickHandler}
                             className="inline-block text-blue-500"
                         >
-                            {!readmore ? `Read more` : `Read less`}
+                            {!readmore ? `Read more` : `Show less`}
                         </button>
                     </p>
                 </span>
