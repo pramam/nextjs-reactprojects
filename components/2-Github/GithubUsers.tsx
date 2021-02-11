@@ -5,27 +5,60 @@ const url = "https://api.github.com/users"
 // Display github users like cards
 export default function GithubUsers() {
     const [users, setUsers] = useState([]);
+    const [urlcounter, setUrlcounter] = useState(0);
+    const [reposcounter, setReposcounter] = useState(0);
 
     const clickHandler = () => console.log('clicked')
 
     const getUsers = async () => {
 
-        const response = await fetch(url)
-        const getusers = await response.json();
+        try {
+            setUrlcounter(prevCounter => prevCounter + 1)
+            const response = await fetch(url)
 
-        // https://advancedweb.hu/how-to-use-async-functions-with-array-map-in-javascript/
-        // All threads will be concurrent, could be a memory issuse. Fix later; Have 30 users
-        // for now.
-        const withrepos = await Promise.all(getusers.map(async (u) => {
-            const response4 = await fetch(u.repos_url);
-            const getrepos4 = await response4.json();
-            // console.log(`4: repos_len: ${getrepos4.length}`)
-            return { ...u, repos_len: getrepos4.length }
+            console.log(`Counter: ${urlcounter}, ${url}`)
+            if (!response.ok) {
+                console.error(`fetch returned bad response ${response.statusText}`)
+                throw response;
+            }
+
+            const getusers = await response.json();
+
+            // https://advancedweb.hu/how-to-use-async-functions-with-array-map-in-javascript/
+            // All threads will be concurrent, could be a memory issuse. Fix later; Have 30 users
+            // for now.
+            if (getusers.length === 0) {
+                setUsers([])
+                console.log("getusers is null")
+                return <div> Failed to load users</div>
+            } 
+            const withrepos = await Promise.all(getusers.map(async (u) => {
+                try {
+                    setReposcounter(prevCount => prevCount + 1);
+
+                    const response2 = await fetch(u.repos_url);
+                    console.log(`reposcounter: ${reposcounter}, ${u.repos_url}`)
+                    if (!response2.ok) {
+                        console.error(`fetch returned bad response ${response2.statusText}, ${u.repos_url}`)
+                        throw response2;
+                    }
+                    const getrepos = await response2.json();
+                // console.log(`4: repos_len: ${getrepos4.length}`)
+                    return { ...u, repos_len: getrepos.length }
+                } catch (e) {
+                    console.error(e)
+                    return (e)
+                }        
         }))
 
         // console.log(JSON.stringify(withrepos))
         // console.log('hello')
         setUsers(withrepos);
+        } catch (e) {
+            console.log(e);
+            return (e)
+
+        }
     }
 
 

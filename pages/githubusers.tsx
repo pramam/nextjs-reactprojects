@@ -2,8 +2,8 @@ import GithubUsers from "../components/2-Github/GithubUsers";
 
 export default function githublanding() {
     return (
-        <body className="h-full bg-indigo-50">
+        <div className="h-screen bg-indigo-50">
         <GithubUsers />
-        </body>
+        </div>
     )
 }
