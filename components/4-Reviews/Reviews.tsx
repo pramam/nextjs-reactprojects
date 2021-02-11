@@ -16,6 +16,7 @@ export default function Reviews() {
                     })}
                 </div>
             </div>
+            <span className="flex justify-center text-gray-500">Icons made by <a href="https://www.freepik.com" title="Freepik"> &nbsp; Freepik &nbsp; </a> from &nbsp;<a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span> 
         </div>
     )
 }

@@ -1,8 +1,11 @@
+import SVGRightQuote from '../svgicons/SVGRightQuote'
+
 export interface IProps {
     image: string
     bgcolor: string
 }
 
+// {/* <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */ }
 export default function FancyImage({ image, bgcolor }: IProps) {
     // For dynamic colors to work, postcss needs the full class name so as not to purge it
     // Add the colors here so they don't get purged:
@@ -28,12 +31,16 @@ export default function FancyImage({ image, bgcolor }: IProps) {
                         <span {...bigcircle_props}></span>
                         {/* <span className="z-40 transform translate-y-1 block h-9 w-9 rounded-full bg-blue-500"> */}
                         <span {...smallcircle_props}>
-                            <h2 className="flex mx-auto my-1 italic text-white font-extrabold text-4xl">
+                            <div className="flex mx-2.5 my-3">
+                                <SVGRightQuote />
+                                {/* <h2 className="flex mx-auto my-1 italic text-white font-extrabold text-4xl">
                                 &#8221;
-                                {/* &#xe01a; */}
-                                {/* “ ” */}
-                                {/* \201D */}
-                            </h2></span>
+                                &#xe01a;
+                                * “ ”
+                                 \201D
+                            </h2> */}
+                            </div>
+                        </span>
                         {/* <blockquote><p>Hello</p></blockquote> */}
                         {/* <span className="z-30 absolute inset-x-0 top-0 transform -translate-y-1.5 translate-x-4 h-36 w-36  inline-block rounded-full bg-transparent border border-red-500"></span> */}
                     </div>
