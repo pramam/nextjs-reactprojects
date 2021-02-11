@@ -5,8 +5,10 @@ import { IReview } from './definitions'
 
 export interface IProps {
     review: IReview
+    prevHandler: () => void
+    nextHandler: () => void
 }
-export default function Review({ review }: IProps) {
+export default function Review({ review, prevHandler, nextHandler }: IProps) {
     // const fancyimageprops = {
     //     className: "mx-auto"
     // }
@@ -42,10 +44,14 @@ export default function Review({ review }: IProps) {
                     </span>
                     <div>
                         <div className="mb-2 flex justify-center">
-                            <button>
+                            <button
+                                type="button"
+                                onClick={prevHandler}>
                                 <SVGChevronLeft css='h-5 w-5 mr-2 text-blue-600' />
                             </button>
-                            <button>
+                            <button
+                                type="button"
+                                onClick={nextHandler}>
                                 <SVGChevronRight css='h-5 w-5 mr-l text-blue-600' />
                             </button>
                         </div>
