@@ -40,7 +40,7 @@ export default function GithubUsers() {
     // }, [])
 
     return (
-        <div className="h-full bg-indigo-50">
+        <div>
             <h1 className="p-4 flex justify-center text-gray-500 text-lg font-medium uppercase tracking-wide">Github users</h1>
             <ul className="mt-3 p-5 grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {users.map((obj, index) => {
