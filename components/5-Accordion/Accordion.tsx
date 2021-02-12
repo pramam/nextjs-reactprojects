@@ -12,7 +12,7 @@ export default function Accordion() {
                         {accordionData.map((obj, index) => (
                             <li key={index}
                                 className="grid grid-cols-1 mt-4 mb-4 mr-10">
-                                <QuestionCard obj={obj} />
+                                <QuestionCard card={obj} />
                             </li>
                         ))}
 
