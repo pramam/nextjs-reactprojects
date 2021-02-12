@@ -1,4 +1,9 @@
-export default function QuestionCard({ obj }) {
+import { ICard } from './definitions'
+
+export interface IProps {
+    obj: ICard
+}
+export default function QuestionCard({ obj }: IProps) {
     return (
         <div className="py-4 bg-gray-50 border border-gray-100 shadow-lg" >
             <div className="flex justify-between">
