@@ -39,11 +39,10 @@ export default function Reviews() {
     }, [current])
     return (
         <div>
-            <div className="flex flex-col justify-center mb-12">
-                <h1 className="mb-4 mt-12 flex justify-center text-5xl font-semibold text-gray-900">Our Reviews</h1>
-                <div className="flex justify-center h-2 rounded-lg mx-auto w-20 bg-blue-500"></div>
+            <div className="flex flex-col justify-center mb-10 sm:mb-12">
+                <h1 className="mb-2 sm:mb-4 mt-12 flex justify-center text-2xl sm:text-5xl font-semibold text-gray-900">Our Reviews</h1>
+                <div className="flex justify-center h-1.5 sm:h-2 rounded-lg mx-auto w-10 sm:w-20 bg-blue-500"></div>
             </div>
-
             <div className="flex justify-center">
                 <div className="flex flex-col">
                     <Review review={reviewData[current]}
