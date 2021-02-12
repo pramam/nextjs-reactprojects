@@ -9,10 +9,9 @@ export default function QuestionCard({ card }: IProps) {
     const clickHandler = () => {
         setExpanded(!isExpanded)
     }
-    useEffect(() => {
-        //Every time the button is clicked, it will refresh
-        //the card
-    }, [isExpanded])
+    // Don't need useEffect with isExpanded dependency
+    // A refresh is done on the useState hook.
+
     return (
         <div className="py-4 max-w-2xl container bg-gray-50 border border-gray-100 shadow-lg" >
             <div className="grid grid-cols-1">
