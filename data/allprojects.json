@@ -25,8 +25,8 @@
         "url": "/reviews"
     },
     {
-        "image": "/screenshots/Screenshot-Bubblewrap.png",
-        "name": "Bubble Wrap",
-        "url": "/bubblewrap"
+        "image": "/screenshots/Screenshot-Accordion.png",
+        "name": "Accordion",
+        "url": "/accordion"
     }
 ]
