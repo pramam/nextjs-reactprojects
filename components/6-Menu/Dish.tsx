@@ -11,7 +11,7 @@ export default function Dish({ dish }) {
                 </div>
             <div className="flex flex-col">
                     <div className="flex justify-between max-w-md container">
-                        <h2 className="uppercase font-semibold">{dish.title}</h2>
+                    <h2 className="uppercase font-semibold tracking-tight">{dish.title}</h2>
                         <h3 className="font-semibold">{dish.price}</h3>
                     </div>
 
