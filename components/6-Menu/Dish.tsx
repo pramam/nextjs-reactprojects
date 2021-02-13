@@ -1,4 +1,9 @@
-export default function Dish({ dish }) {
+import { IMenu } from './definitions'
+
+export interface IProps {
+    dish: IMenu
+}
+export default function Dish({ dish }: IProps) {
     return (
         // <div className="lg:max-w-2xl flex justify-center">
         // I need grid here to get evenly sized width of images, max-w doesn't fix it
