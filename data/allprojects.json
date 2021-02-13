@@ -28,5 +28,10 @@
         "image": "/screenshots/Screenshot-Accordion.png",
         "name": "Accordion",
         "url": "/accordion"
+    },
+    {
+        "image": "/screenshots/Screenshot-Menu.png",
+        "name": "Menu",
+        "url": "/menu"
     }
 ]
