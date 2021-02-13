@@ -1,0 +1,74 @@
+[
+    {
+        "id": 4,
+        "category": "beverage",
+        "title": "Coffee",
+        "price": "$3",
+        "image": "https://images.pexels.com/photos/2478348/pexels-photo-2478348.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        "info": "Nothing like coffee to lift up your spirits."
+    },
+    {
+        "id": 5,
+        "category": "beverage",
+        "title": "Hot Tea",
+        "price": "$2.50",
+        "image": "https://images.pexels.com/photos/734983/pexels-photo-734983.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        "info": "Need something light? Try our tea sourced from Sri Lanka."
+    },
+    {
+        "id": 6,
+        "category": "beverage",
+        "title": "Strawberry blueberry smoothie",
+        "price": "$6",
+        "image": "https://images.pexels.com/photos/434295/pexels-photo-434295.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        "info": "In a rush? Grab our delicious strawberry smoothie!"
+    },
+    {
+        "id": 1,
+        "category": "breakfast",
+        "title": "Pancakes with fresh strawberries",
+        "price": "$8",
+        "image": "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "info": "Energize your morning with pancakes, topped with strawberries sourced from local farms."
+    },
+    {
+        "id": 2,
+        "category": "breakfast",
+        "title": "Avocado and Eggs",
+        "price": "$9.50",
+        "image": "https://images.pexels.com/photos/5591746/pexels-photo-5591746.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        "info": "Did you know that Avocados are a rich source of Omega-6?"
+    },
+    {
+        "id": 3,
+        "category": "breakfast",
+        "title": "Bagel Veggie Sandwich",
+        "price": "$7",
+        "image": "https://images.pexels.com/photos/6492/food-breakfast-fork-bagel.jpg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        "info": "A simple bagel sandwich with cheese to keep you on your toes as you start your day."
+    },
+    {
+        "id": 7,
+        "category": "lunch",
+        "title": "Mediterranean Medley",
+        "price": "$15",
+        "image": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        "info": "Chock full of quinoa and our signature spices, this dish is sure to leave you wanting more."
+    },
+    {
+        "id": 8,
+        "category": "lunch",
+        "title": "Tacos With Lime",
+        "price": "$11",
+        "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        "info": "A light lunch, sprinkled with lime."
+    },
+    {
+        "id": 9,
+        "category": "lunch",
+        "title": "Tomato Basil Pasta",
+        "price": "$14",
+        "image": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        "info": "Hungry? Try our basil pasta."
+    }
+]
