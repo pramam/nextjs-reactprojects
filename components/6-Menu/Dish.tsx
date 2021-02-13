@@ -2,7 +2,7 @@ export default function Dish({ dish }) {
     return (
         // <div className="lg:max-w-2xl flex justify-center">
         // I need grid here to get evenly sized width of images, max-w doesn't fix it
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-2 lg:ml-2 lg:mr-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-2 ml-2 mr-2">
             {/* <div className="flex flex-row"> */}
             <div className="flex justify-center lg:pr-2 lg:pl-2">
                 <img className="w-full md:max-w-md lg:max-w-lg h-40 object-cover flex justify-center items-center"
