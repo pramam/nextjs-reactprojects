@@ -37,12 +37,13 @@ export default function Tabs() {
                 <h1 className="mb-1 sm:mb-4 mt-12 flex justify-center text-2xl sm:text-4xl font-medium text-gray-900">Experience</h1>
                 <hr className="mb-4 flex justify-center h-1 rounded-lg mx-auto w-16 bg-gray-700"></hr>
 
-                <div className="flex justify-between">
-                    <div className="flex flex-col">
+                <div className="flex flex-col lg:flex-row lg:justify-between">
+                    <div className="flex flex-row justify-center space-x-2 lg:space-x-0 lg:space-y-2 lg:flex-col lg:justify-start">
                         {data.map((obj, index) => (
                             <button
                                 type="button"
-                                key={index}>
+                                key={index}
+                                className="lg:flex lg:justify-start">
                                 {obj.company}
 
                             </button>
