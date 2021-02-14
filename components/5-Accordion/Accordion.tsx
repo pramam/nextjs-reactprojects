@@ -13,7 +13,7 @@ export default function Accordion() {
                             <li key={index}
                                 // className="grid grid-cols-1 mt-4 mb-4 mr-10">
                                 //   max-w-xl makes the expanded accordion same size as collapsed one in lg screens
-                                className="flex justify-center mt-4 mb-4 mx-2 lg:mr-10">
+                                className="flex justify-center lg:max-w-xl mt-4 mb-4 mx-2 lg:mr-10">
                                 <QuestionCard card={obj} />
                             </li>
                         ))}
