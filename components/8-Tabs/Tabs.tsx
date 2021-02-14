@@ -27,10 +27,30 @@ export default function Tabs() {
     }, [])
 
     return (
-        <main>
-            {data.map((obj, index) => (
-                <SingleTab data={obj} />
-            ))}
-        </main>
+        <div className="flex justify-center">
+            <div className="flex flex-col">
+                <h1 className="mb-1 sm:mb-4 mt-12 flex justify-center text-2xl sm:text-4xl font-medium text-gray-900">Experience</h1>
+                <hr className="mb-4 flex justify-center h-1 rounded-lg mx-auto w-16 bg-gray-700"></hr>
+
+                <div className="flex justify-between">
+                    <div className="flex flex-col">
+                        {data.map((obj, index) => (
+                            <button
+                                type="button"
+                                key={index}>
+                                {obj.company}
+
+                            </button>
+                        ))}
+                    </div>
+                    {/* <SingleTab job={data[0]} /> */}
+                    {data.map((obj, index) => (
+
+                        <SingleTab key={index} job={obj} />
+                 ))} 
+
+                </div>
+            </div>
+        </div>
     )
 }
