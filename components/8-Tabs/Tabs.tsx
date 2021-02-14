@@ -15,6 +15,11 @@ export default function Tabs() {
             }
 
             const mydata = await response.json();
+            if (mydata.length === 0) {
+                setData([])
+                console.log("No data, mydata.length is 0")
+                return <div> Failed to load users</div>
+            } 
             setData(mydata);
         } catch (e) {
             console.log(e)
@@ -43,11 +48,13 @@ export default function Tabs() {
                             </button>
                         ))}
                     </div>
-                    {/* <SingleTab job={data[0]} /> */}
-                    {data.map((obj, index) => (
+                    {data[0] != null ? <SingleTab job={data[0]} /> :
+                        <p>Data[0] is null</p>
+                    }
+                    {/* {data.map((obj, index) => (
 
                         <SingleTab key={index} job={obj} />
-                 ))} 
+                    ))}  */}
 
                 </div>
             </div>
