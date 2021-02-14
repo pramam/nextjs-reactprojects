@@ -30,7 +30,6 @@ export default function Menu() {
                     </button>
                 </div>
             </div>
-            {/* <ul className="grid grid-cols-1 lg:space-x-2 lg:grid-cols-2"> */}
             <ul className="flex justify-center xl:justify-between flex-wrap">
 
                 {menuData.map((obj, index) => (
