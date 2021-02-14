@@ -19,10 +19,10 @@ export default function Dish({ dish }: IProps) {
                         <h2 className="uppercase font-semibold tracking-tight">{dish.title}</h2>
                         <h3 className="font-semibold">{dish.price}</h3>
                     </div>
+                    {/* <hr className="mt-2 h-0.5 rounded-lg bg-gray-500"></hr> */}
                     <p className="mt-3 font-extralight font-sans text-gray-900">{dish.info}</p>
                 </div>
             </div>
-            {/* <hr className="mt-2 h-0.5 rounded-lg bg-gray-500"></hr> */}
         </div>
     )
 }
