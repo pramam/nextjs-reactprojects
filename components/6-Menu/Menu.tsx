@@ -10,19 +10,9 @@ export default function Menu() {
         setDisplay(menu);
     }
 
-    const beverageHandler = () => {
-        const beverages = menu.filter(item => item.category == 'beverage');
-        setDisplay(beverages)
-    }
-
-    const breakfastHandler = () => {
-        const breakfast = menu.filter(item => item.category == 'breakfast');
-        setDisplay(breakfast)
-    }
-
-    const lunchHandler = () => {
-        const lunch = menu.filter(item => item.category == 'lunch');
-        setDisplay(lunch)
+    const clickHandler = (category) => {
+        const subitems = menu.filter(item => item.category === category);
+        setDisplay(subitems)
     }
 
     return (
@@ -40,19 +30,19 @@ export default function Menu() {
                     <button
                         type="button"
                         className="hover:bg-gray-400 px-1 rounded focus:outline-none border border-transparent"
-                        onClick={beverageHandler}
+                        onClick={() => clickHandler('beverage')}
                     ><h2>Beverages</h2>
                     </button>
                     <button
                         type="button"
                         className="hover:bg-gray-400 px-1 rounded focus:outline-none border border-transparent"
-                        onClick={breakfastHandler}
+                        onClick={() => clickHandler('breakfast')}
                     ><h2>Breakfast</h2>
                     </button>
                     <button
                         type="button"
                         className="hover:bg-gray-400 px-1 rounded focus:outline-none border border-transparent"
-                        onClick={lunchHandler}
+                        onClick={() => clickHandler('lunch')}
                     ><h2>Lunch</h2>
                     </button>
                 </div>
