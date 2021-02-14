@@ -18,7 +18,7 @@ export default function QuestionCard({ card }: IProps) {
             {/* <div className="grid grid-cols-1"> */}
             <div className="lg:max-w-2xl container">
                 <div className="flex flex-col">
-                    <div className="flex lg:justify-between">
+                    <div className="flex justify-between">
                         <h4 className="pl-10 text-lg font-semibold text-gray-900">{card.title}</h4>
                         {/* This lg:ml-40 if reduced causes the accordion to shift */}
                         <div className="ml-10 lg:ml-40 mr-4 lg:mr-6">

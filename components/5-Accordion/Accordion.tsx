@@ -5,7 +5,7 @@ import QuestionCard from './QuestionCard'
 export default function Accordion() {
     return (
         <div className="flex justify-center">
-            <div className="mt-16 sm:mt-24 sm:w-9/12 bg-gray-100 max-w-2xl md:max-w-5xl shadow-xl rounded-lg">
+            <div className="ml-2 mr-2 mt-16 sm:mt-24 sm:w-9/12 bg-gray-100 max-w-2xl md:max-w-5xl shadow-xl rounded-lg">
                 <div className="xl:flex xl:justify-between">
                     <h1 className="pt-2 ml-10 mt-12 w-52 text-3xl font-semibold rounded-xs capitalize">Questions and Answers About My Account </h1>
                     <ul className="mt-12">
