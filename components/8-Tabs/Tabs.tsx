@@ -55,11 +55,11 @@ export default function Tabs() {
     return (
         <div className="flex justify-center">
             <div className="flex flex-col">
-                <h1 className="mb-1 sm:mb-6 lg:mb-4 mt-12 xl:mt-20 flex justify-center text-2xl sm:text-4xl font-medium tracking-wide text-gray-900">Experience</h1>
+                <h1 className="mb-3 md:mb-4 mt-12 xl:mt-20 flex justify-center text-2xl sm:text-4xl font-medium tracking-wide text-gray-900">Experience</h1>
                 <hr className="mb-4 lg:mb-16 flex justify-center h-1 rounded-lg mx-auto w-16 bg-red-700"></hr>
 
                 <div className="flex flex-col lg:flex-row lg:justify-between">
-                    <div className="flex flex-row justify-center lg:pl-10 space-x-2 lg:space-x-0 lg:space-y-2 lg:flex-col lg:justify-start">
+                    <div className="flex flex-row justify-center lg:pl-10 space-x-2 mb-4 lg:space-x-0 lg:space-y-2 lg:flex-col lg:justify-start">
                         {data.map((obj, index) => (
                             <div key={index}
                                 className="lg:flex lg:flex-row">
