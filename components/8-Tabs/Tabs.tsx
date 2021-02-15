@@ -51,7 +51,7 @@ export default function Tabs() {
                                 className="lg:flex lg:flex-row">
                                 <button
                                     type="button"
-                                    className="lg:ml-4 lg:border-l-2 lg:border-red-700 lg:px-4 lg:flex lg:justify-start"
+                                    className="lg:focus:text-red-700 lg:hover:text-red-700 lg:ml-4 lg:focus:outline-none lg:border-l-2 lg:border-transparent lg:hover:border-red-700 lg:px-4 lg:flex lg:justify-start"
                                     onClick={() => buttonClickHandler(index)}
                                 >
                                     {obj.company}
@@ -62,11 +62,6 @@ export default function Tabs() {
                     {data[0] != null ? <SingleTab job={data[current]} /> :
                         <p>Data[0] is null</p>
                     }
-                    {/* {data.map((obj, index) => (
-
-                        <SingleTab key={index} job={obj} />
-                    ))}  */}
-
                 </div>
             </div>
         </div>

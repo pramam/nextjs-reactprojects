@@ -5,8 +5,9 @@ export interface IProps {
 }
 export default function SingleTab({ job }: IProps) {
     return (
-        <div>
-            <h1>{job.title}</h1>
+        <div className="lg:max-w-5xl">
+            <div className="flex flex-col lg:pl-10">
+                <h1 className="md:text-3xl">{job.title}</h1>
             <h3>{job.dates}</h3>
             <h2>{job.company}</h2>
             <ul>
@@ -15,6 +16,7 @@ export default function SingleTab({ job }: IProps) {
                         {obj}
                     </li>)}
             </ul>
+        </div>
         </div>
     )
 }
