@@ -35,25 +35,14 @@ export default function Tabs() {
         !loaded ? getData() : ``
     }, [])
 
-    // const common_props = "lg:active:text-red-700 lg:focus:text-red-700 lg:hover:text-red-700 lg:ml-4 lg:focus:outline-none lg:border-l-2 lg:border-transparent lg:hover:border-red-700 lg:px-4 lg:flex lg:justify-start"
-    // const clicked_props = "lg:text-blue-700 lg:active:border-red-700 lg:border-l-2 active:bg-green-700"
 
-    const common1_props = "lg:hover:text-red-700 lg:focus:text-red-700 lg:active:text-red-700 lg:ml-4 lg:focus:outline-none lg:border-l-2 lg:border-transparent lg:hover:border-red-700 lg:focus:border-red-700 lg:active:border-red-700 lg:px-4 lg:flex lg:justify-start"
+    const common_props = "lg:hover:text-red-700 lg:focus:text-red-700 lg:active:text-red-700 lg:ml-4 lg:focus:outline-none lg:border-l-2 lg:border-transparent lg:hover:border-red-700 lg:focus:border-red-700 lg:active:border-red-700 lg:px-4 lg:flex lg:justify-start"
     const active_props = "lg:text-red-700 lg:border-l-2 lg:border-red-700"
-
-    // var button_props = {
-    //     className: `${common_props}`
-    // }
 
     const buttonClickHandler = (index) => {
         setCurrent(index)
-        // button_props = {
-        //     className:
-        //         index === current ?
-        //             `${common1_props} ${clicked_props}` :
-        //             `${common1_props}`
-        // }
     }
+
     return (
         <div className="flex justify-center">
             <div className="flex flex-col">
@@ -67,9 +56,7 @@ export default function Tabs() {
                                 className="lg:flex lg:flex-row">
                                 <button
                                     type="button"
-                                    className={`${common1_props} ${index === current && active_props}`}
-                                    // {...button_props}
-                                    // className="lg:focus:text-red-700 lg:hover:text-red-700 lg:ml-4 lg:focus:outline-none lg:border-l-2 lg:border-transparent lg:hover:border-red-700 lg:px-4 lg:flex lg:justify-start"
+                                    className={`${common_props} ${index === current && active_props}`}
                                     onClick={() => buttonClickHandler(index)}
                                 >
                                     {obj.company}
