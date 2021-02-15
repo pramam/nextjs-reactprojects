@@ -5,6 +5,8 @@ const url = "https://course-api.com/react-tabs-project"
 
 export default function Tabs() {
     const [data, setData] = useState([]);
+    const [loaded, setLoading] = useState(false);
+    const [current, setCurrent] = useState(0);
 
     const getData = async () => {
         try {
@@ -21,6 +23,7 @@ export default function Tabs() {
                 return <div> Failed to load users</div>
             } 
             setData(mydata);
+            setLoading(true);
         } catch (e) {
             console.log(e)
             return (e)
@@ -28,9 +31,13 @@ export default function Tabs() {
     }
 
     useEffect(() => {
-        getData();
+        //getData the first time
+        !loaded ? getData() : ``
     }, [])
-
+    
+    const buttonClickHandler = (index) => {
+        setCurrent(index)
+    }
     return (
         <div className="flex justify-center">
             <div className="flex flex-col">
@@ -40,16 +47,19 @@ export default function Tabs() {
                 <div className="flex flex-col lg:flex-row lg:justify-between">
                     <div className="flex flex-row justify-center space-x-2 lg:space-x-0 lg:space-y-2 lg:flex-col lg:justify-start">
                         {data.map((obj, index) => (
-                            <button
-                                type="button"
-                                key={index}
-                                className="lg:flex lg:justify-start">
-                                {obj.company}
-
-                            </button>
+                            <div key={index}
+                                className="lg:flex lg:flex-row">
+                                <button
+                                    type="button"
+                                    className="lg:ml-4 lg:border-l-2 lg:border-red-700 lg:px-4 lg:flex lg:justify-start"
+                                    onClick={() => buttonClickHandler(index)}
+                                >
+                                    {obj.company}
+                                </button>
+                            </div>
                         ))}
                     </div>
-                    {data[0] != null ? <SingleTab job={data[0]} /> :
+                    {data[0] != null ? <SingleTab job={data[current]} /> :
                         <p>Data[0] is null</p>
                     }
                     {/* {data.map((obj, index) => (
