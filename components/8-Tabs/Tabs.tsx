@@ -37,8 +37,8 @@ export default function Tabs() {
     }, [])
 
 
-    const common_props = "lg:text-xl lg:hover:text-red-700 lg:focus:text-red-700 lg:active:text-red-700 lg:ml-4 lg:mb-2 lg:focus:outline-none lg:border-l-2 lg:border-transparent lg:hover:border-red-700 lg:focus:border-red-700 lg:active:border-red-700 lg:px-4 lg:flex lg:justify-start"
-    const active_props = "lg:text-red-700 lg:border-l-2 lg:border-red-700"
+    const common_props = "lg:text-xl hover:text-red-700 focus:text-red-700 lg:active:text-red-700 lg:ml-4 lg:mb-2 focus:outline-none lg:border-l-2 lg:border-transparent lg:hover:border-red-700 lg:focus:border-red-700 lg:active:border-red-700 lg:px-4 lg:flex lg:justify-start"
+    const active_props = "text-red-700 lg:border-l-2 lg:border-red-700"
 
     const buttonClickHandler = (index) => {
         setCurrent(index)
@@ -59,7 +59,7 @@ export default function Tabs() {
                 <hr className="mb-4 lg:mb-16 flex justify-center h-1 rounded-lg mx-auto w-16 bg-red-700"></hr>
 
                 <div className="flex flex-col lg:flex-row lg:justify-between">
-                    <div className="flex flex-row justify-center lg:pl-10 space-x-2 mb-4 lg:space-x-0 lg:space-y-2 lg:flex-col lg:justify-start">
+                    <div className="flex flex-row justify-center lg:pl-10 space-x-2 mb-6 lg:mb-0 lg:space-x-0 lg:space-y-2 lg:flex-col lg:justify-start">
                         {data.map((obj, index) => (
                             <div key={index}
                                 className="lg:flex lg:flex-row">
