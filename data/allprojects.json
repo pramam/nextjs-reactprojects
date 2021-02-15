@@ -33,5 +33,10 @@
         "image": "/screenshots/Screenshot-Menu.png",
         "name": "Menu",
         "url": "/menu"
+    },
+    {
+        "image": "/screenshots/Screenshot-Tabs.png",
+        "name": "Tabs",
+        "url": "/tabs"
     }
 ]
