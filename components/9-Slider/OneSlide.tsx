@@ -22,7 +22,7 @@ export default function OneSlide({ data }) {
                 <div className="flex justify-center">
                     <div className="max-w-36 px-20 lg:px-0 lg:max-w-xs lg:max-h-96 lg:z-20 lg:transform lg:-translate-x-12">
                         <img
-                        className="lg:rounded-md lg:h-full object-cover flex justify-center items-center"
+                            className="h-72 lg:rounded-md lg:h-full object-cover flex justify-center items-center"
                             src={data.image}
                             alt={data.alt}
                         />
