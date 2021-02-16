@@ -5,7 +5,7 @@ export default function OneSlide({ data }) {
         <div className="flex flex-col lg:flex-row">
             {/* <div className="flex justify-center"> */}
                 {/* flex-wrap-reverse is so that the image comes on top in <= md: screens */}
-            {/* <div className="flex flex-wrap-reverse lg:flex-wrap"> */}
+            <div className="flex flex-col-reverse lg:flex-row ">
             <div className="flex justify-center">
                 <div className="lg:max-h-80 lg:transform lg:translate-y-8 shadow-2xl z-30 text-gray-50 bg-gray-800 lg:rounded-md">
                     <div className="flex flex-col">
@@ -30,7 +30,7 @@ export default function OneSlide({ data }) {
                         />
                 </div>
             </div>
-            {/* </div> */}
+            </div>
             {/* </div> */}
         </div>
     )
