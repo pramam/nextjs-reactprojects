@@ -8,12 +8,12 @@ export default function OneSlide({ data }) {
                     <div className="lg:max-h-80 lg:transform lg:translate-y-8 shadow-2xl lg:z-30 text-gray-50 bg-gray-800 lg:rounded-md">
                         <div className="flex flex-col">
                             <div className="flex flex-row">
-                                <div className="ml-2 mt-10">
+                                <div className="ml-2 mt-10 lg:mt-16">
                                     <SVGLeftQuote css="h-7 w-7 text-white" />
                                 </div>
                                 <div>
-                                    <h1 className="mt-20 ml-3 mr-3 flex justify-center max-w-md text-xl">{data.quote}</h1>
-                                    <h2 className="mt-4 ml-3 font-semibold">&nbsp;-&nbsp;{data.name}</h2>
+                                    <h1 className="mt-20 lg:mt-24 ml-3 mr-3 flex justify-center max-w-md text-xl">{data.quote}</h1>
+                                    <h2 className="mt-4 ml-3 mb-20 lg:mb-0 font-semibold">&nbsp;-&nbsp;{data.name}</h2>
                                 </div>
                             </div>
                         </div>                   

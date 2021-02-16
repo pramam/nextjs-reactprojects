@@ -28,7 +28,7 @@ export default function Slider() {
                             onClick={leftArrowHandler}                        >
                             <LeftArrow />
                         </button>
-                        <div className="lg:mx-20 lg:transform lg:translate-x-6">
+                        <div className="mt-20 lg:mt-0 lg:mx-20 lg:transform lg:translate-x-6">
                             <OneSlide data={quoteData[current]} />
                         </div>
                         <button
