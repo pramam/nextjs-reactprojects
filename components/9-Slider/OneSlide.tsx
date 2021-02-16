@@ -2,9 +2,10 @@ import SVGLeftQuote from "../svgicons/SVGLeftQuote";
 
 export default function OneSlide({ data }) {
     return (
-        <div className="flex flex-row">
+        <div className="flex flex-col lg:flex-row">
             <div className="flex justify-center">
-                <div className="max-h-80 transform translate-y-8 shadow-2xl z-30 text-gray-50 bg-gray-800 rounded-md">
+                <div className="flex flex-wrap-reverse lg:flex-wrap">
+                    <div className="lg:max-h-80 lg:transform lg:translate-y-8 shadow-2xl z-30 text-gray-50 bg-gray-800 rounded-md">
                     <div className="flex flex-col">
                         <div className="flex flex-row">
                             <div className="ml-2 mt-10">
@@ -25,6 +26,7 @@ export default function OneSlide({ data }) {
                     />
                 </div>
             </div>
+        </div>
         </div>
     )
 }
