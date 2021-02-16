@@ -5,26 +5,38 @@ import LeftArrow from './LeftArrow'
 import RightArrow from './RightArrow'
 
 export default function Slider() {
+    const [current, setCurrent] = useState(0)
+
+    const leftArrowHandler = () => {
+        current === 0 ? setCurrent(quoteData.length - 1) : setCurrent(prev => prev - 1)
+        console.log(`leftArrowHandler: new current:${current}`)
+    }
+
+    const rightArrowHandler = () => {
+        current === quoteData.length - 1 ?
+            setCurrent(0) : setCurrent(prevCurrent => prevCurrent + 1)
+        console.log(`rightArrowHandler: new current: ${current}`)
+    }
+
     return (
         <div>
             <div className="flex justify-center">
                 <div className="lg:mt-32">
                     <div className="flex flex-row items-center">
-                        <LeftArrow />
-                        {/* <div className="rounded-full h-10 w-10 bg-gray-700">
-                            <div className="mx-0.5 my-1">
-                                <SVGChevronLeft css="h-8 w-8 text-gray-50" />
-                            </div>
-                        </div> */}
+                        <button
+                            type="button"
+                            onClick={leftArrowHandler}                        >
+                            <LeftArrow />
+                        </button>
                         <div className="lg:mx-20 lg:transform lg:translate-x-6">
-                        <OneSlide data={quoteData[1]} />
+                            <OneSlide data={quoteData[current]} />
                         </div>
-                        <RightArrow />
-                        {/* <div className="rounded-full h-10 w-10 bg-gray-700">
-                            <div className="mx-0.5 my-1">
-                                <SVGChevronRight css="h-8 w-8 text-gray-50" />
-                            </div>
-                        </div> */}
+                        <button
+                            type="button"
+                            onClick={rightArrowHandler}
+                        >
+                            <RightArrow />
+                        </button>
                     </div>
                 </div>
             </div>
