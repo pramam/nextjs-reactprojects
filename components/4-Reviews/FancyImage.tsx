@@ -32,7 +32,7 @@ export default function FancyImage({ image, bgcolor }: IProps) {
                         {/* <span className="z-40 transform translate-y-1 block h-9 w-9 rounded-full bg-blue-500"> */}
                         <span {...smallcircle_props}>
                             <div className="flex mx-2.5 my-3">
-                                <SVGRightQuote />
+                                <SVGRightQuote css="h-4 w-4 text-white" />
                                 {/* <h2 className="flex mx-auto my-1 italic text-white font-extrabold text-4xl">
                                 &#8221;
                                 &#xe01a;

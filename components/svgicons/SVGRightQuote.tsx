@@ -1,6 +1,12 @@
 // {/* <span className="flex justify-center text-gray-500">Icons made by <a href="https://www.freepik.com" title="Freepik"> &nbsp; Freepik &nbsp; </a> from &nbsp;<a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span>  */ }
+export interface IProps {
+  css: string
+}
 
-export default function SVGRightQuote() {
+export default function SVGRightQuote({ css }: IProps) {
+  const props = {
+    className: `bg-transparent ${css}`
+  }
   return (
     <>
       {/*?xml version="1.0" encoding="iso-8859-1"?*/}
@@ -16,8 +22,9 @@ export default function SVGRightQuote() {
         height="508.044px"
         viewBox="0 0 508.044 508.044"
         // style={{enableBackground: 'new 0 0 508.044 508.044'}} 
-        className="h-4 w-4 bg-transparent"
-        fill="white"
+        // className="h-4 w-4 bg-transparent"
+        {...props}
+        fill="currentColor"
         // stroke="text-red-500"
         xmlSpace="preserve">
         <g>
