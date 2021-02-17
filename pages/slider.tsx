@@ -2,7 +2,8 @@ import Slider from '../components/9-Slider/Slider'
 
 export default function DisplaySlider() {
     return (
-        <div className="relative min-h-screen bg-gray-900">
+        // bg-gray-900 
+        <div className="relative min-h-screen bg-red-900">
             <div className="flex flex-col justify-center ">
                 <Slider />
                 <footer className="flex justify-center text-center">

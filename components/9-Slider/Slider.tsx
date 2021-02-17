@@ -19,7 +19,12 @@ export default function Slider() {
     }
 
     return (
-        <div>
+        // SPECIFY TOTAL HEIGHT in parent container, with overflow-hidden so the background color shows around
+        // the child absolute element
+        // h-180 was butting up against the text in the smallest phone, make it h-200
+        // lg:h-120 butts up to the edge of the picture, add mb-32= h-120+32=h-152(38rem)
+        // lg:h-152 here, but lg:h-140 for OneSlide. Leaving space for the "dots" component
+        <div className="relative bg-gray-900 h-200 lg:h-152 overflow-hidden">
             <div className="flex justify-center">
                 <div className="lg:mt-32">
                     {/* The line below had items-center 
@@ -35,7 +40,10 @@ export default function Slider() {
                         <div className="relative w-56 md:w-128 lg:w-224">
                             {quoteData.map((obj, index) => {
                                 return (
-                                    <div key={index} className="lg:absolute lg:top-0 w-full">
+                                    // TOTAL HEIGHT
+                                    // h-180 top-10 h-224
+                                    // overflow-auto puts a scroll bar for <=md screens. Not working for lg:screens
+                                    <div key={index} className="absolute h-200 lg:h-140 overflow-auto lg:top-0 w-full">
                                         <OneSlide data={obj} />
                                     </div>
                                 )

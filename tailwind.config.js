@@ -4,10 +4,15 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        '76': '19rem', // This is not used
-        '128': '32rem',
-        '168': '42rem',// This is not used
-        '224': '56rem',
+        '76': '19rem',  // This is not used
+        '120': '30rem', // This is not used 
+        '128': '32rem', // w-128 used in Slider
+        '140': '35rem', // h-140 used in Slider
+        '152': '38rem', // h-152 used in Slider
+        '168': '42rem', // This is not used
+        '180': '45rem', // This is not used
+        '200': '50rem', // h-200 used in Slider
+        '224': '56rem', // This is not used
       }
     },
   },

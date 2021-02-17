@@ -19,7 +19,10 @@ export default function OneSlide({ data }) {
         //                       Try w-60: buttons getting cut off
         //                       Try w-56: works.
 
+        // HEIGHT:lg: mt-20 + max(lg:max-h-80, lg:h-96) = mt-20 + h-96 = lg:h-116, make it h-120(30rem, 480px)
+        // HEIGHT:md: mt-20 + height of image + height of text card in one direction, and same a lg:height in other direction
         // WIDTH: lg:mx-20
+        // HEIGHT mt-20
         <div className="mt-20 lg:mt-0 lg:mx-20 lg:transform lg:translate-x-6">
         <div className="flex flex-col lg:flex-row">
             <div className="flex flex-col-reverse lg:flex-row ">
@@ -29,13 +32,16 @@ export default function OneSlide({ data }) {
                         <div className="flex flex-col">
                             <div className="flex flex-row">
                                     {/* WIDTH lg: ml-2  */}
+                                    {/* HEIGHT: mt-10 */}
                                 <div className="ml-2 mt-10 lg:mt-16">
                                         {/* WIDTH lg: w-7  */}
+                                        {/* HEIGHT: h-7 */}
                                     <SVGLeftQuote css="h-7 w-7 text-white" />
                                 </div>
                                 <div>
                                         {/* WIDTH: lg:max-w-md  */}
                                         {/* WIDTH <= md: max-w-md */}
+                                        {/* HEIGHT: lg:mt-24 + mt-4 + size of text */}
                                     <h1 className="mt-20 lg:mt-24 ml-3 mr-3 flex justify-center max-w-md text-xl">{data.quote}</h1>
                                     <h2 className="mt-4 ml-3 mb-20 lg:mb-0 font-semibold">&nbsp;-&nbsp;{data.name}</h2>
                                 </div>
@@ -47,6 +53,7 @@ export default function OneSlide({ data }) {
                     {/* ImageCard */}
                         {/* WIDTH: lg:max-w-xs + lg:-translate-x-12: Did not calclate this */}
                         {/* WIDTH: <= md: w-full */}
+                        {/* HEIGHT: md:h-72 lg:h-96 */}
                     <div className="w-full lg:max-w-xs flex justify-center">
                         <div className="px-5 lg:px-0 lg:z-20 lg:transform lg:-translate-x-12">
                         <img
