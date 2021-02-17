@@ -38,5 +38,10 @@
         "image": "/screenshots/Screenshot-Tabs.png",
         "name": "Tabs",
         "url": "/tabs"
+    },
+    {
+        "image": "/screenshots/Screenshot-Slider.png",
+        "name": "Slider",
+        "url": "/slider"
     }
 ]
