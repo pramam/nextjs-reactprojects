@@ -22,17 +22,32 @@ export default function Slider() {
         <div>
             <div className="flex justify-center">
                 <div className="lg:mt-32">
-                    <div className="flex flex-row items-center">
+                    {/* The line below had items-center 
+                      * Not sure how justify-end works here, but it does*/}
+                    <div className="flex flex-row justify-end">
                         <button
                             type="button"
-                            className="mb-32 lg:mb-0 focus:outline-none border border-transparent"
+                            className="mb-32 lg:mt-44 focus:outline-none border border-transparent"
                             onClick={leftArrowHandler}                        >
                             <LeftArrow />
                         </button>
-                        <OneSlide data={quoteData[current]} />
+                        <div className="relative lg:w-224">
+                            {quoteData.map((obj, index) => {
+                                return (
+                                    <div key={index} className="lg:absolute lg:top-0 w-full">
+                                        <OneSlide data={obj} />
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        {/* <div className="relative lg:w-224">
+                            <div className="lg:absolute lg:top-20 w-full">
+                            <OneSlide data={quoteData[current]} />
+                            </div>
+                        </div> */}
                         <button
                             type="button"
-                            className="mb-32 lg:mb-0 focus:outline-none border border-transparent"
+                            className="mb-32 lg:mt-44 focus:outline-none border border-transparent"
                             onClick={rightArrowHandler}
                         >
                             <RightArrow />
