@@ -31,7 +31,8 @@ export default function Slider() {
                             onClick={leftArrowHandler}                        >
                             <LeftArrow />
                         </button>
-                        <div className="relative lg:w-224">
+                        {/* TOTAL WIDTH: This is the width calculated in OneSlide.tsx*/}
+                        <div className="relative w-56 md:w-128 lg:w-224">
                             {quoteData.map((obj, index) => {
                                 return (
                                     <div key={index} className="lg:absolute lg:top-0 w-full">

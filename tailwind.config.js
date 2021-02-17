@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        '168': '42rem',
+        '76': '19rem', // This is not used
+        '128': '32rem',
+        '168': '42rem',// This is not used
         '224': '56rem',
       }
     },
