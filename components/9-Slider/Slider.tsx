@@ -25,7 +25,7 @@ export default function Slider() {
                     <div className="flex flex-row items-center">
                         <button
                             type="button"
-                            className="mb-32 lg:mb-0"
+                            className="mb-32 lg:mb-0 focus:outline-none border border-transparent"
                             onClick={leftArrowHandler}                        >
                             <LeftArrow />
                         </button>
@@ -34,7 +34,7 @@ export default function Slider() {
                         </div>
                         <button
                             type="button"
-                            className="mb-32 lg:mb-0"
+                            className="mb-32 lg:mb-0 focus:outline-none border border-transparent"
                             onClick={rightArrowHandler}
                         >
                             <RightArrow />
