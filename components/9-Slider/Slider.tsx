@@ -32,7 +32,7 @@ export default function Slider() {
                     <div className="flex flex-row justify-end">
                         <button
                             type="button"
-                            className="mb-32 lg:mt-44 focus:outline-none border border-transparent"
+                            className="mb-32 mt-52 lg:mt-44 focus:outline-none border border-transparent"
                             onClick={leftArrowHandler}                        >
                             <LeftArrow />
                         </button>
@@ -56,7 +56,7 @@ export default function Slider() {
                         </div> */}
                         <button
                             type="button"
-                            className="mb-32 lg:mt-44 focus:outline-none border border-transparent"
+                            className="mb-32 mt-52 lg:mt-44 focus:outline-none border border-transparent"
                             onClick={rightArrowHandler}
                         >
                             <RightArrow />
