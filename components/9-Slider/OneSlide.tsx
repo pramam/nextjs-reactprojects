@@ -2,6 +2,7 @@ import SVGLeftQuote from "../svgicons/SVGLeftQuote";
 
 export default function OneSlide({ data }) {
     return (
+        <div className="mt-20 lg:mt-0 lg:mx-20 lg:transform lg:translate-x-6">
         <div className="flex flex-col lg:flex-row">
             <div className="flex flex-col-reverse lg:flex-row ">
                 <div className="flex justify-center">
@@ -33,6 +34,7 @@ export default function OneSlide({ data }) {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
