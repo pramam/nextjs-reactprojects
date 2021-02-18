@@ -13,7 +13,8 @@ module.exports = {
         '168': '42rem', // This is not used
         '180': '45rem', // This is not used
         '200': '50rem', // h-200 used in Slider
-        '224': '56rem', // This is not used
+        '224': '56rem', // This is used in Slider?
+        '240': '60rem', // This is NOT used
       }
     },
   },

@@ -38,16 +38,41 @@ export default function Slider() {
                             <LeftArrow />
                         </button>
                         {/* TOTAL WIDTH: This is the width calculated in OneSlide.tsx*/}
-                        <div className="relative w-56 md:w-128 lg:w-224">
+                        {/* <div className="relative w-56 md:w-128 lg:w-224"> */}
+                        <div className="relative">
+                            {/* <div className="relative"> */}
+                            <div className="flex flex-row">
+                                <div className="h-200 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224"> { /*lg:w-240*/}
                             {quoteData.map((obj, index) => {
+                                // All the height and width props are outside of the map
+                                const current_props = "absolute transition ease-in-out duration-700";
+                                const right_props = "absolute lg:transform  lg:translate-x-full";//lg:-translate-y-full
+                                const left_props = "absolute lg:transform lg:-translate-x-full"
                                 return (
                                     // TOTAL HEIGHT
                                     // overflow-auto puts a scroll bar for <=md screens. Not working for lg:screens
-                                    <div key={index} className="absolute h-200 lg:h-140 overflow-auto lg:top-0 w-full">
+                                    // <div key={index} className="w-56 md:w-128 lg:w-224">
+                                    <div
+                                        key={index}
+                                        // <div className="relative w-56 md:w-128 lg:w-224">
+                                        // className="absolute h-200 lg:h-140 overflow-auto lg:top-0 w-full"
+                                        // className={`absolute h-200 lg:h-140 lg:top-0 w-full` && index != current ? "lg:transform lg:-translate-x-full" : ""}
+                                        //lg:transform lg:-translate-x-224 
+                                        // className={`absolute h-200 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224` && index != current ? "lg:transform lg:-translate-x-112" : ""}
+                                        // className={index !== current ? "absolute lg:transform lg:-translate-y-full lg:translate-x-full " : ""}
+
+                                        // className="absolute"
+                                        className={`${index === current ? current_props : right_props}`}
+                                    // className={`${index === current ? "absolute" : "absolute lg:transform lg:-translate-y-full lg:translate-x-full "}`}
+                                    // From tabs project: className={`${common_props} ${index === current && active_props}`}
+                                    >
                                         <OneSlide data={obj} />
                                     </div>
+                                    // </div>
                                 )
                             })}
+                                </div>
+                            </div>
                         </div>
                         {/* <div className="relative lg:w-224">
                             <div className="lg:absolute lg:top-20 w-full">
