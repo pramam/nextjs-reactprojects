@@ -29,10 +29,14 @@ export default function Slider() {
                 <div className="lg:mt-32">
                     {/* The line below had items-center 
                       * Not sure how justify-end works here, but it does*/}
-                    <div className="flex flex-row justify-end">
+                    <div className="flex flex-row justify-center">
                         <button
                             type="button"
-                            className="mb-32 mt-52 lg:mt-44 focus:outline-none border border-transparent"
+                            // lg:w-224, so move the button half this distance to the left 112
+                            // md:w-128, so move the button half this distance to the left w-64
+                            // w-56, so move the button half this distance to the left w-28, Needing a bit more space so w-32
+                            // className="absolute z-40 mb-32 mt-52 lg:mt-44 focus:outline-none border border-transparent"
+                            className="absolute z-40 transform -translate-x-32 md:-translate-x-64 mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
                             onClick={leftArrowHandler}                        >
                             <LeftArrow />
                         </button>
@@ -56,7 +60,9 @@ export default function Slider() {
                         </div> */}
                         <button
                             type="button"
-                            className="mb-32 mt-52 lg:mt-44 focus:outline-none border border-transparent"
+                            // Mirror image of the LeftArrow
+                            // className="z-40 mb-32 mt-52 lg:mt-44 focus:outline-none border border-transparent"
+                            className="absolute z-40 transform translate-x-32 md:translate-x-64 mt-52 lg:translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
                             onClick={rightArrowHandler}
                         >
                             <RightArrow />

@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       spacing: {
         '76': '19rem',  // This is not used
+        '112': '28rem', // -translate-x-112 used in Slider
         '120': '30rem', // This is not used 
         '128': '32rem', // w-128 used in Slider
         '140': '35rem', // h-140 used in Slider
