@@ -10,12 +10,10 @@ export default function Slider() {
     const [previous, setPrevious] = useState(quoteData.length - 1);
     const [next, setNext] = useState(1);
 
-    // const leftArrowHandler0 = () => {
-    //     // current moves right
-    //     current === 0 ? setCurrent(quoteData.length - 1) : setCurrent(prev => prev - 1)
-    //     console.log(`leftArrowHandler: new current:${current}`)
-
-    // }
+    // Create an array to display the Dots component
+    let dots = []
+    for (let i = 0; i <= quoteData.length - 1; i++)
+        dots.push(i)
 
     const leftArrowHandler = () => {
         // Initial places on line 1.
@@ -123,6 +121,30 @@ export default function Slider() {
                         >
                             <RightArrow />
                         </button>
+                        <div>
+                            {/* Dots component */}
+                            <div className="flex flex-row">
+                                {dots.map((obj, index) => {
+                                    const active_dot_props = "px-1.5"
+                                    const inactive_dot_props = "px-0.5"
+                                    const common_dot_props = "z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
+
+                                    return (
+                                        <div>
+
+                                            <div className={`${index == current ?
+                                                `${common_dot_props} ${active_dot_props}` : `${common_dot_props} ${inactive_dot_props}`}`}>
+
+                                            </div>
+                                            {/* className={`${index === current ? current_props :
+                                                index === previous ? left_props : right_props}`} */}
+                                            {/* <div className="bg-gray-50 px-0.5 py-0 mr-1 rounded-full text-blue-600"></div> */}
+
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
