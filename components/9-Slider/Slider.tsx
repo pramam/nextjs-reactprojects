@@ -122,13 +122,16 @@ export default function Slider() {
                             <RightArrow />
                         </button>
                         {/* Don't remove this div, removing it gives long vertical lines */}
-                        <div>
+                        <div className="absolute">
                             {/* Dots component */}
                             <div className="flex flex-row">
                                 {dots.map((obj, index) => {
                                     const active_dot_props = "px-1.5"
                                     const inactive_dot_props = "px-0.5"
-                                    const common_dot_props = "z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
+                                    // lg:mt-112 positioning by trial and error until it looked nice
+                                    // md:mt-168 positioning by trial and error until it looked nice
+                                    // mt-180 could overlap long text on phone screens
+                                    const common_dot_props = "relative mt-180 md:mt-168 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
 
                                     return (
                                         <div className={`${index == current ?
