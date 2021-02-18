@@ -10,15 +10,42 @@ export default function Slider() {
     const [previous, setPrevious] = useState(quoteData.length - 1);
     const [next, setNext] = useState(1);
 
-    const leftArrowHandler = () => {
-        // current moves right
-        current === 0 ? setCurrent(quoteData.length - 1) : setCurrent(prev => prev - 1)
-        console.log(`leftArrowHandler: new current:${current}`)
+    // const leftArrowHandler0 = () => {
+    //     // current moves right
+    //     current === 0 ? setCurrent(quoteData.length - 1) : setCurrent(prev => prev - 1)
+    //     console.log(`leftArrowHandler: new current:${current}`)
 
+    // }
+
+    const leftArrowHandler = () => {
+        // Initial places on line 1.
+        //             <                      : Everything slides to the right
+        // 1. previous   current    next      : previous has 1 slide, current has 1 slide, next has all the rest of the slides stacked up
+        //    --------   -------    ----
+        // 2.                       current   : current moves right to next, gets next_props        
+        // 3.            previous             : previous moves right to current
+        // 4. (prev -1)     |                 : Don't move next to the previous spot, it messes it up
+        //                  |                 : Set the prev-1 slide to be on the left
+        // 5. *previous *current    *next     : Final positions
+
+        // current gets current - 1, which is previous (line 5 middle is line 3 middle)
+        // next is oldCurrent
+        // prev is oldNext
+        // At the end we'll have 1 slide on the left, 1 slide on the middle, and everything else on the right
+
+        const oldCurrent = current;
+        const oldPrevious = previous;
+
+        setNext(oldCurrent);
+        oldPrevious == 0 ? setPrevious(quoteData.length - 1) : setPrevious(oldPrevious - 1);
+        current === 0 ? setCurrent(quoteData.length - 1) : setCurrent(i => i - 1)
+
+        console.log(`rightArrowHandler: new current: ${current}`)
     }
 
     const rightArrowHandler = () => {
         // Initial places on line 1.
+        //                      >            : Everything slides to the left 
         // 1. previous  current    next      : previous has 1 slide, current has 1 slide, next has all the rest of the slides stacked up
         //    --------  -------    ----
         // 2.            next                : next moves left to current, gets current_props
@@ -33,7 +60,7 @@ export default function Slider() {
 
         const oldCurrent = current;
         current === quoteData.length - 1 ?
-            setCurrent(0) : setCurrent(prevCurrent => prevCurrent + 1)
+            setCurrent(0) : setCurrent(i => i + 1)
         const oldPrevious = previous;
         setPrevious(oldCurrent);
         setNext(oldPrevious);
