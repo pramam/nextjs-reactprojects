@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import quoteData from './sliderdata.json'
 import OneSlide from './OneSlide'
 import LeftArrow from './LeftArrow'
@@ -9,6 +9,15 @@ export default function Slider() {
     //previous is on the left, next is on the right
     const [previous, setPrevious] = useState(quoteData.length - 1);
     const [next, setNext] = useState(1);
+
+    // Automated playing of the quotes
+    // This can be achieved by 'clicking'(calling) the right arrow button every few seconds
+    // It will automatically move the next and prev slides to where they need to be.
+    // This in turn, changes current, and by having current as a dependency, we land
+    // up calling setTimeout in a loop
+    useEffect(() => {
+        setTimeout(rightArrowHandler, 5000)
+    }, [current]) //Call setTimeout everytime current changes, which is every time rightArrowHandler is called
 
     // Create an array to display the Dots component
     let dots = []
