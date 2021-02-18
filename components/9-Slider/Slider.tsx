@@ -96,8 +96,8 @@ export default function Slider() {
                                    {quoteData.map((obj, index) => {
                                     // All the height and width props are outside of the map
                                     const current_props = "absolute transition ease-in-out duration-700";
-                                    const right_props = "absolute lg:transform  lg:translate-x-full";//lg:-translate-y-full
-                                    const left_props = "absolute lg:transform lg:-translate-x-full"
+                                       const right_props = "absolute transform  translate-x-full";//lg:-translate-y-full
+                                       const left_props = "absolute transform -translate-x-full"
 
                                     return (
                                         <div
