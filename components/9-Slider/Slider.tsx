@@ -121,6 +121,7 @@ export default function Slider() {
                         >
                             <RightArrow />
                         </button>
+                        {/* Don't remove this div, removing it gives long vertical lines */}
                         <div>
                             {/* Dots component */}
                             <div className="flex flex-row">
@@ -130,15 +131,8 @@ export default function Slider() {
                                     const common_dot_props = "z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
 
                                     return (
-                                        <div>
-
-                                            <div className={`${index == current ?
+                                        <div className={`${index == current ?
                                                 `${common_dot_props} ${active_dot_props}` : `${common_dot_props} ${inactive_dot_props}`}`}>
-
-                                            </div>
-                                            {/* className={`${index === current ? current_props :
-                                                index === previous ? left_props : right_props}`} */}
-                                            {/* <div className="bg-gray-50 px-0.5 py-0 mr-1 rounded-full text-blue-600"></div> */}
 
                                         </div>
                                     )
