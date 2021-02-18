@@ -15,9 +15,9 @@ export default function Slider() {
     // It will automatically move the next and prev slides to where they need to be.
     // This in turn, changes current, and by having current as a dependency, we land
     // up calling setTimeout in a loop
-    useEffect(() => {
-        setTimeout(rightArrowHandler, 5000)
-    }, [current]) //Call setTimeout everytime current changes, which is every time rightArrowHandler is called
+    // useEffect(() => {
+    //     setTimeout(rightArrowHandler, 5000)
+    // }, [current]) //Call setTimeout everytime current changes, which is every time rightArrowHandler is called
 
     // Create an array to display the Dots component
     let dots = []
