@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
+                        // Comments below are correct:
         '76': '19rem',  // This is not used
         '112': '28rem', // -translate-x-112 used in Slider
         '120': '30rem', // This is not used 
@@ -13,8 +14,8 @@ module.exports = {
         '168': '42rem', // This is not used
         '180': '45rem', // This is not used
         '200': '50rem', // h-200 used in Slider
-        '224': '56rem', // This is used in Slider?
-        '240': '60rem', // This is NOT used
+        '224': '56rem', // w-224 is used in Slider
+        '240': '60rem', // This is not used
       }
     },
   },
