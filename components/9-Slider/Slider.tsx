@@ -6,15 +6,37 @@ import RightArrow from './RightArrow'
 
 export default function Slider() {
     const [current, setCurrent] = useState(0)
+    //previous is on the left, next is on the right
+    const [previous, setPrevious] = useState(quoteData.length - 1);
+    const [next, setNext] = useState(1);
 
     const leftArrowHandler = () => {
+        // current moves right
         current === 0 ? setCurrent(quoteData.length - 1) : setCurrent(prev => prev - 1)
         console.log(`leftArrowHandler: new current:${current}`)
+
     }
 
     const rightArrowHandler = () => {
+        // Initial places on line 1.
+        // 1. previous  current    next      : previous has 1 slide, current has 1 slide, next has all the rest of the slides stacked up
+        //    --------  -------    ----
+        // 2.            next                : next moves left to current, gets current_props
+        // 3.  current     |                 : current moves left to previous, gets previous_props
+        // 4.              |        previous : previous moves to the next spot, getting next_props
+        // 5. *previous *current    *next    : Final positions
+
+        // current gets current + 1, which is next (line 5 middle is line 2 middle)
+        // prev is oldCurrent
+        // next is oldPrevious
+        // At the end we'll have 1 slide on the left, 1 slide on the middle, and everything else on the right
+
+        const oldCurrent = current;
         current === quoteData.length - 1 ?
             setCurrent(0) : setCurrent(prevCurrent => prevCurrent + 1)
+        const oldPrevious = previous;
+        setPrevious(oldCurrent);
+        setNext(oldPrevious);
         console.log(`rightArrowHandler: new current: ${current}`)
     }
 
@@ -49,10 +71,15 @@ export default function Slider() {
                                     const current_props = "absolute transition ease-in-out duration-700";
                                     const right_props = "absolute lg:transform  lg:translate-x-full";//lg:-translate-y-full
                                     const left_props = "absolute lg:transform lg:-translate-x-full"
-                                       return (
+
+                                    return (
                                         <div
                                                key={index}
-                                               className={`${index === current ? current_props : right_props}`}
+                                            // In the line below, anything that is not current and not previous,
+                                            // gets right_props. So other than prev and current, all the rest of the slides
+                                            // stack up on top of each other in absolute position on the right of the right arrow button.
+                                            className={`${index === current ? current_props :
+                                                index === previous ? left_props : right_props}`}
                                         >
                                             <OneSlide data={obj} />
                                            </div>
