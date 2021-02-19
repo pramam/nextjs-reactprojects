@@ -45,7 +45,7 @@ export default function OneSlide({ data }) {
                                         <div className="ml-2 mt-6 md:mt-8 lg:mt-16">
                                         {/* WIDTH lg: w-7  */}
                                         {/* HEIGHT: h-7 */}
-                                            <SVGLeftQuote css="h-5 w-5 lg:h-7 lg:w-7 text-white" />
+                                            <SVGLeftQuote css="h-5 w-5 md:h-6 w-6 lg:h-7 lg:w-7 text-white" />
                                         </div>
                                 <div>
                                         {/* WIDTH: lg:max-w-md  */}

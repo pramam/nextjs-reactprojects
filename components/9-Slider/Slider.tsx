@@ -85,7 +85,9 @@ export default function Slider() {
         // lg:h-152 here, but lg:h-140 for OneSlide. Leaving space for the "dots" component
         // pallavi: Check these height calculations
         // <=md: Reduced h-200 to h-180 since the font sizes were reduced.
-        <div className="relative bg-gray-900 h-180 lg:h-152 overflow-hidden">
+        // New Calculations:
+        // Eye balling these heights for current length of quotes.
+        <div className="relative bg-gray-900 h-168 md:h-180 lg:h-152 overflow-hidden">
             <div className="flex justify-center">
                 <div className="lg:mt-32">
                     <div className="flex flex-row justify-center">
@@ -104,6 +106,7 @@ export default function Slider() {
                                 {/* TOTAL WIDTH: This is the width calculated in OneSlide.tsx*/}
                                 {/* TOTAL HEIGHT: This is the height calculated in OneSlide.tsx */}
                                 {/* overflow-auto puts a scroll bar for <=md screens. Not working for lg:screens */}
+                                {/* New calculations for below not done. Not sure what to do now! */}
                                 <div className="h-200 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224">
                                    {quoteData.map((obj, index) => {
                                     // All the height and width props are outside of the map
@@ -117,7 +120,7 @@ export default function Slider() {
                                                key={index}
                                             // In the line below, anything that is not current and not previous,
                                             // gets right_props. So other than prev and current, all the rest of the slides
-                                            // stack up on top of each other in absolute position on the right of the right arrow button.
+                                            // stack up on top of each other in absolute position on the right of the right arrow button(right_props).
                                             className={`${index === current ? current_props :
                                                 index === previous ? left_props : right_props}`}
                                         >
