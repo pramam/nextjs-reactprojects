@@ -88,8 +88,8 @@ export default function Slider() {
         // New Calculations:
         // Eye balling these heights for current length of quotes.
         // .map height: bg-green-900 h-156 md:h-168
-        // TODO-HEIGHT: Change this height if quotes become too long
-        <div className="relative bg-red-900 h-156 md:h-168 lg:h-152 overflow-hidden">
+        // TODO-HEIGHT: bg-red-900 Change this height if quotes become too long
+        <div className="relative bg-gray-900 h-156 md:h-168 lg:h-152 overflow-hidden">
             <div className="flex justify-center">
                 <div className="lg:mt-32">
                     <div className="flex flex-row justify-center">
@@ -112,8 +112,8 @@ export default function Slider() {
                                 {/* New calculations for entire Slider component: h-168 md:h-180 lg:h-152 */}
                                 {/* New calculations for entire map component: */}
                                 {/* <div className="bg-green-900 h-200 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224"> */}
-                                {/* TODO-HEIGHT: Change this height if quotes become too long */}
-                                <div className="bg-green-900 h-156 md:h-168 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224">
+                                {/* TODO-HEIGHT: bg-green-900 Change this height if quotes become too long */}
+                                <div className="h-156 md:h-168 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224">
                                    {quoteData.map((obj, index) => {
                                     // All the height and width props are outside of the map
                                        const current_props = "absolute opacity-1 transition ease-in-out duration-700";
