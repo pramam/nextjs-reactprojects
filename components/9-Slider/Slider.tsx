@@ -105,9 +105,10 @@ export default function Slider() {
                                 <div className="h-200 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224">
                                    {quoteData.map((obj, index) => {
                                     // All the height and width props are outside of the map
-                                    const current_props = "absolute transition ease-in-out duration-700";
-                                       const right_props = "absolute transform  translate-x-full";//lg:-translate-y-full
-                                       const left_props = "absolute transform -translate-x-full"
+                                       const current_props = "absolute opacity-1 transition ease-in-out duration-700";
+                                       // Not sure if I need overflow-hidden below
+                                       const right_props = "absolute opacity-0 overflow-hidden transform  translate-x-full";//lg:-translate-y-full
+                                       const left_props = "absolute opacity-0 overflow-hidden transform -translate-x-full"
 
                                     return (
                                         <div
