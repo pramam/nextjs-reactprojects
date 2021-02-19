@@ -148,10 +148,18 @@ export default function Slider() {
                                     const common_dot_props = "relative transform transition-all duration-700 ease-in-out opacity-0 lg:opacity-100 mt-180 md:mt-168 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
 
                                     return (
+                                        <button
+                                            type="button"
+                                            className="focus:outline-none border border-transparent"
+                                            onClick={() =>
+                                                setCurrent(index)
+                                            }
+                                        >
                                         <div className={`${index == current ?
                                                 `${common_dot_props} ${active_dot_props}` : `${common_dot_props} ${inactive_dot_props}`}`}>
 
                                         </div>
+                                        </button>
                                     )
                                 })}
                             </div>
