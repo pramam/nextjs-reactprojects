@@ -23,29 +23,39 @@ export default function OneSlide({ data }) {
         // HEIGHT:md: mt-20 + height of image + height of text card in one direction, and same a lg:height in other direction
         // WIDTH: lg:mx-20
         // HEIGHT mt-20
-        <div className="mt-20 lg:mt-0 lg:mx-20 lg:transform lg:translate-x-6">
+
+        // New Calculations:
+        // HEIGHT: mt-16 md:mt-20 lg:mt-0
+        // HEIGHT of TextCard: lg:max-h-80
+        // WIDHT of TextCard: max-w-xs sm:max-w-2xl lg:?
+        // Max height of text card specified for lg, and max-w specified for <= md:
+        <div className="mt-16 md:mt-20 lg:mt-0 lg:mx-20 lg:transform lg:translate-x-6">
         <div className="flex flex-col lg:flex-row">
-            <div className="flex flex-col-reverse lg:flex-row ">
+                <div className="flex flex-col-reverse justify-center lg:flex-row ">
                 <div className="flex justify-center">
                     {/* TextCard: */}
                     <div className="lg:max-h-80 lg:transform lg:translate-y-8 shadow-2xl lg:z-30 text-gray-50 bg-gray-800 lg:rounded-md">
                         <div className="flex flex-col">
+                                <div className="max-w-xs sm:max-w-2xl"> {/*pallavi get lg:max-w*/}
+
+
                             <div className="flex flex-row">
                                     {/* WIDTH lg: ml-2  */}
                                     {/* HEIGHT: mt-10 */}
-                                <div className="ml-2 mt-10 lg:mt-16">
+                                        <div className="ml-2 mt-6 md:mt-8 lg:mt-16">
                                         {/* WIDTH lg: w-7  */}
                                         {/* HEIGHT: h-7 */}
-                                    <SVGLeftQuote css="h-7 w-7 text-white" />
-                                </div>
+                                            <SVGLeftQuote css="h-5 w-5 lg:h-7 lg:w-7 text-white" />
+                                        </div>
                                 <div>
                                         {/* WIDTH: lg:max-w-md  */}
                                         {/* WIDTH <= md: max-w-md */}
                                         {/* HEIGHT: lg:mt-24 + mt-4 + size of text */}
-                                    <h1 className="mt-20 lg:mt-24 ml-3 mr-3 flex justify-center max-w-md text-xl">{data.quote}</h1>
-                                    <h2 className="mt-4 ml-3 mb-20 lg:mb-0 font-semibold">&nbsp;-&nbsp;{data.name}</h2>
-                                </div>
+                                            <h1 className="mt-12 md:mt-16 lg:mt-24 ml-3 mr-3 flex justify-center text-xs md:text-base lg:text-xl">{data.quote}</h1>
+                                            <h2 className="mt-4 ml-3 mb-6 md:mb-10 lg:mb-0 font-semibold text-xs md:text-sm lg:text-base">&nbsp;-&nbsp;{data.name}</h2>
+                                        </div>
                             </div>
+                                </div>
                         </div>                   
                     </div>
                 </div>
@@ -54,7 +64,21 @@ export default function OneSlide({ data }) {
                         {/* WIDTH: lg:max-w-xs + lg:-translate-x-12: Did not calclate this */}
                         {/* WIDTH: <= md: w-full */}
                         {/* HEIGHT: md:h-72 lg:h-96 */}
-                    <div className="w-full lg:max-w-xs flex justify-center">
+
+                        {/* New calculations:
+                        WIDTH: max-w-xs sm:max-w-2xl lg:max-w-xs
+                        HEIGHT: h-80 lg:h-96 */}
+                        <div className="max-w-xs sm:max-w-2xl lg:max-w-xs">
+                            <div className="lg:px-0 lg:z-20 lg:transform lg:-translate-x-12">
+                                <img
+                                    className="w-full h-80 lg:h-96 lg:rounded-md object-cover flex justify-center items-center"
+                                    src={data.image}
+                                    alt={data.alt}
+                                />
+                            </div>
+                        </div>
+
+                        {/* <div className="w-full lg:max-w-xs flex justify-center">
                         <div className="px-5 lg:px-0 lg:z-20 lg:transform lg:-translate-x-12">
                         <img
                                 className="h-72 lg:rounded-md lg:h-96 object-cover items-center"
@@ -62,7 +86,7 @@ export default function OneSlide({ data }) {
                             alt={data.alt}
                         />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

@@ -83,7 +83,9 @@ export default function Slider() {
         // h-180 was butting up against the text in the smallest phone, make it h-200
         // lg:h-120 butts up to the edge of the picture, add mb-32= h-120+32=h-152(38rem)
         // lg:h-152 here, but lg:h-140 for OneSlide. Leaving space for the "dots" component
-        <div className="relative bg-gray-900 h-200 lg:h-152 overflow-hidden">
+        // pallavi: Check these height calculations
+        // <=md: Reduced h-200 to h-180 since the font sizes were reduced.
+        <div className="relative bg-gray-900 h-180 lg:h-152 overflow-hidden">
             <div className="flex justify-center">
                 <div className="lg:mt-32">
                     <div className="flex flex-row justify-center">
@@ -144,8 +146,11 @@ export default function Slider() {
                                     // lg:mt-112 positioning by trial and error until it looked nice
                                     // md:mt-168 positioning by trial and error until it looked nice
                                     // mt-180 could overlap long text on phone screens
-                                    // Best to hide the dot component for <= md: screens by setting opacity to 0
-                                    const common_dot_props = "relative transform transition-all duration-700 ease-in-out opacity-0 lg:opacity-100 mt-180 md:mt-168 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
+                                    // Undo:Best to hide the dot component for <= md: screens by setting opacity to 0
+                                    // const common_dot_props = "relative transform transition-all duration-700 ease-in-out opacity-0 lg:opacity-100 mt-180 md:mt-168 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
+                                    // New Calculations:
+                                    // mt-148 md:mt-156 lg:mt-112: <=md: might need adjusting if the quotes are too long
+                                    const common_dot_props = "relative transform transition-all duration-700 ease-in-out mt-148 md:mt-156 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
 
                                     return (
                                         <button
