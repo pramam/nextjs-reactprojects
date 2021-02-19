@@ -105,7 +105,7 @@ export default function Slider() {
                             // sm:max-w-2xl: 42rem = w-168, move the button half this distance to the left, w-84, try w-80
                             // remove md: width:md:-translate-x-64: Too close, try -x-72
                             // OLD: className="absolute z-40 transform -translate-x-40 sm:-translate-x-80  mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
-                            className="absolute z-40 transform -translate-x-36 sm:-translate-x-52 md:-translate-x-72 mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
+                            className="absolute z-40 transform -translate-x-36 sm:-translate-x-52 md:-translate-x-72 mt-64 md:mt-64 lg:mt-44 lg:-translate-x-112 focus:outline-none border border-transparent"
                             onClick={leftArrowHandler}                        >
                             <LeftArrow />
                         </button>
@@ -148,7 +148,7 @@ export default function Slider() {
                             type="button"
                             // Mirror image of the LeftArrow
                             // Left Arrow: className="absolute z-40 transform -translate-x-36 sm:-translate-x-80 md:-translate-x-72 mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
-                            className="absolute z-40 transform translate-x-36 sm:translate-x-52 md:translate-x-72 mt-52 lg:translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
+                            className="absolute z-40 transform translate-x-36 sm:translate-x-52 md:translate-x-72 mt-64 md:mt-64 lg:mt-44 lg:translate-x-112 focus:outline-none border border-transparent"
                             onClick={rightArrowHandler}
                         >
                             <RightArrow />
