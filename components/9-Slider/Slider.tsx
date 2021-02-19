@@ -98,7 +98,14 @@ export default function Slider() {
                             // lg:w-224, so move the button half this distance to the left 112
                             // md:w-128, so move the button half this distance to the left w-64
                             // w-56, so move the button half this distance to the left w-28, Needing a bit more space so w-32
-                            className="absolute z-40 transform -translate-x-32 md:-translate-x-64 mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
+                            // New calculations:
+                            // Arrows in md: and less are hitting the images
+                            // Width of TextCard: max-w-xs sm:max-w-2xl
+                            // max-w-xs: 20rem = w-80, move the button half this distance to the left, w-40, too wide, try w-36
+                            // sm:max-w-2xl: 42rem = w-168, move the button half this distance to the left, w-84, try w-80
+                            // remove md: width:md:-translate-x-64: Too close, try -x-72
+                            // OLD: className="absolute z-40 transform -translate-x-40 sm:-translate-x-80  mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
+                            className="absolute z-40 transform -translate-x-36 sm:-translate-x-52 md:-translate-x-72 mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
                             onClick={leftArrowHandler}                        >
                             <LeftArrow />
                         </button>
@@ -140,7 +147,8 @@ export default function Slider() {
                         <button
                             type="button"
                             // Mirror image of the LeftArrow
-                            className="absolute z-40 transform translate-x-32 md:translate-x-64 mt-52 lg:translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
+                            // Left Arrow: className="absolute z-40 transform -translate-x-36 sm:-translate-x-80 md:-translate-x-72 mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
+                            className="absolute z-40 transform translate-x-36 sm:translate-x-52 md:translate-x-72 mt-52 lg:translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
                             onClick={rightArrowHandler}
                         >
                             <RightArrow />
