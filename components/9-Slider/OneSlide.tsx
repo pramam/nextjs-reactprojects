@@ -2,9 +2,10 @@ import SVGLeftQuote from "../svgicons/SVGLeftQuote";
 
 export default function OneSlide({ data }) {
     return (
-        // TOTAL WIDTH is specified in Slider.tsx
-        // TOTAL WIDTH of lg:mx-20(5rem+5rem) + ml-2(0.5rem) + w-7(1.75rem) + max-w-md(28rem)= 42rem = w-168
+        // * TOTAL WIDTH is specified in Slider.tsx
+        // * TOTAL WIDTH of lg:mx-20(5rem+5rem) + ml-2(0.5rem) + w-7(1.75rem) + max-w-md(28rem)= 42rem = w-168
         //                    w-168(42rem) cut off the image, so I went with w-224(56rem)
+        // * TOTAL WIDTH lg:w-224
 
         // TOTAL WIDTH OF md and lower: Max width of image or text:
         // ml-2(0.5rem) + w-7(1.75rem) + max-w-md(28rem)= 30.25rem ~ 32rem = w-128
@@ -27,19 +28,21 @@ export default function OneSlide({ data }) {
         // New Calculations:
         // HEIGHT: mt-16 md:mt-20 lg:mt-0
         // HEIGHT of TextCard: lg:max-h-80
-        // WIDHT of TextCard: max-w-xs sm:max-w-2xl lg:?
+        // WIDTH of TextCard: max-w-xs sm:max-w-2xl 
         // Max height of text card specified for lg, and max-w specified for <= md:
         <div className="mt-16 md:mt-20 lg:mt-0 lg:mx-20 lg:transform lg:translate-x-6">
         <div className="flex flex-col lg:flex-row">
                 <div className="flex flex-col-reverse justify-center lg:flex-row ">
                 <div className="flex justify-center">
                     {/* TextCard: */}
-                    <div className="lg:max-h-80 lg:transform lg:translate-y-8 shadow-2xl lg:z-30 text-gray-50 bg-gray-800 lg:rounded-md">
+                        {/* <div className="lg:max-h-80 lg:transform lg:translate-y-8 lg:shadow-2xl lg:z-30 text-gray-50 bg-gray-800 lg:rounded-md"> */}
+                        {/* BUG: The following line reduces the TextCard width for sm: screens. Mobiles and md:screens are ok */}
+                        <div className="lg:max-h-80 lg:transform lg:translate-y-8 lg:shadow-2xl lg:z-30 text-gray-50 bg-gray-800 lg:rounded-md">
                         <div className="flex flex-col">
-                                <div className="max-w-xs sm:max-w-2xl"> {/*pallavi get lg:max-w*/}
+                                <div className="max-w-xs sm:max-w-lg md:max-w-lg">
 
 
-                            <div className="flex flex-row">
+                                    <div className="flex flex-row sm:container">
                                     {/* WIDTH lg: ml-2  */}
                                     {/* HEIGHT: mt-10 */}
                                         <div className="ml-2 mt-6 md:mt-8 lg:mt-16">
@@ -61,14 +64,14 @@ export default function OneSlide({ data }) {
                 </div>
                 <div className="flex justify-center">
                     {/* ImageCard */}
-                        {/* WIDTH: lg:max-w-xs + lg:-translate-x-12: Did not calclate this */}
+                        {/* WIDTH: lg:max-w-xs + lg:-translate-x-12: Did not calculate this */}
                         {/* WIDTH: <= md: w-full */}
                         {/* HEIGHT: md:h-72 lg:h-96 */}
 
                         {/* New calculations:
-                        WIDTH: max-w-xs sm:max-w-2xl lg:max-w-xs
+                        WIDTH: max-w-xs sm:max-w-2xl lg:max-w-xs lg:-translate-x-12
                         HEIGHT: h-80 lg:h-96 */}
-                        <div className="max-w-xs sm:max-w-2xl lg:max-w-xs">
+                        <div className="max-w-xs sm:max-w-lg md:max-w-lg lg:max-w-xs">
                             <div className="lg:px-0 lg:z-20 lg:transform lg:-translate-x-12">
                                 <img
                                     className="w-full h-80 lg:h-96 lg:rounded-md object-cover flex justify-center items-center"
