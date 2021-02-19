@@ -141,7 +141,7 @@ export default function Slider() {
                                     // md:mt-168 positioning by trial and error until it looked nice
                                     // mt-180 could overlap long text on phone screens
                                     // Best to hide the dot component for <= md: screens by setting opacity to 0
-                                    const common_dot_props = "relative opacity-0 lg:opacity-100 mt-180 md:mt-168 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
+                                    const common_dot_props = "relative transform transition-all duration-700 ease-in-out opacity-0 lg:opacity-100 mt-180 md:mt-168 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
 
                                     return (
                                         <div className={`${index == current ?

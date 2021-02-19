@@ -16,7 +16,10 @@ module.exports = {
         '200': '50rem', // h-200 used in Slider
         '224': '56rem', // w-224 is used in Slider
         '240': '60rem', // This is not used
-      }
+      },
+      transitionProperty: {
+        'spacing': 'margin', //This is for the Dots component in Slider
+      },
     },
   },
   variants: {
