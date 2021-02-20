@@ -130,6 +130,7 @@ export default function Slider() {
                                 {/* <div className="bg-green-900 h-200 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224"> */}
                                 {/* TODO-HEIGHT: bg-green-900 Change this height if quotes become too long */}
                                 {/* <div className="h-156 md:h-168 lg:h-140 lg:top-0 w-80 md:w-128 lg:w-224"> */}
+                                {/* I need the height/width here for the boundary, inside this is the absolute OneSlide */}
                                 <div className="h-156 md:h-168 lg:h-140 lg:top-0 w-80 sm:w-128 md:w-128 lg:w-224">
                                    {quoteData.map((obj, index) => {
                                     // All the height and width props are outside of the map
@@ -177,7 +178,9 @@ export default function Slider() {
                                     // const common_dot_props = "relative transform transition-all duration-700 ease-in-out opacity-0 lg:opacity-100 mt-180 md:mt-168 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
                                     // New Calculations:
                                     // mt-148 md:mt-156 lg:mt-112: <=md: might need adjusting if the quotes are too long
-                                    const common_dot_props = "relative transform transition-all duration-700 ease-in-out mt-148 md:mt-156 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
+                                    // mt- on the dots makes the entire vertical margin above it a clickable button. Not what I want.
+                                    // const common_dot_props = "relative transform transition-all duration-700 ease-in-out mt-148 md:mt-156 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
+                                    const common_dot_props = "relative transform transition-all duration-700 ease-in-out translate-y-148 md:translate-y-156 lg:translate-y-112 z-40 bg-gray-50 py-0.5 mr-1 rounded-full"
 
                                     return (
                                         <button
