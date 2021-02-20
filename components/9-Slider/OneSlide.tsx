@@ -33,16 +33,16 @@ export default function OneSlide({ data }) {
         <div className="mt-16 md:mt-20 lg:mt-0 lg:mx-20 lg:transform lg:translate-x-6">
         <div className="flex flex-col lg:flex-row">
                 <div className="flex flex-col-reverse justify-center lg:flex-row ">
-                <div className="flex justify-center">
+                    <div className="max-w-xs sm:max-w-lg md:max-w-lg lg:w-auto">
+                    <div className="flex justify-center">
                     {/* TextCard: */}
                         {/* <div className="lg:max-h-80 lg:transform lg:translate-y-8 lg:shadow-2xl lg:z-30 text-gray-50 bg-gray-800 lg:rounded-md"> */}
                         {/* BUG: The following line reduces the TextCard width for sm: screens. Mobiles and md:screens are ok */}
-                        <div className="lg:max-h-80 lg:transform lg:translate-y-8 lg:shadow-2xl lg:z-30 text-gray-50 bg-gray-800 lg:rounded-md">
-                        <div className="flex flex-col">
-                                <div className="max-w-xs sm:max-w-lg md:max-w-lg">
+                            <div className="w-full lg:h-80 lg:transform lg:translate-y-8 lg:shadow-2xl lg:z-30 text-gray-50 bg-gray-800 lg:rounded-md">
+                                <div className="flex flex-col">
 
 
-                                    <div className="flex flex-row sm:container">
+                                    <div className="flex flex-row">
                                     {/* WIDTH lg: ml-2  */}
                                     {/* HEIGHT: mt-10 */}
                                         <div className="ml-2 mt-6 md:mt-8 lg:mt-16">
@@ -58,10 +58,10 @@ export default function OneSlide({ data }) {
                                             <h2 className="mt-4 ml-3 mb-6 md:mb-10 lg:mb-0 font-semibold text-xs md:text-sm lg:text-base">&nbsp;-&nbsp;{data.name}</h2>
                                         </div>
                             </div>
-                                </div>
-                        </div>                   
-                    </div>
+                                    </div>             
+                            </div>
                 </div>
+                    </div>
                 <div className="flex justify-center">
                     {/* ImageCard */}
                         {/* WIDTH: lg:max-w-xs + lg:-translate-x-12: Did not calculate this */}
