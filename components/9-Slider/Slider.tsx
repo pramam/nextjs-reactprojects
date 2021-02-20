@@ -129,7 +129,7 @@ export default function Slider() {
                                 {/* New calculations for entire map component: */}
                                 {/* <div className="bg-green-900 h-200 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224"> */}
                                 {/* TODO-HEIGHT: bg-green-900 Change this height if quotes become too long */}
-                                {/* <div className="h-156 md:h-168 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224"> */}
+                                {/* <div className="h-156 md:h-168 lg:h-140 lg:top-0 w-80 md:w-128 lg:w-224"> */}
                                 <div className="h-156 md:h-168 lg:h-140 lg:top-0 w-80 sm:w-128 md:w-128 lg:w-224">
                                    {quoteData.map((obj, index) => {
                                     // All the height and width props are outside of the map
