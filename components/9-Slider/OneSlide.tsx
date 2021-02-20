@@ -3,31 +3,18 @@ import SVGLeftQuote from "../svgicons/SVGLeftQuote";
 export default function OneSlide({ data }) {
     return (
         // * TOTAL WIDTH is specified in Slider.tsx
-        // * TOTAL WIDTH of lg:mx-20(5rem+5rem) + ml-2(0.5rem) + w-7(1.75rem) + max-w-md(28rem)= 42rem = w-168
-        //                    w-168(42rem) cut off the image, so I went with w-224(56rem)
-        // * TOTAL WIDTH lg:w-224
-
-        // TOTAL WIDTH OF md and lower: Max width of image or text:
-        // ml-2(0.5rem) + w-7(1.75rem) + max-w-md(28rem)= 30.25rem ~ 32rem = w-128
-        // w-128 is working for md: screens but not for phones.
-
-        // The smallest phone, iphone4, is 320px, with ml-2 around the text card
-        // TOTAL WIDTH of phones: assume 320px(=20rem, =w-80) - mx-2(m-2 is .5rem, so mx-2 is 1rem)
-        //                       = w-80 - w-4(1rem) = w-76 (19rem)
-        //                       w-76 is too much for the smallest screen, no space for buttons
-        //                       Try w-72: On the smallest phone, there is no space for the arrows
-        //                       Try w-64: 16rem, buttons getting cut off
-        //                       Try w-60: buttons getting cut off
-        //                       Try w-56: works.
-
-
 
         // TextCard and ImageCard together:
-        // TextCard: Width: max-w-xs sm:max-w-lg md:max-w-lg lg:w-auto
+        // TextCard: Width: max-w-xs sm:max-w-lg md:max-w-lg lg:w-auto        
         // ImageCard:Width: max-w-xs sm:max-w-lg md:max-w-lg lg:max-w-xs & lg:-translate-x-12
 
         // TextCard:  Height:      lg:h-80 (w-full)
         // ImageCard: Height: h-80 lg:h-96 (w-full)
+
+        // Total width of lg: mx-20(5rem + 5rem) + ml-2 + w-7 + text + max-w-xs(Image, w-80) - translate-x-12 = 20x2 +2 +7 + 80 -12 = 117 + text width
+        // Old trial and error, I'd settled on lg:w-224 encompassing the entire breadth of lg: which is used in Slider.tsx. 
+        // It looks nice so leave it alone.
+
         <div className="mt-16 md:mt-20 lg:mt-0 lg:mx-20 lg:transform lg:translate-x-6">
         <div className="flex flex-col lg:flex-row">
                 <div className="flex flex-col-reverse justify-center lg:flex-row ">

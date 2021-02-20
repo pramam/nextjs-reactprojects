@@ -115,12 +115,11 @@ export default function Slider() {
                         <div className="relative">
                             <div className="flex flex-row">
                                 {/* TOTAL WIDTH: This is the width calculated in OneSlide.tsx*/}
-                                {/* lg:w-224  */}
-                                {/* max-w-xs(20rem, w-80) sm:max-w-2xl(42rem, w-168) */}
-                                {/* w-80 too much for iphone4, w-72 might work for all phones if Swipe is implemented.
-                                    Without swipe, stick to w-56 to leave space for the arrows */}
-                                {/* md: max-w-lg(32rem, w-128) */}
-                                {/* sm: max-w-lg(32rem, w-128) */}
+                                {/* lg:w-224(56rem) = 896 px = w-224, by trial and error  */}
+                                {/* mobiles:max-w-xs(20rem) = 320px = w-80   */}
+                                {/* sm:max-w-lg(32rem) = 512px = w-128   */}
+                                {/* md:max-w-lg(32rem) = 512px = w-128 */}
+
                                 {/* TOTAL HEIGHT: This is the height calculated in OneSlide.tsx */}
 
                                 {/* overflow-auto puts a scroll bar for <=md screens. Not working for lg:screens */}

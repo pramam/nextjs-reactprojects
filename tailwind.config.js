@@ -8,7 +8,7 @@ module.exports = {
         '76': '19rem',  // This is not used
         '112': '28rem', // -translate-x-112 used in Slider
         '120': '30rem', // This is not used 
-        '128': '32rem', // w-128 used in Slider
+        '128': '32rem', // * sm:w-128 used in Slider
         '140': '35rem', // h-140 used in Slider
         '144': '36rem', //x Dots, slider
         '148': '37rem', // Dots, slider
@@ -18,7 +18,7 @@ module.exports = {
         '168': '42rem', // This is not used
         '180': '45rem', // This is not used
         '200': '50rem', // h-200 used in Slider
-        '224': '56rem', // w-224 is used in Slider
+        '224': '56rem', //* lg:w-224 is used in Slider
         '240': '60rem', // This is not used
       },
       transitionProperty: {
