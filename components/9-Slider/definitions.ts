@@ -1,5 +1,5 @@
 export interface ISlide {
-    id: string,
+    id: number,
     name: string,
     quote: string,
     image: string,
