@@ -5,11 +5,23 @@ module.exports = {
     extend: {
       animation: {
         'wiggle': 'wiggle 1s ease-in-out infinite',
+        'slidy': 'slidy 30s ease-in-out infinite',
       },
       keyframes: {
         'wiggle': {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
+        },
+        'slidy': {
+          '0%': { left: '0%' },
+          '20%': { left: '0%' },
+          '25%': { left: '-100%' },
+          '45%': { left: '-100%' },
+          '50%': { left: '-200%' },
+          '70%': { left: '-200%' },
+          '75%': { left: '-300%' },
+          '95%': { left: '-300%' },
+          '100%': { left: '-400%' },
         },
       },
       spacing: {

@@ -83,12 +83,13 @@ export default function SliderG2({ slides }: IProps) {
     }
 
     return (
+        // This solution is an implementation of this article:
+        // http://thenewcode.com/627/Make-A-Responsive-CSS3-Image-Slider
         // lg:w-224, assume this is the width of every OneSlide
         // lg:max-w-1120
         <div className="flex justify-center">
-            <div className="bg-red-500 lg:w-4/5 lg:max-w-224">
-                {/* <div className="relative lg:w-5/1 lg:m-0 lg:p-0 text-left"> */}
-                <div className="relative lg:w-5/1 lg:m-0 lg:p-0 text-left">
+            <div className="lg:w-4/5 lg:max-w-224 lg:mt-20 lg:overflow-hidden">
+                <div className="relative lg:w-5/1 lg:m-0 lg:p-0 text-left animate-slidy">
                     <div className="flex flex-row justify-center">
                         {slides.map((obj, index) => {
                             // All the height and width props are outside of the map
@@ -108,8 +109,8 @@ export default function SliderG2({ slides }: IProps) {
                                     // In the line below, anything that is not current and not previous,
                                     // gets right_props. So other than prev and current, all the rest of the slides
                                     // stack up on top of each other in absolute position on the right of the right arrow button(right_props).
-                                    className={`${index === current ? common_props && current_props :
-                                        index === previous ? common_props && left_props : common_props && right_props}`}
+                                    // className={`${index === current ? common_props && current_props :
+                                    //     index === previous ? common_props && left_props : common_props && right_props}`}
                                 >
                                     <OneSlideG data={obj} />
                                 </div>
