@@ -88,8 +88,8 @@ export default function SliderKeyframe({ slides }: IProps) {
         // lg:w-224, assume this is the width of every OneSlide
         // lg:max-w-1120
         <div className="flex justify-center">
-            <div className="md:w-4/5 md:max-w-lg lg:max-w-224 lg:mt-20 md:overflow-hidden">
-                <div className="relative md:w-5/1 lg:m-0 lg:p-0 text-left md:animate-slidy">
+            <div className="w-4/5 max-w-xs sm:max-w-lg md:max-w-lg lg:max-w-224 lg:mt-20 overflow-hidden">
+                <div className="relative w-5/1 lg:m-0 lg:p-0 text-left animate-slidy">
                     <div className="flex flex-row justify-center">
                         {slides.map((obj, index) => {
                             // All the height and width props are outside of the map
