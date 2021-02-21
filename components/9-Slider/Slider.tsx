@@ -81,16 +81,26 @@ export default function Slider() {
         // SPECIFY TOTAL HEIGHT in parent container, with overflow-hidden so the background color shows around
         // the child absolute element
 
-        //Delete h-180 was butting up against the text in the smallest phone, make it h-200
+        // Font sizes are smaller for smaller viewports, so have to eyeball this.
+
+        // This is the total height of Slider:
+        // From OneSlide:
+        // TextCard:  Height:      lg:h-80 (w-full)
+        // ImageCard: Height: h-80 lg:h-96 (w-full)
+        // So, for <lg:, height is minimum h-80 + height of text card,
+        //               eyeballed to h-156 md:h-168
+        // lg:h-96, eyeballed to lg:h-152
         // lg:h-120 butts up to the edge of the picture, add mb-32= h-120+32=h-152(38rem)
         // lg:h-152 here, but lg:h-140 for OneSlide. Leaving space for the "dots" component
-        // pallavi: Check these height calculations
-        //End Delete <=md: Reduced h-200 to h-180 since the font sizes were reduced.
 
-        // New Calculations:
         // Eye balling these heights for current length of quotes.
-        // .map height: bg-green-900 h-156 md:h-168
-        // TODO-HEIGHT: bg-red-900 Change this height for lg: if quotes become too long
+        // Here                                :  h-156 md:h-168 lg:h-152
+        // Just for OneSlide, container of .map:  h-156 md:h-168 lg:h-140
+        // If the quotes get too long, there will be a little bit of room for the text box up to md: screens, to expand below.
+
+        // TODO-HEIGHT1: bg-red-900 Change this height for lg: if quotes become too long; Change corresponding height in TODO-HEIGHT2
+        // If TODO-HEIGHT1 and TODO-HEIGHT2 are changed then the Dots component(TODO-HEIGHT3) may need to be moved down.
+        // The arrows may also need to be moved down.
         <div className="relative bg-gray-900 h-156 md:h-168 lg:h-152 overflow-hidden">
             <div className="flex justify-center">
                 <div className="lg:mt-32">
@@ -127,15 +137,12 @@ export default function Slider() {
                                 {/* md:max-w-lg(32rem) = 512px = w-128 */}
 
                                 {/* TOTAL HEIGHT: This is the height calculated in OneSlide.tsx */}
+                                {/* These heights here were eyeballed due to varying font sizes: h-156 md:h-168 lg:h-140
+                                    Note that the entire height of Slider(top most div) is     : h-156 md:h-168 lg:h-152
+                                    If TODO-HEIGHT2 is changed, then TODO-HEIGHT1 must also be changed */}
 
-                                {/* overflow-auto puts a scroll bar for <=md screens. Not working for lg:screens */}
-                                {/* New calculations for below not done. Not sure what to do now! */}
-                                {/* New calculations for entire Slider component: h-168 md:h-180 lg:h-152 */}
-                                {/* New calculations for entire map component: */}
-                                {/* <div className="bg-green-900 h-200 lg:h-140 lg:top-0 w-56 md:w-128 lg:w-224"> */}
-                                {/* TODO-HEIGHT: bg-green-900 Change this height if quotes become too long */}
-                                {/* <div className="h-156 md:h-168 lg:h-140 lg:top-0 w-80 md:w-128 lg:w-224"> */}
-                                {/* I need the height/width here for the boundary, inside this is the absolute OneSlide */}
+                                {/* I need the height AND width here for the boundary, inside this is the absolute OneSlide */}
+                                {/* TODO-HEIGHT2: bg-green-900 Change this height if quotes become too long */}
                                 <div className="h-156 md:h-168 lg:h-140 lg:top-0 w-80 sm:w-128 md:w-128 lg:w-224">
                                    {quoteData.map((obj, index) => {
                                     // All the height and width props are outside of the map
@@ -185,6 +192,7 @@ export default function Slider() {
                                     // mt-148 md:mt-156 lg:mt-112: <=md: might need adjusting if the quotes are too long
                                     // mt- on the dots makes the entire vertical margin above it a clickable button. Not what I want.
                                     // const common_dot_props = "relative transform transition-all duration-700 ease-in-out mt-148 md:mt-156 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
+                                    // TODO-HEIGHT3
                                     const common_dot_props = "relative transform transition-all duration-700 ease-in-out translate-y-148 md:translate-y-156 lg:translate-y-112 z-40 bg-gray-50 py-0.5 mr-1 rounded-full"
 
                                     return (

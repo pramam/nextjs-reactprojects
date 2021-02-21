@@ -9,13 +9,14 @@ module.exports = {
         '112': '28rem', //* lg:-translate-x-112 used in Slider(Arrow)
         '120': '30rem', // This is not used 
         '128': '32rem', // * sm:w-128 used in Slider
-        '140': '35rem', // h-140 used in Slider
+        '140': '35rem', // * lg:h-140 used in Slider
         '144': '36rem', //x Dots, slider
         '148': '37rem', // Dots, slider
-        '152': '38rem', // h-152 used in Slider
-        '156': '39rem', // Dots,slider
+        '152': '38rem', // * lg:h-152 used in Slider
+        '156': '39rem', // *h-156, used in Slider
+                        //Dots,slider
         '160': '40rem', // x h-160 used in Dots-Slider
-        '168': '42rem', // This is not used
+        '168': '42rem', // *h-168, used in Slider
         '180': '45rem', // This is not used
         '200': '50rem', // h-200 used in Slider
         '224': '56rem', //* lg:w-224 is used in Slider
