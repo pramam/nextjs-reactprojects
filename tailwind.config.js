@@ -3,6 +3,15 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      animation: {
+        'wiggle': 'wiggle 1s ease-in-out infinite',
+      },
+      keyframes: {
+        'wiggle': {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+      },
       spacing: {
         // Comments below are correct:
         '112': '28rem', // * lg:-translate-x-112 used in Slider(Arrow), Also used in Slider(Dots)

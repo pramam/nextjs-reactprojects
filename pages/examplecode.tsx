@@ -11,6 +11,10 @@ function tutorial() {
             <Counter />
             <UseEffectExample1 />
             {/* <ObjectManipulation /> */}
+            <div className="mt-2 flex flex-row justify-center">
+                <div className="animate animate-wiggle bg-yellow-400 h-12 w-12"></div>
+            </div>
+
         </div>
     )
 }
