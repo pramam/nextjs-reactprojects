@@ -88,13 +88,14 @@ export default function SliderKeyframe({ slides }: IProps) {
         // lg:w-224, assume this is the width of every OneSlide
         // lg:max-w-1120
         <div className="flex justify-center">
-            <div className="lg:w-4/5 lg:max-w-224 lg:mt-20 lg:overflow-hidden">
-                <div className="relative lg:w-5/1 lg:m-0 lg:p-0 text-left animate-slidy">
+            <div className="md:w-4/5 md:max-w-lg lg:max-w-224 lg:mt-20 md:overflow-hidden">
+                <div className="relative md:w-5/1 lg:m-0 lg:p-0 text-left md:animate-slidy">
                     <div className="flex flex-row justify-center">
                         {slides.map((obj, index) => {
                             // All the height and width props are outside of the map
                             // Removed absolute opacity-1
-                            const common_props = "lg:w-1/5 lg:h-auto"
+                            // Do I need common props? Seems to work without it
+                            // const common_props = "lg:w-1/5 lg:h-auto"
                             const current_props = "transition ease-in-out duration-700";
                             // Not sure if I need overflow-hidden below
                             // Removed absolute opacity-0 overflow-hidden
@@ -111,6 +112,7 @@ export default function SliderKeyframe({ slides }: IProps) {
                                     // stack up on top of each other in absolute position on the right of the right arrow button(right_props).
                                     // className={`${index === current ? common_props && current_props :
                                     //     index === previous ? common_props && left_props : common_props && right_props}`}
+                                    // className={common_props}
                                 >
                                     <OneSlideKeyframe data={obj} />
                                 </div>
