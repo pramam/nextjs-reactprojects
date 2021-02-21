@@ -99,7 +99,8 @@ export default function Slider() {
         // If the quotes get too long, there will be a little bit of room for the text box up to md: screens, to expand below.
 
         // TODO-HEIGHT1: bg-red-900 Change this height for lg: if quotes become too long; Change corresponding height in TODO-HEIGHT2
-        // If TODO-HEIGHT1 and TODO-HEIGHT2 are changed then the Dots component(TODO-HEIGHT3) may need to be moved down.
+        // If TODO-HEIGHT1 and TODO-HEIGHT2 are changed then the Dots component(TODO-HEIGHT3) and Arrow(TODO-HEIGHT4) may need to be moved down.
+        // *Important: Add non-standard heights to tailwind.config.js
         // The arrows may also need to be moved down.
         <div className="relative bg-gray-900 h-156 md:h-168 lg:h-152 overflow-hidden">
             <div className="flex justify-center">
@@ -183,16 +184,8 @@ export default function Slider() {
                                 {dots.map((obj, index) => {
                                     const active_dot_props = "px-1.5"
                                     const inactive_dot_props = "px-0.5"
-                                    // lg:mt-112 positioning by trial and error until it looked nice
-                                    // md:mt-168 positioning by trial and error until it looked nice
-                                    // mt-180 could overlap long text on phone screens
-                                    // Undo:Best to hide the dot component for <= md: screens by setting opacity to 0
-                                    // const common_dot_props = "relative transform transition-all duration-700 ease-in-out opacity-0 lg:opacity-100 mt-180 md:mt-168 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
-                                    // New Calculations:
-                                    // mt-148 md:mt-156 lg:mt-112: <=md: might need adjusting if the quotes are too long
-                                    // mt- on the dots makes the entire vertical margin above it a clickable button. Not what I want.
-                                    // const common_dot_props = "relative transform transition-all duration-700 ease-in-out mt-148 md:mt-156 lg:mt-112 z-40 bg-gray-50 bg-gray-50 py-0.5 mr-1 rounded-full"
-                                    // TODO-HEIGHT3
+                                    // translate-y-148 md:translate-y-156 lg:translate-y-112
+                                    // TODO-HEIGHT3: The translate-y-* values are eyeballed. If any TODO-HEIGHT changes, these may need to be changed.
                                     const common_dot_props = "relative transform transition-all duration-700 ease-in-out translate-y-148 md:translate-y-156 lg:translate-y-112 z-40 bg-gray-50 py-0.5 mr-1 rounded-full"
 
                                     return (

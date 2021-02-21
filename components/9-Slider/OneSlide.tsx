@@ -8,6 +8,7 @@ export default function OneSlide({ data }) {
         // TextCard: Width: max-w-xs sm:max-w-lg md:max-w-lg lg:w-auto        
         // ImageCard:Width: max-w-xs sm:max-w-lg md:max-w-lg lg:max-w-xs & lg:-translate-x-12
 
+        // * TOTAL HEIGHT is specified in Slider.tsx
         // TextCard:  Height:      lg:h-80 (w-full)
         // ImageCard: Height: h-80 lg:h-96 (w-full)
 
