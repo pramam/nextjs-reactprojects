@@ -21,11 +21,11 @@ export default function Slider({ slides }: IProps) {
     // This in turn, changes current, and by having current as a dependency, we land
     // up calling setTimeout in a loop
     // Do a cleanup of the timer otherwise you will run into an infinite loop of Timers
-    // useEffect(() => {
-    //     const timer_id = setTimeout(rightArrowHandler, 5000)
-    //     // Do a cleanup of the timer, else the timers will interfere with each other on every re-render
-    //     return (() => clearTimeout(timer_id))
-    // }, [current]) //Call setTimeout everytime current changes, which is every time rightArrowHandler is called
+    useEffect(() => {
+        const timer_id = setTimeout(rightArrowHandler, 5000)
+        // Do a cleanup of the timer, else the timers will interfere with each other on every re-render
+        return (() => clearTimeout(timer_id))
+    }, [current]) //Call setTimeout everytime current changes, which is every time rightArrowHandler is called
 
     // Create an array to display the Dots component
     let dots = []
