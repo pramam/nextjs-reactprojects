@@ -43,5 +43,10 @@
         "image": "/screenshots/Screenshot-Slider.png",
         "name": "Slider",
         "url": "/slider"
+    },
+    {
+        "image": "/screenshots/Screenshot-Slider-Keyframe.png",
+        "name": "Slider Keyframe",
+        "url": "/sliderkeyframe"
     }
 ]
