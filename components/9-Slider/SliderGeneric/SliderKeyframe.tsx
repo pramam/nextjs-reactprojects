@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import OneSlideG from './OneSlideG'
+import OneSlideKeyframe from './OneSlideKeyframe'
 import LeftArrow from '../LeftArrow'
 import RightArrow from '../RightArrow'
 
@@ -9,7 +9,7 @@ export interface IProps {
     slides: ISlide[]
 }
 
-export default function SliderG2({ slides }: IProps) {
+export default function SliderKeyframe({ slides }: IProps) {
     const [current, setCurrent] = useState(0)
     //previous is on the left, next is on the right
     const [previous, setPrevious] = useState(slides.length - 1);
@@ -112,7 +112,7 @@ export default function SliderG2({ slides }: IProps) {
                                     // className={`${index === current ? common_props && current_props :
                                     //     index === previous ? common_props && left_props : common_props && right_props}`}
                                 >
-                                    <OneSlideG data={obj} />
+                                    <OneSlideKeyframe data={obj} />
                                 </div>
                             )
                         })}
