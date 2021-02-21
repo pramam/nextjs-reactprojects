@@ -120,9 +120,9 @@ export default function Slider() {
                             // lg:224: -translate-x-112 seems to work since there was mx-20 on either side of OneSlide.
                             // So final button translations: x-36 sm:x-72 md:x-72 lg:x-112
 
-
-                            // OLD: className="absolute z-40 transform -translate-x-40 sm:-translate-x-80  mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
-                            className="absolute z-40 transform -translate-x-36 sm:-translate-x-72 md:-translate-x-72 lg:-translate-x-112 mt-64 md:mt-64 lg:mt-44  focus:outline-none border border-transparent"
+                            // Arrows are moved down with translate-y-* instead of mt-*. mt makes the entire margin a button, which is not what we want.
+                            // TODO-HEIGHT4: If TODO-HEIGHT1 and TODO-HEIGHT2 change, the arrows might have to be eyeballed and moved
+                            className="absolute z-40 transform -translate-x-36 sm:-translate-x-72 md:-translate-x-72 lg:-translate-x-112 translate-y-64 md:translate-y-64 lg:translate-y-44 focus:outline-none border border-transparent"
                             onClick={leftArrowHandler}
                         >
                             <LeftArrow />
@@ -169,9 +169,9 @@ export default function Slider() {
                         </div>
                         <button
                             type="button"
-                            // Mirror image of the LeftArrow
-                            // Left Arrow: className="absolute z-40 transform -translate-x-36 sm:-translate-x-80 md:-translate-x-72 mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
-                            className="absolute z-40 transform translate-x-36 sm:translate-x-72 md:translate-x-72 lg:translate-x-112 mt-64 md:mt-64 lg:mt-44 focus:outline-none border border-transparent"
+                            // Mirror image of the LeftArrow for translate-x; Same as LeftArrow for translate-y
+                            // Left Arrow: className="absolute z-40 transform -translate-x-36 sm:-translate-x-72 md:-translate-x-72 lg:-translate-x-112 translate-y-64 md:translate-y-64 lg:translate-y-44 focus:outline-none border border-transparent"
+                            className="absolute z-40 transform translate-x-36 sm:translate-x-72 md:translate-x-72 lg:translate-x-112 translate-y-64 md:translate-y-64 lg:translate-y-44 focus:outline-none border border-transparent"
                             onClick={rightArrowHandler}
                         >
                             <RightArrow />
