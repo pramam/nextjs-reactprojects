@@ -11,11 +11,11 @@ module.exports = {
         '148': '37rem', // * Dots, Slider
         '152': '38rem', // * lg:h-152 used in Slider
         '156': '39rem', // * h-156,Dots used in Slider
-        '168': '42rem', // *h-168, used in Slider
-        '224': '56rem', //* lg:w-224 is used in Slider
+        '168': '42rem', // * h-168, used in Slider
+        '224': '56rem', // * lg:w-224 is used in Slider
       },
       transitionProperty: {
-        'spacing': 'margin', //This is for the Dots component in Slider
+        'spacing': 'margin', // This is for the Dots component in Slider
       },
     },
   },
