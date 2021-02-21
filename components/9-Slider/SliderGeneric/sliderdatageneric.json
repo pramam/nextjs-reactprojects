@@ -1,12 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Albert Einstein",
-        "quote": "No problem can be solved from the same level of consciousness that created it.",
-        "image": "https://images.pexels.com/photos/4319752/pexels-photo-4319752.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-        "alt": "surfers riding a wave"
-    },
-    {
         "id": 2,
         "name": "Henry Ford",
         "quote": "Whether you think you can or you think you can't, you're right.",
@@ -35,10 +28,10 @@
         "alt": "soldier interacting with children"
     },
     {
-        "id": 6,
-        "name": "Brian Tracy",
-        "quote": "Move out of your comfort zone. You can only grow if you are willing to feel awkward and uncomfortable when you try something new.",
-        "image": "https://images.pexels.com/photos/3716087/pexels-photo-3716087.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-        "alt": "man jumping through a fire ring"
+        "id": 2,
+        "name": "Henry Ford",
+        "quote": "Whether you think you can or you think you can't, you're right.",
+        "image": "https://images.pexels.com/photos/936094/pexels-photo-936094.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+        "alt": "athlete at the start line"
     }
 ]
