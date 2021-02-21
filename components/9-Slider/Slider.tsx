@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react'
-import quoteData from './sliderdata.json'
 import OneSlide from './OneSlide'
 import LeftArrow from './LeftArrow'
 import RightArrow from './RightArrow'
 
-export default function Slider() {
+import { ISlide } from './definitions'
+
+export interface IProps {
+    slides: ISlide[]
+}
+
+export default function Slider({ slides }: IProps) {
     const [current, setCurrent] = useState(0)
     //previous is on the left, next is on the right
-    const [previous, setPrevious] = useState(quoteData.length - 1);
+    const [previous, setPrevious] = useState(slides.length - 1);
     const [next, setNext] = useState(1);
 
     // Automated playing of the quotes
@@ -24,7 +29,7 @@ export default function Slider() {
 
     // Create an array to display the Dots component
     let dots = []
-    for (let i = 0; i <= quoteData.length - 1; i++)
+    for (let i = 0; i <= slides.length - 1; i++)
         dots.push(i)
 
     const leftArrowHandler = () => {
@@ -47,8 +52,8 @@ export default function Slider() {
         const oldPrevious = previous;
 
         setNext(oldCurrent);
-        oldPrevious == 0 ? setPrevious(quoteData.length - 1) : setPrevious(oldPrevious - 1);
-        current === 0 ? setCurrent(quoteData.length - 1) : setCurrent(i => i - 1)
+        oldPrevious == 0 ? setPrevious(slides.length - 1) : setPrevious(oldPrevious - 1);
+        current === 0 ? setCurrent(slides.length - 1) : setCurrent(i => i - 1)
 
         console.log(`rightArrowHandler: new current: ${current}`)
     }
@@ -69,7 +74,7 @@ export default function Slider() {
         // At the end we'll have 1 slide on the left, 1 slide on the middle, and everything else on the right
 
         const oldCurrent = current;
-        current === quoteData.length - 1 ?
+        current === slides.length - 1 ?
             setCurrent(0) : setCurrent(i => i + 1)
         const oldPrevious = previous;
         setPrevious(oldCurrent);
@@ -145,7 +150,7 @@ export default function Slider() {
                                 {/* I need the height AND width here for the boundary, inside this is the absolute OneSlide */}
                                 {/* TODO-HEIGHT2: bg-green-900 Change this height if quotes become too long */}
                                 <div className="h-156 md:h-168 lg:h-140 lg:top-0 w-80 sm:w-128 md:w-128 lg:w-224">
-                                   {quoteData.map((obj, index) => {
+                                    {slides.map((obj, index) => {
                                     // All the height and width props are outside of the map
                                        const current_props = "absolute opacity-1 transition ease-in-out duration-700";
                                        // Not sure if I need overflow-hidden below
