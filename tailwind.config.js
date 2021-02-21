@@ -6,7 +6,7 @@ module.exports = {
       spacing: {
                         // Comments below are no longer correct:
         '76': '19rem',  // This is not used
-        '112': '28rem', // -translate-x-112 used in Slider
+        '112': '28rem', //* lg:-translate-x-112 used in Slider(Arrow)
         '120': '30rem', // This is not used 
         '128': '32rem', // * sm:w-128 used in Slider
         '140': '35rem', // h-140 used in Slider

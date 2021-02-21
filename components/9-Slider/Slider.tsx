@@ -97,18 +97,24 @@ export default function Slider() {
                     <div className="flex flex-row justify-center">
                         <button
                             type="button"
-                            // lg:w-224, so move the button half this distance to the left 112
-                            // md:w-128, so move the button half this distance to the left w-64
-                            // w-56, so move the button half this distance to the left w-28, Needing a bit more space so w-32
-                            // New calculations:
-                            // Arrows in md: and less are hitting the images
-                            // Width of TextCard: max-w-xs sm:max-w-2xl
-                            // max-w-xs: 20rem = w-80, move the button half this distance to the left, w-40, too wide, try w-36
-                            // sm:max-w-2xl: 42rem = w-168, move the button half this distance to the left, w-84, try w-80
-                            // remove md: width:md:-translate-x-64: Too close, try -x-72
+                            // .map widths:
+                            // w-80 sm:w-128 md:w-128 lg:w-224
+                            // Button is in center of screen so translate -x 1/2 of the above widths
+                            // w-80: -translate-x-40 is getting cut off on iphone4, and looking bad on some other mobiles in portrait
+                            //       -translate-x-36 fits better
+                            // sm:w-128: -translate-x-64 cuts the image in an awkward way
+                            //           -translate-x-72, same as md: works! Arrows are outside the image
+                            // md:w-128: -translate-x-64 cuts the image. 
+                            //           There is extra room on the sides:
+                            //           -translate-x-72 works better. Arrows are off the image
+                            // lg:224: -translate-x-112 seems to work since there was mx-20 on either side of OneSlide.
+                            // So final button translations: x-36 sm:x-72 md:x-72 lg:x-112
+
+
                             // OLD: className="absolute z-40 transform -translate-x-40 sm:-translate-x-80  mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
-                            className="absolute z-40 transform -translate-x-36 sm:-translate-x-52 md:-translate-x-72 mt-64 md:mt-64 lg:mt-44 lg:-translate-x-112 focus:outline-none border border-transparent"
-                            onClick={leftArrowHandler}                        >
+                            className="absolute z-40 transform -translate-x-36 sm:-translate-x-72 md:-translate-x-72 lg:-translate-x-112 mt-64 md:mt-64 lg:mt-44  focus:outline-none border border-transparent"
+                            onClick={leftArrowHandler}
+                        >
                             <LeftArrow />
                         </button>
 
@@ -158,7 +164,7 @@ export default function Slider() {
                             type="button"
                             // Mirror image of the LeftArrow
                             // Left Arrow: className="absolute z-40 transform -translate-x-36 sm:-translate-x-80 md:-translate-x-72 mt-52 lg:-translate-x-112 lg:mt-44 focus:outline-none border border-transparent"
-                            className="absolute z-40 transform translate-x-36 sm:translate-x-52 md:translate-x-72 mt-64 md:mt-64 lg:mt-44 lg:translate-x-112 focus:outline-none border border-transparent"
+                            className="absolute z-40 transform translate-x-36 sm:translate-x-72 md:translate-x-72 lg:translate-x-112 mt-64 md:mt-64 lg:mt-44 focus:outline-none border border-transparent"
                             onClick={rightArrowHandler}
                         >
                             <RightArrow />
