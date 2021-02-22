@@ -10,7 +10,7 @@ function allprojects() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                 {allprojectsData.map((obj, index) => (
-                    <a href={obj.url} className="mb-12">
+                    <a key={index} href={obj.url} className="mb-12">
                         <article className="transform hover:scale-105 motion-reduce:transform-none transition duration-500 ease-in-out">
                             <div className="mt-2 flex flex-col flex-shrink shadow-lg mx-4">
                                 <div className="max-w-28">
