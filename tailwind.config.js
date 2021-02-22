@@ -82,5 +82,7 @@ module.exports = {
       textColor: ['hover', 'focus', 'active'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

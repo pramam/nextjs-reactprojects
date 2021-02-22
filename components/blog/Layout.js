@@ -1,7 +1,8 @@
 export default function Layout({ children }) {
     return (
         <>
-            <div className="wrapper">{children}</div>
+            <div className="prose lg:prose-lg"> {children}</div>
+            {/* <div className="wrapper">{children}</div> */}
             <style jsx>{`
         .wrapper {
           max-width: 36rem;
