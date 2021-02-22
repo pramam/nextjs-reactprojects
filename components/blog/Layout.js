@@ -1,7 +1,9 @@
 export default function Layout({ children }) {
     return (
         <>
-            <div className="prose lg:prose-lg"> {children}</div>
+            <div className="flex justify-center">
+                <div className="mx-auto prose"> {children}</div>
+            </div>
             {/* <div className="wrapper">{children}</div> */}
             <style jsx>{`
         .wrapper {
