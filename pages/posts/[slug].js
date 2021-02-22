@@ -21,6 +21,7 @@ const components = {
     // See the notes in README.md for more details.
     TestComponent: dynamic(() => import('../../components/blog/TestComponent')),
     Head,
+    BubbleWrap: dynamic(() => import('../../components/0-Bubbles/BubbleWrap')),
 }
 
 export default function PostPage({ source, frontMatter }) {
