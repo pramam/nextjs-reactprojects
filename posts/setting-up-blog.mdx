@@ -1,0 +1,55 @@
+---
+title: 'Setting up a blog with MDX'
+date: '2021-02-22T21:54:58.778Z'
+description: 'Setting up a blog with nextjs, next-mdx-remote and tailwindcss'
+keywords: [nextjs, next-mdx-remote, MDX, tailwindcss, typography, creating blog, blog]
+---
+I found it tricky to set up a blog with mdx in nextjs. I wanted a Table of Contents and I also wanted the ability to display react components in the blog posts.
+
+I found blog posts that referenced using `@next/mdx`, then `next-mdx-enhanced`, but there were performance problems, so the latest recommendation was to use `next-mdx-remote`.
+
+I found a quick hack by looking at vercel's [example code](https://github.com/vercel/next.js/blob/canary/examples/with-mdx-remote
+). I replicated their code by doing the following:
+- `npm install gray-matter`
+- `npm install next-mdx-remote`
+- Copy `vercel/with-mdx-remote/components` -> `my-repo/components/blog`
+- Copy `vercel/with-mdx-remote/utils` -> `my-repo/utils`
+- Copy `vercel/with-mdx-remote/posts` -> `my-repo/posts`
+- Copy `vercel/with-mdx-remote/pages/posts/[slug].js` -> `my-repo/pages/posts/[slug].js`
+- Copy `vercel/with-mdx-remote/pages/index.js` -> `my-repo/pages/blog.js`
+
+My blog posts are in `my-repo/posts`, and the `posts/[slug].js` implementation automatically pulls in those posts and displays them.
+
+Note that the API route `posts/[slug].js` means that you cannot have blog posts in subdirectories of `my-repo/posts`. The .mdx files have to be in the directory `my-repo/posts` for the API route to work.
+
+A vanilla tailwind installation strips out all formatting for mdx files. I wanted to use tailwindcss styling, so I installed `@tailwindcss/typography` by following [these instructions](https://github.com/tailwindlabs/tailwindcss-typography#installation).
+
+In the `components/blog/Layout.js` component, I edited it to be:
+```tsx
+    <div className="flex justify-center">
+        <div className="mx-auto prose"> {children}</div>
+    </div>
+```
+The utility class `prose` automatically formats the MDX content using `@tailwindcss/typography` styles. I think I'd like to change this theme in the future, but it works for now and I have a blog up and running!
+
+To add a React component to your MDX blog post:
+- Add the component to `pages/posts/[slug].js`
+```typescript
+const components = {
+    a: CustomLink,
+    // It also works with dynamically-imported components, which is especially
+    // useful for conditionally loading components for certain routes.
+    // See the notes in README.md for more details.
+    TestComponent: dynamic(() => import('../../components/blog/TestComponent')),
+    Head,
+    BubbleWrap: dynamic(() => import('../../components/0-Bubbles/BubbleWrap')),
+}
+```
+- You don't need to import the component in the .mdx file. You can just use it like so:
+```typescript
+<BubbleWrap rows={2} cols={5}/>
+```
+Here it is:
+<BubbleWrap rows={2} cols={5}/>
+
+_Total time to investigate issue and implement this: 6 hours_

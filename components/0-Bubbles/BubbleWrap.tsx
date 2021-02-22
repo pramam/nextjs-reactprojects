@@ -30,7 +30,7 @@ export default function BubbleWrap({ rows, cols }: IProps) {
             <div className="container mx-auto max-w-xl px-8 py-8 mt-12">
             <div {...grid_props}>
                 {bubbles.map((rows, index) => (
-                    <div>
+                    <div key={index}>
                         <Bubble></Bubble>
                     </div>
 
