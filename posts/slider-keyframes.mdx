@@ -1,0 +1,24 @@
+---
+title: The Slider Keyframes Project
+date: '2021-02-22T22:53:09.791Z'
+keywords: [slider, carousel, react, moving images, css, tailwindcss, keyframes, no absolute positioning, positioning]
+description: Building a Slider without absolute positioning
+---
+In a [previous project](/posts/slider-project), I build a Slider from scratch using React Hooks and Tailwindcss. It used a lot of absolute positioning calculations which I found cumbersome, so now I want to explore another solution that doesn't use so many calculations.
+
+I found this blog post on making [a responsive CSS Slider](http://thenewcode.com/627/Make-A-Responsive-CSS3-Image-Slider) and replicated this in nextjs, using React and TailwindCSS. It is purely a CSS animation. 
+
+I had to learn about keyframes and figure out how to extend Tailwindcss to use a sliding animation using keyframes.
+
+This is my [final result](/sliderkeyframe). Source code is [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/9-Slider/SliderKeyframe).
+ 
+## Advantages
+I am coming off a finished Slider project and have that code to use. I landed up using each slide of that project and built the container SliderKeyframe from scratch. The width calculations from the Slider project were used here, so that made it easier.
+
+## Constraints
+
+- One of the constraints of this solution is that all the images(or frames to be accurate) have to be the same size. Moreover,they have to be all in portrait or all in landscape mode.
+- Another constraint is that if you change the total number of images in the data set, you have to redo the animation calculations. It is simpler than the absolute positioning Slider, but it still requires a code change. Tailwindcss does not work very well with dynamic CSS, because `purgecss` does not preserve dyanamic css classes, so it isn't a good idea to make generic calculations and plug that in.
+- There is no pause button. I'm not sure how to interrupt a CSS animation.
+
+_Total time to implement this solution: 12 checkins, ~ 1/2 a day_
