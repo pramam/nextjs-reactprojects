@@ -29,7 +29,7 @@ export default function SliderKeyframe({ slides }: IProps) {
                             return (
                                 <div
                                     key={index}
-                                    // className={common_props}
+                                // className={common_props}
                                 >
                                     <OneSlideKeyframe data={obj} />
                                 </div>

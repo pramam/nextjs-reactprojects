@@ -1,5 +1,5 @@
-import quoteDataGeneric from '../components/9-Slider/SliderGeneric/sliderdatageneric.json'
-import SliderKeyframe from '../components/9-Slider/SliderGeneric/SliderKeyframe'
+import quoteDataGeneric from '../components/9-Slider/SliderKeyframe/sliderdatageneric.json'
+import SliderKeyframe from '../components/9-Slider/SliderKeyframe/SliderKeyframe'
 
 export default function DisplaySlider() {
     return (

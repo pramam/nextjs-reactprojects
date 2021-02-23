@@ -1,6 +1,6 @@
 import SVGLeftQuote from "../../svgicons/SVGLeftQuote";
 
-export default function OneSlideG({ data }) {
+export default function OneSlideKeyframe({ data }) {
     return (
         // * TOTAL WIDTH is specified in Slider.tsx
 
