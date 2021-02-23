@@ -22,6 +22,7 @@ const components = {
     TestComponent: dynamic(() => import('../../components/blog/TestComponent')),
     Head,
     BubbleWrap: dynamic(() => import('../../components/0-Bubbles/BubbleWrap')),
+    GithubUsers: dynamic(() => import('../../components/2-Github/GithubUsers')),
     Slider: dynamic(() => import('../../components/9-Slider/Slider')),
 }
 

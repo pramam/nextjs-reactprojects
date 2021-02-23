@@ -1,0 +1,22 @@
+---
+title: Fetching github users
+date: '2021-02-23T04:31:41.698Z'
+keywords: [useEffect, promises, async await, react, nextjs]
+description: Fetching data from a URL in useEffect
+---
+I am doing a free course on [React Hooks by John Smilga](https://youtu.be/4UZrsTqkcW4?t=19164), offered by freecodecamp.org and this is one of the exercises on useEffect. 
+
+This URL is used to fetch user data from github: [https://api.github.com/users](https://api.github.com/users)
+
+The API fetches a limited number of users from Github. I decided to extend it and also fetch the number of repos of each user from the data returned by the `users` url. There seems to be an upper bound of 30 on the number of repos returned.
+
+This is my [final project](/githubusers). Source code is [here](https://github.com/pramam/nextjs-reactprojects/commits/main/components/2-Github).
+
+## Challenge
+One of the challenges was how to do a fetch call inside a map. I ran into issues and found the solution in this blog post:
+
+[How to use async functions inside a map function](https://advancedweb.hu/how-to-use-async-functions-with-array-map-in-javascript/).
+
+My current solution does not handle concurrency issues. This is a ToDo for the future. Error handling also needs a code review--I get a 403 on some runs.
+
+_Time to implement: 8 checkins, 2.5 days_
