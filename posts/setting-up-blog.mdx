@@ -6,9 +6,9 @@ keywords: [nextjs, next-mdx-remote, MDX, tailwindcss, typography, creating blog,
 ---
 I found it tricky to set up a blog with mdx in nextjs. I wanted a Table of Contents and I also wanted the ability to display react components in the blog posts.
 
-I found blog posts that referenced using `@next/mdx`, then `next-mdx-enhanced`, but there were performance problems, so the latest recommendation was to use `next-mdx-remote`.
+I found blog posts that referenced using `@next/mdx`, then `next-mdx-enhanced`, but there were [performance problems](https://leerob.io/blog/tailwind), so the latest recommendation was to use [`next-mdx-remote`](https://github.com/hashicorp/next-mdx-remote).
 
-I found a quick hack by looking at vercel's [example code](https://github.com/vercel/next.js/blob/canary/examples/with-mdx-remote
+I found a quick hack, thanks to a colleague, by looking at vercel's [example code](https://github.com/vercel/next.js/blob/canary/examples/with-mdx-remote
 ). I replicated their code by doing the following:
 - `npm install gray-matter`
 - `npm install next-mdx-remote`

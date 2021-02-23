@@ -22,6 +22,7 @@ const components = {
     TestComponent: dynamic(() => import('../../components/blog/TestComponent')),
     Head,
     BubbleWrap: dynamic(() => import('../../components/0-Bubbles/BubbleWrap')),
+    Slider: dynamic(() => import('../../components/9-Slider/Slider')),
 }
 
 export default function PostPage({ source, frontMatter }) {

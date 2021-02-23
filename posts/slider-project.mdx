@@ -1,0 +1,140 @@
+---
+title: The Slider Project
+date: '2021-02-22T22:53:09.791Z'
+keywords: [slider, carousel, blog, react, react hooks, useState, useEffect, timer, nextjs, javascript]
+description: Key challenges in building a Slider
+---
+[This is the project](https://react-projects-7-slider.netlify.app/) I want to replicate from [this free course on React Hooks by John Smilga](https://www.youtube.com/watch?v=4UZrsTqkcW4), offered by freecodecamp.org. The accompanying projects can be found [here](https://www.youtube.com/watch?v=a_7Z7C_JCyo&t=8020s). This is project #7, Slider. This course is also available on [Udemy](https://www.udemy.com/course/react-tutorial-and-projects-course) and a good way to support the instructor.
+
+My design inspiration: [https://www.masterclass.com/](https://www.masterclass.com/).  Scroll a bit down to see the reviews Slider. If you're curious to see a screenshot, here it is:
+
+![MasterclassOriginalDesign](/blog/Slider/Screenshot-Masterclass-OriginalDesign.png)
+
+
+Having learned about useState and useEffect, my goal is to use that and my tailwindcss skills to build this project without watching the tutorial on it or looking at the source code. I do peek at the css a bit if I get stymied, but, for the most part, I have stayed away from 'cheating'.
+
+This is my [final result](/slider). Source code is [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/9-Slider).
+
+All quotes except the Albert Einstein quote are from [here](https://blog.hubspot.com/sales/famous-quotes) and [here](https://blog.hubspot.com/sales/18-motivational-quotes-to-start-your-day-list). The images are from [pexels.com](pexels.com).
+
+## Responsive Image and Text
+On an lg: screen, this is what the image looks like:
+![LaptopScreenShot](/screenshots/Screenshot-Slider.png)
+
+The CSS for this on laptop sized screens(lg:) was challenging initially. I had to use z-index and translate-X to get the 2 cards to align right. 
+On lg: screens:
+
+```tsx
+<div className=”flex lg:flex-row”>
+    <div className=”flex lg:flex-row”>
+	    <TextCard className=”lg:z-30”/>
+	    <ImageCard className=”lg:z-20 lg:transform lg:-translate-x-12”/>
+    </div>
+</div>
+```
+`lg:z-30` puts the TextCard on top of the ImageCard(`lg:z-20`), and `lg:-translate-x-12` moves the image a tad to the left, going under the TextCard.
+
+On md: screens and lower, this is what the image looks like:
+
+![MobileScreenShot](/blog/Slider/Screenshot-Mobile.png)
+
+
+What turned out to be even more challenging is to get this to work on mobile and ipad(md: and lower) screens. 
+How do you get both to co-exist?
+
+For laptop screens(lg:) it is `flex flex-row` going from left to right: Text card and then Image card.
+
+For small screens it is `flex flex-col` going from bottom to top : Image card and then text card.
+To do this I had to use:
+
+```tsx
+<div className=”flex flex-col lg:flex-row”>
+    <div className=”flex flex-col-reverse lg:flex-row”>
+	    <TextCard className=”lg:z-30”/>
+	    <ImageCard className=”lg:z-20 lg:transform lg:-translate-x-12”/>
+    </div>
+</div>
+```
+On line2, `flex-col-reverse` is the key for smaller than lg:screens
+
+Once I got the responsiveness figured out, I added the arrow buttons and click Handlers, using useState to maintain the index of the current slide. Only one slide is displayed at a time. This is very much like the [Reviews Project](/reviews).
+
+## Sliding the image to the left
+
+The next challenging step is how to make the image move to the left as it is replaced by the next image from the right. I have no idea how to do this and had to resort to reading blog posts on it. It seemed complicated, so I watched a [piece of the tutorial](https://youtu.be/a_7Z7C_JCyo?t=9166) on the css for this project. I recommend you watch this video if you are building such a Slider.
+
+His solution is the following:
+
+Assume we have 6 images in total to display. All the slides are first stacked on top of each other with absolute positioning as in line 0 below. Like this:
+
+<table>
+  <tr>
+    <th>Line # </th>
+    <th>Left of screen(Prev)</th>
+    <th>On screen(Current)</th>
+    <th>Right of screen(Next)</th>
+  </tr>
+  <tr>
+    <td> 0. </td>
+    <td>No slides</td>
+    <td>Slide 1,2,3,4,5,6</td>
+    <td>No slides</td>
+  </tr>
+  <tr>
+    <td> 1.</td>
+    <td>Slide 6</td>
+    <td>Slide 1</td>
+    <td>Slide 2,3,4,5</td>
+  </tr>
+  <tr>
+    <td> 2.</td>
+    <td>Slide 1</td>
+    <td>Slide 2</td>
+    <td>Slide 3,4,5,6</td>
+  </tr>
+  <tr>
+    <td> 3.</td>
+    <td>Slide 2</td>
+    <td>Slide 3</td>
+    <td>Slide 4,5,6,1</td>
+  </tr>
+  <tr>
+    <td> 4.</td>
+    <td>Slide 3</td>
+    <td>Slide 4</td>
+    <td>Slide 5,6,1,2</td>
+  </tr>
+</table>
+
+
+... and so on
+
+**Line 1:** Leave Slide 1 in the center. Move Slide 6(the previous slide) to the left of the screen. Move the rest of the stack(2,3,4,5) to the right of the screen.
+
+**Line 2:** When you click the Left Arrow Button:
+
+Slide 1, which was in the center moves to the left and becomes the previous slide, and Slide 2 moves into it's place. Slide 6, moves the right, in the stack of 'Next' slides.
+
+**Line 3:** When you click the Left Arrow Button:
+
+Slides 2 and 3 left shift. Slide 1 from Line 2 moves to the right.
+
+**and so on**
+
+Note that all the slides here are absolutely positioned. Since I was also building a responsive design, I found that I was doing a lot of height and width calculations for various screen sizes and this was quite cumbersome.
+
+When the arrows were `relative` positioned, I realized on zooming out that all the slides were inside the 2 arrows, instead of being to it's left and right.
+
+It turned out that the arrows also had to be absolutely positioned.
+
+I eventually added the "Dots" below the slider,which are also clickable buttons, and they too are absolutely positioned.
+
+## Is absolute positioning the way to go?
+As a relative newbie to front-end coding, I am left wondering if absolute positioning is the way to go? I've had to do lots of calculations for various screen sizes, updated `tailwind.config.js` with various heights and widths, to make this work. It doesn't seem scalable.
+
+Is there a relative positioning solution that can be applied to this? I will explore that in the next project.
+
+## Constraints
+The images are not constrained. One can have any size images, in portrait or landscape mode, and they will fit with `object-cover` in fixed height and width calculations for each frame. The constraint of this project is that absolute positioning is used--it requires a lot of calculations to get *both* the height and widths just right.
+
+_Total time to create this Slider solution: 67 commits, ~ 5 long days_

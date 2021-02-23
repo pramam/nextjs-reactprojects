@@ -194,6 +194,7 @@ export default function Slider({ slides }: IProps) {
                                     const common_dot_props = "relative transform transition-all duration-700 ease-in-out translate-y-148 md:translate-y-156 lg:translate-y-112 z-40 bg-gray-50 py-0.5 mr-1 rounded-full"
 
                                     return (
+                                        <div key={index}>
                                         <button
                                             type="button"
                                             className="focus:outline-none border border-transparent"
@@ -206,6 +207,7 @@ export default function Slider({ slides }: IProps) {
 
                                         </div>
                                         </button>
+                                        </div>
                                     )
                                 })}
                             </div>
