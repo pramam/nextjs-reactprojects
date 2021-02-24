@@ -4,11 +4,12 @@ export default function Layout({ children }) {
         {/* <div className="relative min-h-screen"> */}
         {/* <div className="flex justify-center"> */}
         {/* <div className="prose"> */}
-        <div className="lg:w-auto"> {children}</div>
+        {/* <div className="lg:w-auto"> {children}</div> */}
         {/* </div> */}
         {/* </div> */}
         {/* </div> */}
-            {/* <div className="wrapper">{children}</div> */}
+        {/* <div className="wrapper">{children}</div> */}
+        <div className="lg:w-auto">{children}</div>
             <style jsx>{`
         .wrapper {
           max-width: 36rem;

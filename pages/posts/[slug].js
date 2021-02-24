@@ -23,7 +23,7 @@ const components = {
     Head,
     BubbleWrap: dynamic(() => import('../../components/0-Bubbles/BubbleWrap')),
     GithubUsers: dynamic(() => import('../../components/2-Github/GithubUsers')),
-    Slider: dynamic(() => import('../../components/9-Slider/Slider')),
+    SliderKeyframeWrapper: dynamic(() => import('../../components/9-Slider/SliderKeyframe/SliderKeyframeWrapper')),
     SliderWrapper: dynamic(() => import('../../components/9-Slider/SliderWrapper'))
 }
 
