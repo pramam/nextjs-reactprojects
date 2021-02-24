@@ -32,8 +32,9 @@ export default function OneSlide({ data }) {
                                             <SVGLeftQuote css="h-5 w-5 md:h-6 w-6 lg:h-7 lg:w-7 text-white" />
                                         </div>
                                         <div>
-                                            <h1 className="mt-12 md:mt-16 lg:mt-24 ml-3 mr-3 flex justify-center text-xs md:text-base lg:text-xl">{data.quote}</h1>
-                                            <h2 className="mt-4 ml-3 mb-6 md:mb-10 lg:mb-0 font-semibold text-xs md:text-sm lg:text-base">&nbsp;-&nbsp;{data.name}</h2>
+                                            {/* Remove h1 and h2 as it interferes with rendering this component in mdx when using tailwindcss/typography's 'prose' class */}
+                                            <div className="font-sans mt-12 md:mt-16 lg:mt-24 ml-3 mr-3 flex justify-center text-xs md:text-base lg:text-xl">{data.quote}</div>
+                                            <div className="font-sans mt-4 ml-3 mb-6 md:mb-10 lg:mb-0 font-semibold text-xs md:text-sm lg:text-base">&nbsp;-&nbsp;{data.name}</div>
                                         </div>
                             </div>
                                     </div>             

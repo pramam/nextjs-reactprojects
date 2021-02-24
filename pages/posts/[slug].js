@@ -24,6 +24,7 @@ const components = {
     BubbleWrap: dynamic(() => import('../../components/0-Bubbles/BubbleWrap')),
     GithubUsers: dynamic(() => import('../../components/2-Github/GithubUsers')),
     Slider: dynamic(() => import('../../components/9-Slider/Slider')),
+    SliderWrapper: dynamic(() => import('../../components/9-Slider/SliderWrapper'))
 }
 
 export default function PostPage({ source, frontMatter }) {

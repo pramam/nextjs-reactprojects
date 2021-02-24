@@ -1,9 +1,13 @@
 export default function Layout({ children }) {
     return (
         <>
-            <div className="flex justify-center">
-                <div className="mx-auto prose"> {children}</div>
-            </div>
+        {/* <div className="relative min-h-screen"> */}
+        {/* <div className="flex justify-center"> */}
+        {/* <div className="prose"> */}
+        <div className="lg:w-auto"> {children}</div>
+        {/* </div> */}
+        {/* </div> */}
+        {/* </div> */}
             {/* <div className="wrapper">{children}</div> */}
             <style jsx>{`
         .wrapper {
