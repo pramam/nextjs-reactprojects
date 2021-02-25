@@ -1,0 +1,73 @@
+---
+title: The Tabs Project
+date: '2021-02-24T23:31:29.902Z'
+keywords: [react, react hooks, useState, useEffect, blog resume, blog]
+description: A spiffy resume using React hooks
+---
+[This](https://react-projects-6-tabs.netlify.app/) is what I am trying to replicate. 
+
+[This](/tabs) is what I created. The source code can be found [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/8-Tabs)
+
+Here's what it looks like:
+
+<div className="min-h-screen bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300">
+    <Tabs />
+</div>
+
+
+I decided to stick with flexbox and not use grids for this project. The css was relatively easy to put together. The tricy part was getting the red bar and the red highlight of the job text.
+
+## Challenges:
+
+- I had to figure out how to create the vertical red line to the left of the Company's name. I looked at creating an ```<hr>``` tag and flipping it 90 degrees, but it didn't seem to be the right solution. I looked for an icon with just a vertical line, but that didn’t seem to be it.  I eventually settled on creating a border to the left of the word and making it red.Here's the relevant tailwindcss for it:
+
+```tsx
+const common_props = "lg:border-l-2 lg:border-transparent lg:hover:border-red-700 lg:focus:border-red-700 lg:active:border-red-700 lg:px-4"
+```
+
+I had to add the active state to tailwind.config.js:
+
+```json
+module.exports = {
+    variants: {
+        extend: {
+            backgroundColor: ['hover', 'focus', 'active'],
+            borderColor: ['hover', 'focus', 'active'],      
+            textColor: ['hover', 'focus', 'active'],   
+        }, 
+    },
+}
+```
+- The next challenge was to figure out how to get the initial displayed job to display in red with the red bar, without mousing over it or clicking on anything. 
+Setting up a `current` useState variable, and changing the css on the button click didn't work. 
+I needed it to display in red without any button click or action by the user. 
+
+The solution was to define active_props, and set the css on the button if index === current:
+
+```tsx
+const [current, setCurrent] = useState(0);
+const buttonClickHandler = (index) => {
+        setCurrent(index)   
+}
+const common_props = "lg:text-xl hover:text-red-700 focus:text-red-700 lg:active:text-red-700 lg:ml-4 lg:mb-2 focus:outline-none lg:border-l-2 lg:border-transparent lg:hover:border-red-700 lg:focus:border-red-700 lg:active:border-red-700 lg:px-4 lg:flex lg:justify-start"
+
+const active_props = "text-red-700 lg:border-l-2 lg:border-red-700"
+
+<button 
+    type="button"    
+    className={`${common_props} ${index === current && active_props}`}    
+    onClick={() => buttonClickHandler(index)} 
+>
+<span className="uppercase">{obj.company}</span>
+</button>
+```
+
+- I used a flex box with `flex flex-col justify-between` to display the 2 columns of data. It’s a bit jumpy when you click from one job to the next. I was told that one musn’t mix flex and grids, it leads to instability, but I’m wondering if having a grid there will help fix the issue.
+
+- I kept getting a null array upon display intermittently. So I added a [loaded,setLoading] useState variable to monitor the state of the fetch call and I display ‘Loading…’ on the page if the data is not yet loaded.
+
+- Getting the Chevron Double Right icon to display in the middle of the text needed some tweaking. I thought I’d have to use tailwind’s `baseline` and then I remembered that one can set margins on icons. The final solution I used was to put the SVG in a div with ‘flex items-center’.
+
+
+_Time to complete project: 12 checkins, ~ 1 day _
+
