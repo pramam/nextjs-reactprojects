@@ -25,35 +25,52 @@ export default function SampleForm() {
         // console.log(`no people: ${people.length}`)
     }
     return (
-        <div className="flex flex-col justify-center mt-6">
-            <form className="form" onSubmit={handleSubmit}>
-                <div className="">
-                    <div className="mt-1 mb-2">Form</div>
-                    <label htmlFor="firstName">Name:</label>
-                    <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                    ></input>
-                    <label htmlFor="email"> Email:</label>
-                    <input
-                        type="text"
-                        id="email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    ></input>
-                    <button type="submit">Add Person</button>
+        <div className="mt-6 max-w-2xl shadow-lg flex justify-center mx-auto">
+            <div className=""> {/*flex flex-row justify-center*/}
+                <div className="w-full">
+                    <form className="form mb-6 max-w-lg" onSubmit={handleSubmit}>
+                        <div className="flex flex-col">
+                            <div className="mt-1 mb-2 text-xl">Form</div>
+                            <label htmlFor="firstName"
+                                className="text-gray-700 font-semibold mb-2">First name</label>
+                        <input
+                            type="text"
+                                className="w-full bg-gray-100 rounded-md border border-transparent mb-6"
+                            id="firstName"
+                            name="firstName"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                        ></input>
+                            <label htmlFor="email"
+                                className="text-gray-700 font-semibold mb-2"> Email address</label>
+                        <input
+                            type="text"
+                                className="bg-gray-100 rounded-md border border-transparent mb-6"
+                            id="email"
+                            name="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        ></input>
+                            <button
+                                type="submit"
+                                className="bg-indigo-500 py-2 rounded-md text-white focus:outline-none"
+                            >
+                                Add Person
+                        </button>
                 </div>
             </form>
-            <ul>
+                    <ul className="mx-auto shadow-lg mb-6 w-full">
                 {people.map((obj, index) => {
                     const { id, firstName, email } = obj
-                    return <li key={id} className="text-green-700"> {firstName} : {email}</li>
+                    return (
+                        <li key={id} className="text-gray-900">
+                            <span className="font-bold">{firstName}</span>
+                            <span> : {email}</span>
+                        </li>)
                 })}
             </ul>
+            </div>
+            </div>
         </div>
     )
 }
