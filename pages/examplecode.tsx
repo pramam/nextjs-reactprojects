@@ -4,6 +4,7 @@ import Counter from '../components/examplecode/Counter'
 import UseEffectExample1 from '../components/examplecode/UseEffectExample1'
 import ObjectManipulation from '../components/examplecode/ObjectManipulation'
 import SampleForm from '../components/examplecode/Forms'
+import FormMultipleInputs from '../components/examplecode/FormMultipleInputs'
 
 function tutorial() {
     return (
@@ -16,6 +17,7 @@ function tutorial() {
                 <div className="animate animate-wiggle bg-yellow-400 h-12 w-12"></div>
             </div>
             <SampleForm />
+            <FormMultipleInputs />
         </div>
     )
 }
