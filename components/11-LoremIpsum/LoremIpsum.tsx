@@ -3,7 +3,7 @@ import loremipsumdata from './loremipsumdata.json'
 
 // Data obtained from: https://hipsum.co/?paras=8&type=hipster-latin
 export default function LoremIpsum() {
-    const [paragraphs, setParagraphs] = useState(0);
+    const [count, setCount] = useState(0);
 
     return (
         <div className="flex justify-center">
@@ -16,10 +16,10 @@ export default function LoremIpsum() {
                         <form className="">
                             <input
                                 type='number'
-                                id='paragraphs'
-                                name='paragraphs'
-                                value={paragraphs}
-                                onChange={(e) => setParagraphs(e.target.valueAsNumber)}
+                                id='count'
+                                name='count'
+                                value={count}
+                                onChange={(e) => setCount(e.target.valueAsNumber)}
                                 className="w-16 mr-2">
                             </input>
                             <button
