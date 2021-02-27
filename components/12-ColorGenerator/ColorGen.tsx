@@ -9,7 +9,7 @@ export default function ColorGen() {
                 <form>
                     <div className="flex flex-row">
                         <label htmlFor="color"
-                            className="md:text-2xl lg:text-3xl font-bold mr-5 tracking-wide">
+                            className="mt-4 sm:mt-2 text-xl sm:text-2xl lg:text-3xl font-bold mr-5 tracking-wide">
                             Color Generator
                         </label>
                         <div className="flex flex-col sm:flex-row">
@@ -18,12 +18,12 @@ export default function ColorGen() {
                                 name="color"
                                 id="color"
                                 value={color}
-                                className="w-52 rounded-md"
+                                className="w-40 sm:w-52 rounded-md"
                             >
                             </input>
                             <button
                                 type='submit'
-                                className="text-white bg-gradient-to-r from-green-400 to-blue-500 tracking-wide font-medium ml-4 px-7 rounded-md focus:outline-line"
+                                className="text-white bg-gradient-to-r from-green-400 to-blue-500 tracking-wide font-medium sm:ml-4 mt-2 sm:mt-0 px-1 sm:px-7 rounded-md focus:outline-line"
                             >Submit </button>
                         </div>
                     </div>
