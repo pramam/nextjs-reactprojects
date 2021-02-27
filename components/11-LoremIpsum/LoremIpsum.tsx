@@ -32,7 +32,7 @@ export default function LoremIpsum() {
                 <h1 className="text-center uppercase text-2xl mt-10 lg:text-3xl lg:mt-16">Tired of boring Lorem Ipsum?</h1>
                 <div className="mt-7 mb-7 lg:mb-10">
                     <div className="flex flex-row justify-center">
-                        <form className="form" onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit}>
                             <label htmlFor="count"
                                 className="text-2xl mr-3 align-baseline mt-2"> Paragraphs: </label>
                             <input
