@@ -28,7 +28,7 @@ export default function SampleForm() {
         <div className="mt-6 max-w-2xl shadow-lg flex justify-center mx-auto">
             <div className=""> {/*flex flex-row justify-center*/}
                 <div className="w-full">
-                    <form className="form mb-6 max-w-lg" onSubmit={handleSubmit}>
+                    <form className="mb-6 max-w-lg" onSubmit={handleSubmit}>
                         <div className="flex flex-col">
                             <div className="mt-1 mb-2 text-xl">Form</div>
                             <label htmlFor="firstName"
