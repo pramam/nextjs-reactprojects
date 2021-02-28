@@ -6,12 +6,7 @@ export default function ColorGen() {
     const [color, setColor] = useState('')
     const [list, setList] = useState([]) // list of all colors
     const [error, setError] = useState(false)
-    // const newcolor = new Values('#f15025'), { log } = console
-    // log(newcolor.tint(20))
-    // log(newcolor.shade(20))
-    // const { hex } = newcolor.tint(20);
-    // console.log(`hex: ${hex}, hex2: ${newcolor.hexString()}`)
-    // const colorarray = newcolor.all()
+
     const handleSubmit = (e) => {
         e.preventDefault();
         try {
@@ -19,6 +14,7 @@ export default function ColorGen() {
             console.log("Got values")
             setList(newcolor.all())
             console.log("setList successfully")
+            setError(false)
         } catch (error) {
             setError(true)
             console.log(`Error: ${error.message}`)
@@ -41,7 +37,7 @@ export default function ColorGen() {
                                 placeholder="#f15025"
                                 value={color}
                                 onChange={(e) => setColor(e.target.value)}
-                                className="w-40 sm:w-52 rounded-md"
+                                className={`w-40 sm:w-52 rounded-md ${error ? `border border-red-500` : ``}`}
                             >
                             </input>
                             <button
@@ -63,7 +59,8 @@ export default function ColorGen() {
                             className={`${common_props} ${index > 9 ? `text-white` : `text-gray-900`}`}
                             style={bgColor}
                         >
-                            <h3 className="ml-3 mt-3">{Math.abs(100 - (index * 10))}%</h3>
+                            {/* <h3 className="ml-3 mt-3">{Math.abs(100 - (index * 10))}%</h3> */}
+                            <h3 className="ml-3 mt-3">{obj.weight}%</h3>
                             <h3 className="ml-3">{obj.hexString()} </h3>
                         </div>
                     )
