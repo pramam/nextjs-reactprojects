@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import Values from 'values.js'
+import SingleColor from './SingleColor'
 
 // Uses https://github.com/noeldelgado/values.js
 export default function ColorGen() {
-    const [color, setColor] = useState('')
+    const [color, setColor] = useState('') // set to #hex color
     const [list, setList] = useState([]) // list of all colors
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(false) // set when the library throws an error
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -51,19 +52,34 @@ export default function ColorGen() {
 
             <div className="mt-7 flex flex-row flex-wrap">
                 {list.map((obj, index) => {
-                    const bgColor = { backgroundColor: obj.hexString() }
-                    const common_props = "h-20 w-20 sm:h-32 sm:w-32"
-                    return (
-                        <div
-                            key={index}
-                            className={`${common_props} ${index > 9 ? `text-white` : `text-gray-900`}`}
-                            style={bgColor}
-                        >
-                            {/* <h3 className="ml-3 mt-3">{Math.abs(100 - (index * 10))}%</h3> */}
-                            <h3 className="ml-3 mt-3">{obj.weight}%</h3>
-                            <h3 className="ml-3">{obj.hexString()} </h3>
-                        </div>
-                    )
+                    return (<div key={index}>
+                        <SingleColor
+                            hex={obj.hexString()}
+                            weight={obj.weight}
+                            index={index}
+                        />
+                    </div>)
+                    // const bgColor = { backgroundColor: obj.hexString() }
+                    // const common_props = "h-20 w-20 sm:h-32 sm:w-32"
+                    // return (
+                    //     // <button key={index} type="button" onClick={() => setClipboard(obj.hexString())}>
+                    //         <div
+                    //             key={index}
+                    //             className={`${common_props} ${index > 9 ? `text-white` : `text-gray-900`}`}
+                    //             style={bgColor}
+                    //         onClick={() => {
+                    //             setAlert(true)
+                    //             // setClipboard(obj.hexString())
+
+                    //         }}
+                    //             >
+                    //         {/* <h3 className="ml-3 mt-3">{Math.abs(100 - (index * 10))}%</h3> */}
+                    //         <h3 className="ml-3">{obj.weight}%</h3>
+                    //                 <h3 className="ml-3">{obj.hexString()} </h3>
+                    //         { alert && <h4 className="ml-3 uppercase text-sm text-indigo-500">Copied to clipboard</h4>}
+                    //             </div>
+                    //     // </button>
+                    // )
                 })}
             </div>
         </div>
