@@ -11,7 +11,7 @@ export default function LoremIpsum() {
 
     const maxcount = paragraphs.length
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         console.log("in handleSubmit")
         // setCount is asynchronous; cannot call it inside if loop.
