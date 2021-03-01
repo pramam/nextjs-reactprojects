@@ -64,7 +64,8 @@ export default function ColorGen() {
                 </form>
             </div>
 
-            <div className="mt-7 flex flex-row flex-wrap">
+            <div className="mt-7">
+                <div className="grid grid-cols-3 lg:grid-cols-4 grid-flow-row gap-0">
                 {list.map((obj, index) => {
                     return (<div key={index}>
                         <SingleColor
@@ -74,6 +75,7 @@ export default function ColorGen() {
                         />
                     </div>)
                 })}
+                </div>
             </div>
             <p className="mt-2 text-center"> Click on tile to copy color to Clipboard</p>
         </div>

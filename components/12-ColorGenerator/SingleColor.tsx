@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 export default function SingleColor({ hex, weight, index }) {
     const [alert, setAlert] = useState(false)
     const bgColor = { backgroundColor: hex }
-    const common_props = "h-20 w-20 sm:h-32 sm:w-32"
+    const common_props = "h-32"
 
     // clear the "Copied to Clipboard" message after 3 seconds
     useEffect(() => {
