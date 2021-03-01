@@ -1,0 +1,94 @@
+---
+title: The Color Generator
+date: '2021-03-01T02:36:35.050Z'
+keywords: [react, react hooks, javascript, copy to clipboard, hex color, color generator, blog]
+description: Generate colors by inputting a hex color
+---
+[This](https://react-projects-9-color-generator.netlify.app/) is what I am trying to replicate. 
+
+[This](/colorgenerator) is what I created. The source code can be found [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/12-ColorGenerator).
+
+Here's what it looks like:
+
+<ColorGen/>
+
+## Generating the colors 
+
+The [values.js package](https://github.com/noeldelgado/values.js) was used to generate hex colors:
+
+```typescript
+const [color, setColor] = useState('86eb21')
+const [list, setList] = useState([])
+const [error, setError] = useState(false)
+
+        try {
+            let newcolor = new Values(color)
+            // This generates an array of hex colors, 10% weight apart
+            setList(newcolor.all())
+            setError(false)
+        } catch (error) {
+            setError(true)
+        }
+
+// Iterate over `list` to display the colors
+            <div className="mt-7">
+                <div className="grid grid-cols-3 lg:grid-cols-4 grid-flow-row gap-0">
+                {list.map((obj, index) => {
+                    return (<div key={index}>
+                        <SingleColor
+                            hex={obj.hexString()}
+                            weight={obj.weight}
+                            index={index}
+                        />
+                    </div>)
+                })}
+                </div>
+            </div>
+```
+
+## Copying to clipboard
+
+Each tile is a separate component, SingleColor. Clicking on it copies its hex value to the clipboard.
+
+A useState variable, `alert`, stores the state `true` if something is copied to the clipboard.
+
+```typescript
+const [alert, setAlert] = useState(false)
+
+// An onClick handler is added to each tile:
+
+onClick={() => {
+    setAlert(true)
+    // This is a javascript function that copies the hex value to the clipboard
+    navigator.clipboard.writeText(hex)
+}}
+
+// onMouseLeave and onMouseOut handlers were also added:
+onMouseLeave={() => {
+    setAlert(false)
+}}
+
+onMouseOut={() => {
+    setAlert(false)
+}}
+```
+
+Every time something is copied to clipboard, the alert 'Copied to Clipboard' goes away in 3 seconds. This is done by the following code in useEffect:
+
+```typescript
+useEffect(() => {
+        const timer_id = setTimeout(() => { setAlert(false) }, 3000)
+        return (() => clearTimeout(timer_id))
+    }, [alert])
+```
+
+
+The `alert` state variable is used to display the message in the jsx:
+
+```jsx
+   { alert && <h4 className="ml-3 uppercase text-sm text-indigo-500">Copied to clipboard</h4>}
+```
+
+It is really important to maintain momentum when coding. I had great momentum a week ago when coding the [Slider](/slider) and [Slider Keyframes](/sliderkeyframe). The Slider was a tough project. My mometum has slowed a bit since then and I am trying to bring it back up.
+
+_Time to complete: 6 checkins, 2 days_

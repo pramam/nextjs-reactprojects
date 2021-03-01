@@ -22,6 +22,7 @@ const components = {
     TestComponent: dynamic(() => import('../../components/blog/TestComponent')),
     Head,
     BubbleWrap: dynamic(() => import('../../components/0-Bubbles/BubbleWrap')),
+    ColorGen: dynamic(() => import('../../components/12-ColorGenerator/ColorGen')),
     GithubUsers: dynamic(() => import('../../components/2-Github/GithubUsers')),
     SliderKeyframeWrapper: dynamic(() => import('../../components/9-Slider/SliderKeyframe/SliderKeyframeWrapper')),
     SliderWrapper: dynamic(() => import('../../components/9-Slider/SliderWrapper')),
