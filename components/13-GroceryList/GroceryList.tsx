@@ -1,23 +1,45 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SVGPencilAltSmall from '../svgicons/SVGPencilAltSmall';
 import SVGTrashSmall from '../svgicons/SVGTrashSmall';
 
 export default function GroceryList() {
     const [groceryitem, setGroceryItem] = useState('')
     const [grocerylist, setGroceryList] = useState([])
+    // showAlert is set to true when we want to display an alert message on top
+    // message is the message displayed
+    const [showAlert, setShowAlert] = useState(false)
+    const [message, setMessage] = useState('')
+
+    useEffect(() => {
+        console.log(`in useEffect`)
+        const timer_id = setTimeout(() => { setShowAlert(false) }, 3000)
+        return (() => clearTimeout(timer_id))
+    }, [showAlert])
 
     const submitHandler = (e) => {
         e.preventDefault();
         if (groceryitem) {
             setGroceryList([...grocerylist, groceryitem])
-            console.log(`added ${groceryitem} to list`)
+            setMessage(`Added ${groceryitem} to list`)
+            setShowAlert(true)
+            // console.log(`added ${groceryitem} to list`)
         }
         else
+        {
+            setMessage(`Please enter a valid value`)
+            setShowAlert(true)
             console.log(`empty input field`)
+        }
+    }
+    const clearAllHandler = () => {
+        setGroceryList([])
+        setMessage(`Cleared all items`)
+        setShowAlert(true)
     }
     return (
         <div className="flex justify-center">
             <div className="w-4/5 sm:w-3/5 lg:w-1/2 2xl:w-1/5 mt-20 shadow-lg bg-gray-50 rounded-md">
+                {showAlert ? <h2 className="mx-1 sm:mx-5 lg:mx-20 mt-2 text-center text-gray-900 bg-gray-300">{message}</h2> : ''}
                 <h1 className="mt-2 lg:mt-10 flex justify-center mx-auto w-full text-2xl font-semibold ">Grocery List</h1>
                 <form className="mt-2 lg:mt-4" onSubmit={submitHandler}>
                     <div className="flex justify-center">
@@ -55,6 +77,13 @@ export default function GroceryList() {
                             )
                         })}
                     </ul>
+
+                    {grocerylist.length > 0 ?
+                        <button className="flex justify-center mx-auto mb-5 text-yellow-700"
+                            type="button"
+                            onClick={clearAllHandler}
+                        >Clear All Items</button>
+                        : ''}
                 </div>  
             </div>
         </div>
