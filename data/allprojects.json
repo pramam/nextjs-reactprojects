@@ -53,5 +53,10 @@
         "image": "/screenshots/Screenshot-LoremIpsum.png",
         "name": "Lorem Ipsum",
         "url": "/loremipsum"
+    },
+    {
+        "image": "/screenshots/Screenshot-ColorGenerator.png",
+        "name": "Color Generator",
+        "url": "/colorgenerator"
     }
 ]
