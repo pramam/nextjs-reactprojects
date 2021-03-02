@@ -4,6 +4,7 @@ import SVGTrashSmall from '../svgicons/SVGTrashSmall';
 
 export default function GroceryList() {
     const [groceryitem, setGroceryItem] = useState('')
+    // grocerylist has array of {id: '', label :''}
     const [grocerylist, setGroceryList] = useState([])
     // showAlert is set to true when we want to display an alert message on top
     // message is the message displayed
@@ -19,7 +20,8 @@ export default function GroceryList() {
     const submitHandler = (e) => {
         e.preventDefault();
         if (groceryitem) {
-            setGroceryList([...grocerylist, groceryitem])
+            const newItem = { id: new Date().getTime().toString(), label: groceryitem }
+            setGroceryList([...grocerylist, newItem])
             setMessage(`Added ${groceryitem} to list`)
             setShowAlert(true)
             // console.log(`added ${groceryitem} to list`)
@@ -67,7 +69,7 @@ export default function GroceryList() {
                             return (
                                 <li key={index} className="text-gray-900 mb-3">
                                     <div className="flex flex-row justify-between">
-                                        <p className="">{obj}</p>
+                                        <p className="">{obj.label}</p>
                                         <div className="flex flex-row">
                                             <SVGPencilAltSmall css="h-5 w-5 text-green-600" />
                                             <SVGTrashSmall css="h-5 w-5 text-red-600" />
