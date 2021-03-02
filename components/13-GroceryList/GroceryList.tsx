@@ -29,12 +29,14 @@ export default function GroceryList() {
                 if (grocerylist.find(item => item.label === groceryitem.trim())) {
                     setMessage(`Item ${groceryitem} already on list`)
                     setShowAlert(true)
+                    setGroceryItem('')
                 }
                 else {
                     const newItem = { id: new Date().getTime().toString(), label: groceryitem.trim() }
                     setGroceryList([...grocerylist, newItem])
                     setMessage(`Added ${groceryitem} to list`)
                     setShowAlert(true)
+                    setGroceryItem('')
                 }
             } else { // editing
                 // editingItem already has item being edited from the editHandler
@@ -49,6 +51,7 @@ export default function GroceryList() {
                 setShowAlert(true)
                 setEditing(false)
                 setEditingItem(null)
+                setGroceryItem('')
             }
         }
         else
