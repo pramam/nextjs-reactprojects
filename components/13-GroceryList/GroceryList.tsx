@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import ObjectManipulation from '../examplecode/ObjectManipulation';
 import SVGPencilAltSmall from '../svgicons/SVGPencilAltSmall';
 import SVGTrashSmall from '../svgicons/SVGTrashSmall';
 
@@ -11,6 +12,9 @@ export default function GroceryList() {
     const [showAlert, setShowAlert] = useState(false)
     const [message, setMessage] = useState('')
 
+    const [editing, setEditing] = useState(false)
+    const [editingItem, setEditingItem] = useState(null)
+
     useEffect(() => {
         console.log(`in useEffect`)
         const timer_id = setTimeout(() => { setShowAlert(false) }, 3000)
@@ -20,17 +24,31 @@ export default function GroceryList() {
     const submitHandler = (e) => {
         e.preventDefault();
         if (groceryitem) {
-            // if groceryitem already in list, show alert and do not add
-            if (grocerylist.find(item => item.label === groceryitem.trim())) {
-                setMessage(`Item ${groceryitem} already on list`)
+            if (!editing) {
+                // if groceryitem already in list, show alert and do not add
+                if (grocerylist.find(item => item.label === groceryitem.trim())) {
+                    setMessage(`Item ${groceryitem} already on list`)
+                    setShowAlert(true)
+                }
+                else {
+                    const newItem = { id: new Date().getTime().toString(), label: groceryitem.trim() }
+                    setGroceryList([...grocerylist, newItem])
+                    setMessage(`Added ${groceryitem} to list`)
+                    setShowAlert(true)
+                }
+            } else { // editing
+                // editingItem already has item being edited from the editHandler
+                // it is still on the list
+                setMessage(`Edited ${editingItem.label}`)
+                // When an item is edited, its 'id' does not change, so it keeps its place
+                // in the list
+                setGroceryList(grocerylist.map((obj) => {
+                    obj.id === editingItem.id ? obj.label = groceryitem : ''
+                    return obj
+                }))
                 setShowAlert(true)
-            }
-            else {
-                const newItem = { id: new Date().getTime().toString(), label: groceryitem.trim() }
-                setGroceryList([...grocerylist, newItem])
-                setMessage(`Added ${groceryitem} to list`)
-                setShowAlert(true)
-                // console.log(`added ${groceryitem} to list`)
+                setEditing(false)
+                setEditingItem(null)
             }
         }
         else
@@ -55,6 +73,15 @@ export default function GroceryList() {
         setShowAlert(true)
     }
 
+    const editHandler = (id) => {
+        const editing_item = grocerylist.find(item => item.id === id)
+
+        setGroceryItem(editing_item.label)
+        // This will change the Submit button to Edit
+        setEditing(true)
+        setEditingItem(editing_item)
+    }
+
     return (
         <div className="flex justify-center">
             <div className="w-4/5 sm:w-3/5 lg:w-1/2 2xl:w-1/5 mt-20 shadow-lg bg-gray-50 rounded-md">
@@ -76,7 +103,7 @@ export default function GroceryList() {
                             <button
                                 type="submit"
                                 className="px-5 bg-gradient-to-tr from-yellow-500 via-red-600 to-yellow-500 rounded-md focus:outline-none border border:transparent text-gray-50"
-                            >Submit</button>
+                            >{editing ? 'Edit' : 'Submit'}</button>
                         </div>
                     </div>
                 </form>
@@ -88,7 +115,12 @@ export default function GroceryList() {
                                     <div className="flex flex-row justify-between">
                                         <p className="">{obj.label}</p>
                                         <div className="flex flex-row">
-                                            <SVGPencilAltSmall css="h-5 w-5 text-green-600" />
+                                            <button
+                                                className="focus:outline-none"
+                                                onClick={() => editHandler(obj.id)}
+                                            >
+                                                <SVGPencilAltSmall css="h-5 w-5 text-green-600" />
+                                            </button>
                                             <button
                                                 className="focus:outline-none"
                                                 onClick={() => deleteHandler(obj.id)}>
