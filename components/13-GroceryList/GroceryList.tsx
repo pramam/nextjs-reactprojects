@@ -20,11 +20,18 @@ export default function GroceryList() {
     const submitHandler = (e) => {
         e.preventDefault();
         if (groceryitem) {
-            const newItem = { id: new Date().getTime().toString(), label: groceryitem }
-            setGroceryList([...grocerylist, newItem])
-            setMessage(`Added ${groceryitem} to list`)
-            setShowAlert(true)
-            // console.log(`added ${groceryitem} to list`)
+            // if groceryitem already in list, show alert and do not add
+            if (grocerylist.find(item => item.label === groceryitem.trim())) {
+                setMessage(`Item ${groceryitem} already on list`)
+                setShowAlert(true)
+            }
+            else {
+                const newItem = { id: new Date().getTime().toString(), label: groceryitem.trim() }
+                setGroceryList([...grocerylist, newItem])
+                setMessage(`Added ${groceryitem} to list`)
+                setShowAlert(true)
+                // console.log(`added ${groceryitem} to list`)
+            }
         }
         else
         {
@@ -38,6 +45,16 @@ export default function GroceryList() {
         setMessage(`Cleared all items`)
         setShowAlert(true)
     }
+
+    const deleteHandler = (id) => {
+        // get the label of the item being removed
+        const removedItem = grocerylist.find(item => item.id === id)
+
+        setGroceryList(grocerylist.filter(item => item.id != id))
+        setMessage(`Removed ${removedItem.label} from list`)
+        setShowAlert(true)
+    }
+
     return (
         <div className="flex justify-center">
             <div className="w-4/5 sm:w-3/5 lg:w-1/2 2xl:w-1/5 mt-20 shadow-lg bg-gray-50 rounded-md">
@@ -72,7 +89,11 @@ export default function GroceryList() {
                                         <p className="">{obj.label}</p>
                                         <div className="flex flex-row">
                                             <SVGPencilAltSmall css="h-5 w-5 text-green-600" />
-                                            <SVGTrashSmall css="h-5 w-5 text-red-600" />
+                                            <button
+                                                className="focus:outline-none"
+                                                onClick={() => deleteHandler(obj.id)}>
+                                                <SVGTrashSmall css="h-5 w-5 text-red-600" />
+                                            </button>
                                         </div>
                                     </div>
                                 </li>
