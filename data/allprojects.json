@@ -58,5 +58,10 @@
         "image": "/screenshots/Screenshot-ColorGenerator.png",
         "name": "Color Generator",
         "url": "/colorgenerator"
+    },
+    {
+        "image": "/screenshots/Screenshot-GroceryList.png",
+        "name": "Grocery List",
+        "url": "/grocery"
     }
 ]
