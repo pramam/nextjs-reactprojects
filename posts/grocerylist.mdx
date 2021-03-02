@@ -1,0 +1,80 @@
+---
+title: Grocery List 
+date: '2021-03-02T03:37:59.774Z'
+keywords: [react, react hooks, useEffect, useState, local storage, localstorage, next.js, nextjs, state management, form, forms]
+description: A grocery list app with Edit and Delete capabilities built using react hooks on next.js
+---
+[This](https://react-projects-10-grocery-bud.netlify.app/) is what I am trying to replicate. 
+
+[This](/grocery) is what I created. The source code can be found [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/13-GroceryList)
+
+Here is what it looks like:
+<div className="min-h-screen bg-gradient-to-tr from-yellow-500 via-red-600 to-yellow-500">
+    <GroceryList />
+</div>
+
+## Lessons Learned:
+
+### State management
+
+- This grocery list is built using the React hook 'useState'. I have 6 state variables:
+
+``` typescript
+    // Stores the item just entered
+    const [groceryitem, setGroceryItem] = useState('')
+    // Stores the entire list; grocerylist is array of {id: '', label :''}
+    const [grocerylist, setGroceryList] = useState([])
+    // showAlert is set to true when we want to display an alert message on top
+    // and message is the message displayed
+    const [showAlert, setShowAlert] = useState(false)
+    const [message, setMessage] = useState('')
+
+    // editing is set to true when an existing grocery item is being edited
+    const [editing, setEditing] = useState(false)
+    // This is the item being edited. It 'label' is replaced in place with a new value
+    const [editingItem, setEditingItem] = useState(null)
+```
+
+I found that getting all the state management logic right was mostly encapsulated in the 'Submit' handler, 'Delete' handler, and the 'Edit' handler, in addition to a little bit of code added to the jsx.
+The logic of this app is relatively simple, but I can see how this can get to be a real pain as the complexity of the app grows.
+
+[Jotai](https://github.com/pmndrs/jotai) (pronounced "joe-tie" and means state in Japanese) is a primitive and flexible state management package for React. This might be something to explore in future projects as the state gets more complicated.
+
+### Storing state in local storage
+
+If you have items in your grocery list, and you refresh the page on the browser, you will lose all the items in your grocery list. To prevent this, the state can be stored in the 'local storage' of the browser.
+You can see what is stored in Chrome developer tools under Application ->Storage -> Local Storage -> URL -> with a key,value pair:
+
+![LocalStorage](/blog/GroceryList/Screenshot-LocalStorage.png)
+
+To store the items in local storage everytime 'grocerylist' changes:
+
+```typescript
+    const localStorageID = 'local_grocery_list'
+
+    // Everytime the list changes, save it to local storage
+    useEffect(() => {
+        localStorage.setItem(localStorageID, JSON.stringify(grocerylist))
+    }, [grocerylist])
+```
+
+This worked relatively simply, but how to read back from this storage on a browser refresh? Creating a general purpose utility function(getLocalStorage) to read from local storage and initializing a useState call with this did not work because of the way next.js operates.
+
+```typescript
+    const [grocerylist, setGroceryList] = useState(getLocalStorage())
+```
+
+To solve this, I access local storage on the first render in useEffect:
+
+```typescript
+  // On initial render, get grocery list from local storage
+    useEffect(() => {
+        let localitems = localStorage.getItem(localStorageID)
+        if (localitems)
+            setGroceryList(JSON.parse(localitems))
+        else
+            setGroceryList([])
+    }, [])
+```
+
+_Total time to complete: ~ 1 day_

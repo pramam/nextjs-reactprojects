@@ -24,6 +24,7 @@ const components = {
     BubbleWrap: dynamic(() => import('../../components/0-Bubbles/BubbleWrap')),
     ColorGen: dynamic(() => import('../../components/12-ColorGenerator/ColorGen')),
     GithubUsers: dynamic(() => import('../../components/2-Github/GithubUsers')),
+    GroceryList: dynamic(() => import('../../components/13-GroceryList/GroceryList')),
     SliderKeyframeWrapper: dynamic(() => import('../../components/9-Slider/SliderKeyframe/SliderKeyframeWrapper')),
     SliderWrapper: dynamic(() => import('../../components/9-Slider/SliderWrapper')),
     Tabs: dynamic(() => import('../../components/8-Tabs/Tabs')),
