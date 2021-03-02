@@ -3,6 +3,8 @@ import ObjectManipulation from '../examplecode/ObjectManipulation';
 import SVGPencilAltSmall from '../svgicons/SVGPencilAltSmall';
 import SVGTrashSmall from '../svgicons/SVGTrashSmall';
 
+const localStorageID = 'local_grocery_list'
+
 export default function GroceryList() {
     const [groceryitem, setGroceryItem] = useState('')
     // grocerylist has array of {id: '', label :''}
@@ -14,6 +16,20 @@ export default function GroceryList() {
 
     const [editing, setEditing] = useState(false)
     const [editingItem, setEditingItem] = useState(null)
+
+    // On initial render, get grocery list from local storage
+    useEffect(() => {
+        let localitems = localStorage.getItem(localStorageID)
+        if (localitems)
+            setGroceryList(JSON.parse(localitems))
+        else
+            setGroceryList([])
+    }, [])
+
+    // Everytime the list changes, save it to local storage
+    useEffect(() => {
+        localStorage.setItem(localStorageID, JSON.stringify(grocerylist))
+    }, [grocerylist])
 
     useEffect(() => {
         console.log(`in useEffect`)
