@@ -1,0 +1,51 @@
+---
+title: Lorem Ipsum
+date: '2021-03-03T02:31:34.686Z'
+keywords: [hipster ipsum, hipsum.co, lorem ipsum, react, react hooks, useState, next.js, array.slice]
+description: Generate paragraphs other than Lorem Ipsum
+---
+[This](https://react-projects-8-lorem-ipsum-generator.netlify.app/) is what I am trying to replicate. 
+
+[This](/loremipsum) is what I created. The source code can be found [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/11-LoremIpsum)
+
+Here's what it looks like:
+
+<div className="min-h-screen bg-gradient-to-r from-gray-300 via-green-300 to-gray-300">
+    <LoremIpsum />
+</div>
+
+This is a pretty simple project and the primary goal  is to get comfortable coding a simple form. The sample paragraphs are obtained from [hipsum.co](https://hipsum.co/) and stored in an array of strings, one for each paragraph.
+The react hook useState is used to store the data that is displayed.
+
+Here is some code:
+
+```typescript
+    // Stores the number of paragraphs to generate
+    const [count, setCount] = useState(0);
+    // This stores the database of all available paragraphs
+    const [paragraphs, setParagraphs] = useState(loremipsumdata);
+    
+    // Number of paragraphs to display
+    const [display, setDisplay] = useState([]);
+
+    const maxcount = paragraphs.length
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // setCount is asynchronous; cannot call it inside if loop.
+        let amount = count;
+        if (amount <= 0) {
+            amount = 1;
+            // Cannot call setCount here
+        }
+        if (amount > maxcount)
+            amount = maxcount; // Cannot call setCount here
+        console.log(`setting Display: [0, ${amount}]`)
+        setDisplay(paragraphs.slice(0, amount))
+        setCount(amount)
+    }
+```
+
+The main lesson learned was that the `setCount` hook call is asynchronous and I cannot call it multiple times inside the if/else condition in the handleSubmit code. The workaround was to store the count in `amount`, manipulate it, and call `setCount` only once in the end.
+
+_Time to complete: 3 checkins, 4 hours_

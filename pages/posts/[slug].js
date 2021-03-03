@@ -25,6 +25,7 @@ const components = {
     ColorGen: dynamic(() => import('../../components/12-ColorGenerator/ColorGen')),
     GithubUsers: dynamic(() => import('../../components/2-Github/GithubUsers')),
     GroceryList: dynamic(() => import('../../components/13-GroceryList/GroceryList')),
+    LoremIpsum: dynamic(() => import('../../components/11-LoremIpsum/LoremIpsum')),
     SliderKeyframeWrapper: dynamic(() => import('../../components/9-Slider/SliderKeyframe/SliderKeyframeWrapper')),
     SliderWrapper: dynamic(() => import('../../components/9-Slider/SliderWrapper')),
     Tabs: dynamic(() => import('../../components/8-Tabs/Tabs')),
