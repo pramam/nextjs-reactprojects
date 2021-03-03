@@ -5,6 +5,7 @@ import UseEffectExample1 from '../components/examplecode/UseEffectExample1'
 import ObjectManipulation from '../components/examplecode/ObjectManipulation'
 import SampleForm from '../components/examplecode/Forms'
 import FormMultipleInputs from '../components/examplecode/FormMultipleInputs'
+import UseRefExample from '../components/examplecode/UseRefExample'
 
 function tutorial() {
     return (
@@ -18,6 +19,7 @@ function tutorial() {
             </div>
             <SampleForm />
             <FormMultipleInputs />
+            <UseRefExample />
         </div>
     )
 }
