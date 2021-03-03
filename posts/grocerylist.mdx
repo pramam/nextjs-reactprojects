@@ -15,6 +15,42 @@ Here is what it looks like:
 
 ## Lessons Learned:
 
+
+### Widths in percentages
+
+I used percentage widths for the Card the form is in and it made tweaking for responsiveness much easier than using sm: md: and lg: max widths:
+Notice that I use `w-4/5 sm:w-3/5 lg:w-1/2 2xl:w-1/5` in the second `<div>`
+
+```tsx
+        <div className="flex justify-center">
+            <div className="w-4/5 sm:w-3/5 lg:w-1/2 2xl:w-1/5 mt-20 shadow-lg bg-gray-50 rounded-md">
+                <h1 className="...">Grocery List</h1>
+                <form onSubmit={submitHandler}>
+                ...
+                </form>
+            </div>
+        </div>
+```
+
+And here is the CSS for the displayed grocery list underneath the form:
+Notice that I use `w-3/5` in the first `<div>`.
+
+```typescript
+<div className="mt-4 w-3/5 sm:w-3/5 lg:w-3/5 mx-auto">
+    <ul className="flex flex-col justify-center">
+        {grocerylist.map((obj, index) => {
+            return (
+                <li key={index} className="text-gray-900 mb-3">
+                ...
+                </li>
+                )
+        })}
+    </ul>
+</div>
+```
+
+Having widths in percentages makes the design scale seamlessly across different sized viewports.
+
 ### State management
 
 - This grocery list is built using the React hook 'useState'. I have 6 state variables:
@@ -58,13 +94,13 @@ To store the items in local storage everytime 'grocerylist' changes:
     }, [grocerylist])
 ```
 
-This worked relatively simply, but how to read back from this storage on a browser refresh? Creating a general purpose utility function(getLocalStorage) to read from local storage and initializing a useState call with this did not work because of the way next.js operates.
+This worked relatively simply, but how to read back from this storage on a browser refresh? Creating a general purpose utility function(getLocalStorage) to read from local storage and initializing a useState call with this did not work because of the difference between client side and server side code in next.js.
 
 ```typescript
     const [grocerylist, setGroceryList] = useState(getLocalStorage())
 ```
 
-To solve this, I access local storage on the first render in useEffect:
+To solve this, I access local storage on the first render in useEffect, which is guaranteed to be running on the client side:
 
 ```typescript
   // On initial render, get grocery list from local storage
