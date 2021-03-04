@@ -29,6 +29,7 @@ export function getProjectData(projectName) {
         blogUrl: allprojectsData[index].blogurl,
         githubUrl: allprojectsData[index].githuburl,
         prevProjectUrl: prevProjectUrl,
-        nextProjectUrl: nextProjectUrl
+        nextProjectUrl: nextProjectUrl,
+        inspiration: allprojectsData[index].inspiration
     }
 }

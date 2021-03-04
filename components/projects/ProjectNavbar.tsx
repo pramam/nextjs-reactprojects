@@ -5,6 +5,7 @@ export interface IProps {
     prevProjectUrl?: string,
     nextProjectUrl?: string,
     githubUrl?: string,
+    inspiration: string,
     textColor: string
 }
 
@@ -15,6 +16,7 @@ export default function ProjectNavbar({
     prevProjectUrl,
     nextProjectUrl,
     githubUrl,
+    inspiration,
     textColor }: IProps) {
     const text = `text-sm uppercase text-center ${textColor}`
     const textgray = "text-sm uppercase text-gray-500 cursor-not-allowed text-center"
@@ -45,8 +47,11 @@ export default function ProjectNavbar({
                     <a href={blogUrl} className="mr-3">
                         <div className={blogUrl ? text : textgray}>Blog</div>
                     </a>
-                    <a href={githubUrl}>
+                    <a href={githubUrl} className="mr-3">
                         <div className={githubUrl ? text : textgray}>Github</div>
+                    </a>
+                    <a href={inspiration}>
+                        <div className={inspiration ? text : textgray}>Inspiration</div>
                     </a>
                 </div>
             </div>

@@ -10,8 +10,9 @@ export interface IProps {
 
 export default function ProjectNavbarContainer({ projectName, textColor }: IProps) {
     const projectData = getProjectData(projectName)
-    const { status, projectNum, dayNum, blogUrl, githubUrl, prevProjectUrl, nextProjectUrl } = projectData;
-    // console.log(`${projectName}:  status: ${status}`)
+    const { status, projectNum, dayNum, blogUrl, githubUrl, prevProjectUrl, nextProjectUrl, inspiration } = projectData;
+    if (status != "OK")
+        console.log(`${projectName}:  status: ${status}`)
     // console.log(`projectNum: ${projectNum},dayNum: ${dayNum}`)
     // console.log(`blogUrl: ${blogUrl}`)
     // console.log(`prevProjectUrl: ${prevProjectUrl}; nextProjectUrl: ${nextProjectUrl}`)
@@ -23,6 +24,7 @@ export default function ProjectNavbarContainer({ projectName, textColor }: IProp
             githubUrl={githubUrl}
             prevProjectUrl={prevProjectUrl}
             nextProjectUrl={nextProjectUrl}
+            inspiration={inspiration}
             textColor={textColor}
         />
     )
