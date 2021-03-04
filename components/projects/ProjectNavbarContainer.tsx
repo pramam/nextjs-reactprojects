@@ -11,10 +11,10 @@ export interface IProps {
 export default function ProjectNavbarContainer({ projectName, textColor }: IProps) {
     const projectData = getProjectData(projectName)
     const { status, projectNum, dayNum, blogUrl, githubUrl, prevProjectUrl, nextProjectUrl } = projectData;
-    console.log(`${projectName}:  status: ${status}`)
-    console.log(`projectNum: ${projectNum},dayNum: ${dayNum}`)
-    console.log(`blogUrl: ${blogUrl}`)
-    console.log(`prevProjectUrl: ${prevProjectUrl}; nextProjectUrl: ${nextProjectUrl}`)
+    // console.log(`${projectName}:  status: ${status}`)
+    // console.log(`projectNum: ${projectNum},dayNum: ${dayNum}`)
+    // console.log(`blogUrl: ${blogUrl}`)
+    // console.log(`prevProjectUrl: ${prevProjectUrl}; nextProjectUrl: ${nextProjectUrl}`)
 
     return (
         <ProjectNavbar projectNum={projectNum}

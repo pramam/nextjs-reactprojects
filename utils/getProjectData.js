@@ -21,12 +21,13 @@ export function getProjectData(projectName) {
     else
         nextProjectUrl = allprojectsData[index + 1].url
 
-    console.log(`${projectName} has index ${index}`)
+    // console.log(`${projectName} has index ${index}`)
     return {
         status: 'OK',
         projectNum: projectNum,
         dayNum: allprojectsData[index].day,
         blogUrl: allprojectsData[index].blogurl,
+        githubUrl: allprojectsData[index].githuburl,
         prevProjectUrl: prevProjectUrl,
         nextProjectUrl: nextProjectUrl
     }

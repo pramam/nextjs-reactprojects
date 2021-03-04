@@ -6,7 +6,7 @@
         "name": "Bubble Wrap",
         "url": "/bubblewrap",
         "blogurl": "/posts/bubblewrap",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/0-Bubbles"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "name": "Birthday Reminder",
         "url": "/birthday",
         "blogurl": "",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/1-Birthday"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "name": "Github Users",
         "url": "/githubusers",
         "blogurl": "/posts/githubusers",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/2-Github"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "name": "Tours",
         "url": "/tours",
         "blogurl": "",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/3-Tours"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "name": "Reviews",
         "url": "/reviews",
         "blogurl": "",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/4-Reviews"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "name": "Accordion",
         "url": "/accordion",
         "blogurl": "",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/5-Accordion"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "name": "Menu",
         "url": "/menu",
         "blogurl": "",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/6-Menu"
     },
     {
         "id": 8,
@@ -69,7 +69,7 @@
         "name": "Tabs",
         "url": "/tabs",
         "blogurl": "/posts/tabs",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/8-Tabs"
     },
     {
         "id": 9,
@@ -78,7 +78,7 @@
         "name": "Slider",
         "url": "/slider",
         "blogurl": "/posts/slider-project",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/9-Slider"
     },
     {
         "id": 10,
@@ -87,7 +87,7 @@
         "name": "Slider Keyframe",
         "url": "/sliderkeyframe",
         "blogurl": "/posts/slider-keyframes",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/9-Slider/SliderKeyframe"
     },
     {
         "id": 11,
@@ -96,7 +96,7 @@
         "name": "Lorem Ipsum",
         "url": "/loremipsum",
         "blogurl": "/posts/loremipsum",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/11-LoremIpsum"
     },
     {
         "id": 12,
@@ -105,7 +105,7 @@
         "name": "Color Generator",
         "url": "/colorgenerator",
         "blogurl": "/posts/color-generator",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/12-ColorGenerator"
     },
     {
         "id": 13,
@@ -114,6 +114,6 @@
         "name": "Grocery List",
         "url": "/grocery",
         "blogurl": "/posts/grocerylist",
-        "githuburl": ""
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/13-GroceryList"
     }
 ]
