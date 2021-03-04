@@ -1,67 +1,119 @@
 [
     {
+        "id": 1,
+        "day": 7,
         "image": "/screenshots/Screenshot-Bubblewrap.png",
         "name": "Bubble Wrap",
-        "url": "/bubblewrap"
+        "url": "/bubblewrap",
+        "blogurl": "/posts/bubblewrap",
+        "githuburl": ""
     },
     {
+        "id": 2,
+        "day": 10,
         "image": "/screenshots/Screenshot-Birthdays.png",
         "name": "Birthday Reminder",
-        "url": "/birthday"
+        "url": "/birthday",
+        "blogurl": "",
+        "githuburl": ""
     },
     {
+        "id": 3,
+        "day": 13,
         "image": "/screenshots/Screenshot-Githubusers.png",
         "name": "Github Users",
-        "url": "/githubusers"
+        "url": "/githubusers",
+        "blogurl": "/posts/githubusers",
+        "githuburl": ""
     },
     {
+        "id": 4,
+        "day": 14,
         "image": "/screenshots/Screenshot-Tours.png",
         "name": "Tours",
-        "url": "/tours"
+        "url": "/tours",
+        "blogurl": "",
+        "githuburl": ""
     },
     {
+        "id": 5,
+        "day": 17,
         "image": "/screenshots/Screenshot-Reviews.png",
         "name": "Reviews",
-        "url": "/reviews"
+        "url": "/reviews",
+        "blogurl": "",
+        "githuburl": ""
     },
     {
+        "id": 6,
+        "day": 18,
         "image": "/screenshots/Screenshot-Accordion.png",
         "name": "Accordion",
-        "url": "/accordion"
+        "url": "/accordion",
+        "blogurl": "",
+        "githuburl": ""
     },
     {
+        "id": 7,
+        "day": 20,
         "image": "/screenshots/Screenshot-Menu.png",
         "name": "Menu",
-        "url": "/menu"
+        "url": "/menu",
+        "blogurl": "",
+        "githuburl": ""
     },
     {
+        "id": 8,
+        "day": 21,
         "image": "/screenshots/Screenshot-Tabs.png",
         "name": "Tabs",
-        "url": "/tabs"
+        "url": "/tabs",
+        "blogurl": "/posts/tabs",
+        "githuburl": ""
     },
     {
+        "id": 9,
+        "day": 26,
         "image": "/screenshots/Screenshot-Slider.png",
         "name": "Slider",
-        "url": "/slider"
+        "url": "/slider",
+        "blogurl": "/posts/slider-project",
+        "githuburl": ""
     },
     {
+        "id": 10,
+        "day": 27,
         "image": "/screenshots/Screenshot-Slider-Keyframe.png",
         "name": "Slider Keyframe",
-        "url": "/sliderkeyframe"
+        "url": "/sliderkeyframe",
+        "blogurl": "/posts/slider-keyframes",
+        "githuburl": ""
     },
     {
+        "id": 11,
+        "day": 32,
         "image": "/screenshots/Screenshot-LoremIpsum.png",
         "name": "Lorem Ipsum",
-        "url": "/loremipsum"
+        "url": "/loremipsum",
+        "blogurl": "/posts/loremipsum",
+        "githuburl": ""
     },
     {
+        "id": 12,
+        "day": 34,
         "image": "/screenshots/Screenshot-ColorGenerator.png",
         "name": "Color Generator",
-        "url": "/colorgenerator"
+        "url": "/colorgenerator",
+        "blogurl": "/posts/color-generator",
+        "githuburl": ""
     },
     {
+        "id": 13,
+        "day": 35,
         "image": "/screenshots/Screenshot-GroceryList.png",
         "name": "Grocery List",
-        "url": "/grocery"
+        "url": "/grocery",
+        "blogurl": "/posts/grocerylist",
+        "githuburl": ""
     }
 ]

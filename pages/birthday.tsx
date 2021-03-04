@@ -1,12 +1,16 @@
 import birthdayData from '../components/1-Birthday/birthdaydata.json'
 import AllBirthdays from '../components/1-Birthday/AllBirthdays'
-import Bubble from '../components/0-Bubbles/Bubble'
+import ProjectNavbarContainer from '../components/projects/ProjectNavbarContainer'
 
 export default function projects() {
 
     return (
-        <body className="min-h-screen bg-pink-400">
+        <div className="min-h-screen bg-pink-400">
+            <ProjectNavbarContainer
+                projectName="Birthday Reminder"
+                textColor="text-white"
+            />
         < AllBirthdays birthday_array={birthdayData} />
-        </body>
+        </div>
     )
 }
