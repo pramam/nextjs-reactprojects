@@ -1,12 +1,12 @@
 import quoteData from '../components/9-Slider/sliderdata.json'
 import Slider from '../components/9-Slider/Slider'
-import ProjectNavbarContainer from '../components/projects/ProjectNavbarContainer'
+import ProjectNavbarContainerSimple from '../components/projects/ProjectNavbarContainerSimple'
 
 export default function DisplaySlider() {
     return (
         <div className="relative min-h-screen bg-gray-900">
             <div className="flex flex-col justify-center ">
-                <ProjectNavbarContainer
+                <ProjectNavbarContainerSimple
                     projectName="Slider"
                     textColor="text-gray-50"
                 />

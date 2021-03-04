@@ -1,10 +1,10 @@
 import Tours from "../components/3-Tours/Tours";
-import ProjectNavbarContainer from '../components/projects/ProjectNavbarContainer'
+import ProjectNavbarContainerSimple from '../components/projects/ProjectNavbarContainerSimple'
 
 export default function ListTours() {
     return (
         <div className="min-h-screen bg-blue-50">
-            <ProjectNavbarContainer
+            <ProjectNavbarContainerSimple
                 projectName="Tours"
                 textColor="text-gray-900"
             />
