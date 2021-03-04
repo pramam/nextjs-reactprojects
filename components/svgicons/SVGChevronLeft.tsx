@@ -10,7 +10,7 @@ export default function SVGChevronLeft({ css }: IProps) {
         <svg
             {...props}
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+            fill="currentColor"
             viewBox="0 0 24 24"
             stroke="currentColor">
             <path
