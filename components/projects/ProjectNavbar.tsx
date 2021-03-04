@@ -25,6 +25,7 @@ export default function ProjectNavbar({
     const textgray = "text-sm uppercase text-gray-500 cursor-not-allowed text-center"
     const chevronCss = `mt-1 h-4 w-4 text-center ${textColor}`
     const chevronCssGray = `mt-1 h-4 w-4 text-gray-500 text-center cursor-not-allowed`
+
     return (
         <div className="flex justify-center mx-auto">
             <div className="mt-2 flex flex-col">
@@ -34,23 +35,28 @@ export default function ProjectNavbar({
                         <li className="flex flex-col"
                         >
                             <SVGChevronLeft css={prevProjectUrl ? chevronCss : chevronCssGray} />
-                            {/* <div className={prevProjectUrl ? text : textgray}>Previous</div>
-                            <div className={prevProjectUrl ? text : textgray}>Project</div> */}
                         </li>
+                    </a>
+                    <a href={inspiration} className="ml-3 hidden sm:block">
+                        <div className={inspiration ? text : textgray}>Inspiration</div>
                     </a>
                     <li className="flex ml-3 mr-3 no-underline font-semibold">
                         <div className={text}>Project {projectNum}&nbsp;</div>
                         <div className={text}>Day {dayNum}</div>
                     </li>
+                    <a href={blogUrl} className="mr-3 hidden sm:block">
+                        <div className={blogUrl ? text : textgray}>Blog</div>
+                    </a>
+                    <a href={githubUrl} className="mr-3 hidden sm:block">
+                        <div className={githubUrl ? text : textgray}>Github</div>
+                    </a>
                     <a href={nextProjectUrl}>
                         <li className="flex flex-col">
                             <SVGChevronRight css={nextProjectUrl ? chevronCss : chevronCssGray} />
-                            {/* <div className={nextProjectUrl ? text : textgray}>Next</div>
-                            <div className={nextProjectUrl ? text : textgray}>Project</div> */}
                         </li>
                     </a>
                 </div>
-                <div className="mt-2 flex flex-row justify-center">
+                <div className="mt-2 flex flex-row justify-center sm:hidden">
                     <a href={inspiration} className="mr-3">
                         <div className={inspiration ? text : textgray}>Inspiration</div>
                     </a>
