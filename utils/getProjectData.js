@@ -30,6 +30,8 @@ export function getProjectData(projectName) {
         githubUrl: allprojectsData[index].githuburl,
         prevProjectUrl: prevProjectUrl,
         nextProjectUrl: nextProjectUrl,
-        inspiration: allprojectsData[index].inspiration
+        inspiration: allprojectsData[index].inspiration,
+        timeline: allprojectsData[index].timeline,
+        about: allprojectsData[index].about
     }
 }

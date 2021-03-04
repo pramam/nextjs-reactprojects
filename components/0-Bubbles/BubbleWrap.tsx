@@ -25,7 +25,7 @@ export default function BubbleWrap({ rows, cols }: IProps) {
         <div>
             <div className="flex flex-col justify-center mt-8 sm:mt-12">
                 <h3 className="flex justify-center text-2xl text-gray-900 mb-2"> Bubble Wrap</h3>
-                <h4 className="flex justify-center text-gray-500 font-semibold text-md"> Click on a bubble to pop it. Click again to reset.</h4>
+                <h4 className="flex justify-center text-gray-500 font-semibold text-md text-center"> Click on a bubble to pop it. Click again to reset.</h4>
             </div>
             <div className="container mx-auto max-w-xl px-8 py-8 mt-12">
             <div {...grid_props}>

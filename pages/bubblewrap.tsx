@@ -1,10 +1,10 @@
 import BubbleWrap from '../components/0-Bubbles/BubbleWrap'
-import ProjectNavbarContainer from '../components/projects/ProjectNavbarContainer'
+import ProjectNavbarContainerSimple from '../components/projects/ProjectNavbarContainerSimple'
 
 export default function projects() {
     return (
         <>
-            <ProjectNavbarContainer
+            <ProjectNavbarContainerSimple
                 projectName="Bubble Wrap"
                 textColor="text-gray-900"
             />
