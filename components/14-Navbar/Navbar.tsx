@@ -1,13 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { navlinks, sociallinks } from './navbaritems'
 import SVGMenu from '../svgicons/SVGMenu'
 
 export default function Navbar() {
     const [isopen, setIsOpen] = useState(false)
+    const refDropdownTotal = useRef(null)
+    const refLinks = useRef(null)
+    const refSocial = useRef(null)
 
     const clickHandler = () => {
         setIsOpen(!isopen)
     }
+
+    useEffect(() => {
+        console.log(`refDropdowntotal: ${refDropdownTotal}`)
+        console.log(`refDropdownTotal height: ${refDropdownTotal.current.getBoundingClientRect().height}`)
+        console.log(`refLinks: ${refLinks.current.getBoundingClientRect().height}`)
+        console.log(`refSocial: ${refSocial.current.getBoundingClientRect().height}`)
+    }, [isopen])
 
     return (
         <div className="bg-white mt-5">
@@ -43,8 +53,9 @@ export default function Navbar() {
                     </div>
                 </div>
                 {/* Drop down menu  */}
-                <div className="sm:hidden flex flex-col">
-                    {isopen ? (<ul className="flex flex-col mt-3">
+                <div className="flex flex-col" ref={refDropdownTotal}>
+                    <div className="sm:hidden flex flex-col" ref={refLinks}>
+                        {isopen ? (<ul className="flex flex-col mt-3">
                         {navlinks.map((obj, index) => {
                             return (
                                 <li key={index} className="mt-2">{obj.label}</li>
@@ -52,7 +63,7 @@ export default function Navbar() {
                         })}
                     </ul>) : ''}
                 </div>
-                <div className="mt-3 mb-3 sm:hidden flex flex-col">
+                    <div className="mt-3 mb-3 sm:hidden flex flex-col" ref={refSocial}>
                     {isopen ? (<ul className="flex flex-row mr-3">
                         {sociallinks.map((obj, index) => {
                             return (
@@ -60,6 +71,7 @@ export default function Navbar() {
                             )
                         })}
                     </ul>) : ''}
+                </div>
                 </div>
             </div>
         </div>
