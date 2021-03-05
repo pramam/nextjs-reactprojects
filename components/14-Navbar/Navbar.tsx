@@ -13,11 +13,17 @@ export default function Navbar() {
     }
 
     useEffect(() => {
+        // as I close the dropdown, it shows me the previous heights
         console.log(`refDropdowntotal: ${refDropdownTotal}`)
         console.log(`refDropdownTotal height: ${refDropdownTotal.current.getBoundingClientRect().height}`)
         console.log(`refLinks: ${refLinks.current.getBoundingClientRect().height}`)
         console.log(`refSocial: ${refSocial.current.getBoundingClientRect().height}`)
     }, [isopen])
+
+    const dropdownmenu_common_props = `flex flex-col transition-all duration-700 ease-in-out h-0 overflow-hidden`
+
+    // We cannot hard code this height 
+    const dropdownmenu_clicked_props = `h-52`
 
     return (
         <div className="bg-white mt-5">
@@ -53,24 +59,26 @@ export default function Navbar() {
                     </div>
                 </div>
                 {/* Drop down menu  */}
-                <div className="flex flex-col" ref={refDropdownTotal}>
+                <div
+                    className={`${isopen ? `${dropdownmenu_common_props} ${dropdownmenu_clicked_props}` : `${dropdownmenu_common_props}`}`}
+                    ref={refDropdownTotal}>
                     <div className="sm:hidden flex flex-col" ref={refLinks}>
-                        {isopen ? (<ul className="flex flex-col mt-3">
+                        <ul className="flex flex-col mt-3">
                         {navlinks.map((obj, index) => {
                             return (
                                 <li key={index} className="mt-2">{obj.label}</li>
                             )
                         })}
-                    </ul>) : ''}
-                </div>
+                        </ul>
+                    </div>
                     <div className="mt-3 mb-3 sm:hidden flex flex-col" ref={refSocial}>
-                    {isopen ? (<ul className="flex flex-row mr-3">
+                        <ul className="flex flex-row mr-3">
                         {sociallinks.map((obj, index) => {
                             return (
                                 <li key={index} className="mr-2 text-blue-500">{obj.icon}</li>
                             )
                         })}
-                    </ul>) : ''}
+                        </ul>
                 </div>
                 </div>
             </div>
