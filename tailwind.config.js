@@ -67,6 +67,7 @@ module.exports = {
       },
       transitionProperty: {
         'spacing': 'margin', // This is for the Dots component in Slider
+        'height': 'height', // This is for Project Navbar, TransitionHeightExample
       },
       maxWidth: {
         '224': '56rem', // SliderKeyframe
@@ -80,6 +81,7 @@ module.exports = {
       backgroundColor: ['hover', 'focus', 'active'],
       borderColor: ['hover', 'focus', 'active'],
       textColor: ['hover', 'focus', 'active'],
+      height: ['responsive', 'hover', 'focus', 'active'] // This is for TransitionHeightExample
     },
   },
   plugins: [

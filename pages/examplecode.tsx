@@ -6,6 +6,7 @@ import ObjectManipulation from '../components/examplecode/ObjectManipulation'
 import SampleForm from '../components/examplecode/Forms'
 import FormMultipleInputs from '../components/examplecode/FormMultipleInputs'
 import UseRefExample from '../components/examplecode/UseRefExample'
+import TransitionHeightExample from '../components/examplecode/TransitionHeightExample'
 
 function tutorial() {
     return (
@@ -20,6 +21,7 @@ function tutorial() {
             <SampleForm />
             <FormMultipleInputs />
             <UseRefExample />
+            <TransitionHeightExample />
         </div>
     )
 }
