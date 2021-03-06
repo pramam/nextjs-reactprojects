@@ -166,6 +166,17 @@
         "inspiration": "https://react-projects-11-navbar.netlify.app/",
         "timeline": "/",
         "about": "/general/about"
-        }
-
+    },
+    {
+        "id": 15,
+        "day": 40,
+        "image": "/screenshots/Screenshot-NavbarTailwindTransition.png",
+        "name": "Navbar Tailwind Transition",
+        "url": "/navbartailwindtransition",
+        "blogurl": "/posts/navbartailwindtransition",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar/15-NavbarTailwind",
+        "inspiration": "https://react-projects-11-navbar.netlify.app/",
+        "timeline": "/",
+        "about": "/general/about"
+    }
 ]
