@@ -27,9 +27,11 @@ const components = {
     GroceryList: dynamic(() => import('../../components/13-GroceryList/GroceryList')),
     LoremIpsum: dynamic(() => import('../../components/11-LoremIpsum/LoremIpsum')),
     Navbar: dynamic(() => import('../../components/14-Navbar/Navbar')),
+    NavbarTailwind: dynamic(() => import('../../components/14-Navbar/15-NavbarTailwind/NavbarTailwind')),
     SliderKeyframeWrapper: dynamic(() => import('../../components/9-Slider/SliderKeyframe/SliderKeyframeWrapper')),
     SliderWrapper: dynamic(() => import('../../components/9-Slider/SliderWrapper')),
     Tabs: dynamic(() => import('../../components/8-Tabs/Tabs')),
+    TailwindTransitionExample: dynamic(() => import('../../components/examplecode/TailwindTransitionExample')),
     TransitionHeightExample: dynamic(() => import('../../components/examplecode/TransitionHeightExample')),
 }
 
