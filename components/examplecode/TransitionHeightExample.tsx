@@ -6,7 +6,7 @@ export default function TransitionHeightExample() {
         setIsclicked(!isclicked)
 
     }
-    const common_props = "my-4 transition-all duration-700 ease-in-out w-10 bg-green-500 h-8"
+    const common_props = "h-8 w-8 my-4 transition-all duration-700 ease-in-out bg-green-500"
     const clicked_props = "h-24 hover:bg-red-500"
     return (
         <div className="flex flex-row justify-center">
