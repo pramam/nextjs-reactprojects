@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { navlinks, sociallinks } from './navbaritems'
 import SVGMenu from '../svgicons/SVGMenu'
+import SVGX from '../svgicons/SVGX'
 
 export default function Navbar() {
     const [isopen, setIsOpen] = useState(false)
@@ -66,8 +67,12 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div className="sm:hidden mr-2">
-                        <button type="button" onClick={clickHandler}>
-                    <SVGMenu css="h-10 w-10 text-gray-400" />
+                        <button type="button"
+                            className="focus:outline-none border border-transparent"
+                            onClick={clickHandler}>
+                            {isopen ? <SVGX css="h-10 w-10 text-gray-400" />
+                                : <SVGMenu css="h-10 w-10 text-gray-400" />
+                            }
                         </button>
                     </div>
                 </div>
