@@ -23,7 +23,7 @@ export default function Navbar() {
     const dropdownmenu_common_props = `flex flex-col transition-all duration-700 ease-in-out h-0 overflow-hidden`
 
     // We cannot hard code this height 
-    const dropdownmenu_clicked_props = `height: '210px'` //h-52
+    const dropdownmenu_clicked_props = "h-52" // This doesn't work: `height: '210px'` 
 
     const style_common = { height: '0px' }
     const style_open = { height: '208px' }
@@ -63,11 +63,11 @@ export default function Navbar() {
                 {/* Drop down menu  */}
                 <div 
                     // This works:
-                    // className={`${isopen ? `${dropdownmenu_common_props} ${dropdownmenu_clicked_props}` : `${dropdownmenu_common_props}`}`}
+                    className={`${isopen ? `${dropdownmenu_common_props} ${dropdownmenu_clicked_props}` : `${dropdownmenu_common_props}`}`}
 
                     // This works:
-                    className={`${isopen ? 'navbar-container navbar-show-container' : 'navbar-container'}`}
-
+                    // className={`${isopen ? 'navbar-container navbar-show-container' : 'navbar-container'}`}
+                    
                     // This works, but might have issues on older browsers:
                     // https://reactjs.org/docs/dom-elements.html#style
                     // style={isopen ? { height: '208px', overflow: 'hidden', transition: "all 0.3s linear" } : { height: '0px', overflow: 'hidden', transition: "all 0.3s linear" }}
