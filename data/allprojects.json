@@ -156,12 +156,12 @@
         "about": "/general/about"
     },
     {
-        "id": 13,
+        "id": 14,
         "day": 39,
         "image": "/screenshots/Screenshot-Navbar.png",
         "name": "Navbar",
         "url": "/navbarproject",
-        "blogurl": "",
+        "blogurl": "/posts/navbarproject",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar",
         "inspiration": "https://react-projects-11-navbar.netlify.app/",
         "timeline": "/",

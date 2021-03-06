@@ -26,9 +26,11 @@ const components = {
     GithubUsers: dynamic(() => import('../../components/2-Github/GithubUsers')),
     GroceryList: dynamic(() => import('../../components/13-GroceryList/GroceryList')),
     LoremIpsum: dynamic(() => import('../../components/11-LoremIpsum/LoremIpsum')),
+    Navbar: dynamic(() => import('../../components/14-Navbar/Navbar')),
     SliderKeyframeWrapper: dynamic(() => import('../../components/9-Slider/SliderKeyframe/SliderKeyframeWrapper')),
     SliderWrapper: dynamic(() => import('../../components/9-Slider/SliderWrapper')),
     Tabs: dynamic(() => import('../../components/8-Tabs/Tabs')),
+    TransitionHeightExample: dynamic(() => import('../../components/examplecode/TransitionHeightExample')),
 }
 
 export default function PostPage({ source, frontMatter }) {

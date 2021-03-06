@@ -10,7 +10,8 @@ export default function TransitionHeightExample() {
     const clicked_props = "h-24 hover:bg-red-500"
     return (
         <div className="flex flex-row justify-center">
-            <button type="button" onClick={clickHandler}>
+            <button type="button" onClick={clickHandler}
+                className="focus:outline-none border border-transparent">
                 <div className={isclicked ? `${common_props} ${clicked_props}` : common_props}>
                 </div>
             </button>

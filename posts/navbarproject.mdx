@@ -1,0 +1,83 @@
+---
+title: The Navbar Project
+date: '2021-03-06T04:36:51.991Z'
+keywords: [next.js, react, react hooks, useRef, dropdown menu, transition, height, tailwindcss, css]
+description: Build a navbar with a dropdown menu on mobiles
+---
+[This](https://react-projects-11-navbar.netlify.app/) is what I am trying to replicate. 
+
+[This](/navbarproject) is what I created. The source code can be found [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar)
+
+Here is what it looks like on a large screen(scroll down):
+
+<div className="min-h-screen bg-gradient-to-r from-gray-100 via-gray-100 to-gray-100">
+    <Navbar />
+</div>
+
+This is what it looks like with the menu collapsed on a mobile:
+
+![Collapsed](/blog/Navbar/Screenshot-NavbarMobile-Collapsed.png)
+
+This is what it looks like with the menu expanded on a mobile:
+![Expanded](/screenshots/Screenshot-Navbar.png)
+
+
+I found this project challenging to make work with TailwindCSS.
+
+To understand why, here's a color and height transition using tailwindcss transitions. Click the green box to see it expand in height:
+
+<TransitionHeightExample/>
+
+Here is how to add transitions to tailwindcss:
+tailwind.config.js:
+```javascript
+module.exports = {
+  theme: {
+    extend: {
+      transitionProperty: {
+        'height': 'height', // This is for Project Navbar, TransitionHeightExample
+      },
+    },
+  },
+  variants: {
+    extend: {
+      height: ['responsive', 'hover', 'focus', 'active'] // This is for TransitionHeightExample
+    },
+  },
+}
+```
+
+The code is below. Using a state variable, the css applied to the box is changed.
+The green box is in `common_props`, `h-8`, the red box is `clicked_props`, `h-24`.
+
+```typescript
+import { useState } from 'react'
+
+export default function TransitionHeightExample() {
+    const [isclicked, setIsclicked] = useState(false)
+    const clickHandler = () => {
+        setIsclicked(!isclicked)
+
+    }
+    const common_props = "h-8 w-10 my-4 transition-all duration-700 ease-in-out bg-green-500"
+    const clicked_props = "h-24 hover:bg-red-500"
+    return (
+        <div className="flex flex-row justify-center">
+            <button type="button" onClick={clickHandler}>
+                <div className={isclicked ? `${common_props} ${clicked_props}` : common_props}>
+                </div>
+            </button>
+        </div>
+    )
+}
+```
+
+The problem with this solution is that the expanded height `h-24` is hardcoded.
+When the drop down menu expands in the navbar, the menu items may be dynamic and so the height will have to be specified dynamically.
+
+The way to do this is to use useRef to get the height of the DOM element and use that in the transition. 
+Please watch [this video](https://www.youtube.com/watch?v=a_7Z7C_JCyo&t=16887s) from the freecodecamp course for more information.
+
+TailwindCSS does not play well with dynamic values. If you want to add specific heights not included in default `h-*`, then you need to add it to tailwind.config.js. I landed up using vanilla CSS in the menu dropdown instead of tailwind CSS to implement this transition. See this [github link](https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar) for details.
+
+_Time to complete: 12 checkins, 2.5 days_
