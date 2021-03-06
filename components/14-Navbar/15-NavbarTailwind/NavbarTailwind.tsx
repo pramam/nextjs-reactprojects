@@ -17,9 +17,9 @@ export default function NavbarTailwind() {
             <div className="flex flex-col">
             <div className="flex flex-row justify-between">
                 <div className="ml-2 sm:ml-5 md:ml-10 lg:ml-20 mb-5 text-3xl flex flex-row">
-                    <div className="hidden md:block text-gray-900 font-semibold">Your&nbsp;</div>
-                    <div className="text-red-600 font-bold">Logo&nbsp;</div>
-                    <div className="hidden md:block text-gray-900 font-semibold">Here</div>
+                        <div className="hidden md:block text-gray-900 font-semibold">Tailwind&nbsp;</div>
+                        <div className="text-indigo-600 font-bold">Transition&nbsp;</div>
+                        {/* <div className="hidden md:block text-gray-900 font-semibold">Here</div> */}
                 </div>
                 <div className="hidden sm:block">
                     <ul className="flex flex-row mt-3">
