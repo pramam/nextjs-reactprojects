@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
-import { navlinks, sociallinks } from './navbaritems'
-import SVGMenu from '../svgicons/SVGMenu'
-import SVGX from '../svgicons/SVGX'
+import { navlinks, sociallinks } from '../navbaritems'
+import SVGMenu from '../../svgicons/SVGMenu'
+import SVGX from '../../svgicons/SVGX'
 
 export default function Navbar() {
     const [isopen, setIsOpen] = useState(false)
