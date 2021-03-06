@@ -154,5 +154,18 @@
         "inspiration": "https://react-projects-10-grocery-bud.netlify.app/",
         "timeline": "/",
         "about": "/general/about"
-    }
+    },
+    {
+        "id": 13,
+        "day": 35,
+        "image": "/screenshots/Screenshot-Navbar.png",
+        "name": "Navbar",
+        "url": "/navbarproject",
+        "blogurl": "",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar",
+        "inspiration": "https://react-projects-11-navbar.netlify.app/",
+        "timeline": "/",
+        "about": "/general/about"
+        }
+
 ]
