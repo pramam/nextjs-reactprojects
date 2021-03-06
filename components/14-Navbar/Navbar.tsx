@@ -7,7 +7,7 @@ export default function Navbar() {
     const refDropdownTotal = useRef(null)
     const refLinks = useRef(null)
     const refSocial = useRef(null)
-
+    
     const clickHandler = () => {
         setIsOpen(!isopen)
     }
@@ -23,8 +23,10 @@ export default function Navbar() {
     const dropdownmenu_common_props = `flex flex-col transition-all duration-700 ease-in-out h-0 overflow-hidden`
 
     // We cannot hard code this height 
-    const dropdownmenu_clicked_props = `h-52`
+    const dropdownmenu_clicked_props = `height: '210px'` //h-52
 
+    const style_common = { height: '0px' }
+    const style_open = { height: '208px' }
     return (
         <div className="bg-white mt-5">
             <div className="flex flex-col">
@@ -59,8 +61,16 @@ export default function Navbar() {
                     </div>
                 </div>
                 {/* Drop down menu  */}
-                <div
-                    className={`${isopen ? `${dropdownmenu_common_props} ${dropdownmenu_clicked_props}` : `${dropdownmenu_common_props}`}`}
+                <div 
+                    // This works:
+                    // className={`${isopen ? `${dropdownmenu_common_props} ${dropdownmenu_clicked_props}` : `${dropdownmenu_common_props}`}`}
+
+                    // This works:
+                    className={`${isopen ? 'navbar-container navbar-show-container' : 'navbar-container'}`}
+
+                    // This works, but might have issues on older browsers:
+                    // https://reactjs.org/docs/dom-elements.html#style
+                    // style={isopen ? { height: '208px', overflow: 'hidden', transition: "all 0.3s linear" } : { height: '0px', overflow: 'hidden', transition: "all 0.3s linear" }}
                     ref={refDropdownTotal}>
                     <div className="sm:hidden flex flex-col" ref={refLinks}>
                         <ul className="flex flex-col mt-3">
