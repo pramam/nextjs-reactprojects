@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { navlinks, sociallinks } from '../navbaritems'
 import SVGMenu from '../../svgicons/SVGMenu'
 import SVGX from '../../svgicons/SVGX'
@@ -6,42 +6,12 @@ import { Transition } from '@headlessui/react'
 
 export default function NavbarTailwind() {
     const [isopen, setIsOpen] = useState(false)
-    const refDropdownTotal = useRef(null)
-    const refLinks = useRef(null)
-    const refSocial = useRef(null)
     
     const clickHandler = () => {
         setIsOpen(!isopen)
     }
 
-    // useEffect(() => {
-        // const linksHeight = refLinks.current.getBoundingClientRect().height;
-        // const socialHeight = refSocial.current.getBoundingClientRect().height;
 
-        // const dropdownCalcHeight = refDropdownTotal.current.getBoundingClientRect().height;
-
-        // as I close the dropdown, it shows me the previous heights
-        // console.log(`refDropdownCalcHeight: ${dropdownCalcHeight}`)
-        // console.log(`refDropdownTotal height: ${refDropdownTotal.current.getBoundingClientRect().height}`)
-        // console.log(`refLinks: ${linksHeight}`)
-        // console.log(`refSocial: ${socialHeight}`)
-        // use height of refLinks and refSocial to change the height of refDropdownTotal.
-        // why doesn't he calculate the height of refDropdownTotal directly?
-        // if (isopen)
-        //     refDropdownTotal.current.style.height = `${linksHeight + socialHeight}px`
-        // else
-        //     refDropdownTotal.current.style.height = '0px';
-    // }, [isopen])
-
-    const dropdownmenu_common_props = `flex flex-col transition-all duration-700 ease-in-out h-0 overflow-hidden`
-    // move this to a separate div contained inside <Transition/>
-    // const dropdownmenu_twtransition_props = `flex flex-col`
-
-    // We cannot hard code this height 
-    const dropdownmenu_clicked_props = "h-52" // This doesn't work: `height: '210px'` 
-
-    const style_common = { height: '0px' }
-    const style_open = { height: '208px' }
     return (
         <div className="bg-white mt-5">
             <div className="flex flex-col">
@@ -80,17 +50,6 @@ export default function NavbarTailwind() {
                     </div>
                 </div>
                 {/* Drop down menu  */}
-                {/* <div 
-                    This works:
-                    className={`${isopen ? `${dropdownmenu_common_props} ${dropdownmenu_clicked_props}` : `${dropdownmenu_common_props}`}`}
-                    
-                    This works:
-                    className={`${isopen ? 'navbar-container navbar-show-container' : 'navbar-container'}`}
-                    
-                    This works, but might have issues on older browsers:
-                    https://reactjs.org/docs/dom-elements.html#style
-                    style={isopen ? { height: '208px', overflow: 'hidden', transition: "all 0.3s linear" } : { height: '0px', overflow: 'hidden', transition: "all 0.3s linear" }}
-                    ref={refDropdownTotal}> */}
                 <Transition
                     show={isopen}
                     enter="transition-opacity duration-700"
@@ -102,7 +61,7 @@ export default function NavbarTailwind() {
                 >
                     {/* The following div and its contents will be rendered as a part of the transition */}
                     <div className="flex flex-col">
-                    <div className="sm:hidden flex flex-col" ref={refLinks}>
+                        <div className="sm:hidden flex flex-col">
                         <ul className="flex flex-col mt-3">
                         {navlinks.map((obj, index) => {
                             return (
@@ -111,7 +70,7 @@ export default function NavbarTailwind() {
                         })}
                         </ul>
                     </div>
-                    <div ref={refSocial}>
+                        <div>
                         <div className="sm:hidden flex flex-col"> {/* had to move mt, mb down to ul to get height calculations to include mt/mb */}
                             <ul className="mt-3 mb-3 flex flex-row mr-3">
                         {sociallinks.map((obj, index) => {
