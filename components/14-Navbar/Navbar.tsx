@@ -13,11 +13,22 @@ export default function Navbar() {
     }
 
     useEffect(() => {
+        const linksHeight = refLinks.current.getBoundingClientRect().height;
+        const socialHeight = refSocial.current.getBoundingClientRect().height;
+
+        const dropdownCalcHeight = refDropdownTotal.current.getBoundingClientRect().height;
+
         // as I close the dropdown, it shows me the previous heights
-        console.log(`refDropdowntotal: ${refDropdownTotal}`)
+        console.log(`refDropdownCalcHeight: ${dropdownCalcHeight}`)
         console.log(`refDropdownTotal height: ${refDropdownTotal.current.getBoundingClientRect().height}`)
-        console.log(`refLinks: ${refLinks.current.getBoundingClientRect().height}`)
-        console.log(`refSocial: ${refSocial.current.getBoundingClientRect().height}`)
+        console.log(`refLinks: ${linksHeight}`)
+        console.log(`refSocial: ${socialHeight}`)
+        // use height of refLinks and refSocial to change the height of refDropdownTotal.
+        // why doesn't he calculate the height of refDropdownTotal directly?
+        if (isopen)
+            refDropdownTotal.current.style.height = `${linksHeight + socialHeight}px`
+        else
+            refDropdownTotal.current.style.height = '0px';
     }, [isopen])
 
     const dropdownmenu_common_props = `flex flex-col transition-all duration-700 ease-in-out h-0 overflow-hidden`
@@ -46,7 +57,7 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div className="hidden sm:block">
-                    <ul className="flex flex-row mt-3 mr-20">
+                        <ul className="flex flex-row mt-3 mr-20">
                         {sociallinks.map((obj, index) => {
                             return (
                                 <li key={index} className="mr-2 text-blue-500">{obj.icon}</li>
@@ -63,10 +74,10 @@ export default function Navbar() {
                 {/* Drop down menu  */}
                 <div 
                     // This works:
-                    className={`${isopen ? `${dropdownmenu_common_props} ${dropdownmenu_clicked_props}` : `${dropdownmenu_common_props}`}`}
+                    // className={`${isopen ? `${dropdownmenu_common_props} ${dropdownmenu_clicked_props}` : `${dropdownmenu_common_props}`}`}
 
                     // This works:
-                    // className={`${isopen ? 'navbar-container navbar-show-container' : 'navbar-container'}`}
+                    className={`${isopen ? 'navbar-container navbar-show-container' : 'navbar-container'}`}
                     
                     // This works, but might have issues on older browsers:
                     // https://reactjs.org/docs/dom-elements.html#style
@@ -81,16 +92,18 @@ export default function Navbar() {
                         })}
                         </ul>
                     </div>
-                    <div className="mt-3 mb-3 sm:hidden flex flex-col" ref={refSocial}>
-                        <ul className="flex flex-row mr-3">
+                    <div ref={refSocial}>
+                        <div className="sm:hidden flex flex-col"> {/* had to move mt, mb down to ul to get height calculations to include mt/mb */}
+                            <ul className="mt-3 mb-3 flex flex-row mr-3">
                         {sociallinks.map((obj, index) => {
                             return (
                                 <li key={index} className="mr-2 text-blue-500">{obj.icon}</li>
                             )
                         })}
                         </ul>
-                </div>
-                </div>
+                        </div>
+                    </div>
+                </div> {/* End of dropdown menu */}
             </div>
         </div>
     )
