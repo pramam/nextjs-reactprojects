@@ -8,6 +8,7 @@ import FormMultipleInputs from '../components/examplecode/FormMultipleInputs'
 import UseRefExample from '../components/examplecode/UseRefExample'
 import TransitionHeightExample from '../components/examplecode/TransitionHeightExample'
 import TailwindTransitionExample from '../components/examplecode/TailwindTransitionExample'
+import UseReducerExample from '../components/examplecode/UseReducerExample'
 
 function tutorial() {
     return (
@@ -24,6 +25,7 @@ function tutorial() {
             <UseRefExample />
             <TransitionHeightExample />
             <TailwindTransitionExample />
+            <UseReducerExample />
         </div>
     )
 }
