@@ -41,10 +41,6 @@ export default function Index() {
     // useReducer is looking for reducer which is the function that is manipulating the state,
     // and it will happen when dipatch the action
 
-    // const [people, setPeople] = useState([])
-    // const [showModal, setShowModal] = useState(false)
-    // const [message, setMessage] = useState('')
-
     // useEffect(() => {
     //     const timeout_id = setTimeout(() => {
     //         setMessage('')
@@ -54,14 +50,6 @@ export default function Index() {
     const submitHandler = (e) => {
         e.preventDefault();
         if (name) {
-            // setShowModal(true)
-            // setPeople((oldPeople) => {
-            //     return ([...oldPeople, { id: new Date().getTime().toString(), name }])
-            // })
-            // setMessage("Item Added")
-            // setName('')
-            // console.log(`After setting people: ${people}`)
-
             // once you dispatch your action, you need to handle it in reducer
             const newItem = { id: new Date().getTime().toString(), name }
             dispatch({ type: "ADD_ITEM", payload: newItem })
@@ -69,8 +57,6 @@ export default function Index() {
         }
         else {
             dispatch({ type: "NO_VALUE" })
-            // setShowModal(true)
-            // setMessage("Please enter value")
         }
     }
     return (
