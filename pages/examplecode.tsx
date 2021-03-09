@@ -10,6 +10,8 @@ import TransitionHeightExample from '../components/examplecode/TransitionHeightE
 import TailwindTransitionExample from '../components/examplecode/TailwindTransitionExample'
 import UseReducerExample from '../components/examplecode/UseReducerExample'
 import PropDrilling from '../components/examplecode/PropDrilling'
+import UseContextExample from '../components/examplecode/UseContextExample'
+
 
 function tutorial() {
     return (
@@ -28,6 +30,7 @@ function tutorial() {
             <TailwindTransitionExample />
             <UseReducerExample />
             <PropDrilling />
+            <UseContextExample />
         </div>
     )
 }

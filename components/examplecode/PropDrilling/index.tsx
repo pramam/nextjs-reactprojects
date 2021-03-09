@@ -10,7 +10,7 @@ export default function Index() {
         })
     }
     return (
-        <section>
+        <section className="mb-5">
             <h3 className="text-3xl text-center">Prop Drilling</h3>
             <List people={people} removePerson={removePerson} />
         </section>

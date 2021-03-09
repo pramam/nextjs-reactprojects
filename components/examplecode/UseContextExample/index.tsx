@@ -1,5 +1,10 @@
-import { useState } from 'react'
-import { data } from './data'
+import { useState, useContext } from 'react'
+import React from 'react'
+import { data } from './data.js'
+
+const PersonContext = React.createContext(null)
+// two Components: Provider, Consumer
+// Provider works as a distributer
 
 export default function Index() {
     const [people, setPeople] = useState(data)
@@ -10,25 +15,30 @@ export default function Index() {
         })
     }
     return (
-        <section>
-            <h3 className="text-3xl text-center">Prop Drilling</h3>
-            <List people={people} removePerson={removePerson} />
-        </section>
+        <div className="mb-5">
+            <PersonContext.Provider value={{ removePerson, people }}>
+                <h3 className="text-3xl text-center">useContext Example</h3>
+                <List />
+            </PersonContext.Provider>
+        </div>
     )
 }
 
-const List = ({ people, removePerson }) => {
+const List = () => {
+    const mainData = useContext(PersonContext)
+
     return (
         <>
-            {people.map((obj) => {
-                return <SinglePerson key={obj.id} {...obj}
-                    removePerson={removePerson} />
+            {mainData.people.map((obj) => {
+                return <SinglePerson key={obj.id} {...obj} />
             })}
         </>
     )
 }
 
-const SinglePerson = ({ id, name, removePerson }) => {
+const SinglePerson = ({ id, name }) => {
+    const { removePerson } = useContext(PersonContext)
+    // console.log(removePerson)
     return (
         <div className="flex flex-row justify-center">
             <div className="flex flex-row max-w-2xl justify-between mb-2">
