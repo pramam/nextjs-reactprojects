@@ -18,12 +18,6 @@ export default function Index() {
     // useReducer is looking for reducer which is the function that is manipulating the state,
     // and it will happen when dipatch the action
 
-    // useEffect(() => {
-    //     const timeout_id = setTimeout(() => {
-    //         setMessage('')
-    //     }, 3000)
-    //     return (() => clearTimeout(timeout_id))
-    // }, [message])
     const closeModal = () => {
         dispatch({ type: 'CLOSE_MODAL' })
     }
