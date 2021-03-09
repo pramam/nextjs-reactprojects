@@ -11,6 +11,8 @@ export const reducer = (state: State, action: Action): State => {
             const removedPerson = state.people.find(item => item.id === action.payload.id)
             const newArray = state.people.filter(item => item.id != action.payload.id)
             return { people: [...newArray], isModalOpen: true, modalContent: `Removed ${removedPerson.name}` }
+        case 'CLOSE_MODAL':
+            return { ...state, isModalOpen: false, modalContent: '' }
         default:
             throw new Error('No matching action type')
     }

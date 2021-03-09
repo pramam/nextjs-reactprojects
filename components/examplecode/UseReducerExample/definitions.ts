@@ -10,3 +10,4 @@ export type Action =
     | { type: 'ADD_ITEM', payload: { id: string, name: string } }
     | { type: 'NO_VALUE' }
     | { type: 'DELETE_ITEM', payload: { id: string, name: string } }
+    | { type: 'CLOSE_MODAL' }

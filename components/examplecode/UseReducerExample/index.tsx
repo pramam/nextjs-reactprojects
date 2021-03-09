@@ -24,6 +24,9 @@ export default function Index() {
     //     }, 3000)
     //     return (() => clearTimeout(timeout_id))
     // }, [message])
+    const closeModal = () => {
+        dispatch({ type: 'CLOSE_MODAL' })
+    }
     const submitHandler = (e) => {
         e.preventDefault();
         if (name) {
@@ -39,7 +42,7 @@ export default function Index() {
     return (
         <div className="mt-6 mb-6 flex justify-center mx-auto shadow-lg max-w-2xl">
             <div className="flex flex-col">
-                {state.isModalOpen && <Modal message={state.modalContent} />}
+                {state.isModalOpen && <Modal message={state.modalContent} closeModal={closeModal} />}
                 <form onSubmit={submitHandler} className="mb-4">
                     <h1 className="mt-1 mb-4 text-xl text-center"> useReducer Example</h1>
                     <input type="text"
