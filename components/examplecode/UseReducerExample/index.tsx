@@ -1,5 +1,6 @@
 import { useState, useEffect, useReducer } from 'react'
 import Modal from './Modal'
+import SVGTrashSmall from '../../svgicons/SVGTrashSmall'
 
 // Type checking useReducer in Typescript: https://www.benmvp.com/blog/type-checking-react-usereducer-typescript/
 type State = {
@@ -13,6 +14,7 @@ type State = {
 type Action =
     | { type: 'ADD_ITEM', payload: { id: string, name: string } }
     | { type: 'NO_VALUE' }
+    | { type: 'DELETE_ITEM', payload: { id: string, name: string } }
 
 // state right before the update, and the action
 const reducer = (state: State, action: Action): State => {
@@ -22,6 +24,10 @@ const reducer = (state: State, action: Action): State => {
             return { ...state, people: [...state.people, action.payload], isModalOpen: true, modalContent: `Item ${action.payload.name} Added` }
         case 'NO_VALUE':
             return { ...state, isModalOpen: true, modalContent: "Please enter a value" }
+        case 'DELETE_ITEM':
+            const removedPerson = state.people.find(item => item.id === action.payload.id)
+            const newArray = state.people.filter(item => item.id != action.payload.id)
+            return { people: [...newArray], isModalOpen: true, modalContent: `Removed ${removedPerson.name}` }
         default:
             throw new Error('No matching action type')
     }
@@ -76,7 +82,13 @@ export default function Index() {
                         Add Person</button>
                 </form>
                 {state.people.map((obj, index) => (
-                    <p key={obj.id} className="text-center"> {obj.name}</p>
+                    <div key={obj.id} className="flex flex-row justify-between">
+                        <p className="text-center"> {obj.name}</p>
+                        <button className="focus:outline-none"
+                            onClick={() => dispatch({ type: 'DELETE_ITEM', payload: obj })}>
+                            <SVGTrashSmall css="h-4 w-4 text-red-500" />
+                        </button>
+                    </div>
                 ))}
             </div>
         </div>
