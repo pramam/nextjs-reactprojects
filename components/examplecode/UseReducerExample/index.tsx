@@ -1,23 +1,29 @@
 import { useState, useEffect, useReducer } from 'react'
 import Modal from './Modal'
 
+// Type checking useReducer in Typescript: https://www.benmvp.com/blog/type-checking-react-usereducer-typescript/
 type State = {
     people: {
-        id: number,
+        id: string,
         name: string
     }[]
     isModalOpen: boolean
     modalContent: string
 }
 type Action =
-    | { type: 'TESTING' }
+    | { type: 'ADD_ITEM', payload: { id: string, name: string } }
+    | { type: 'NO_VALUE' }
+
 // state right before the update, and the action
 const reducer = (state: State, action: Action): State => {
     console.log(state, action)
-    return {
-        people: [],
-        isModalOpen: true,
-        modalContent: "testng"
+    switch (action.type) {
+        case 'ADD_ITEM':
+            return { ...state, people: [...state.people, action.payload], isModalOpen: true, modalContent: `Item ${action.payload.name} Added` }
+        case 'NO_VALUE':
+            return { ...state, isModalOpen: true, modalContent: "Please enter a value" }
+        default:
+            throw new Error('No matching action type')
     }
 }
 
@@ -57,9 +63,12 @@ export default function Index() {
             // console.log(`After setting people: ${people}`)
 
             // once you dispatch your action, you need to handle it in reducer
-            dispatch({ type: "TESTING" })
+            const newItem = { id: new Date().getTime().toString(), name }
+            dispatch({ type: "ADD_ITEM", payload: newItem })
+            setName('')
         }
         else {
+            dispatch({ type: "NO_VALUE" })
             // setShowModal(true)
             // setMessage("Please enter value")
         }
