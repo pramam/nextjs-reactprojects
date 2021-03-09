@@ -33,6 +33,7 @@ const components = {
     Tabs: dynamic(() => import('../../components/8-Tabs/Tabs')),
     TailwindTransitionExample: dynamic(() => import('../../components/examplecode/TailwindTransitionExample')),
     TransitionHeightExample: dynamic(() => import('../../components/examplecode/TransitionHeightExample')),
+    UseReducerExample: dynamic(() => import('../../components/examplecode/UseReducerExample')),
 }
 
 export default function PostPage({ source, frontMatter }) {
