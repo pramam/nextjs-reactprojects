@@ -11,17 +11,17 @@ export default function SidebarModal() {
     }
     return (
         <div className="flex">
-            <div className="lg:w-3/12 lg:h-screen">
+            <div className="w-full h-screen md:w-1/2 lg:w-3/12 lg:h-screen">
                 {menuIsOpen ?
                     (<div className="bg-white w-full h-full">
-                        <div className="flex flex-row mb-10">
-                            <div className="ml-2 sm:ml-5 md:ml-10 lg:ml-10 lg:mr-7 lg:mt-7 text-3xl flex flex-row">
-                                <div className="hidden md:block text-gray-900 font-semibold">Your&nbsp;</div>
+                        <div className="flex flex-row justify-between mb-10">
+                            <div className="ml-10 md:mr-7 mt-5 md:mt-7 lg:mt-7 lg:mr-7 text-3xl flex flex-row">
+                                <div className="hidden sm:block text-gray-900 font-semibold">Your&nbsp;</div>
                                 <div className="text-indigo-700 font-bold">Logo&nbsp;</div>
-                                <div className="hidden md:block text-gray-900 font-semibold">Here</div>
+                                <div className="hidden sm:block text-gray-900 font-semibold">Here</div>
                             </div>
                             <button onClick={menuHandler}
-                                className="lg:mt-7 focus:outline-none border border-transparent">
+                                className="mt-5 md:mt-7 mr-5 focus:outline-none border border-transparent">
                                 <SVGX css="mt-1.5 h-8 w-8 text-red-700" />
                             </button>
                         </div>
@@ -41,7 +41,7 @@ export default function SidebarModal() {
                     </div>)
                     :
                     <button onClick={menuHandler}
-                        className="ml-2 sm:ml-5 md:ml-10 lg:ml-10 lg:mr-7 lg:mt-7 focus:outline-none border border-transparent">
+                        className="ml-2 sm:ml-5 md:ml-10 lg:ml-10 mt-2 sm:mt-5 md:mt-7 lg:mt-7 lg:mr-7  focus:outline-none border border-transparent">
                         <SVGMenu css="h-10 w-10 text-indigo-700" />
                     </button>
 
