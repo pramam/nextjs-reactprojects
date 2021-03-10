@@ -12,14 +12,15 @@ export default function SidebarModal() {
     }
     return (
         <div className="flex">
-            <div className="w-full h-screen md:w-1/2 lg:w-3/12 lg:h-screen">
-                {menuIsOpen ?
+            {/* <button className="flex justify-center">Show Modal</button> */}
+            {menuIsOpen ?
+                <div className="w-full h-screen md:w-1/2 lg:w-3/12 lg:h-screen">
                     <Transition
                         show={menuIsOpen}
-                        enter="transition-opacity duration-3000"
+                        enter="transition-opacity ease-in-out duration-3000"
                         enterFrom="opacity-0"
                         enterTo="opacity-100"
-                        leave="transition-opacity duration-3000"
+                        leave="transition-opacity ease-in-out duration-3000"
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0">
                         <div className="bg-white w-full h-screen">
@@ -49,6 +50,7 @@ export default function SidebarModal() {
 
                         </div>
                     </Transition>
+                </div>
                     :
                     <button onClick={menuHandler}
                         className="ml-2 sm:ml-5 md:ml-10 lg:ml-10 mt-2 sm:mt-5 md:mt-7 lg:mt-7 lg:mr-7  focus:outline-none border border-transparent">
@@ -56,7 +58,7 @@ export default function SidebarModal() {
                     </button>
 
                 }
-            </div>
+
         </div>
     )
 }
