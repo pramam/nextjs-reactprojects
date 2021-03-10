@@ -2,6 +2,7 @@ import { useState } from 'react'
 import SVGMenu from '../svgicons/SVGMenu'
 import SVGX from '../svgicons/SVGX'
 import { menuData } from './menudata'
+import { Transition } from '@headlessui/react'
 
 export default function SidebarModal() {
     const [menuIsOpen, setMenuIsOpen] = useState(false)
@@ -13,7 +14,15 @@ export default function SidebarModal() {
         <div className="flex">
             <div className="w-full h-screen md:w-1/2 lg:w-3/12 lg:h-screen">
                 {menuIsOpen ?
-                    (<div className="bg-white w-full h-full">
+                    <Transition
+                        show={menuIsOpen}
+                        enter="transition-opacity duration-3000"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="transition-opacity duration-3000"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0">
+                        <div className="bg-white w-full h-screen">
                         <div className="flex flex-row justify-between mb-10">
                             <div className="ml-10 md:mr-7 mt-5 md:mt-7 lg:mt-7 lg:mr-7 text-3xl flex flex-row">
                                 <div className="hidden sm:block text-gray-900 font-semibold">Your&nbsp;</div>
@@ -38,7 +47,8 @@ export default function SidebarModal() {
                             })}
                         </ul>
 
-                    </div>)
+                        </div>
+                    </Transition>
                     :
                     <button onClick={menuHandler}
                         className="ml-2 sm:ml-5 md:ml-10 lg:ml-10 mt-2 sm:mt-5 md:mt-7 lg:mt-7 lg:mr-7  focus:outline-none border border-transparent">

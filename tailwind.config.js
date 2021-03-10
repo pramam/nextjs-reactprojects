@@ -65,6 +65,10 @@ module.exports = {
         '5/1': '500%', // * SliderKeyframe
         'auto': 'auto',
       },
+      transtionDuration: {
+        '2000': '2000ms',
+        '3000': '3000ms',
+      },
       transitionProperty: {
         'spacing': 'margin', // This is for the Dots component in Slider
         'height': 'height', // This is for Project Navbar, TransitionHeightExample
