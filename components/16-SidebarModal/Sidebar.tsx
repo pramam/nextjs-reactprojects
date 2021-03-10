@@ -4,7 +4,7 @@ import SVGX from '../svgicons/SVGX'
 
 export default function Sidebar({ menuIsOpen, closeHandler }) {
     return (
-        <div className="w-full h-screen md:w-1/2 lg:w-3/12 lg:h-screen">
+        <div className="fixed w-full h-screen md:w-1/2 lg:w-3/12 lg:h-screen">
             <Transition
                 show={menuIsOpen}
                 enter="transition-opacity ease-in-out duration-3000"
