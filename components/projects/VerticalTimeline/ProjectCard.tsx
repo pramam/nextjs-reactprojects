@@ -2,7 +2,6 @@ export interface IProps {
     index: number,
     image: string,
     title: string,
-    //    day: number,
     demo: string,
     blog: string,
     inspiration: string,
@@ -10,6 +9,8 @@ export interface IProps {
 }
 
 export default function ProjectCard({ index, image, title, demo, blog, inspiration, github }: IProps) {
+    const text = "text-sm text-gray-400 uppercase mr-3"
+    const textgray = "text-sm text-gray-300 uppercase mr-3 cursor-not-allowed"
     return (
         <div className="mt-2 flex flex-col flex-shrink shadow-xl mx-4">
             <div className="max-w-28">
@@ -21,12 +22,13 @@ export default function ProjectCard({ index, image, title, demo, blog, inspirati
             <div className="bg-gray-50">
                 <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">{index}. {title}</div>
                 <div className="bg-gray-50 flex flex-row justify-center">
-                    <div className="text-sm text-gray-400 uppercase mr-3">Demo</div>
-                    <div className="text-sm text-gray-400 uppercase mr-3">Blog</div>
-                    <div className="text-sm text-gray-400 uppercase mr-3">Inspiration</div>
-                    <div className="text-sm text-gray-400 uppercase mr-3">Github</div>
+                    <a href={demo} className={demo ? text : textgray} >Demo</a>
+                    <a href={blog} className={blog ? text : textgray}>Blog</a>
+                    <a href={inspiration} className={inspiration ? text : textgray}>Inspiration</a>
+                    <a href={github} className={github ? text : textgray}>Github</a>
                 </div>
             </div>
         </div>
+
     )
 }

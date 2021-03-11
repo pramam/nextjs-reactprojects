@@ -21,7 +21,7 @@ export default function VerticalTimeline() {
                     </div>   */}
                     <CenterTextCard 
                         title="Introduction"
-                        blog="/" />
+                        blog="" />
                     <LeftCard
                         index={1}
                         image={allprojectsData[0].image}
