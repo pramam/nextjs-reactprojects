@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import React from 'react'
 const AppContext = React.createContext(null)
 
@@ -6,13 +6,6 @@ const AppProvider = ({ children }) => {
     const [menuIsOpen, setMenuIsOpen] = useState(false)
     const [showModal, setShowModal] = useState(false)
 
-    // const menuHandler = () => {
-    //     setMenuIsOpen(!menuIsOpen)
-    // }
-
-    // const showModalHandler = () => {
-    //     setShowModal(!showModal)
-    // }
     const openSidebar = () => {
         setMenuIsOpen(true)
         console.log("openSidebar")
