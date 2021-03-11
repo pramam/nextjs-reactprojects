@@ -2,11 +2,7 @@ import { useContext } from 'react'
 import SVGMenu from '../svgicons/SVGMenu'
 import { AppContext } from './Context'
 
-// export interface IProps {
-//     clickHandler: () => void
-// }
 export default function Menu() {
-    // <Menu clickHandler={menuHandler}
     const { openSidebar } = useContext(AppContext)
     return (
         <button onClick={openSidebar}

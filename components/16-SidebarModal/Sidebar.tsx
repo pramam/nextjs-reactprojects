@@ -4,9 +4,7 @@ import { Transition } from '@headlessui/react'
 import SVGX from '../svgicons/SVGX'
 import { AppContext } from './Context'
 
-// export default function Sidebar({ menuIsOpen, closeHandler }) {
 export default function Sidebar() {
-    // <Sidebar menuIsOpen={menuIsOpen} closeHandler={menuHandler} />
 
     const { menuIsOpen, closeSidebar } = useContext(AppContext)
 
@@ -27,7 +25,6 @@ export default function Sidebar() {
                             <div className="text-indigo-700 font-bold">Logo&nbsp;</div>
                             <div className="hidden sm:block text-gray-900 font-semibold">Here</div>
                         </div>
-                        {/* closeHandler */}
                         <button onClick={closeSidebar} 
                             className="mt-5 md:mt-7 mr-5 focus:outline-none border border-transparent">
                             <SVGX css="mt-1.5 h-8 w-8 text-red-700" />
