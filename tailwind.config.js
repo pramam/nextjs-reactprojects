@@ -6,6 +6,7 @@ module.exports = {
       animation: {
         'wiggle': 'wiggle 1s ease-in-out infinite',
         'slidy': 'slidy 30s ease-in-out infinite',
+        'expandcontract': 'expandcontract 2s ease-in-out infinite'
       },
       keyframes: {
         'wiggle': {
@@ -23,6 +24,10 @@ module.exports = {
           '95%': { left: '-300%' },
           '100%': { left: '-400%' },
         },
+        'expandcontract': {
+          '0%, 100%': { transform: 'scale(1.2)' },
+          '50%': { transform: 'scale(1)' },
+        }
       },
       spacing: {
         // Comments below are correct:
