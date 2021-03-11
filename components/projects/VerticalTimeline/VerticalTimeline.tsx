@@ -1,6 +1,7 @@
 import LeftCard from './LeftCard'
 import RightCard from './RightCard'
 import allprojectsData from '../../../data/allprojects.json'
+import CenterTextCard from './CenterTextCard'
 
 // Code copied from https://tailwindcomponents.com/component/vertical-timeline
 export default function VerticalTimeline() {
@@ -8,17 +9,19 @@ export default function VerticalTimeline() {
         <>
             {/* component */}
             <div className="container">
-                <div className="grid grid-cols-1">
-                    <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">Introduction</div>
-                </div>
+
                 <div className="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50">
-                    {/* <LeftCard
-                        index={0}
-                        image="/screenshots/Screenshot-Introduction-pexels-photo-804269"
-                        // image="https://www.pexels.com/photo/white-and-blue-surface-illustration-804269/"
+                    {/* <div className="col-start-4 col-end-7 shadow-xl mx-4">
+                        <div className="flex flex-col bg-gray-50">
+                            <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">Introduction</div>
+                            <div className="bg-gray-50 flex flex-row justify-center">
+                                <div className="text-sm text-gray-400 uppercase mr-3">Blog</div>
+                            </div>
+                        </div>
+                    </div>   */}
+                    <CenterTextCard 
                         title="Introduction"
-                        day={1}
-                    /> */}
+                        blog="/" />
                     <LeftCard
                         index={1}
                         image={allprojectsData[0].image}

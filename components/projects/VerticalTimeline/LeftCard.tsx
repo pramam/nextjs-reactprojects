@@ -1,3 +1,5 @@
+import ProjectCard from "./ProjectCard";
+
 export interface IProps {
     index: number,
     image: string,
@@ -22,7 +24,16 @@ export default function LeftCard({ index, image, title, day, demo, blog, inspira
                             </p>
             </div> */}
             <article className="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto">
-                <div className="mt-2 flex flex-col flex-shrink shadow-xl mx-4">
+                <ProjectCard
+                    index={index}
+                    image={image}
+                    title={title}
+                    demo={demo}
+                    blog={blog}
+                    inspiration={inspiration}
+                    github={github}
+                />
+                {/* <div className="mt-2 flex flex-col flex-shrink shadow-xl mx-4">
                     <div className="max-w-28">
                         <img
                             className="h-64 w-70 object-cover"
@@ -38,7 +49,7 @@ export default function LeftCard({ index, image, title, day, demo, blog, inspira
                             <div className="text-sm text-gray-400 uppercase mr-3">Github</div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </article>
             <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
                 <div className="h-full w-14 flex items-center justify-center">
