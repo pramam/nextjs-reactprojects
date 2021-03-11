@@ -1,4 +1,4 @@
-import { menuData } from './menudata'
+import { menuData, socialData } from './menudata'
 import { Transition } from '@headlessui/react'
 import SVGX from '../svgicons/SVGX'
 
@@ -13,7 +13,7 @@ export default function Sidebar({ menuIsOpen, closeHandler }) {
                 leave="transition-opacity ease-in-out duration-3000"
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0">
-                <div className="bg-white w-full h-screen">
+                <div className="relative bg-white w-full h-screen">
                     <div className="flex flex-row justify-between mb-10">
                         <div className="ml-10 md:mr-7 mt-5 md:mt-7 lg:mt-7 lg:mr-7 text-3xl flex flex-row">
                             <div className="hidden sm:block text-gray-900 font-semibold">Your&nbsp;</div>
@@ -37,7 +37,16 @@ export default function Sidebar({ menuIsOpen, closeHandler }) {
                             )
                         })}
                     </ul>
-
+                    <ul className="absolute flex flex-row ml-10 bottom-0">
+                        {socialData.map((obj) => {
+                            return (
+                                <li key={obj.id}
+                                    className="mr-3 text-blue-500">
+                                    {obj.icon}
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </div>
             </Transition>
         </div>

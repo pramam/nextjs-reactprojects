@@ -3,7 +3,7 @@ import SVGUsers from "../svgicons/SVGUsers";
 import SVGFolderOpen from "../svgicons/SVGFolderOpen";
 import SVGCalendar from "../svgicons/SVGCalendar";
 import SVGDocumentDuplicate from "../svgicons/SVGDocumentDuplicate";
-
+import { FaTwitter, FaFacebook, FaLinkedin, FaBehance } from 'react-icons/fa'
 
 export const menuData = [
     {
@@ -31,4 +31,27 @@ export const menuData = [
         label: "Documents",
         icon: SVGDocumentDuplicate
     }
+]
+
+export const socialData = [
+    {
+        "id": 1,
+        "url": "https://www.twitter.com",
+        "icon": <FaTwitter />
+    },
+    {
+        "id": 2,
+        "url": "https://facebook.com",
+        "icon": <FaFacebook />
+    },
+    {
+        "id": 3,
+        "url": "https://linkedin.com",
+        "icon": <FaLinkedin />
+    },
+    {
+        "id": 4,
+        "url": "https://behance.com",
+        "icon": <FaBehance />
+    },
 ]
