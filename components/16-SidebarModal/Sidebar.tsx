@@ -1,8 +1,15 @@
+import { useContext } from 'react'
 import { menuData, socialData } from './menudata'
 import { Transition } from '@headlessui/react'
 import SVGX from '../svgicons/SVGX'
+import { AppContext } from './Context'
 
-export default function Sidebar({ menuIsOpen, closeHandler }) {
+// export default function Sidebar({ menuIsOpen, closeHandler }) {
+export default function Sidebar() {
+    // <Sidebar menuIsOpen={menuIsOpen} closeHandler={menuHandler} />
+
+    const { menuIsOpen, closeSidebar } = useContext(AppContext)
+
     return (
         <div className="z-0 fixed w-full h-screen md:w-1/2 lg:w-3/12 lg:h-screen">
             <Transition
@@ -20,7 +27,8 @@ export default function Sidebar({ menuIsOpen, closeHandler }) {
                             <div className="text-indigo-700 font-bold">Logo&nbsp;</div>
                             <div className="hidden sm:block text-gray-900 font-semibold">Here</div>
                         </div>
-                        <button onClick={closeHandler}
+                        {/* closeHandler */}
+                        <button onClick={closeSidebar} 
                             className="mt-5 md:mt-7 mr-5 focus:outline-none border border-transparent">
                             <SVGX css="mt-1.5 h-8 w-8 text-red-700" />
                         </button>

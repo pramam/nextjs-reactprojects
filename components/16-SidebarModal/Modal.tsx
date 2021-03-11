@@ -1,6 +1,10 @@
+import { useContext } from 'react'
 import SVGX from '../svgicons/SVGX'
+import { AppContext } from './Context'
 
-export default function Modal({ closeModalHandler }) {
+export default function Modal() {
+    const { closeModal } = useContext(AppContext)
+
     return (
         <div className="bg-gray-600 z-20 pointer-events-auto min-h-screen ">
             <div className="flex justify-center z-20">
@@ -8,7 +12,7 @@ export default function Modal({ closeModalHandler }) {
                     <div className="flex flex-row justify-end">
                         <p className="flex justify-center py-20 sm:py-28 lg:py-40 mx-auto text-3xl">Modal Content</p>
                         <div className="absolute mt-2">
-                            <button onClick={closeModalHandler}
+                            <button onClick={closeModal}
                                 className="mt-5 md:mt-7 mr-5 focus:outline-none border border-transparent">
                                 <SVGX css="mt-1.5 h-8 w-8 text-red-700" />
                             </button>
