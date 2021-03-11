@@ -178,5 +178,17 @@
         "inspiration": "https://react-projects-11-navbar.netlify.app/",
         "timeline": "/",
         "about": "/general/about"
+    },
+    {
+        "id": 16,
+        "day": 44,
+        "image": "/screenshots/Screenshot-SidebarModal.png",
+        "name": "Sidebar Modal",
+        "url": "/sidebarmodal",
+        "blogurl": "/posts/sidebarmodal",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/16-SidebarModal",
+        "inspiration": "https://react-projects-12-sidebar-modal.netlify.app/",
+        "timeline": "/",
+        "about": "/general/about"
     }
 ]
