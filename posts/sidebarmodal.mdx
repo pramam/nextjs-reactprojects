@@ -1,0 +1,26 @@
+---
+title: Sidebar Modal
+day: 44
+keywords: [react, react hooks, next.js, useContext, Modal, Sidebar]
+description: A Sidebar Menu along with a Modal pop up
+---
+[This](https://react-projects-12-sidebar-modal.netlify.app/) is what I am trying to replicate. 
+
+[This](/sidebarmodal) is what I created. The source code can be found [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/16-SidebarModal)
+
+Here's what it looks like:
+<div className="min-h-screen bg-gradient-to-r from-green-500 via-gray-400 to-green-500 ">
+    <SidebarModal />
+</div>
+
+I see a bug above where the Menu is scrolling down to the middle of the component on this page and I am not sure how to fix it.
+
+A few things learned from this project:
+
+- The Menu Button on the left and the Sidebar are in position `fixed`.
+
+- I used TailwindCSS `pointer-events-none` to gray out the Menu and Sidebar when the Modal is open.
+
+- Integrating useContext on a working solution initially seemed cumbersome, but I see the beauty of accessing the context from anywhere.
+
+_Time to complete: 17 checkins, 1.5 days_

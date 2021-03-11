@@ -9,7 +9,7 @@ export default function App() {
     const { menuIsOpen, showModal } = useContext(AppContext)
 
     return (
-        <div>
+        <div className="relative">
             {menuIsOpen ?
                 <Sidebar />
                 :

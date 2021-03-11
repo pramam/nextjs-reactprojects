@@ -30,6 +30,7 @@ const components = {
     NavbarTailwind: dynamic(() => import('../../components/14-Navbar/15-NavbarTailwind/NavbarTailwind')),
     SliderKeyframeWrapper: dynamic(() => import('../../components/9-Slider/SliderKeyframe/SliderKeyframeWrapper')),
     SliderWrapper: dynamic(() => import('../../components/9-Slider/SliderWrapper')),
+    SidebarModal: dynamic(() => import('../../components/16-SidebarModal')),
     Tabs: dynamic(() => import('../../components/8-Tabs/Tabs')),
     TailwindTransitionExample: dynamic(() => import('../../components/examplecode/TailwindTransitionExample')),
     TransitionHeightExample: dynamic(() => import('../../components/examplecode/TransitionHeightExample')),
