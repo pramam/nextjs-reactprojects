@@ -2,7 +2,7 @@ import SVGX from '../svgicons/SVGX'
 
 export default function Modal({ closeModalHandler }) {
     return (
-        <div className="bg-gray-600 z-10 min-h-screen ">
+        <div className="bg-gray-600 z-20 pointer-events-auto min-h-screen ">
             <div className="flex justify-center z-20">
                 <div className="relative w-4/5 sm:w-3/5 lg:w-1/2 2xl:w-1/5 mt-32 sm:mt-32 md:mt-40 shadow-lg bg-gray-50 rounded-md">
                     <div className="flex flex-row justify-end">
