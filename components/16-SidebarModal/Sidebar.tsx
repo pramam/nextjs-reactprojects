@@ -6,10 +6,13 @@ import { AppContext } from './Context'
 
 export default function Sidebar() {
 
-    const { menuIsOpen, closeSidebar } = useContext(AppContext)
+    const { menuIsOpen, closeSidebar, showModal } = useContext(AppContext)
+    const common_props = "z-0 fixed w-full h-screen md:w-1/2 lg:w-3/12 lg:h-screen"
+    // Do not allow operation of Sidebar if Modal is open
+    const gray_out_function_props = "pointer-events-none opacity-50"
 
     return (
-        <div className="z-0 fixed w-full h-screen md:w-1/2 lg:w-3/12 lg:h-screen">
+        <div className={`${showModal ? `${common_props} ${gray_out_function_props}` : `${common_props}`}`}>
             <Transition
                 show={menuIsOpen}
                 enter="transition-opacity ease-in-out duration-3000"
