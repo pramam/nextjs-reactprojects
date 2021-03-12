@@ -9,7 +9,7 @@ export default function VerticalTimeline() {
         <>
             {/* component */}
             <div className="container">
-                <div className="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50">
+                <div className="flex flex-col md:grid md:grid-cols-9 mx-auto p-2 text-blue-50">
                     <CenterTextCard 
                         title="Introduction"
                         blog="" />

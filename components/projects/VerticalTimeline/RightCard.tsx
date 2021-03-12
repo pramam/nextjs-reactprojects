@@ -15,7 +15,7 @@ export default function RightCard({ index, image, title, day, demo, blog, inspir
     return (
         // right
         < div className="flex md:contents" >
-            <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+            <div className="md:col-start-5 md:col-end-6 mr-2 md:mr-10 md:mx-auto relative">
                 <div className="h-full w-14 flex items-center justify-center">
                     <div className="h-full w-1 bg-gray-800 pointer-events-none" />
                 </div>
@@ -27,7 +27,7 @@ export default function RightCard({ index, image, title, day, demo, blog, inspir
                     </div>
                 </div>
             </div>
-            <article className="col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto">
+            <article className="md:col-start-6 md:col-end-10 p-4 rounded-xl my-4 mr-auto">
                 <ProjectCard
                     index={index}
                     image={image}

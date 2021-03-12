@@ -15,7 +15,7 @@ export default function LeftCard({ index, image, title, day, demo, blog, inspira
     return (
         // left
         <div className="flex flex-row-reverse md:contents" >
-            <article className="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto">
+            <article className="md:col-start-1 md:col-end-5 p-4 rounded-xl my-4 ml-auto">
                 <ProjectCard
                     index={index}
                     image={image}
@@ -26,7 +26,7 @@ export default function LeftCard({ index, image, title, day, demo, blog, inspira
                     github={github}
                 />
             </article>
-            <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
+            <div className="md:col-start-5 md:col-end-6 md:mx-auto relative mr-2 md:mr-10">
                 <div className="h-full w-14 flex items-center justify-center">
                     <div className="h-full w-1 bg-gray-800 pointer-events-none" />
                 </div>
