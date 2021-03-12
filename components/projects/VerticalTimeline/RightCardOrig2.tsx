@@ -1,8 +1,17 @@
 import ProjectCardOrig2 from "./ProjectCardOrig2"
 
-export default function RightCardOrig2({ index, day, demo, blog, inspiration, github }) {
-    const text = "text-sm text-gray-400 uppercase mr-3"
-    const textgray = "text-sm text-gray-300 uppercase mr-3 cursor-not-allowed"
+export interface IProps {
+    index: number,
+    image: string,
+    title: string,
+    day: number,
+    demo: string,
+    blog: string,
+    inspiration: string,
+    github: string
+}
+
+export default function RightCardOrig2({ index, image, title, day, demo, blog, inspiration, github }) {
     return (
         <div className="flex md:contents">
             <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
@@ -13,28 +22,19 @@ export default function RightCardOrig2({ index, day, demo, blog, inspiration, gi
                     <a id={`project${index}`} />
                     <div className="animate animate-wiggle flex flex-col">
                         <p>Day</p>
-                        <p>31</p>
+                        <p>{day}</p>
                     </div>
                 </div>
             </div>
             <div className="col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto">
-                {/* <h3 className="font-semibold text-lg mb-1">Lorem ipsum</h3>
-                <p className="leading-tight text-justify">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Vitae, facilis.
-        </p>
-                <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">index. title</div>
-                <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
-                    <a href="" className={demo ? text : textgray} >Demo</a>
-                    <a href="" className={blog ? text : textgray}>Blog</a>
-                    <a href="" className={inspiration ? text : textgray}>Inspiration</a>
-                    <a href="" className={github ? text : textgray}>Github</a>
-                </div> */}
                 <ProjectCardOrig2
-                    blog=""
-                    demo=""
-                    inspiration=""
-                    github=""
+                    index={index}
+                    image={image}
+                    title={title}
+                    demo={demo}
+                    blog={blog}
+                    inspiration={inspiration}
+                    github={github}
                 />
             </div>
         </div>

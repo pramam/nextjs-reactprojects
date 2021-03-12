@@ -1,29 +1,28 @@
 import ProjectCardOrig2 from './ProjectCardOrig2'
 
-export default function LeftCardOrig2({ index, day, demo, blog, inspiration, github }) {
-    const text = "text-sm text-gray-400 uppercase mr-3"
-    const textgray = "text-sm text-gray-300 uppercase mr-3 cursor-not-allowed"
+export interface IProps {
+    index: number,
+    image: string,
+    title: string,
+    day: number,
+    demo: string,
+    blog: string,
+    inspiration: string,
+    github: string
+}
 
+export default function LeftCardOrig2({ index, image, title, day, demo, blog, inspiration, github }: IProps) {
     return (
         <div className="flex flex-row-reverse md:contents">
             <div className="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto">
-                {/* <h3 className="font-semibold text-lg mb-1">Lorem ipsum</h3>
-                <p className="leading-tight text-justify">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
-                    quaerat?
-        </p>
-                <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">index. title</div>
-                <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
-                    <a href="" className={demo ? text : textgray} >Demo</a>
-                    <a href="" className={blog ? text : textgray}>Blog</a>
-                    <a href="" className={inspiration ? text : textgray}>Inspiration</a>
-                    <a href="" className={github ? text : textgray}>Github</a>
-                </div> */}
                 <ProjectCardOrig2
-                    demo=""
-                    blog=""
-                    inspiration=""
-                    github=""
+                    index={index}
+                    image={image}
+                    title={title}
+                    demo={demo}
+                    blog={blog}
+                    inspiration={inspiration}
+                    github={github}
                 />
             </div>
             <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
@@ -34,7 +33,7 @@ export default function LeftCardOrig2({ index, day, demo, blog, inspiration, git
                     <a id={`project${index}`} />
                     <div className="animate animate-wiggle flex flex-col">
                         <p>Day</p>
-                        <p>16</p>
+                        <p>{day}</p>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,8 @@ export default function VerticalTimelineOrig2() {
                     {/* left Red */}
                     <LeftCardOrig2
                         index={1}
+                        image="/screenshots/Screenshot-Bubblewrap.png"
+                        title="Hello"
                         day={70}
                         demo=""
                         blog=""
@@ -18,6 +20,8 @@ export default function VerticalTimelineOrig2() {
                     {/* left Red */}
                     <LeftCardOrig2
                         index={2}
+                        image="/screenshots/Screenshot-Birthdays.png"
+                        title="Two"
                         day={24}
                         demo=""
                         blog=""
@@ -27,6 +31,8 @@ export default function VerticalTimelineOrig2() {
                     {/* right Blue*/}
                     <RightCardOrig2
                         index={3}
+                        image="/screenshots/Screenshot-Githubusers.png"
+                        title="three"
                         day={33}
                         demo=""
                         blog=""
@@ -35,7 +41,9 @@ export default function VerticalTimelineOrig2() {
                     />
                     {/* left Red */}
                     <LeftCardOrig2
-                        index={3}
+                        index={4}
+                        image="/screenshots/Screenshot-Tours.png"
+                        title="Three"
                         day={34}
                         demo=""
                         blog=""
@@ -44,6 +52,8 @@ export default function VerticalTimelineOrig2() {
                     {/* left Red*/}
                     <LeftCardOrig2
                         index={4}
+                        image="/screenshots/Screenshot-Navbar.png"
+                        title="Four"
                         day={44}
                         demo=""
                         blog=""
@@ -52,6 +62,8 @@ export default function VerticalTimelineOrig2() {
                     {/* right Blue */}
                     <RightCardOrig2
                         index={2}
+                        image="/screenshots/Screenshot-Slider.png"
+                        title="five"
                         day={22}
                         demo=""
                         blog=""
