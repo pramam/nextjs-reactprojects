@@ -6,7 +6,7 @@ export default function LeftCardOrig2({ demo, blog, inspiration, github }) {
 
     return (
         <div className="flex flex-row-reverse md:contents">
-            <div className="bg-red-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
+            <div className="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto">
                 {/* <h3 className="font-semibold text-lg mb-1">Lorem ipsum</h3>
                 <p className="leading-tight text-justify">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,

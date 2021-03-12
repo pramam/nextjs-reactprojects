@@ -11,7 +11,7 @@ export default function RightCardOrig2({ demo, blog, inspiration, github }) {
                 </div>
                 <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-blue-500 shadow" />
             </div>
-            <div className="bg-blue-500 col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto shadow-md">
+            <div className="col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto">
                 {/* <h3 className="font-semibold text-lg mb-1">Lorem ipsum</h3>
                 <p className="leading-tight text-justify">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.

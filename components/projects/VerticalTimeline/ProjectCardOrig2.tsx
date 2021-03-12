@@ -3,12 +3,12 @@ export default function ProjectCardOrig2({ demo, blog, inspiration, github }) {
     const textgray = "text-sm text-gray-300 uppercase mr-3 cursor-not-allowed"
 
     return (
-        <>
-            <h3 className="font-semibold text-lg mb-1">Lorem ipsum</h3>
+        <div className="bg-gray-50 shadow-md">
+            {/* <h3 className="font-semibold text-lg mb-1">Lorem ipsum</h3>
             <p className="leading-tight text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
                 quaerat?
-        </p>
+        </p> */}
             <div className="max-w-4/6 sm:max-w-4/5">
                 <img
                     className="w-full h-64 object-cover flex rounded-t-md justify-center items-center"
@@ -23,6 +23,6 @@ export default function ProjectCardOrig2({ demo, blog, inspiration, github }) {
                 <a href="" className={inspiration ? text : textgray}>Inspiration</a>
                 <a href="" className={github ? text : textgray}>Github</a>
             </div>
-        </>
+        </div>
     )
 }
