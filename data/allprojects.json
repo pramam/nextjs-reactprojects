@@ -120,6 +120,18 @@
         "about": "/general/about"
     },
     {
+        "id": 1615573613626,
+        "day": 28,
+        "image": "",
+        "name": "Setting up a Blog",
+        "url": "/blog",
+        "blogurl": "/posts/setting-up-blog",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects",
+        "inspiration": "https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote",
+        "timeline": "/general/verticaltimeline",
+        "about": "/general/about"
+    },
+    {
         "id": 11,
         "day": 32,
         "image": "/screenshots/Screenshot-LoremIpsum.png",
@@ -180,6 +192,18 @@
         "about": "/general/about"
     },
     {
+        "id": 1615574371176,
+        "day": 42,
+        "image": "",
+        "name": "useReducer Example",
+        "url": "",
+        "blogurl": "/posts/usereducerexample",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/examplecode/UseReducerExample",
+        "inspiration": "https://www.youtube.com/watch?v=4UZrsTqkcW4&t=26992s",
+        "timeline": "/general/verticaltimeline",
+        "about": "/general/about"
+    },
+    {
         "id": 16,
         "day": 44,
         "image": "/screenshots/Screenshot-SidebarModal.png",
@@ -188,6 +212,18 @@
         "blogurl": "/posts/sidebarmodal",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/16-SidebarModal",
         "inspiration": "https://react-projects-12-sidebar-modal.netlify.app/",
+        "timeline": "/general/verticaltimeline",
+        "about": "/general/about"
+    },
+    {
+        "id": 1615574773355,
+        "day": 46,
+        "image": "",
+        "name": "Vertical Timeline",
+        "url": "/general/verticaltimeline",
+        "blogurl": "/posts/verticaltimeline",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/projects/VerticalTimeline",
+        "inspiration": "https://tailwindcomponents.com/component/vertical-timeline",
         "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     }

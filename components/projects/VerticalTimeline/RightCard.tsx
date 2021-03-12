@@ -8,10 +8,11 @@ export interface IProps {
     demo: string,
     blog: string,
     inspiration: string,
-    github: string
+    github: string,
+    project: boolean
 }
 
-export default function RightCard({ index, image, title, day, demo, blog, inspiration, github }: IProps) {
+export default function RightCard({ index, image, title, day, demo, blog, inspiration, github, project }: IProps) {
     return (
         // right
         < div className="flex md:contents" >
@@ -36,6 +37,7 @@ export default function RightCard({ index, image, title, day, demo, blog, inspir
                     blog={blog}
                     inspiration={inspiration}
                     github={github}
+                    project={project}
                 />
             </article>
         </div >

@@ -8,10 +8,11 @@ export interface IProps {
     demo: string,
     blog: string,
     inspiration: string,
-    github: string
+    github: string,
+    project: boolean
 }
 
-export default function LeftCard({ index, image, title, day, demo, blog, inspiration, github }: IProps) {
+export default function LeftCard({ index, image, title, day, demo, blog, inspiration, github, project }: IProps) {
     return (
         // left
         <div className="flex flex-row-reverse md:contents" >
@@ -24,7 +25,8 @@ export default function LeftCard({ index, image, title, day, demo, blog, inspira
                     blog={blog}
                     inspiration={inspiration}
                     github={github}
-                />
+                    project={project}
+                    /> 
             </article>
             <div className="md:col-start-5 md:col-end-6 md:mx-auto relative mr-2 md:mr-10">
                 <div className="h-full w-14 flex items-center justify-center">

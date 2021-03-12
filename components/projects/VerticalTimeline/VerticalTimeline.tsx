@@ -14,7 +14,7 @@ export default function VerticalTimeline() {
                         title="Introduction"
                         blog="" />
                     {allprojectsData.map((obj, index) => {
-
+                        const project = obj.image ? true : false;
 
                         return (
                             <>
@@ -28,6 +28,7 @@ export default function VerticalTimeline() {
                                         blog={obj.blogurl}
                                         inspiration={obj.inspiration}
                                         github={obj.githuburl}
+                                        project={project}
                                     /> :
                                     <RightCard
                                         index={index + 1}
@@ -38,6 +39,7 @@ export default function VerticalTimeline() {
                                         blog={obj.blogurl}
                                         inspiration={obj.inspiration}
                                         github={obj.githuburl}
+                                        project={project}
                                     />
 
                                 }
