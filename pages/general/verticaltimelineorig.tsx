@@ -1,9 +1,9 @@
-import VerticalTimelineOrig from '../../components/projects/VerticalTimeline/VerticalTimelineOrig'
+import VerticalTimelineOrig2 from '../../components/projects/VerticalTimeline/VerticalTimelineOrig2'
 
 export default function DisplayVerticalTimelineOrig() {
     return (
         <div>
-            <VerticalTimelineOrig />
+            <VerticalTimelineOrig2 />
         </div>
     )
 }
