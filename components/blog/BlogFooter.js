@@ -1,10 +1,10 @@
 import allprojectsData from '../../data/allprojects.json'
 
 export default function BlogFooter({ id }) {
-    const entry = allprojectsData.find(item => item.day === id)
+    const entry = allprojectsData.find(item => item.id === id)
     return (
         <div>
-            Day {id} has title {entry.name}
+            Project {id} has title {entry.name}
         </div>
     )
 }

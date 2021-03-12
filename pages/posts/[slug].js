@@ -60,9 +60,9 @@ export default function PostPage({ source, frontMatter }) {
                 )}
             </div>
             <main>
-                <BlogHeader id={frontMatter.day} />
+                <BlogHeader id={frontMatter.id} />
                 {content}
-                <BlogFooter id={frontMatter.day} />
+                <BlogFooter id={frontMatter.id} />
             </main>
 
             <style jsx>{`
