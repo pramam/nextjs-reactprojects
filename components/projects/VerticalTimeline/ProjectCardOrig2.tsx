@@ -6,7 +6,7 @@ export default function ProjectCardOrig2({ index, image, title, demo, blog, insp
         <div className="bg-gray-50 shadow-md">
             <div className="max-w-4/6 sm:max-w-4/5">
                 <img
-                    className="w-full h-64 object-cover flex rounded-t-md justify-center items-center"
+                    className="w-full h-64 object-cover flex justify-center items-center"
                     src={image}
                     alt={title}
                 />
