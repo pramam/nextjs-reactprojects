@@ -8,7 +8,6 @@ export default function projects() {
         <div className="min-h-screen bg-pink-400">
             <ProjectNavbarContainerSimple
                 projectId={2}
-                projectName="Birthday Reminder"
                 textColor="text-gray-50"
             />
         < AllBirthdays birthday_array={birthdayData} />

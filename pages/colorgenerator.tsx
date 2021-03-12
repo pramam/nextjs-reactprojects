@@ -6,7 +6,6 @@ export default function DisplayColorGenerator() {
         <div className="min-h-screen bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200">
             <ProjectNavbarContainerSimple
                 projectId={12}
-                projectName="Color Generator"
                 textColor="text-gray-900"
             />
             <ColorGen />

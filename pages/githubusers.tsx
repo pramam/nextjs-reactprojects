@@ -6,7 +6,6 @@ export default function githublanding() {
         <div className="min-h-screen bg-indigo-50">
             <ProjectNavbarContainerSimple
                 projectId={3}
-                projectName="Github Users"
                 textColor="text-gray-500"
             />
         <GithubUsers />

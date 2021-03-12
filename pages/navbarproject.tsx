@@ -6,7 +6,6 @@ export default function NavbarProject() {
         <div className="min-h-screen bg-gradient-to-r from-gray-100 via-gray-100 to-gray-100">
             <ProjectNavbarContainerSimple
                 projectId={14}
-                projectName="Navbar"
                 textColor="text-gray-900"
             />
             <Navbar />

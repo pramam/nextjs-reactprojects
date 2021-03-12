@@ -8,7 +8,6 @@ export default function DisplaySlider() {
             <div className="flex flex-col justify-center ">
                 <ProjectNavbarContainerSimple
                     projectId={9}
-                    projectName="Slider"
                     textColor="text-gray-50"
                 />
                 <Slider slides={quoteData} />

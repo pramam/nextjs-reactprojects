@@ -6,7 +6,6 @@ export default function ShowReviews() {
         <div className="min-h-screen bg-blue-50">
             <ProjectNavbarContainerSimple
                 projectId={5}
-                projectName="Reviews"
                 textColor="text-gray-900"
             />
             <Reviews />

@@ -5,15 +5,15 @@ import ProjectNavbarSimple from './ProjectNavbarSimple'
 // production builds if it doesn't find the color in the code.
 export interface IProps {
     projectId: number
-    projectName: string
     textColor: string
 }
 
-export default function ProjectNavbarContainerSimple({ projectId, projectName, textColor }: IProps) {
+// projectId is from one source of truth: /data/allprojects.json
+export default function ProjectNavbarContainerSimple({ projectId, textColor }: IProps) {
     const projectData = getProjectData(projectId)
     const { status, projectNum, prevProjectUrl, nextProjectUrl, timeline, about } = projectData;
     if (status != "OK")
-        console.log(`${projectName}:  status: ${status}`)
+        console.log(`${projectId}:  status: ${status}`)
     // console.log(`projectNum: ${projectNum},dayNum: ${dayNum}`)
     // console.log(`blogUrl: ${blogUrl}`)
     // console.log(`prevProjectUrl: ${prevProjectUrl}; nextProjectUrl: ${nextProjectUrl}`)

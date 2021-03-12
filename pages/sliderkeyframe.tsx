@@ -8,7 +8,6 @@ export default function DisplaySlider() {
             <div className="flex flex-col justify-center ">
                 <ProjectNavbarContainerSimple
                     projectId={10}
-                    projectName="Slider Keyframe"
                     textColor="text-gray-50"
                 />
                 <SliderKeyframe slides={quoteDataGeneric} />

@@ -6,7 +6,6 @@ export default function NavbarTailwindTransition() {
         <div className="min-h-screen bg-gradient-to-r from-gray-100 via-gray-100 to-gray-100">
             <ProjectNavbarContainerSimple
                 projectId={15}
-                projectName="Navbar Tailwind Transition"
                 textColor="text-gray-900"
             />
             <NavbarTailwind />

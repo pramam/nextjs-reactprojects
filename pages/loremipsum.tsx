@@ -6,7 +6,6 @@ export default function DisplayLoremIpsum() {
         <div className="min-h-screen bg-gradient-to-r from-gray-300 via-green-300 to-gray-300">
             <ProjectNavbarContainerSimple
                 projectId={11}
-                projectName="Lorem Ipsum"
                 textColor="text-gray-900"
             />
             <LoremIpsum />

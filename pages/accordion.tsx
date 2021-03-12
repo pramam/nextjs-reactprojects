@@ -6,7 +6,6 @@ export default function DisplayAccordion() {
         <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500">
             <ProjectNavbarContainerSimple
                 projectId={6}
-                projectName="Accordion"
                 textColor="text-white"
             />
             <Accordion />

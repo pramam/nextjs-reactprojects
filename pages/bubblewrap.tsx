@@ -6,7 +6,6 @@ export default function projects() {
         <>
             <ProjectNavbarContainerSimple
                 projectId={1}
-                projectName="Bubble Wrap"
                 textColor="text-gray-900"
             />
         <BubbleWrap rows={8} cols={10} />

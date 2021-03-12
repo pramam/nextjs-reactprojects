@@ -6,7 +6,6 @@ export default function DisplaySidebarModal() {
         <div className="min-h-screen bg-gradient-to-r from-green-500 via-gray-400 to-green-500 ">
             <ProjectNavbarContainerSimple
                 projectId={16}
-                projectName="Sidebar Modal"
                 textColor="text-gray-900"
             />
             <SidebarModal />
