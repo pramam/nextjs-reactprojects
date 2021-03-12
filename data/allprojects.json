@@ -8,7 +8,7 @@
         "blogurl": "/posts/bubblewrap",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/0-Bubbles",
         "inspiration": "https://bubble-wrap.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -20,7 +20,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/1-Birthday",
         "inspiration": "https://react-projects-1-birthday-reminder.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -32,7 +32,7 @@
         "blogurl": "/posts/githubusers",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/2-Github",
         "inspiration": "https://youtu.be/4UZrsTqkcW4?t=19168",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -44,7 +44,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/3-Tours",
         "inspiration": "https://react-projects-2-tours.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -56,7 +56,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/4-Reviews",
         "inspiration": "https://react-projects-3-reviews.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -68,7 +68,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/5-Accordion",
         "inspiration": "https://react-projects-4-accordion.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -80,7 +80,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/6-Menu",
         "inspiration": "https://react-projects-5-menu.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -92,7 +92,7 @@
         "blogurl": "/posts/tabs",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/8-Tabs",
         "inspiration": "https://react-projects-6-tabs.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -104,7 +104,7 @@
         "blogurl": "/posts/slider-project",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/9-Slider",
         "inspiration": "https://react-projects-7-slider.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -116,7 +116,7 @@
         "blogurl": "/posts/slider-keyframes",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/9-Slider/SliderKeyframe",
         "inspiration": "http://thenewcode.com/627/Make-A-Responsive-CSS3-Image-Slider",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -128,7 +128,7 @@
         "blogurl": "/posts/loremipsum",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/11-LoremIpsum",
         "inspiration": "https://react-projects-8-lorem-ipsum-generator.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -140,7 +140,7 @@
         "blogurl": "/posts/color-generator",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/12-ColorGenerator",
         "inspiration": "https://react-projects-9-color-generator.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -152,7 +152,7 @@
         "blogurl": "/posts/grocerylist",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/13-GroceryList",
         "inspiration": "https://react-projects-10-grocery-bud.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -164,7 +164,7 @@
         "blogurl": "/posts/navbarproject",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar",
         "inspiration": "https://react-projects-11-navbar.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -176,7 +176,7 @@
         "blogurl": "/posts/navbartailwindtransition",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar/15-NavbarTailwind",
         "inspiration": "https://react-projects-11-navbar.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     },
     {
@@ -188,7 +188,7 @@
         "blogurl": "/posts/sidebarmodal",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/16-SidebarModal",
         "inspiration": "https://react-projects-12-sidebar-modal.netlify.app/",
-        "timeline": "/",
+        "timeline": "/general/verticaltimeline",
         "about": "/general/about"
     }
 ]

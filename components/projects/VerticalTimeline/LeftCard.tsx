@@ -31,6 +31,7 @@ export default function LeftCard({ index, image, title, day, demo, blog, inspira
                     <div className="h-full w-1 bg-gray-800 pointer-events-none" />
                 </div>
                 <div className="w-14 h-14 absolute top-1/2 -mt-3 rounded-full bg-gray-600 text-white text-center shadow">
+                    <a id={`project${index}`} />
                     <div className="animate animate-wiggle flex flex-col">
                         <p>Day</p>
                         <p>{day}</p>
