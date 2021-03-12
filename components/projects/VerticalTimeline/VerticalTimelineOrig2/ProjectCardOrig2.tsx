@@ -1,7 +1,16 @@
-export default function ProjectCardOrig2({ index, image, title, demo, blog, inspiration, github }) {
+export interface IProps {
+    index: number,
+    image: string,
+    title: string,
+    demo: string,
+    blog: string,
+    inspiration: string,
+    github: string
+}
+
+export default function ProjectCardOrig2({ index, image, title, demo, blog, inspiration, github }: IProps) {
     const text = "text-sm text-gray-400 uppercase mr-3"
     const textgray = "text-sm text-gray-300 uppercase mr-3 cursor-not-allowed"
-    console.log(`ProjectCardOrig2: index ${index} title ${title} `)
     return (
         <div className="bg-gray-50 shadow-md">
             <div className="max-w-4/6 sm:max-w-4/5">
