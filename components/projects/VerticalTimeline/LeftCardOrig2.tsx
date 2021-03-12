@@ -1,4 +1,7 @@
-export default function LeftCardOrig2() {
+export default function LeftCardOrig2({ demo, blog, inspiration, github }) {
+    const text = "text-sm text-gray-400 uppercase mr-3"
+    const textgray = "text-sm text-gray-300 uppercase mr-3 cursor-not-allowed"
+
     return (
         <div className="flex flex-row-reverse md:contents">
             <div className="bg-red-500 col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto shadow-md">
@@ -7,6 +10,13 @@ export default function LeftCardOrig2() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
                     quaerat?
         </p>
+                <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">index. title</div>
+                <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
+                    <a href="" className={demo ? text : textgray} >Demo</a>
+                    <a href="" className={blog ? text : textgray}>Blog</a>
+                    <a href="" className={inspiration ? text : textgray}>Inspiration</a>
+                    <a href="" className={github ? text : textgray}>Github</a>
+                </div>
             </div>
             <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
                 <div className="h-full w-6 flex items-center justify-center">
