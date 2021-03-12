@@ -5,6 +5,7 @@ export default function ListTours() {
     return (
         <div className="min-h-screen bg-blue-50">
             <ProjectNavbarContainerSimple
+                projectId={4}
                 projectName="Tours"
                 textColor="text-gray-900"
             />

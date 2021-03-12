@@ -4,12 +4,13 @@ import ProjectNavbarSimple from './ProjectNavbarSimple'
 // Don't put the text color in the json file. Purgecss will strip it away for
 // production builds if it doesn't find the color in the code.
 export interface IProps {
+    projectId: number
     projectName: string
     textColor: string
 }
 
-export default function ProjectNavbarContainerSimple({ projectName, textColor }: IProps) {
-    const projectData = getProjectData(projectName)
+export default function ProjectNavbarContainerSimple({ projectId, projectName, textColor }: IProps) {
+    const projectData = getProjectData(projectId)
     const { status, projectNum, prevProjectUrl, nextProjectUrl, timeline, about } = projectData;
     if (status != "OK")
         console.log(`${projectName}:  status: ${status}`)

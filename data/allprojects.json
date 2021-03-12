@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "isproject": true,
         "day": 7,
         "image": "/screenshots/Screenshot-Bubblewrap.png",
         "name": "Bubble Wrap",
@@ -13,6 +14,7 @@
     },
     {
         "id": 2,
+        "isproject": true,
         "day": 10,
         "image": "/screenshots/Screenshot-Birthdays.png",
         "name": "Birthday Reminder",
@@ -25,6 +27,7 @@
     },
     {
         "id": 3,
+        "isproject": true,
         "day": 13,
         "image": "/screenshots/Screenshot-Githubusers.png",
         "name": "Github Users",
@@ -37,6 +40,7 @@
     },
     {
         "id": 4,
+        "isproject": true,
         "day": 14,
         "image": "/screenshots/Screenshot-Tours.png",
         "name": "Tours",
@@ -49,6 +53,7 @@
     },
     {
         "id": 5,
+        "isproject": true,
         "day": 17,
         "image": "/screenshots/Screenshot-Reviews.png",
         "name": "Reviews",
@@ -61,6 +66,7 @@
     },
     {
         "id": 6,
+        "isproject": true,
         "day": 18,
         "image": "/screenshots/Screenshot-Accordion.png",
         "name": "Accordion",
@@ -73,6 +79,7 @@
     },
     {
         "id": 7,
+        "isproject": true,
         "day": 20,
         "image": "/screenshots/Screenshot-Menu.png",
         "name": "Menu",
@@ -85,6 +92,7 @@
     },
     {
         "id": 8,
+        "isproject": true,
         "day": 21,
         "image": "/screenshots/Screenshot-Tabs.png",
         "name": "Tabs",
@@ -97,6 +105,7 @@
     },
     {
         "id": 9,
+        "isproject": true,
         "day": 26,
         "image": "/screenshots/Screenshot-Slider.png",
         "name": "Slider",
@@ -109,6 +118,7 @@
     },
     {
         "id": 10,
+        "isproject": true,
         "day": 27,
         "image": "/screenshots/Screenshot-Slider-Keyframe.png",
         "name": "Slider Keyframe",
@@ -121,10 +131,11 @@
     },
     {
         "id": 1615573613626,
+        "isproject": false,
         "day": 28,
         "image": "",
         "name": "Setting up a Blog with MDX",
-        "url": "/blog",
+        "url": "",
         "blogurl": "/posts/setting-up-blog",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects",
         "inspiration": "https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote",
@@ -133,6 +144,7 @@
     },
     {
         "id": 11,
+        "isproject": true,
         "day": 32,
         "image": "/screenshots/Screenshot-LoremIpsum.png",
         "name": "Lorem Ipsum",
@@ -145,6 +157,7 @@
     },
     {
         "id": 12,
+        "isproject": true,
         "day": 34,
         "image": "/screenshots/Screenshot-ColorGenerator.png",
         "name": "Color Generator",
@@ -157,6 +170,7 @@
     },
     {
         "id": 13,
+        "isproject": true,
         "day": 35,
         "image": "/screenshots/Screenshot-GroceryList.png",
         "name": "Grocery List",
@@ -169,6 +183,7 @@
     },
     {
         "id": 14,
+        "isproject": true,
         "day": 39,
         "image": "/screenshots/Screenshot-Navbar.png",
         "name": "Navbar",
@@ -181,6 +196,7 @@
     },
     {
         "id": 15,
+        "isproject": true,
         "day": 40,
         "image": "/screenshots/Screenshot-NavbarTailwindTransition.png",
         "name": "Navbar Tailwind Transition",
@@ -193,6 +209,7 @@
     },
     {
         "id": 1615574371176,
+        "isproject": false,
         "day": 42,
         "image": "",
         "name": "useReducer Example",
@@ -205,6 +222,7 @@
     },
     {
         "id": 16,
+        "isproject": true,
         "day": 44,
         "image": "/screenshots/Screenshot-SidebarModal.png",
         "name": "Sidebar Modal",
@@ -217,6 +235,7 @@
     },
     {
         "id": 1615574773355,
+        "isproject": false,
         "day": 46,
         "image": "",
         "name": "Vertical Timeline",

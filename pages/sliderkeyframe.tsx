@@ -7,6 +7,7 @@ export default function DisplaySlider() {
         <div className="relative min-h-screen bg-gray-900">
             <div className="flex flex-col justify-center ">
                 <ProjectNavbarContainerSimple
+                    projectId={10}
                     projectName="Slider Keyframe"
                     textColor="text-gray-50"
                 />

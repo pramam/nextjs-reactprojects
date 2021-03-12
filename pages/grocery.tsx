@@ -5,6 +5,7 @@ export default function DisplayGrocery() {
     return (
         <div className="min-h-screen bg-gradient-to-tr from-yellow-500 via-red-600 to-yellow-500">
             <ProjectNavbarContainerSimple
+                projectId={13}
                 projectName="Grocery List"
                 textColor="text-gray-50"
             />

@@ -1,7 +1,39 @@
 import allprojectsData from '../data/allprojects.json'
 
-export function getProjectData(projectName) {
-    const index = allprojectsData.findIndex((elem) => elem.name === projectName)
+function findPreviousProjectUrl(index) {
+    let prevProjectUrl = "";
+    if (index === 0)
+        return prevProjectUrl;
+
+    let i = index;
+    while (i >= 1) {
+        if (allprojectsData[i - 1].isproject === true)
+            return allprojectsData[i - 1].url
+        i--;
+    }
+    return prevProjectUrl;
+}
+
+function findNextProjectUrl(index) {
+    let nextProjectUrl = "";
+    if (index === allprojectsData.length - 1)
+        return nextProjectUrl;
+
+    let i = index;
+    while (i <= allprojectsData.length - 2) {
+        // console.log(`findNextProjectUrl: i: ${i} len: ${allprojectsData.length}`)
+        if (allprojectsData[i + 1].isproject === true) {
+            // console.log(`findNextProjectUrl: Found! i+1: ${i + 1}`)
+            // console.log(`returning ${allprojectsData[i + 1].url}`)
+            return allprojectsData[i + 1].url
+        }
+        i++;
+        // console.log(`findNextProjectUrl: Not found! incremented i: ${i}`)
+    }
+    return nextProjectUrl;
+}
+export function getProjectData(projectId) {
+    const index = allprojectsData.findIndex((elem) => elem.id === projectId)
     let projectNum, prevProjectUrl, nextProjectUrl;
     if (index === -1) {
         projectNum = -1
@@ -9,21 +41,25 @@ export function getProjectData(projectName) {
             status: 'ERR: Not found'
         }
     } else
-        projectNum = index + 1;
+        projectNum = projectId;
 
-    if (index === 0)
-        prevProjectUrl = ""
-    else
-        prevProjectUrl = allprojectsData[index - 1].url
+    prevProjectUrl = findPreviousProjectUrl(index);
 
-    if (index === allprojectsData.length - 1)
-        nextProjectUrl = ""
-    else
-        nextProjectUrl = allprojectsData[index + 1].url
+    // if (index === 0)
+    //     prevProjectUrl = ""
+    // else
 
+    //     prevProjectUrl = allprojectsData[index - 1].url
+
+    // if (index === allprojectsData.length - 1)
+    //     nextProjectUrl = ""
+    // else
+    //     nextProjectUrl = allprojectsData[index + 1].url
+    nextProjectUrl = findNextProjectUrl(index)
     // console.log(`${projectName} has index ${index}`)
     return {
         status: 'OK',
+        isProject: allprojectsData[index].isproject,
         projectNum: projectNum,
         dayNum: allprojectsData[index].day,
         blogUrl: allprojectsData[index].blogurl,

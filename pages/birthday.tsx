@@ -7,6 +7,7 @@ export default function projects() {
     return (
         <div className="min-h-screen bg-pink-400">
             <ProjectNavbarContainerSimple
+                projectId={2}
                 projectName="Birthday Reminder"
                 textColor="text-gray-50"
             />

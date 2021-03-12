@@ -5,6 +5,7 @@ export default function projects() {
     return (
         <>
             <ProjectNavbarContainerSimple
+                projectId={1}
                 projectName="Bubble Wrap"
                 textColor="text-gray-900"
             />
