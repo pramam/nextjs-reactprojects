@@ -20,7 +20,7 @@ export default function VerticalTimeline() {
                             <>
                                 {index % 2 === 0 ?
                                     <LeftCard
-                                        index={index + 1}
+                                        index={obj.id}
                                         image={obj.image}
                                         title={obj.name}
                                         day={obj.day}
@@ -31,7 +31,7 @@ export default function VerticalTimeline() {
                                         project={project}
                                     /> :
                                     <RightCard
-                                        index={index + 1}
+                                        index={obj.id}
                                         image={obj.image}
                                         title={obj.name}
                                         day={obj.day}
