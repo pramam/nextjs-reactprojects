@@ -9,6 +9,13 @@ export default function ProjectCardOrig2({ demo, blog, inspiration, github }) {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
                 quaerat?
         </p>
+            <div className="max-w-4/6 sm:max-w-4/5">
+                <img
+                    className="w-full h-64 object-cover flex rounded-t-md justify-center items-center"
+                    src="/screenshots/Screenshot-Accordion.png"
+                    alt="Test photo"
+                />
+            </div>
             <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">index. title</div>
             <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
                 <a href="" className={demo ? text : textgray} >Demo</a>
