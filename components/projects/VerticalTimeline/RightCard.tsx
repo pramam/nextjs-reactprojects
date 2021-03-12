@@ -13,7 +13,7 @@ export interface IProps {
 
 export default function RightCard({ index, image, title, day, demo, blog, inspiration, github }: IProps) {
     return (
-        // {/* right */ }
+        // right
         < div className="flex md:contents" >
             <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
                 <div className="h-full w-14 flex items-center justify-center">
