@@ -1,6 +1,6 @@
 import ProjectCardOrig2 from './ProjectCardOrig2'
 
-export default function LeftCardOrig2({ demo, blog, inspiration, github }) {
+export default function LeftCardOrig2({ index, day, demo, blog, inspiration, github }) {
     const text = "text-sm text-gray-400 uppercase mr-3"
     const textgray = "text-sm text-gray-300 uppercase mr-3 cursor-not-allowed"
 
@@ -27,10 +27,16 @@ export default function LeftCardOrig2({ demo, blog, inspiration, github }) {
                 />
             </div>
             <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
-                <div className="h-full w-6 flex items-center justify-center">
-                    <div className="h-full w-1 bg-red-800 pointer-events-none" />
+                <div className="h-full w-14 flex items-center justify-center">
+                    <div className="h-full w-1 bg-gray-800 pointer-events-none" />
                 </div>
-                <div className="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-red-500 shadow" />
+                <div className="w-14 h-14 absolute top-1/2 -mt-3 rounded-full bg-gray-600 text-white text-center shadow">
+                    <a id={`project${index}`} />
+                    <div className="animate animate-wiggle flex flex-col">
+                        <p>Day</p>
+                        <p>16</p>
+                    </div>
+                </div>
             </div>
         </div>
 
