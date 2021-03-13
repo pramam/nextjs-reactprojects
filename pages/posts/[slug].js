@@ -10,6 +10,7 @@ import CustomLink from '../../components/blog/CustomLink'
 import Layout from '../../components/blog/Layout'
 import BlogHeader from '../../components/blog/BlogHeader'
 import BlogFooter from '../../components/blog/BlogFooter'
+import IntroNavbarBlog from '../../components/blog/IntroNavbarBlog'
 
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 
@@ -42,6 +43,7 @@ const components = {
 
 export default function PostPage({ source, frontMatter }) {
     const content = hydrate(source, { components })
+    console.log(`[slug.js]: ${frontMatter.title} ${frontMatter.intro ? `intro is true` : `false`}`)
     return (
         <Layout>
             <header>
@@ -52,6 +54,9 @@ export default function PostPage({ source, frontMatter }) {
                 </nav>
                 {frontMatter.id ?
                 <BlogHeader id={frontMatter.id} />
+                    : ''}
+                {frontMatter.intro ?
+                    <IntroNavbarBlog textColor="text-gray-900" />
                     : ''}
             </header>
             <div className="post-header">

@@ -10,9 +10,10 @@ export default function VerticalTimeline() {
             {/* component */}
             <div className="container">
                 <div className="flex flex-col md:grid md:grid-cols-9 mx-auto p-2 text-blue-50">
+                    <a id="introduction"></a>
                     <CenterTextCard 
                         title="Introduction"
-                        blog="" />
+                        blog="/posts/introduction" />
                     {allprojectsData.map((obj, index) => {
                         const project = obj.image ? true : false;
 
