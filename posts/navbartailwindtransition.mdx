@@ -4,10 +4,6 @@ id: 15
 keywords: [next.js, react, react hooks, dropdown menu, Transition, headlessui/react, tailwindcss, css]
 description: Build a navbar with a dropdown menu on mobiles using Tailwind's Transition react component
 ---
-[This](https://react-projects-11-navbar.netlify.app/) is what I am trying to replicate. 
-
-[This](/navbartailwindtransition) is what I created. The source code can be found [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar/15-NavbarTailwind)
-
 The [previous project](/navbarproject) used useRef and vanilla css to pass in the dynamic height of the dropdown. It did not use Tailwind's height classes. I wanted to find a better solution and headed over to their [@headlessui/react](https://www.npmjs.com/package/@headlessui/react) project which has a React component `<Transition/>` built exactly for this purpose.
 
 Here is what it looks like (scroll down on a large screen):
@@ -35,5 +31,3 @@ The code for this can be found on the [npm website](https://www.npmjs.com/packag
 To modify my code, I cleaned up all uses of useRef and useEffect and do not calculate the height of the drop down. Instead I pass the dropdown's CSS to the `<Transition/>` component to handle.
 
 The source code is [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar/15-NavbarTailwind).
-
-_Time to complete: 6 checkins, 1/2 a day_

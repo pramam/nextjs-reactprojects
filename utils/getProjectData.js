@@ -82,6 +82,8 @@ export function getProjectData(projectId, includeBlogs) {
         nextProjectUrl: nextProjectUrl,
         inspiration: allprojectsData[index].inspiration,
         timeline: allprojectsData[index].timeline,
-        about: allprojectsData[index].about
+        about: allprojectsData[index].about,
+        checkins: allprojectsData[index].checkins,
+        timetocomplete: allprojectsData[index].timetocomplete
     }
 }

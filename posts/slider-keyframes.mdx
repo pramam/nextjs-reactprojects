@@ -10,8 +10,6 @@ I found this blog post on making [a responsive CSS Slider](http://thenewcode.com
 
 I had to learn about keyframes and figure out how to extend Tailwindcss to use a sliding animation using keyframes.
 
-This is my [final result](/sliderkeyframe). Source code is [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/9-Slider/SliderKeyframe).
-
 <SliderKeyframeWrapper/>
  
 ## Advantages
@@ -22,5 +20,3 @@ I am coming off a finished Slider project and have that code to use. I landed up
 - One of the constraints of this solution is that all the images(or frames to be accurate) have to be the same size. Moreover,they have to be all in portrait or all in landscape mode.
 - Another constraint is that if you change the total number of images in the data set, you have to redo the animation calculations. It is simpler than the absolute positioning Slider, but it still requires a code change. Tailwindcss does not work very well with dynamic CSS, because `purgecss` does not preserve dyanamic css classes, so it isn't a good idea to make generic calculations and plug that in.
 - There is no pause button. I'm not sure how to interrupt a CSS animation.
-
-_Total time to implement this solution: 12 checkins, ~ 1/2 a day_

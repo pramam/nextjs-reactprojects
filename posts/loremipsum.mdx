@@ -4,11 +4,8 @@ id: 11
 keywords: [hipster ipsum, hipsum.co, lorem ipsum, react, react hooks, useState, next.js, array.slice]
 description: Generate paragraphs other than Lorem Ipsum
 ---
-[This](https://react-projects-8-lorem-ipsum-generator.netlify.app/) is what I am trying to replicate. 
 
-[This](/loremipsum) is what I created. The source code can be found [here](https://github.com/pramam/nextjs-reactprojects/tree/main/components/11-LoremIpsum)
-
-Here's what it looks like:
+Here's the React Component:
 
 <div className="min-h-screen bg-gradient-to-r from-gray-300 via-green-300 to-gray-300">
     <LoremIpsum />
@@ -47,5 +44,3 @@ Here is some code:
 ```
 
 The main lesson learned was that the `setCount` hook call is asynchronous and I cannot call it multiple times inside the if/else condition in the handleSubmit code. The workaround was to store the count in `amount`, manipulate it, and call `setCount` only once in the end.
-
-_Time to complete: 3 checkins, 4 hours_
