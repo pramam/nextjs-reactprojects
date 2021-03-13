@@ -7,6 +7,7 @@ export default function DisplayAccordion() {
             <ProjectNavbarContainerSimple
                 projectId={6}
                 textColor="text-white"
+                includeBlogs={false}
             />
             <Accordion />
         </div>
