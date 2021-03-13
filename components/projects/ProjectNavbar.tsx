@@ -1,5 +1,6 @@
 import SVGChevronLeft from '../svgicons/SVGChevronLeft'
 import SVGChevronRight from '../svgicons/SVGChevronRight'
+import Link from 'next/link'
 
 export interface IProps {
     projectNum: number,
@@ -30,13 +31,14 @@ export default function ProjectNavbar({
         <div className="flex justify-center mx-auto">
             <div className="mt-2 flex flex-col">
                 <div className="flex flex-row justify-center">
-
-                    <a href={prevProjectUrl}>
-                        <li className="flex flex-col"
-                        >
-                            <SVGChevronLeft css={prevProjectUrl ? chevronCss : chevronCssGray} />
-                        </li>
-                    </a>
+                    <Link href={prevProjectUrl}>
+                        <a>
+                            <li className="flex flex-col"
+                            >
+                                <SVGChevronLeft css={prevProjectUrl ? chevronCss : chevronCssGray} />
+                            </li>
+                        </a>
+                    </Link>
                     <a href={inspiration} className="ml-3 hidden sm:block">
                         <div className={inspiration ? text : textgray}>Inspiration</div>
                     </a>
@@ -44,26 +46,32 @@ export default function ProjectNavbar({
                         <div className={text}>Project {projectNum}&nbsp;</div>
                         <div className={text}>Day {dayNum}</div>
                     </li>
-                    <a href={blogUrl} className="mr-3 hidden sm:block">
-                        <div className={blogUrl ? text : textgray}>Blog</div>
-                    </a>
+                    <Link href={blogUrl}>
+                        <a className="mr-3 hidden sm:block">
+                            <div className={blogUrl ? text : textgray}>Blog</div>
+                        </a>
+                    </Link>
                     <a href={githubUrl} className="mr-3 hidden sm:block">
                         <div className={githubUrl ? text : textgray}>Github</div>
                     </a>
-                    <a href={nextProjectUrl}>
-                        <li className="flex flex-col">
-                            <SVGChevronRight css={nextProjectUrl ? chevronCss : chevronCssGray} />
-                        </li>
-                    </a>
+                    <Link href={nextProjectUrl}>
+                        <a>
+                            <li className="flex flex-col">
+                                <SVGChevronRight css={nextProjectUrl ? chevronCss : chevronCssGray} />
+                            </li>
+                        </a>
+                    </Link>
                 </div>
                 <div className="mt-2 flex flex-row justify-center sm:hidden">
                     <a href={inspiration} className="mr-3">
                         <div className={inspiration ? text : textgray}>Inspiration</div>
                     </a>
                     {/* <span className={`mr-2 mt-1.5 rounded-full h-1.5 w-1.5 flex-items-center justify-center bg-gray-50`}></span> */}
-                    <a href={blogUrl} className="mr-3">
-                        <div className={blogUrl ? text : textgray}>Blog</div>
-                    </a>
+                    <Link href={blogUrl}>
+                        <a className="mr-3">
+                            <div className={blogUrl ? text : textgray}>Blog</div>
+                        </a>
+                    </Link>
                     {/* <span className={`mr-2 mt-1.5 rounded-full h-1.5 w-1.5 flex-items-center justify-center bg-gray-50`}></span> */}
                     <a href={githubUrl}>
                         <div className={githubUrl ? text : textgray}>Github</div>

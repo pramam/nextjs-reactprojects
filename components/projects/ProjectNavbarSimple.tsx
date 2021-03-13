@@ -1,5 +1,6 @@
 import SVGChevronLeft from '../svgicons/SVGChevronLeft'
 import SVGChevronRight from '../svgicons/SVGChevronRight'
+import Link from 'next/link'
 
 export interface IProps {
     projectNum: number,
@@ -39,20 +40,26 @@ export default function ProjectNavbarSimple({
             <div className="mt-2 flex flex-col">
                 <div className="flex flex-row justify-center">
 
-                    <a href={prevProjectUrl}>
-                        <li className="flex flex-col"
-                        >
-                            <SVGChevronLeft css={prevProjectUrl ? chevronCss : chevronCssGray} />
-                        </li>
-                    </a>
+                    <Link href={prevProjectUrl}>
+                        <a>
+                            <li className="flex flex-col"
+                            >
+                                <SVGChevronLeft css={prevProjectUrl ? chevronCss : chevronCssGray} />
+                            </li>
+                        </a>
+                    </Link>
                     {/* #TIMELINE  */}
                     {timeline === "/" ?
-                        <a href={`/#project${projectNum}`} className="ml-3">
-                            <div className={timeline ? text : textgray}>Timeline</div>
-                        </a> :
-                        <a href={`${timeline}/#project${projectNum}`} className="ml-3">
-                            <div className={timeline ? text : textgray}>Timeline</div>
-                        </a>
+                        <Link href={`/#project${projectNum}`}>
+                            <a className="ml-3">
+                                <div className={timeline ? text : textgray}>Timeline</div>
+                            </a>
+                        </Link> :
+                        <Link href={`${timeline}/#project${projectNum}`}>
+                            <a className="ml-3">
+                                <div className={timeline ? text : textgray}>Timeline</div>
+                            </a>
+                        </Link>
                     }
                     <li className="flex ml-3 mr-3 no-underline font-semibold">
                         {!isProject ?
@@ -61,17 +68,21 @@ export default function ProjectNavbarSimple({
                         <div className={text}>Project {projectNum}&nbsp;</div>
                         }
                     </li>
-                    <a href={about} className="mr-3">
-                        <div className={about ? text : textgray}>About</div>
-                    </a>
+                    <Link href={about}>
+                        <a className="mr-3">
+                            <div className={about ? text : textgray}>About</div>
+                        </a>
+                    </Link>
                     {/* <a href={githubUrl} className="mr-3 hidden sm:block">
                         <div className={githubUrl ? text : textgray}>Github</div>
                     </a> */}
-                    <a href={nextProjectUrl}>
-                        <li className="flex flex-col">
-                            <SVGChevronRight css={nextProjectUrl ? chevronCss : chevronCssGray} />
-                        </li>
-                    </a>
+                    <Link href={nextProjectUrl}>
+                        <a>
+                            <li className="flex flex-col">
+                                <SVGChevronRight css={nextProjectUrl ? chevronCss : chevronCssGray} />
+                            </li>
+                        </a>
+                    </Link>
                 </div>
                 {/* <div className="mt-2 flex flex-row justify-center sm:hidden">
                     <a href={inspiration} className="mr-3">
