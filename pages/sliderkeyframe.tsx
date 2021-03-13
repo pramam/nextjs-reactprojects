@@ -9,6 +9,7 @@ export default function DisplaySlider() {
                 <ProjectNavbarContainerSimple
                     projectId={10}
                     textColor="text-gray-50"
+                    includeBlogs={false}
                 />
                 <SliderKeyframe slides={quoteDataGeneric} />
                 <footer className="flex justify-center text-center">

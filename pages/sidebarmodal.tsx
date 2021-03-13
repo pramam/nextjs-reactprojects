@@ -7,6 +7,7 @@ export default function DisplaySidebarModal() {
             <ProjectNavbarContainerSimple
                 projectId={16}
                 textColor="text-gray-900"
+                includeBlogs={false}
             />
             <SidebarModal />
         </div>

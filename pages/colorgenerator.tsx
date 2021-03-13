@@ -7,6 +7,7 @@ export default function DisplayColorGenerator() {
             <ProjectNavbarContainerSimple
                 projectId={12}
                 textColor="text-gray-900"
+                includeBlogs={false}
             />
             <ColorGen />
         </div>

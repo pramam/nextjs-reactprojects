@@ -7,6 +7,7 @@ export default function DisplayMenu() {
             <ProjectNavbarContainerSimple
                 projectId={7}
                 textColor="text-gray-900"
+                includeBlogs={false}
             />
             <Menu />
         </div>

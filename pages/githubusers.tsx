@@ -7,6 +7,7 @@ export default function githublanding() {
             <ProjectNavbarContainerSimple
                 projectId={3}
                 textColor="text-gray-500"
+                includeBlogs={false}
             />
         <GithubUsers />
         </div>

@@ -9,6 +9,7 @@ export default function projects() {
             <ProjectNavbarContainerSimple
                 projectId={2}
                 textColor="text-gray-50"
+                includeBlogs={false}
             />
         < AllBirthdays birthday_array={birthdayData} />
         </div>

@@ -7,6 +7,7 @@ export default function NavbarProject() {
             <ProjectNavbarContainerSimple
                 projectId={14}
                 textColor="text-gray-900"
+                includeBlogs={false}
             />
             <Navbar />
         </div>

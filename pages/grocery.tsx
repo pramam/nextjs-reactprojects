@@ -7,6 +7,7 @@ export default function DisplayGrocery() {
             <ProjectNavbarContainerSimple
                 projectId={13}
                 textColor="text-gray-50"
+                includeBlogs={false}
             />
             <GroceryList />
         </div>

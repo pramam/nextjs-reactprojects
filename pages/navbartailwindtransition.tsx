@@ -7,6 +7,7 @@ export default function NavbarTailwindTransition() {
             <ProjectNavbarContainerSimple
                 projectId={15}
                 textColor="text-gray-900"
+                includeBlogs={false}
             />
             <NavbarTailwind />
         </div>

@@ -7,6 +7,7 @@ export default function DisplayLoremIpsum() {
             <ProjectNavbarContainerSimple
                 projectId={11}
                 textColor="text-gray-900"
+                includeBlogs={false}
             />
             <LoremIpsum />
         </div>

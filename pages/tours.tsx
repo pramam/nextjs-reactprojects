@@ -7,6 +7,7 @@ export default function ListTours() {
             <ProjectNavbarContainerSimple
                 projectId={4}
                 textColor="text-gray-900"
+                includeBlogs={false}
             />
             <Tours />
         </div>

@@ -7,6 +7,7 @@ export default function projects() {
             <ProjectNavbarContainerSimple
                 projectId={1}
                 textColor="text-gray-900"
+                includeBlogs={false}
             />
         <BubbleWrap rows={8} cols={10} />
         </>

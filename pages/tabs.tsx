@@ -7,6 +7,7 @@ export default function DisplayTabs() {
             <ProjectNavbarContainerSimple
                 projectId={8}
                 textColor="text-gray-900"
+                includeBlogs={false}
             />
             <Tabs />
         </div>

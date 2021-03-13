@@ -7,6 +7,7 @@ export default function ShowReviews() {
             <ProjectNavbarContainerSimple
                 projectId={5}
                 textColor="text-gray-900"
+                includeBlogs={false}
             />
             <Reviews />
         </div>)
