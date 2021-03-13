@@ -9,7 +9,7 @@
         "blogurl": "/posts/bubblewrap",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/0-Bubbles",
         "inspiration": "https://bubble-wrap.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 5,
         "timetocomplete": "4 days"
@@ -24,7 +24,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/1-Birthday",
         "inspiration": "https://react-projects-1-birthday-reminder.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 8,
         "timetocomplete": "2 days"
@@ -39,7 +39,7 @@
         "blogurl": "/posts/githubusers",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/2-Github",
         "inspiration": "https://youtu.be/4UZrsTqkcW4?t=19168",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 8,
         "timetocomplete": "2.5 days"
@@ -54,7 +54,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/3-Tours",
         "inspiration": "https://react-projects-2-tours.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 8,
         "timetocomplete": "2 days"
@@ -69,7 +69,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/4-Reviews",
         "inspiration": "https://react-projects-3-reviews.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 10,
         "timetocomplete": "3 days"
@@ -84,7 +84,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/5-Accordion",
         "inspiration": "https://react-projects-4-accordion.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 9,
         "timetocomplete": "4 days"
@@ -99,7 +99,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/6-Menu",
         "inspiration": "https://react-projects-5-menu.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 12,
         "timetocomplete": "2.5 days"
@@ -114,7 +114,7 @@
         "blogurl": "/posts/tabs",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/8-Tabs",
         "inspiration": "https://react-projects-6-tabs.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 12,
         "timetocomplete": "2 days"
@@ -129,7 +129,7 @@
         "blogurl": "/posts/slider-project",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/9-Slider",
         "inspiration": "https://react-projects-7-slider.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 67,
         "timetocomplete": "6 long days"
@@ -144,7 +144,7 @@
         "blogurl": "/posts/slider-keyframes",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/9-Slider/SliderKeyframe",
         "inspiration": "http://thenewcode.com/627/Make-A-Responsive-CSS3-Image-Slider",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 11,
         "timetocomplete": "1 day"
@@ -159,7 +159,7 @@
         "blogurl": "/posts/setting-up-blog",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects",
         "inspiration": "https://github.com/vercel/next.js/tree/canary/examples/with-mdx-remote",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 5,
         "timetocomplete": "3 days"
@@ -174,7 +174,7 @@
         "blogurl": "/posts/loremipsum",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/11-LoremIpsum",
         "inspiration": "https://react-projects-8-lorem-ipsum-generator.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 3,
         "timetocomplete": "4 hours"
@@ -189,7 +189,7 @@
         "blogurl": "/posts/color-generator",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/12-ColorGenerator",
         "inspiration": "https://react-projects-9-color-generator.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 7,
         "timetocomplete": "2 days"
@@ -204,7 +204,7 @@
         "blogurl": "/posts/grocerylist",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/13-GroceryList",
         "inspiration": "https://react-projects-10-grocery-bud.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 9,
         "timetocomplete": "1 day"
@@ -219,7 +219,7 @@
         "blogurl": "/posts/navbarproject",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar",
         "inspiration": "https://react-projects-11-navbar.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 12,
         "timetocomplete": "2.5 days"
@@ -234,7 +234,7 @@
         "blogurl": "/posts/navbartailwindtransition",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/14-Navbar/15-NavbarTailwind",
         "inspiration": "https://react-projects-11-navbar.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 6,
         "timetocomplete": "1/2 day"
@@ -249,7 +249,7 @@
         "blogurl": "/posts/usereducerexample",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/examplecode/UseReducerExample",
         "inspiration": "https://www.youtube.com/watch?v=4UZrsTqkcW4&t=26992s",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 10,
         "timetocomplete": "2 days"
@@ -264,7 +264,7 @@
         "blogurl": "/posts/sidebarmodal",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/16-SidebarModal",
         "inspiration": "https://react-projects-12-sidebar-modal.netlify.app/",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 17,
         "timetocomplete": "1.5 days"
@@ -279,7 +279,7 @@
         "blogurl": "/posts/verticaltimeline",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/projects/VerticalTimeline",
         "inspiration": "https://tailwindcomponents.com/component/vertical-timeline",
-        "timeline": "/general/verticaltimeline",
+        "timeline": "/",
         "about": "/general/about",
         "checkins": 28,
         "timetocomplete": "1.5 days"

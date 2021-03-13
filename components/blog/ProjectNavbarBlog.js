@@ -28,9 +28,15 @@ export default function ProjectNavbarBlog({ projectId, textColor }) {
                             <SVGChevronLeft css={prevProjectUrl ? chevronCss : chevronCssGray} />
                         </li>
                     </a> */}
-                    <a href={`${timeline}/#project${projectNum}`} className="ml-3">
-                        <div className={timeline ? text : textgray}>Timeline</div>
-                    </a>
+                    {/* #TIMELINE  */}
+                    {timeline === "/" ?
+                        <a href={`/#project${projectNum}`} className="ml-3">
+                            <div className={timeline ? text : textgray}>Timeline</div>
+                        </a> :
+                        <a href={`${timeline}/#project${projectNum}`} className="ml-3">
+                            <div className={timeline ? text : textgray}>Timeline</div>
+                        </a>
+                    }
                     <li className="flex ml-3 mr-3 no-underline font-semibold">
                         {isProject ?
                             <div className={text}>Blog for Project {projectNum}</div>

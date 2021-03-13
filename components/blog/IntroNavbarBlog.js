@@ -15,10 +15,16 @@ export default function IntroNavbarBlog({ textColor }) {
         <div className="flex justify-center mx-auto">
             <div className="mt-2 flex flex-col">
                 <div className="flex flex-row justify-center">
-
-                    <a href={`${timeline}/#introduction`} className="ml-3">
-                        <div className={timeline ? text : textgray}>Timeline</div>
-                    </a>
+                    {/* #TIMELINE */}
+                    {timeline === '/' ?
+                        <a href={`/#introduction`} className="ml-3">
+                            <div className={timeline ? text : textgray}>Timeline</div>
+                        </a>
+                        :
+                        <a href={`${timeline}/#introduction`} className="ml-3">
+                            <div className={timeline ? text : textgray}>Timeline</div>
+                        </a>
+                    }
                     <li className="flex ml-3 mr-3 no-underline font-semibold">
                         <div className={text}>Blog</div>
                     </li>
