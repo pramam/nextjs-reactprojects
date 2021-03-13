@@ -10,6 +10,7 @@ import CustomLink from '../../components/blog/CustomLink'
 import Layout from '../../components/blog/Layout'
 import BlogHeader from '../../components/blog/BlogHeader'
 import BlogFooter from '../../components/blog/BlogFooter'
+
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 
 // Custom components/renderers to pass to MDX.
@@ -45,17 +46,14 @@ export default function PostPage({ source, frontMatter }) {
         <Layout>
             <header>
                 <nav>
-                    <Link href="/blog">
+                    {/* <Link href="/blog">
                         <a>👈 Go back to Blog home</a>
-                    </Link>
+                    </Link> */}
                 </nav>
                 <BlogHeader id={frontMatter.id} />
             </header>
             <div className="post-header">
                 <h1>{frontMatter.title}</h1>
-                {frontMatter.date && (
-                    <h4>{frontMatter.date}</h4>
-                )}
                 {frontMatter.description && (
                     <p className="description">{frontMatter.description}</p>
                 )}

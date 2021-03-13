@@ -1,5 +1,6 @@
 import allprojectsData from '../../data/allprojects.json'
 import ProjectNavbarBlog from './ProjectNavbarBlog'
+import InspirationNavbarBlog from './InspirationNavbarBlog'
 
 export default function BlogHeader({ id }) {
     const entry = allprojectsData.find(item => item.id === id)
@@ -9,8 +10,10 @@ export default function BlogHeader({ id }) {
                 projectId={id}
                 textColor="text-gray-900"
             />
-
-            Project {id} has title {entry.name}
+            <InspirationNavbarBlog
+                projectId={id}
+                textColor="text-gray-900"
+            />
         </div>
     )
 }

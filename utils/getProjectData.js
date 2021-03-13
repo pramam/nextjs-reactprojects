@@ -75,6 +75,7 @@ export function getProjectData(projectId, includeBlogs) {
         isProject: allprojectsData[index].isproject,
         projectNum: projectNum,
         dayNum: allprojectsData[index].day,
+        url: allprojectsData[index].url,
         blogUrl: allprojectsData[index].blogurl,
         githubUrl: allprojectsData[index].githuburl,
         prevProjectUrl: prevProjectUrl,
