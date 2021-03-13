@@ -21,7 +21,7 @@
         "image": "/screenshots/Screenshot-Birthdays.png",
         "name": "Birthday Reminder",
         "url": "/birthday",
-        "blogurl": "",
+        "blogurl": "/posts/birthday",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/1-Birthday",
         "inspiration": "https://react-projects-1-birthday-reminder.netlify.app/",
         "timeline": "/",

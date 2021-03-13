@@ -1,0 +1,45 @@
+---
+title: Birthdays
+id: 2
+keywords: [React, useState, button onClick handler,TailwindCSS, react hooks]
+description: A simple project with useState and a button to clear all state
+---
+Here's the React Component:
+
+<div className="min-h-screen bg-pink-400">
+    <AllBirthdaysWrapper/>
+</div>
+
+
+## useState and button click handler 
+
+This was a simple project to get comfortable with `useState` and button click handlers.
+
+```typescript
+
+const [birthdays, setBirthdays] = useState(birthday_array)
+    const clickHandler = () => {
+        setBirthdays([]);
+    }
+    // ...
+    // The button click handler:
+    <button
+        className="justify-center px-8 sm:px-16 md:px-24 rounded-md bg-pink-400 text-white py-2 focus:outline-none border border-transparent"
+        type="button"
+        onClick={clickHandler}>
+        Clear all
+    </button>
+```
+
+
+## Tip to center CSS on a page
+
+Specify `flex justify-center` as a wrapper, and the width within it:
+
+```tsx
+<div className="flex justify-center">
+    <div className="mt-10 sm:mt-20 sm:w-2/5 lg:w-1/4 2xl:w-1/5 bg-gray-50 rounded-md shadow-2xl">
+    {/* The card details here */}
+    </div>
+</div>
+```            

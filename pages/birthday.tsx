@@ -2,7 +2,7 @@ import birthdayData from '../components/1-Birthday/birthdaydata.json'
 import AllBirthdays from '../components/1-Birthday/AllBirthdays'
 import ProjectNavbarContainerSimple from '../components/projects/ProjectNavbarContainerSimple'
 
-export default function projects() {
+export default function DisplayBirthdays() {
 
     return (
         <div className="min-h-screen bg-pink-400">
