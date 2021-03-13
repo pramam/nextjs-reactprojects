@@ -15,20 +15,13 @@ export default function ProjectNavbarContainerSimple({ projectId, textColor, inc
     const { status, isProject, projectNum, prevProjectUrl, nextProjectUrl, timeline, about } = projectData;
     if (status != "OK")
         console.log(`${projectId}:  status: ${status}`)
-    // console.log(`projectNum: ${projectNum},dayNum: ${dayNum}`)
-    // console.log(`blogUrl: ${blogUrl}`)
-    // console.log(`prevProjectUrl: ${prevProjectUrl}; nextProjectUrl: ${nextProjectUrl}`)
-
+    
     return (
         <ProjectNavbarSimple projectNum={projectNum}
-            // dayNum={dayNum}
-            // blogUrl={blogUrl}
-            // githubUrl={githubUrl}
             prevProjectUrl={prevProjectUrl}
             nextProjectUrl={nextProjectUrl}
             timeline={timeline}
             about={about}
-            // inspiration={inspiration}
             textColor={textColor}
             isProject={isProject}
             includeBlogs={includeBlogs}

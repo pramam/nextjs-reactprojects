@@ -66,13 +66,11 @@ export default function ProjectNavbar({
                     <a href={inspiration} className="mr-3">
                         <div className={inspiration ? text : textgray}>Inspiration</div>
                     </a>
-                    {/* <span className={`mr-2 mt-1.5 rounded-full h-1.5 w-1.5 flex-items-center justify-center bg-gray-50`}></span> */}
                     <Link href={blogUrl}>
                         <a className="mr-3">
                             <div className={blogUrl ? text : textgray}>Blog</div>
                         </a>
                     </Link>
-                    {/* <span className={`mr-2 mt-1.5 rounded-full h-1.5 w-1.5 flex-items-center justify-center bg-gray-50`}></span> */}
                     <a href={githubUrl}>
                         <div className={githubUrl ? text : textgray}>Github</div>
                     </a>
