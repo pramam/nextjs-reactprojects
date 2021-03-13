@@ -13,7 +13,8 @@ export default function VerticalTimeline() {
                     <a id="introduction"></a>
                     <CenterTextCard 
                         title="Introduction"
-                        blog="/posts/introduction" />
+                        blog="/posts/introduction"
+                        about="/general/about" />
                     {allprojectsData.map((obj, index) => {
                         const project = obj.image ? true : false;
 
