@@ -32,6 +32,7 @@ const components = {
     GithubUsers: dynamic(() => import('../../components/2-Github/GithubUsers')),
     GroceryList: dynamic(() => import('../../components/13-GroceryList/GroceryList')),
     LoremIpsum: dynamic(() => import('../../components/11-LoremIpsum/LoremIpsum')),
+    Menu: dynamic(() => import('../../components/6-Menu/Menu')),
     Navbar: dynamic(() => import('../../components/14-Navbar/Navbar')),
     NavbarTailwind: dynamic(() => import('../../components/14-Navbar/15-NavbarTailwind/NavbarTailwind')),
     Reviews: dynamic(() => import('../../components/4-Reviews/Reviews')),

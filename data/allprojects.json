@@ -96,7 +96,7 @@
         "image": "/screenshots/Screenshot-Menu.png",
         "name": "Menu",
         "url": "/menu",
-        "blogurl": "",
+        "blogurl": "/posts/menu",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/6-Menu",
         "inspiration": "https://react-projects-5-menu.netlify.app/",
         "timeline": "/",
