@@ -25,6 +25,7 @@ const components = {
     // See the notes in README.md for more details.
     TestComponent: dynamic(() => import('../../components/blog/TestComponent')),
     Head,
+    Accordion: dynamic(() => import('../../components/5-Accordion/Accordion')),
     AllBirthdaysWrapper: dynamic(() => import('../../components/1-Birthday/AllBirthdaysWrapper')),
     BubbleWrap: dynamic(() => import('../../components/0-Bubbles/BubbleWrap')),
     ColorGen: dynamic(() => import('../../components/12-ColorGenerator/ColorGen')),

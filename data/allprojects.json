@@ -81,7 +81,7 @@
         "image": "/screenshots/Screenshot-Accordion.png",
         "name": "Accordion",
         "url": "/accordion",
-        "blogurl": "",
+        "blogurl": "/posts/accordion",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/5-Accordion",
         "inspiration": "https://react-projects-4-accordion.netlify.app/",
         "timeline": "/",

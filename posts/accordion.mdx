@@ -1,0 +1,21 @@
+---
+title: Accordioin
+id: 6
+keywords: [next.js, javascript, react, react hooks, useState, accordion, flex]
+description: An accordion implemented using React Hooks without CSS calculations
+---
+Here's the React Component:
+
+<div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500">
+    <Accordion />
+</div>
+
+I was advised by a collegue to use flex-box instead of grid to allow the browser to calculate the best fit, so this 
+implementation uses flex-box.
+
+## useState only React Hook used
+In a previous [Tours project blog](/posts/tours)[(source code)](https://github.com/pramam/nextjs-reactprojects/blob/22f7faa57adc0bdf36f4ae5b8146410111967a8d/components/3-Tours/Tour.tsx#L16) I mentioned that I used useState and useEffect to implement the 'accordion' like functionality for that project. In that project, the `text size` was updated to display additional information 
+and hence useEffect was required. Well, I've since learned that
+when a useState state variable changes, a re-render automatically happens, so in this project I just had to toggle the state variable to display the accordion functionality and I skipped using useEffect for this project.
+
+This is getting to be real fun and I cannot stop coding! :) 
