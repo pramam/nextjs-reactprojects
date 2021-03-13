@@ -1,5 +1,5 @@
 import { getProjectData } from '../../utils/getProjectData'
-
+import Link from 'next/link'
 
 // Display <TIMELINE> BLOG <ABOUT> without left and right arrows on Blog post
 
@@ -28,14 +28,18 @@ export default function ProjectNavbarBlog({ projectId, textColor }) {
                             <SVGChevronLeft css={prevProjectUrl ? chevronCss : chevronCssGray} />
                         </li>
                     </a> */}
-                    {/* #TIMELINE  */}
+                    {/* #TIMELINE*/}
                     {timeline === "/" ?
-                        <a href={`/#project${projectNum}`} className="ml-3">
-                            <div className={timeline ? text : textgray}>Timeline</div>
-                        </a> :
-                        <a href={`${timeline}/#project${projectNum}`} className="ml-3">
+                        <Link href={`/#project${projectNum}`}>
+                            <a className="ml-3">
+                                <div className={timeline ? text : textgray}>Timeline</div>
+                            </a>
+                        </Link> :
+                        <Link href={`${timeline}/#project${projectNum}`}>
+                            <a className="ml-3">
                             <div className={timeline ? text : textgray}>Timeline</div>
                         </a>
+                        </Link>
                     }
                     <li className="flex ml-3 mr-3 no-underline font-semibold">
                         {isProject ?
@@ -44,9 +48,11 @@ export default function ProjectNavbarBlog({ projectId, textColor }) {
                             <div className={text}>Blog</div>
                         }
                     </li>
-                    <a href={about} className="mr-3">
-                        <div className={about ? text : textgray}>About</div>
-                    </a>
+                    <Link href={about}>
+                        <a className="mr-3">
+                            <div className={about ? text : textgray}>About</div>
+                        </a>
+                    </Link>
                     {/* <a href={nextProjectUrl}>
                         <li className="flex flex-col">
                             <SVGChevronRight css={nextProjectUrl ? chevronCss : chevronCssGray} />

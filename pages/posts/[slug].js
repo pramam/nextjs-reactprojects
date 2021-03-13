@@ -45,7 +45,7 @@ const components = {
 
 export default function PostPage({ source, frontMatter }) {
     const content = hydrate(source, { components })
-    console.log(`[slug.js]: ${frontMatter.title} ${frontMatter.intro ? `intro is true` : `false`}`)
+    // console.log(`[slug.js]: ${frontMatter.title} ${frontMatter.intro ? `intro is true` : `false`}`)
     return (
         <Layout>
             <header>
