@@ -7,7 +7,10 @@ export default function InspirationNavbarBlog({ projectId, textColor }) {
     const projectData = getProjectData(projectId, true)
     const { status, isProject, url, inspiration, githubUrl, projectNum, timeline, about } = projectData;
     if (status != "OK")
+    {
         console.log(`${projectId}:  status: ${status}`)
+        return <>ProjectId {projectId} not found </>
+    }
 
     const text = `text-sm uppercase text-center ${textColor}`
     const textgray = "text-sm uppercase text-gray-500 cursor-not-allowed text-center"

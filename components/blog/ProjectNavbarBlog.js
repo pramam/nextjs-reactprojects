@@ -7,8 +7,11 @@ export default function ProjectNavbarBlog({ projectId, textColor }) {
     const projectData = getProjectData(projectId, true)
     const { status, isProject, projectNum, timeline, about } = projectData;
     if (status != "OK")
+    {
         console.log(`${projectId}:  status: ${status}`)
-
+        return <>ProjectId {projectId} not found </>
+    }
+        
     const text = `text-sm uppercase text-center ${textColor}`
     const textgray = "text-sm uppercase text-gray-500 cursor-not-allowed text-center"
     // const chevronCss = `mt-1 h-4 w-4 text-center ${textColor}`
