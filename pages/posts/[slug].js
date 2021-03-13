@@ -49,6 +49,7 @@ export default function PostPage({ source, frontMatter }) {
                         <a>👈 Go back to Blog home</a>
                     </Link>
                 </nav>
+                <BlogHeader id={frontMatter.id} />
             </header>
             <div className="post-header">
                 <h1>{frontMatter.title}</h1>
@@ -60,7 +61,6 @@ export default function PostPage({ source, frontMatter }) {
                 )}
             </div>
             <main>
-                <BlogHeader id={frontMatter.id} />
                 {content}
                 <BlogFooter id={frontMatter.id} />
             </main>

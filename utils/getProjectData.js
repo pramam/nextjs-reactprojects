@@ -1,5 +1,22 @@
 import allprojectsData from '../data/allprojects.json'
 
+function findPreviousUrl(index) {
+    let prevUrl = ""
+    if (index === 0)
+        prevUrl = ""
+    else
+        prevUrl = allprojectsData[index - 1].url
+    return prevUrl
+}
+function findNextUrl(index) {
+    let nextUrl = ""
+    if (index === allprojectsData.length - 1)
+        nextUrl = ""
+    else
+        nextUrl = allprojectsData[index + 1].url
+    return nextUrl
+}
+
 function findPreviousProjectUrl(index) {
     let prevProjectUrl = "";
     if (index === 0)
@@ -32,7 +49,8 @@ function findNextProjectUrl(index) {
     }
     return nextProjectUrl;
 }
-export function getProjectData(projectId) {
+
+export function getProjectData(projectId, includeBlogs) {
     const index = allprojectsData.findIndex((elem) => elem.id === projectId)
     let projectNum, prevProjectUrl, nextProjectUrl;
     if (index === -1) {
@@ -43,20 +61,15 @@ export function getProjectData(projectId) {
     } else
         projectNum = projectId;
 
-    prevProjectUrl = findPreviousProjectUrl(index);
+    if (includeBlogs) {
+        prevProjectUrl = findPreviousUrl(index);
+        nextProjectUrl = findNextUrl(index)
+    }
+    else {
+        prevProjectUrl = findPreviousProjectUrl(index);
+        nextProjectUrl = findNextProjectUrl(index)
+    }
 
-    // if (index === 0)
-    //     prevProjectUrl = ""
-    // else
-
-    //     prevProjectUrl = allprojectsData[index - 1].url
-
-    // if (index === allprojectsData.length - 1)
-    //     nextProjectUrl = ""
-    // else
-    //     nextProjectUrl = allprojectsData[index + 1].url
-    nextProjectUrl = findNextProjectUrl(index)
-    // console.log(`${projectName} has index ${index}`)
     return {
         status: 'OK',
         isProject: allprojectsData[index].isproject,

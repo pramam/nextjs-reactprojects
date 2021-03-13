@@ -11,7 +11,9 @@ export interface IProps {
     // inspiration: string,
     about: string,
     timeline: string,
-    textColor: string
+    textColor: string,
+    isProject: boolean
+    includeBlogs: boolean
 }
 
 export default function ProjectNavbarSimple({
@@ -24,7 +26,9 @@ export default function ProjectNavbarSimple({
     // inspiration,
     about,
     timeline,
-    textColor }: IProps) {
+    textColor,
+    isProject,
+    includeBlogs }: IProps) {
     const text = `text-sm uppercase text-center ${textColor}`
     const textgray = "text-sm uppercase text-gray-500 cursor-not-allowed text-center"
     const chevronCss = `mt-1 h-4 w-4 text-center ${textColor}`
@@ -45,8 +49,11 @@ export default function ProjectNavbarSimple({
                         <div className={timeline ? text : textgray}>Timeline</div>
                     </a>
                     <li className="flex ml-3 mr-3 no-underline font-semibold">
+                        {!isProject ?
+                            <div className={text}>{includeBlogs ? `Blog` : ``}</div>
+                            :
                         <div className={text}>Project {projectNum}&nbsp;</div>
-                        {/* <div className={text}>Day {dayNum}</div> */}
+                        }
                     </li>
                     <a href={about} className="mr-3">
                         <div className={about ? text : textgray}>About</div>

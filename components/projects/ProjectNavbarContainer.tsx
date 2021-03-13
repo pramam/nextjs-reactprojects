@@ -9,7 +9,7 @@ export interface IProps {
 }
 
 export default function ProjectNavbarContainer({ projectName, textColor }: IProps) {
-    const projectData = getProjectData(projectName)
+    const projectData = getProjectData(projectName, false)
     const { status, projectNum, dayNum, blogUrl, githubUrl, prevProjectUrl, nextProjectUrl, inspiration } = projectData;
     if (status != "OK")
         console.log(`${projectName}:  status: ${status}`)

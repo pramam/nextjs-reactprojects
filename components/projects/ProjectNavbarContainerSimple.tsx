@@ -6,12 +6,13 @@ import ProjectNavbarSimple from './ProjectNavbarSimple'
 export interface IProps {
     projectId: number
     textColor: string
+    includeBlogs: boolean
 }
 
 // projectId is from one source of truth: /data/allprojects.json
-export default function ProjectNavbarContainerSimple({ projectId, textColor }: IProps) {
-    const projectData = getProjectData(projectId)
-    const { status, projectNum, prevProjectUrl, nextProjectUrl, timeline, about } = projectData;
+export default function ProjectNavbarContainerSimple({ projectId, textColor, includeBlogs }: IProps) {
+    const projectData = getProjectData(projectId, includeBlogs)
+    const { status, isProject, projectNum, prevProjectUrl, nextProjectUrl, timeline, about } = projectData;
     if (status != "OK")
         console.log(`${projectId}:  status: ${status}`)
     // console.log(`projectNum: ${projectNum},dayNum: ${dayNum}`)
@@ -29,6 +30,8 @@ export default function ProjectNavbarContainerSimple({ projectId, textColor }: I
             about={about}
             // inspiration={inspiration}
             textColor={textColor}
+            isProject={isProject}
+            includeBlogs={includeBlogs}
         />
     )
 }
