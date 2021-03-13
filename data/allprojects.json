@@ -66,7 +66,7 @@
         "image": "/screenshots/Screenshot-Reviews.png",
         "name": "Reviews",
         "url": "/reviews",
-        "blogurl": "",
+        "blogurl": "/posts/reviews",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/4-Reviews",
         "inspiration": "https://react-projects-3-reviews.netlify.app/",
         "timeline": "/",

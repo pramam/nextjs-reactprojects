@@ -1,0 +1,41 @@
+---
+title: Reviews
+id: 5
+keywords: [react, react hooks, useEffect, useState, random, slide image, z-index, quote, quote icon]
+description: A progression of fancy images with Next and Previous arrows and a Surprise Me button
+---
+Here's the React Component:
+
+<Reviews/>
+
+## useEffect with a dependency on `current` slide
+This slide solution uses useEffect with a dependency on the current slide# to refresh the page when an arrow is clicked. It is a surprisingly easy way to implement this solution. 
+
+```typescript
+    const [current, setCurrent] = useState(reviewData.length - 1);
+
+    const clickPrevHandler = () => {
+        current === 0 ?
+            setCurrent(reviewData.length - 1) : setCurrent(prevCurrent => prevCurrent - 1)
+    }
+
+    const clickNextHandler = () => {
+        current === reviewData.length - 1 ?
+            setCurrent(0) : setCurrent(prevCurrent => prevCurrent + 1)
+    }
+
+    useEffect(() => {
+        // Every time current changes, re-render
+    }, [current])
+```
+
+## Implementing a fancy image with an icon
+It was fun to implement the "FancyImage"[(source code)](https://github.com/pramam/nextjs-reactprojects/blob/main/components/4-Reviews/FancyImage.tsx) which shows the larger circle at the back and a smaller circle with front with a quote on it. The quote is created by placing a quote icon on the smaller circle.
+The implementation uses z-index and translate to implement this. 
+
+## Changing background colors for the images
+The inspiration project had only one color in the background for all the images. I decided to make my implementation more colorful by having different color backgrounds for the different images. I put the bg-color in the data.json file. TailwindCSS doesn't play nice with dynamic CSS read from a file. PurgeCSS purges any utility classes
+not found in the source code, so this solution didn't initially work for production builds(they worked for dev builds).I hacked it by putting a comment with the text colors in the source code, so PurgeCSS wouldn't strip them out
+for production builds.
+
+In general, to solve this, it is best not to put TailwindCSS utility classes in a data file. 
