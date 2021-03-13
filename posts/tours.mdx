@@ -1,0 +1,86 @@
+---
+title: Tours
+id: 4
+keywords: [React, useState, useEffect, button onClick handler,TailwindCSS, object-cover, react hooks]
+description: A Tours application that works like an accordion
+---
+Here is the React Component:
+<div className="min-h-screen bg-blue-50">
+    <Tours />
+</div>
+
+## useEffect 
+
+useEffect was used on first render to fetch the data from an API.
+
+```tsx
+    const tours_url = "https://course-api.com/react-tours-project"
+
+    const [tours, setTours] = useState([]);
+    const getTours = async () => {
+        try {
+        const response = await fetch(tours_url);
+        const mytours = await response.json();
+
+        setTours(mytours);
+        } catch (e) {
+            console.log(e)
+        }
+    }
+    useEffect(() => {
+        getTours()
+    }, []) // get data only on 1st render
+```
+
+## Read More/Show Less
+The Read More/Show Less functionality was implemented by toggling state to store the number of characters to display. Initially a useState variable, `textSize` was initialized to 200 characters, and only 200 characters are displayed on one Tour. On pressing ReadMore, `textSize` is increased to the length of the entire information.
+
+I found this to be an interesting way to implement an accordion. I've seen blog posts in the past that do it with CSS and involve many calculations. This solution was elegant in the way it used `useState` to achieve the same thing.
+
+## Delete functionality
+The component `<Tours/>` contains the data and iterates over each `<Tour/>` compononent, passing in the data. A delete handler is passed as a prop to `Tour`, which it calls when you click "Not Interested".
+
+Delete handler in parent:
+```tsx
+    const childDeleteHandler = (id) => {
+        const newtours = tours.filter(item => item.id != id)
+        setTours(newtours)
+    }
+```
+
+Delete handler passed from parent to child:
+```tsx
+    <Tour key={index} tour={obj} deleteHandler={childDeleteHandler} />
+```  
+
+Delete handler is called by child:
+```tsx
+    <button type="button"
+            className="px-12 py-1 text-lg rounded-md justify-center text-red-700 border border-red-700 focus:outline-none focus:border-red-700"
+            // delete this tour from parent's array of Tours
+            onClick={() => deleteHandler(tour.id)}
+    >
+    Not interested
+    </button>
+```
+
+## Displaying images
+The images were of different dimensions, some in portrait mode and some in landscape mode. How to display them uniformly?
+
+Specify the max width of the image container in the second div below. Then have the image inside that div, specifying a particular height but with w-full, which fills the container, and most importantly: `object-cover`.
+In this case I used `max-w-<screen-size>` to make it responsive but it might be a better idea to specify max width as a percentage of the screen width by extending Tailwindcss in tailwind.config.js. Interestingly, any text below the image automatically fills the max-width of the container.
+
+
+```typescript
+    <div className="flex flex-col justify-center">
+        <div className="max-w-xs sm:max-w-2xl shadow-md mb-7 bg-gray-50 rounded-b-md">
+            <img
+                className="w-full h-80 object-cover flex rounded-t-md justify-center items-center"
+                src={tour.image}
+                alt="tour photo"
+            />
+            <span> Text goes here </span>
+        </div>
+    </div>
+```
+

@@ -54,7 +54,7 @@
         "blogurl": "",
         "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/3-Tours",
         "inspiration": "https://react-projects-2-tours.netlify.app/",
-        "timeline": "/",
+        "timeline": "/posts/tours",
         "about": "/general/about",
         "checkins": 8,
         "timetocomplete": "2 days"

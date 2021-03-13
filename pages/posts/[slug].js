@@ -38,6 +38,7 @@ const components = {
     SidebarModal: dynamic(() => import('../../components/16-SidebarModal')),
     Tabs: dynamic(() => import('../../components/8-Tabs/Tabs')),
     TailwindTransitionExample: dynamic(() => import('../../components/examplecode/TailwindTransitionExample')),
+    Tours: dynamic(() => import('../../components/3-Tours/Tours')),
     TransitionHeightExample: dynamic(() => import('../../components/examplecode/TransitionHeightExample')),
     UseReducerExample: dynamic(() => import('../../components/examplecode/UseReducerExample'))
 }
