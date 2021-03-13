@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export interface IProps {
     index: number,
     image: string,
@@ -28,8 +30,12 @@ export default function ProjectCard({ index, image, title, demo, blog, inspirati
                     {project ? `${index}. ` : ``}{title}
                 </div>
                 <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
-                    <a href={demo} className={demo ? text : textgray} >Demo</a>
-                    <a href={blog} className={blog ? text : textgray}>Blog</a>
+                    <Link href={demo}>
+                        <a className={demo ? text : textgray} >Demo</a>
+                    </Link>
+                    <Link href={blog}>
+                        <a className={blog ? text : textgray}>Blog</a>
+                    </Link>
                     <a href={inspiration} className={inspiration ? text : textgray}>Inspiration</a>
                     <a href={github} className={github ? text : textgray}>Github</a>
                 </div>

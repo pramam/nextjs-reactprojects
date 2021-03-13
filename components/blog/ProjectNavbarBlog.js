@@ -14,20 +14,11 @@ export default function ProjectNavbarBlog({ projectId, textColor }) {
         
     const text = `text-sm uppercase text-center ${textColor}`
     const textgray = "text-sm uppercase text-gray-500 cursor-not-allowed text-center"
-    // const chevronCss = `mt-1 h-4 w-4 text-center ${textColor}`
-    // const chevronCssGray = `mt-1 h-4 w-4 text-gray-500 text-center cursor-not-allowed`
-
+    
     return (
         <div className="flex justify-center mx-auto">
             <div className="mt-2 flex flex-col">
                 <div className="flex flex-row justify-center">
-
-                    {/* <a href={prevProjectUrl}>
-                        <li className="flex flex-col"
-                        >
-                            <SVGChevronLeft css={prevProjectUrl ? chevronCss : chevronCssGray} />
-                        </li>
-                    </a> */}
                     {/* #TIMELINE*/}
                     {timeline === "/" ?
                         <Link href={`/#project${projectNum}`}>
@@ -53,11 +44,6 @@ export default function ProjectNavbarBlog({ projectId, textColor }) {
                             <div className={about ? text : textgray}>About</div>
                         </a>
                     </Link>
-                    {/* <a href={nextProjectUrl}>
-                        <li className="flex flex-col">
-                            <SVGChevronRight css={nextProjectUrl ? chevronCss : chevronCssGray} />
-                        </li>
-                    </a> */}
                 </div>
             </div>
         </div >

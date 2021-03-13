@@ -1,5 +1,5 @@
 import { getProjectData } from '../../utils/getProjectData'
-
+import Link from 'next/link'
 
 // Display <INSPIRATION> <DEMO> <GITHUB> in blog post for whichever links are available
 
@@ -23,9 +23,11 @@ export default function InspirationNavbarBlog({ projectId, textColor }) {
                     <a href={inspiration} className="ml-3">
                         <div className={inspiration ? text : textgray}>Inspiration</div>
                     </a>
-                    <a href={url} className="ml-3">
-                        <div className={url ? text : textgray}>Demo</div>
-                    </a>
+                    <Link href={url}>
+                        <a className="ml-3">
+                            <div className={url ? text : textgray}>Demo</div>
+                        </a>
+                    </Link>
                     <a href={githubUrl} className="ml-3">
                         <div className={githubUrl ? text : textgray}>Github</div>
                     </a>

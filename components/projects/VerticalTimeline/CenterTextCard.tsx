@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export interface IProps {
     title: string,
     blog: string,
@@ -13,11 +15,15 @@ export default function CenterTextCard({ title, blog, about }: IProps) {
                 <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">{title}</div>
                 <div className="flex flex-row justify-center">
                 <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
-                    <a href={blog} className={blog ? text : textgray}>Blog</a>
+                        <Link href={blog}>
+                            <a className={blog ? text : textgray}>Blog</a>
+                        </Link>
                 </div>
-                    <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
-                        <a href={about} className={about ? text : textgray}>About</a>
-                    </div>
+                <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
+                        <Link href={about}>
+                            <a className={about ? text : textgray}>About</a>
+                        </Link>
+                </div>
                 </div>
             </div>
         </div>
