@@ -15,12 +15,6 @@ export default function Navbar() {
                     <li className="text-xl font-semibold mr-8">Pricing</li>
                 </ul>
                 <div className="mt-10 mr-1/12">
-                    {/* <button className="text-xl px-4 py-2 text-white focus:outline-none border border-white rounded-md">
-                        <div className="flex flex-row">
-                            Sign In
-                        <SVGChevronRight css="ml-1.5 mt-2 h-4 w-4" />
-                        </div>
-                    </button> */}
                     <Button text="Sign in" />
                 </div>
             </div>
