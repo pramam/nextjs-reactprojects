@@ -1,18 +1,6 @@
 import ProjectCard from './ProjectCard'
 
-// export interface IProps {
-//     index: number,
-//     image: string,
-//     title: string,
-//     day: number,
-//     demo: string,
-//     blog: string,
-//     inspiration: string,
-//     github: string,
-//     project: boolean
-// }
-// export default function RightCard({ index, image, title, day, demo, blog, inspiration, github, project }: IProps) {
-
+// project is an entry in allprojects.json
 export default function RightCard(project) {
     return (
         // right
@@ -30,17 +18,7 @@ export default function RightCard(project) {
                 </div>
             </div>
             <article className="md:col-start-6 md:col-end-10 p-4 rounded-xl my-4 mr-auto">
-                <ProjectCard
-                    {...project}
-                    // index={index}
-                    // image={image}
-                    // title={title}
-                    // demo={demo}
-                    // blog={blog}
-                    // inspiration={inspiration}
-                    // github={github}
-                    // project={project}
-                />
+                <ProjectCard {...project} />
             </article>
         </div >
     )

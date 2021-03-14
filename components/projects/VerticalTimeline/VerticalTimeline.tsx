@@ -21,29 +21,8 @@ export default function VerticalTimeline() {
                             <>
                                 {index % 2 === 0 ?
                                     <LeftCard {...obj} />
-                                    //     index={obj.id}
-                                    //     image={obj.image}
-                                    //     title={obj.name}
-                                    //     day={obj.day}
-                                    //     demo={obj.url}
-                                    //     blog={obj.blogurl}
-                                    //     inspiration={obj.inspiration}
-                                    //     github={obj.githuburl}
-                                    //     project={obj.isproject}
-                                    // /> 
                                     :
                                     <RightCard {...obj} />
-                                    //     index={obj.id}
-                                    //     image={obj.image}
-                                    //     title={obj.name}
-                                    //     day={obj.day}
-                                    //     demo={obj.url}
-                                    //     blog={obj.blogurl}
-                                    //     inspiration={obj.inspiration}
-                                    //     github={obj.githuburl}
-                                    //     project={obj.isproject}
-                                    // />
-
                                 }
                             </>
 

@@ -1,35 +1,12 @@
 import ProjectCard from "./ProjectCard";
 
-// export interface IProps {
-//     index: number,
-//     image: string,
-//     title: string,
-//     day: number,
-//     demo: string,
-//     blog: string,
-//     inspiration: string,
-//     github: string,
-//     project: boolean
-// }
-
-// export default function LeftCard({ index, image, title, day, demo, blog, inspiration, github, project }: IProps) {
+// project is an entry in allprojects.json
 export default function LeftCard(project) {
-
     return (
         // left
         <div className="flex flex-row-reverse md:contents" >
             <article className="md:col-start-1 md:col-end-5 p-4 rounded-xl my-4 ml-auto">
-                <ProjectCard
-                    {...project}
-                    // index={index}
-                    // image={image}
-                    // title={title}
-                    // demo={demo}
-                    // blog={blog}
-                    // inspiration={inspiration}
-                    // github={github}
-                    // project={project}
-                    /> 
+                <ProjectCard {...project} />
             </article>
             <div className="md:col-start-5 md:col-end-6 md:mx-auto relative mr-2 md:mr-10">
                 <div className="h-full w-14 flex items-center justify-center">
