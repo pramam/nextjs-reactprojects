@@ -20,9 +20,9 @@ export default function VerticalTimeline() {
                         return (
                             <>
                                 {index % 2 === 0 ?
-                                    <LeftCard {...obj} />
+                                    <LeftCard key={index} {...obj} />
                                     :
-                                    <RightCard {...obj} />
+                                    <RightCard key={index} {...obj} />
                                 }
                             </>
 
