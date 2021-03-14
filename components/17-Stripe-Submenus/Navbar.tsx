@@ -1,4 +1,3 @@
-import SVGChevronRight from '../svgicons/SVGChevronRight'
 import SVGLogo from './svgimages/SVGLogo'
 import Button from './Button'
 

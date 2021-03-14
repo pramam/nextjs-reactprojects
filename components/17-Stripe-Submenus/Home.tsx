@@ -1,6 +1,5 @@
 import { useGlobalStripeContext } from './Context'
 import SVGPhone from './svgimages/SVGPhone'
-import SVGChevronRight from '../svgicons/SVGChevronRight'
 import Button from './Button'
 
 export default function Home() {
@@ -19,12 +18,6 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="mt-6 mr-2/12">
-                    {/* <img className="h-96 w-48 object-cover rounded-md" src="/screenshots/Screenshot-Accordion.png"
-                        alt="phone"
-                    /> */}
-                    {/* <img className="h-96 w-48 object-cover rounded-md" src="/svgimages/phone.svg"
-                        alt="phone"
-                    /> */}
                     <SVGPhone css="" />
 
                 </div>
