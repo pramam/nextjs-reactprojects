@@ -15,9 +15,13 @@ export default function CenterTextCard({ title, blog, about }: IProps) {
                 <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">{title}</div>
                 <div className="flex flex-row justify-center">
                 <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
+                        {blog ?
                         <Link href={blog}>
                             <a className={blog ? text : textgray}>Blog</a>
                         </Link>
+                            :
+                            <a className={blog ? text : textgray}>Blog</a>
+                        }
                 </div>
                 <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
                         <Link href={about}>

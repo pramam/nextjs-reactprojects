@@ -20,28 +20,29 @@ export default function VerticalTimeline() {
                         return (
                             <>
                                 {index % 2 === 0 ?
-                                    <LeftCard
-                                        index={obj.id}
-                                        image={obj.image}
-                                        title={obj.name}
-                                        day={obj.day}
-                                        demo={obj.url}
-                                        blog={obj.blogurl}
-                                        inspiration={obj.inspiration}
-                                        github={obj.githuburl}
-                                        project={obj.isproject}
-                                    /> :
-                                    <RightCard
-                                        index={obj.id}
-                                        image={obj.image}
-                                        title={obj.name}
-                                        day={obj.day}
-                                        demo={obj.url}
-                                        blog={obj.blogurl}
-                                        inspiration={obj.inspiration}
-                                        github={obj.githuburl}
-                                        project={obj.isproject}
-                                    />
+                                    <LeftCard {...obj} />
+                                    //     index={obj.id}
+                                    //     image={obj.image}
+                                    //     title={obj.name}
+                                    //     day={obj.day}
+                                    //     demo={obj.url}
+                                    //     blog={obj.blogurl}
+                                    //     inspiration={obj.inspiration}
+                                    //     github={obj.githuburl}
+                                    //     project={obj.isproject}
+                                    // /> 
+                                    :
+                                    <RightCard {...obj} />
+                                    //     index={obj.id}
+                                    //     image={obj.image}
+                                    //     title={obj.name}
+                                    //     day={obj.day}
+                                    //     demo={obj.url}
+                                    //     blog={obj.blogurl}
+                                    //     inspiration={obj.inspiration}
+                                    //     github={obj.githuburl}
+                                    //     project={obj.isproject}
+                                    // />
 
                                 }
                             </>
