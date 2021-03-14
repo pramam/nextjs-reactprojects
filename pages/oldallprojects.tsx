@@ -17,10 +17,10 @@ function allprojects() {
                                     <img
                                         className="h-64 w-70 object-cover"
                                         src={obj.image}
-                                        alt={obj.name} />
+                                        alt={obj.title} />
                                 </div>
                                 <div className="bg-gray-50">
-                                    <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">{index + 1}. {obj.name}</div>
+                                    <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">{index + 1}. {obj.title}</div>
                                 </div>
                             </div>
                         </article>

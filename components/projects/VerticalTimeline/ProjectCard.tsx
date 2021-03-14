@@ -3,7 +3,7 @@ import Link from 'next/link'
 export interface IProps {
     id: number,
     image: string,
-    name: string,
+    title: string,
     url: string,
     blogurl: string,
     inspiration: string,
@@ -11,7 +11,7 @@ export interface IProps {
     isproject: boolean
 }
 
-export default function ProjectCard({ id, image, name, url, blogurl, inspiration, githuburl, isproject }: IProps) {
+export default function ProjectCard({ id, image, title, url, blogurl, inspiration, githuburl, isproject }: IProps) {
     const text = "text-sm text-gray-400 uppercase mr-3"
     const textgray = "text-sm text-gray-300 uppercase mr-3 cursor-not-allowed"
     return (
@@ -22,12 +22,12 @@ export default function ProjectCard({ id, image, name, url, blogurl, inspiration
                 <img
                     className="w-full h-64 object-cover flex justify-center items-center"
                     src={image}
-                        alt={name}
+                        alt={title}
                 />
                 </div> : ``}
             <div className="bg-gray-50">
                 <div className="m-3 flex justify-center text-xl font-semibold text-gray-400 capitalize">
-                    {isproject ? `${id}. ` : ``}{name}
+                    {isproject ? `${id}. ` : ``}{title}
                 </div>
                 <div className="bg-gray-50 flex flex-row flex-wrap justify-center">
                     {url ?
