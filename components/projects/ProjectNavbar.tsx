@@ -8,7 +8,7 @@ export interface IProps {
     blogUrl?: string,
     prevProjectUrl?: string,
     nextProjectUrl?: string,
-    githubUrl?: string,
+    githuburl?: string,
     inspiration: string,
     textColor: string
 }
@@ -19,7 +19,7 @@ export default function ProjectNavbar({
     blogUrl,
     prevProjectUrl,
     nextProjectUrl,
-    githubUrl,
+    githuburl,
     inspiration,
     textColor }: IProps) {
     const text = `text-sm uppercase text-center ${textColor}`
@@ -51,8 +51,8 @@ export default function ProjectNavbar({
                             <div className={blogUrl ? text : textgray}>Blog</div>
                         </a>
                     </Link>
-                    <a href={githubUrl} className="mr-3 hidden sm:block">
-                        <div className={githubUrl ? text : textgray}>Github</div>
+                    <a href={githuburl} className="mr-3 hidden sm:block">
+                        <div className={githuburl ? text : textgray}>Github</div>
                     </a>
                     <Link href={nextProjectUrl}>
                         <a>
@@ -71,8 +71,8 @@ export default function ProjectNavbar({
                             <div className={blogUrl ? text : textgray}>Blog</div>
                         </a>
                     </Link>
-                    <a href={githubUrl}>
-                        <div className={githubUrl ? text : textgray}>Github</div>
+                    <a href={githuburl}>
+                        <div className={githuburl ? text : textgray}>Github</div>
                     </a>
                 </div>
             </div>

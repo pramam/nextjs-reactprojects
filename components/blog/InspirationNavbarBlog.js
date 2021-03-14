@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function InspirationNavbarBlog({ projectId, textColor }) {
     const projectData = getProjectData(projectId, true)
-    const { status, isProject, url, inspiration, githubUrl, projectNum, timeline, about } = projectData;
+    const { status, isProject, url, inspiration, githuburl, projectNum, timeline, about } = projectData;
     if (status != "OK")
     {
         console.log(`${projectId}:  status: ${status}`)
@@ -28,8 +28,8 @@ export default function InspirationNavbarBlog({ projectId, textColor }) {
                             <div className={url ? text : textgray}>Demo</div>
                         </a>
                     </Link>
-                    <a href={githubUrl} className="ml-3">
-                        <div className={githubUrl ? text : textgray}>Github</div>
+                    <a href={githuburl} className="ml-3">
+                        <div className={githuburl ? text : textgray}>Github</div>
                     </a>
                 </div>
             </div>
