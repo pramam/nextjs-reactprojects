@@ -9,13 +9,13 @@ export default function Navbar() {
     return (
         <div className="w-full">
             <div className="flex flex-row justify-between">
-                <h1 className="mt-8 ml-10"><SVGLogo /></h1>
+                <h1 className="mt-8 ml-10 sm:ml-16"><SVGLogo /></h1>
                 <ul className="hidden text-white w-5/12 mt-10 lg:flex lg:flex-row">
                     <li className="text-xl font-semibold mr-8">Products</li>
                     <li className="text-xl font-semibold mr-8">Use cases</li>
                     <li className="text-xl font-semibold mr-8">Developers</li>
                     <li className="text-xl font-semibold mr-8">Company</li>
-                    <li className="text-xl font-semibold mr-8">Pricing</li>
+                    {/* <li className="text-xl font-semibold mr-8">Pricing</li> */}
                 </ul>
                 <div className="hidden lg:flex mt-10 mr-1/12">
                     <Button text="Sign in" />
