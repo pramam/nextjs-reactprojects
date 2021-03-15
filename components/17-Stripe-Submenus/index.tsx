@@ -1,8 +1,4 @@
-// import Hero from './Hero'
-// import Home from './Home'
-// import Navbar from './Navbar'
-// import Sidebar from './Sidebar'
-// import Footer from './Footer'
+import Footer from './Footer'
 import App from './App'
 import { StripeProvider } from './Context'
 
@@ -15,14 +11,10 @@ export default function Index() {
         // }>
         //     Hello World
         // </div >
-        <div className="relative">
+        <div className="min-h-screen relative">
             <StripeProvider>
                 <App />
-                {/* <Hero >
-                    <Navbar />
-                    <Home />
-                    <Sidebar />
-                </Hero> */}
+                <Footer />
             </StripeProvider>
         </div>
     )

@@ -1,11 +1,7 @@
-import { useGlobalStripeContext } from './Context'
 import SVGPhone from './svgimages/SVGPhone'
 import Button from './Button'
 
 export default function Home() {
-    const { isSidebarOpen } = useGlobalStripeContext();
-
-    console.log(isSidebarOpen)
     return (
         <div className="ml-10 sm:ml-16">
             <div className="flex flex-row justify-between">
@@ -19,7 +15,6 @@ export default function Home() {
                 </div>
                 <div className="hidden sm:block mt-6 lg:mr-2/12">
                     <SVGPhone css="" />
-
                 </div>
             </div>
         </div>

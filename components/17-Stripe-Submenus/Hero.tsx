@@ -1,5 +1,3 @@
-import Home from './Home'
-import Footer from './Footer'
 export default function Hero({ children }) {
     const stripeHeroImage = "/stripe/stripe-hero-image.png"
 
@@ -20,7 +18,6 @@ export default function Hero({ children }) {
 
         <div className="w-full bg-cover bg-no-repeat" style={bgSVG}>
             {children}
-            <Footer></Footer>
         </div >
     )
 }
