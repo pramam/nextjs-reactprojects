@@ -5,29 +5,49 @@ import { useGlobalStripeContext } from './Context'
 
 export default function Navbar() {
     const { openSidebar, openSubmenu } = useGlobalStripeContext();
+    // onMouseOver could call openSubmenu, but it calls this function instead
+    // to add additional functionality
     const displaySubmenu = (e) => {
         // e.preventDefault();
-        openSubmenu(true)
+        const btn = e.target.getBoundingClientRect()
+        // Left is left shifted to half the width
+        const left = btn.left - (btn.width / 2)
+        // Bottom is used to position the top of the Submenu
+        const bottom = btn.bottom
+        // Center is needed for the arrow
+        const center = (btn.right - btn.left) / 2
+        const label = e.target.textContent
+        console.log(btn)
+        console.log(e.target.textContent)
+        console.log(`displaySubment: e.target.value ${e.target.value}`)
+        console.log(`displaySubmenu button, ${btn}, center ${center}, bottom ${btn.bottom}`)
+        openSubmenu(label, left, bottom, center)
     }
     return (
         <div className="w-full">
             <div className="flex flex-row justify-between">
                 <h1 className="mt-8 ml-10 sm:ml-16"><SVGLogo /></h1>
                 <ul className="hidden text-white w-5/12 mt-10 lg:flex lg:flex-row">
-                    <button className="focus:outline-none hover:cursor-pointer border border-transparent"
-                        onMouseOver={displaySubmenu}>
-                        <li className="text-xl font-semibold mr-8">Products</li>
+                    <button className="mr-8 hover:cursor-pointer border-1 border-yellow-400"
+                        onMouseOver={displaySubmenu}
+                    >
+                        <li className="text-xl font-semibold">Products</li>
                     </button>
-                    <button>
-                        <li className="text-xl font-semibold mr-8">Use cases</li>
+                    <button className="mr-8 hover:cursor-pointer border border-transparent"
+                        onMouseOver={displaySubmenu}
+                    >
+                        <li className="text-xl font-semibold">Use cases</li>
                     </button>
-                    <button>
-                        <li className="text-xl font-semibold mr-8">Developers</li>
+                    <button className="mr-8 hover:cursor-pointer border border-transparent"
+                        onMouseOver={displaySubmenu}
+                    >
+                        <li className="text-xl font-semibold">Developers</li>
                     </button>
-                    <button>
-                        <li className="text-xl font-semibold mr-8">Company</li>
+                    <button className="mr-8 hover:cursor-pointer border border-transparent"
+                        onMouseOver={displaySubmenu}
+                    >
+                        <li className="text-xl font-semibold">Company</li>
                     </button>
-                    {/* <li className="text-xl font-semibold mr-8">Pricing</li> */}
                 </ul>
                 <div className="hidden lg:flex mt-10 mr-1/12">
                     <Button text="Sign in" />

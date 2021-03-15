@@ -10,7 +10,9 @@ export default function App() {
     const { isSidebarOpen } = useGlobalStripeContext()
 
     return (
-        <Hero >
+        // relative needed because Submenu is absolute
+        <div className="relative">
+            <Hero>
             {/* Sidebar, when open, will cover the entire screen hiding Navbar and Home behind it  */}
             {/* Sidebar's position is fixed, so it covers Home/Navbar */}
             <Transition
@@ -30,5 +32,6 @@ export default function App() {
             <Submenu />
             <Home />
         </Hero>
+        </div>
     )
 }

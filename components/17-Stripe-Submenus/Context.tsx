@@ -7,6 +7,8 @@ const StripeProvider = ({ children }) => {
     // sidebar is connected to the Menu button
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
+    const [coords, setCoords] = useState({})
+    const [navButtonToShow, setNavButtonToShow] = useState('')
 
     const openSidebar = () => {
         setIsSidebarOpen(true)
@@ -16,13 +18,15 @@ const StripeProvider = ({ children }) => {
         setIsSidebarOpen(false)
     }
 
-    const openSubmenu = () => {
-        console.log("openSubmenu")
+    const openSubmenu = (label, left, bottom, center) => {
+        setCoords({ left, bottom, center })
+        console.log(`openSubmenu, label: ${label} center: ${center}, bottom: ${bottom}`)
+        setNavButtonToShow(label)
         setIsSubmenuOpen(true)
     }
 
     const closeSubmenu = () => {
-        console.log(closeSubmenu)
+        console.log(`closeSubmenu`)
         setIsSubmenuOpen(false)
     }
     return (
@@ -34,7 +38,9 @@ const StripeProvider = ({ children }) => {
                 openSidebar,
                 closeSidebar,
                 openSubmenu,
-                closeSubmenu
+                closeSubmenu,
+                navButtonToShow,
+                coords
             }}
         >
             {children}
