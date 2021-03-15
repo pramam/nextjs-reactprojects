@@ -14,7 +14,7 @@ export default function Sidebar() {
                     <div className="flex flex-col">
                         <div className="flex justify-end mt-2 mr-2">
                             <button onClick={closeSidebar}
-                                className="mt-5 md:mt-7 mr-5 focus:outline-none border border-transparent">
+                                className="mt-3 mr-3 focus:outline-none border border-transparent">
                                 <SVGX css="mt-1.5 h-8 w-8 text-red-700" />
                             </button>
                         </div>
