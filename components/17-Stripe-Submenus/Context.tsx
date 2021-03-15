@@ -5,7 +5,7 @@ const StripeContext = React.createContext(null)
 
 const StripeProvider = ({ children }) => {
     // sidebar is connected to the Menu button
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(true)
 
     const openSidebar = () => {
