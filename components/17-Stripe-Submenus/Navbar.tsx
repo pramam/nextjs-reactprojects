@@ -59,24 +59,51 @@ export default function Navbar() {
             <div className="flex flex-row justify-between">
                 <h1 className="mt-8 ml-10 sm:ml-16"><SVGLogo /></h1>
                 <ul className="hidden text-white w-5/12 mt-10 lg:flex lg:flex-row">
-                    <button className="stripedummy border-1 border-yellow-400"
+                    <li>
+                        <button
+                            className="stripedummy text-xl font-semibold"
+                            onMouseOver={displaySubmenu}
+                        // onMouseLeave={handleLeave}
+                        >
+                            <div className="mx-8">Products</div>
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            className="stripedummy text-xl font-semibold"
+                            onMouseOver={displaySubmenu}
+                        // onMouseLeave={handleLeave}
+                        >
+                            <div className="mx-8">Developers</div>
+                        </button>
+                    </li>
+                    <li>
+                        <button
+                            className="stripedummy text-xl font-semibold"
+                            onMouseOver={displaySubmenu}
+                        // onMouseLeave={handleLeave}
+                        >
+                            <div className="mx-8">Company</div>
+                        </button>
+                    </li>
+                    {/* <button className="stripedummy border-1 border-yellow-400"
                         onMouseOver={displaySubmenu}
                         // onMouseLeave={handleLeave}
                     >
                         <li className="stripedummy mx-8 text-xl font-semibold">Products</li>
-                    </button>
-                    <button className="stripedummy border border-transparent"
+                    </button> */}
+                    {/* <button className="stripedummy border border-transparent"
                         onMouseOver={displaySubmenu}
                         // onMouseLeave={handleLeave}
                     >
                         <li className="stripedummy mx-8 text-xl font-semibold">Developers</li>
-                    </button>
-                    <button className="stripedummy border border-transparent"
+                    </button> */}
+                    {/* <button className="stripedummy border border-transparent"
                         onMouseOver={displaySubmenu}
                         // onMouseLeave={handleLeave}
                     >
                         <li className="stripedummy mx-8 text-xl font-semibold">Company</li>
-                    </button>
+                    </button> */}
                     {/* <button>
                         <Link href={"/stripe/company"} >
                             <a className="hover:cursor-pointer">
