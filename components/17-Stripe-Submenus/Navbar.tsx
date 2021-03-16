@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import SVGLogo from './svgimages/SVGLogo'
 import Button from './Button'
 import SVGMenu from '../svgicons/SVGMenu'
@@ -8,16 +7,16 @@ import submenuData from './submenudata'
 
 export default function Navbar() {
     const { openSidebar, openSubmenu, closeSubmenu, navButtonIndex } = useGlobalStripeContext();
-    // const [menuIndex, setMenuIndex] = useState(0);
+
     // onMouseOver could call openSubmenu, but it calls this function instead
     // to add additional functionality
     const displaySubmenu = (e) => {
         const btn = e.target.getBoundingClientRect()
         // Left is left shifted to half the width
-        const left = btn.left - (btn.width / 2)
         // Bottom is used to position the top of the Submenu
-        const bottom = btn.bottom
         // Center is needed for the arrow
+        const left = btn.left - (btn.width / 2)
+        const bottom = btn.bottom
         const center = (btn.right - btn.left) / 2
 
         const label = e.target.textContent
@@ -66,11 +65,10 @@ export default function Navbar() {
                 <h1 className="mt-8 ml-10 sm:ml-16"><SVGLogo /></h1>
                 <ul className="hidden text-white w-5/12 mt-10 lg:flex lg:flex-row">
                     {submenuData.map((obj, index) => {
-                        const common_submenu_props = "transition ease-in-out duration-700"
                         return (
                             <li key={index}>
                                 <button
-                                    // Don't wrap Use cases on 2 lines:whitespace-nowrap
+                                    // Don't wrap 'Use cases' on 2 lines:whitespace-nowrap
                                     className="stripedummy whitespace-nowrap text-xl font-semibold"
                                     onMouseOver={displaySubmenu}
                                 // onMouseLeave={handleLeave}
@@ -135,9 +133,12 @@ export default function Navbar() {
                         </Link>
                     </button> */}
                 </ul>
+                {/* Sign in Button shows on large screens only */}
                 <div className="hidden lg:flex mt-10 mr-1/12">
                     <Button text="Sign in" />
                 </div>
+                {/* Menu Button shows on small screens only  */}
+                {/* The Sign In button appears in the Sidebar on small screens  */}
                 <div className="lg:hidden mt-8 mr-5">
                     <button type="button"
                         className="focus:outline-none border-2 border-gray-800 rounded-md transform hover:scale-110 motion-reduce:transform-none transition duration-500 ease-in-out"
