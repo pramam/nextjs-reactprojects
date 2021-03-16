@@ -7,8 +7,8 @@ import Link from 'next/link'
 import submenuData from './submenudata'
 
 export default function Navbar() {
-    const { openSidebar, openSubmenu, closeSubmenu } = useGlobalStripeContext();
-    const [pageindex, setPageIndex] = useState(0);
+    const { openSidebar, openSubmenu, closeSubmenu, navButtonIndex } = useGlobalStripeContext();
+    // const [menuIndex, setMenuIndex] = useState(0);
     // onMouseOver could call openSubmenu, but it calls this function instead
     // to add additional functionality
     const displaySubmenu = (e) => {
@@ -21,11 +21,14 @@ export default function Navbar() {
         const center = (btn.right - btn.left) / 2
 
         const label = e.target.textContent
+        // Find index of label
+        const menuIndex = submenuData.findIndex(elem => elem.page === label)
+        // setMenuIndex(menuIndex)
         console.log(btn)
         console.log(e.target.textContent)
         // console.log(`displaySubmenu: e.target.value ${e.target.value}`)
         // console.log(`displaySubmenu button, ${btn}, center ${center}, bottom ${btn.bottom}`)
-        openSubmenu(label, left, bottom, center)
+        openSubmenu(label, menuIndex, left, bottom, center)
     }
     const handleLeave = (e) => {
         //https://www.designcise.com/web/tutorial/how-to-fix-property-does-not-exist-on-type-eventtarget-typescript-error
@@ -63,6 +66,7 @@ export default function Navbar() {
                 <h1 className="mt-8 ml-10 sm:ml-16"><SVGLogo /></h1>
                 <ul className="hidden text-white w-5/12 mt-10 lg:flex lg:flex-row">
                     {submenuData.map((obj, index) => {
+                        const common_submenu_props = "transition ease-in-out duration-700"
                         return (
                             <li key={index}>
                                 <button

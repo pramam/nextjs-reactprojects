@@ -9,7 +9,8 @@ const StripeProvider = ({ children }) => {
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
     const [coords, setCoords] = useState({})
     const [navButtonToShow, setNavButtonToShow] = useState('')
-
+    const [navButtonIndex, setNavButtonIndex] = useState(0)
+    
     const openSidebar = () => {
         setIsSidebarOpen(true)
     }
@@ -18,10 +19,11 @@ const StripeProvider = ({ children }) => {
         setIsSidebarOpen(false)
     }
 
-    const openSubmenu = (label, left, bottom, center) => {
+    const openSubmenu = (label, labelindex, left, bottom, center) => {
         setCoords({ left, bottom, center })
         console.log(`openSubmenu, label: ${label} center: ${center}, bottom: ${bottom}`)
         setNavButtonToShow(label)
+        setNavButtonIndex(labelindex)
         setIsSubmenuOpen(true)
     }
 
@@ -40,6 +42,7 @@ const StripeProvider = ({ children }) => {
                 openSubmenu,
                 closeSubmenu,
                 navButtonToShow,
+                navButtonIndex,
                 coords
             }}
         >

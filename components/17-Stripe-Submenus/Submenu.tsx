@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useGlobalStripeContext } from './Context'
 
 export default function Submenu() {
-    const { isSubmenuOpen, navButtonToShow, coords } = useGlobalStripeContext()
+    const { isSubmenuOpen, navButtonToShow, navButtonIndex, coords } = useGlobalStripeContext()
     const topSpacePx = 0 //-3
     // const refContainer = useRef(null)
     useEffect(() => {
@@ -22,7 +22,7 @@ export default function Submenu() {
                     >
                         <div className="flex flex-col">
 
-                            <li>Submenu: {navButtonToShow}</li>
+                            <li>Submenu: {navButtonToShow}: index: {navButtonIndex}</li>
                             <li>Coords: {coords.center}, {coords.bottom}</li>
                         </div>
                     </div>
