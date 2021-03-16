@@ -1,15 +1,17 @@
+import { useState } from 'react'
 import SVGLogo from './svgimages/SVGLogo'
 import Button from './Button'
 import SVGMenu from '../svgicons/SVGMenu'
 import { useGlobalStripeContext } from './Context'
 import Link from 'next/link'
+import submenuData from './submenudata'
 
 export default function Navbar() {
     const { openSidebar, openSubmenu, closeSubmenu } = useGlobalStripeContext();
+    const [pageindex, setPageIndex] = useState(0);
     // onMouseOver could call openSubmenu, but it calls this function instead
     // to add additional functionality
     const displaySubmenu = (e) => {
-        // e.preventDefault();
         const btn = e.target.getBoundingClientRect()
         // Left is left shifted to half the width
         const left = btn.left - (btn.width / 2)
@@ -17,6 +19,7 @@ export default function Navbar() {
         const bottom = btn.bottom
         // Center is needed for the arrow
         const center = (btn.right - btn.left) / 2
+
         const label = e.target.textContent
         console.log(btn)
         console.log(e.target.textContent)
@@ -59,33 +62,48 @@ export default function Navbar() {
             <div className="flex flex-row justify-between">
                 <h1 className="mt-8 ml-10 sm:ml-16"><SVGLogo /></h1>
                 <ul className="hidden text-white w-5/12 mt-10 lg:flex lg:flex-row">
-                    <li>
+                    {submenuData.map((obj, index) => {
+                        return (
+                            <li key={index}>
+                                <button
+                                    // Don't wrap Use cases on 2 lines:whitespace-nowrap
+                                    className="stripedummy whitespace-nowrap text-xl font-semibold"
+                                    onMouseOver={displaySubmenu}
+                                // onMouseLeave={handleLeave}
+                                >
+                                    {/* px-4 py-2 here prevents the bottom-px reading from shifting as the mouse moves */}
+                                    <div className="px-4 py-2">{obj.page}</div>
+                                </button>
+                            </li>
+                        )
+                    })}
+                    {/* <li>
                         <button
                             className="stripedummy text-xl font-semibold"
                             onMouseOver={displaySubmenu}
                         // onMouseLeave={handleLeave}
                         >
-                            <div className="mx-8">Products</div>
+                            <div className="mx-8 my-2">Products</div>
                         </button>
-                    </li>
-                    <li>
+                    </li> */}
+                    {/* <li>
                         <button
                             className="stripedummy text-xl font-semibold"
                             onMouseOver={displaySubmenu}
                         // onMouseLeave={handleLeave}
                         >
-                            <div className="mx-8">Developers</div>
+                            <div className="mx-8 my-2">Developers</div>
                         </button>
-                    </li>
-                    <li>
+                    </li> */}
+                    {/* <li>
                         <button
                             className="stripedummy text-xl font-semibold"
                             onMouseOver={displaySubmenu}
                         // onMouseLeave={handleLeave}
                         >
-                            <div className="mx-8">Company</div>
+                            <div className="mx-8 my-2">Company</div>
                         </button>
-                    </li>
+                    </li> */}
                     {/* <button className="stripedummy border-1 border-yellow-400"
                         onMouseOver={displaySubmenu}
                         // onMouseLeave={handleLeave}

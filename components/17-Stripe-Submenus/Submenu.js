@@ -3,7 +3,7 @@ import { useGlobalStripeContext } from './Context'
 
 export default function Submenu() {
     const { isSubmenuOpen, navButtonToShow, coords } = useGlobalStripeContext()
-    const topSpacePx = -5
+    const topSpacePx = 0 //-3
     // const refContainer = useRef(null)
     useEffect(() => {
         // const submenu = refContainer.current

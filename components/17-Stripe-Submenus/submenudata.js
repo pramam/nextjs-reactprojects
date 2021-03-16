@@ -1,3 +1,5 @@
+import SVGHome from '../svgicons/SVGHome'
+
 export const submenuData = [
     {
         page: "Products",
