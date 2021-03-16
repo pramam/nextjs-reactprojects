@@ -272,7 +272,7 @@
     {
         "id": 1615574773355,
         "isproject": false,
-        "day": 46,
+        "day": 47,
         "image": "",
         "title": "Vertical Timeline",
         "url": "/general/verticaltimeline",
@@ -282,6 +282,6 @@
         "timeline": "/",
         "about": "/general/about",
         "checkins": 28,
-        "timetocomplete": "1.5 days"
+        "timetocomplete": "3 days"
     }
 ]
