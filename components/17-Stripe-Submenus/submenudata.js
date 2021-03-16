@@ -112,3 +112,4 @@ export const submenuData = [
         ]
     },
 ]
+export default submenuData

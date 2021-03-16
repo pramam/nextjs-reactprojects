@@ -1,9 +1,19 @@
+import { useEffect } from 'react'
 import { useGlobalStripeContext } from './Context'
+
 export default function Submenu() {
     const { isSubmenuOpen, navButtonToShow, coords } = useGlobalStripeContext()
-    const topSpacePx = 15
+    const topSpacePx = -5
+    const refContainer = useRef(null)
+    useEffect(() => {
+        // const submenu = refContainer.current
+        // const { center, bottom } = coords
+        // // He used this for inline styling which I don't need
+    }, [coords])
     return (
-        <>
+        <div
+        // ref={refContainer}
+        >
             {isSubmenuOpen ?
 
                 <div>
@@ -19,6 +29,6 @@ export default function Submenu() {
                 </div>
                 : ``
             }
-        </>
+        </div>
     )
 }

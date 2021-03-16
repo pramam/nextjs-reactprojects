@@ -13,6 +13,10 @@ body {
 .navbar-show-container{
   height: 13rem;
 }
+
+#stripedummy {
+  cursor: pointer;
+}
 /* blockquote {
   background: #f9f9f9;
   border-left: 10px solid rgb(241, 8, 8);

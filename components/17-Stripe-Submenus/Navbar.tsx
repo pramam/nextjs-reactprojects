@@ -2,9 +2,10 @@ import SVGLogo from './svgimages/SVGLogo'
 import Button from './Button'
 import SVGMenu from '../svgicons/SVGMenu'
 import { useGlobalStripeContext } from './Context'
+import Link from 'next/link'
 
 export default function Navbar() {
-    const { openSidebar, openSubmenu } = useGlobalStripeContext();
+    const { openSidebar, openSubmenu, closeSubmenu } = useGlobalStripeContext();
     // onMouseOver could call openSubmenu, but it calls this function instead
     // to add additional functionality
     const displaySubmenu = (e) => {
@@ -19,35 +20,71 @@ export default function Navbar() {
         const label = e.target.textContent
         console.log(btn)
         console.log(e.target.textContent)
-        console.log(`displaySubment: e.target.value ${e.target.value}`)
-        console.log(`displaySubmenu button, ${btn}, center ${center}, bottom ${btn.bottom}`)
+        // console.log(`displaySubmenu: e.target.value ${e.target.value}`)
+        // console.log(`displaySubmenu button, ${btn}, center ${center}, bottom ${btn.bottom}`)
         openSubmenu(label, left, bottom, center)
+    }
+    const handleLeave = (e) => {
+        //https://www.designcise.com/web/tutorial/how-to-fix-property-does-not-exist-on-type-eventtarget-typescript-error
+        // let classList = e.target.classList;
+
+        // console.log(`handleLeave: e.target.classList: ${e.target.classList}`)
+        // const containsresult = e.target.classList.contains('stripedummy')
+        // if (!e.target.classList.contains('stripedummy')) {
+        //     console.log(`handleLeave does not contain stripedummy`)
+        //     // console.log(containsresult)
+        //     closeSubmenu()
+        // }
+        // else {
+        //     console.log(`handleLeave: contains YES`)
+        //     // console.log(containsresult)
+        // }
+        if (e.target.classList.item[0] = 'stripedummy') {
+            console.log(`handleLeave: YES stripedummy`)
+            closeSubmenu()
+        }
+        else {
+            console.log(`handleLeave: Staying`)
+            // closeSubmenu()
+        }
+            // if (!e.target.classList.contains('stripedummy')) {
+        //     closeSubmenu()
+        // }
+        // else
+        //     console.log(`handleLeave: not leaving`)
+
     }
     return (
         <div className="w-full">
             <div className="flex flex-row justify-between">
                 <h1 className="mt-8 ml-10 sm:ml-16"><SVGLogo /></h1>
                 <ul className="hidden text-white w-5/12 mt-10 lg:flex lg:flex-row">
-                    <button className="mr-8 hover:cursor-pointer border-1 border-yellow-400"
+                    <button className="stripedummy border-1 border-yellow-400"
                         onMouseOver={displaySubmenu}
+                        // onMouseLeave={handleLeave}
                     >
-                        <li className="text-xl font-semibold">Products</li>
+                        <li className="stripedummy mx-8 text-xl font-semibold">Products</li>
                     </button>
-                    <button className="mr-8 hover:cursor-pointer border border-transparent"
+                    <button className="stripedummy border border-transparent"
                         onMouseOver={displaySubmenu}
+                        // onMouseLeave={handleLeave}
                     >
-                        <li className="text-xl font-semibold">Use cases</li>
+                        <li className="stripedummy mx-8 text-xl font-semibold">Developers</li>
                     </button>
-                    <button className="mr-8 hover:cursor-pointer border border-transparent"
+                    <button className="stripedummy border border-transparent"
                         onMouseOver={displaySubmenu}
+                        // onMouseLeave={handleLeave}
                     >
-                        <li className="text-xl font-semibold">Developers</li>
+                        <li className="stripedummy mx-8 text-xl font-semibold">Company</li>
                     </button>
-                    <button className="mr-8 hover:cursor-pointer border border-transparent"
-                        onMouseOver={displaySubmenu}
-                    >
-                        <li className="text-xl font-semibold">Company</li>
-                    </button>
+                    {/* <button>
+                        <Link href={"/stripe/company"} >
+                            <a className="hover:cursor-pointer">
+
+                                <span className="text-xl font-semibold">Company</span>
+                            </a>
+                        </Link>
+                    </button> */}
                 </ul>
                 <div className="hidden lg:flex mt-10 mr-1/12">
                     <Button text="Sign in" />

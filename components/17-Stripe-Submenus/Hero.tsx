@@ -1,4 +1,8 @@
+import { useGlobalStripeContext } from './Context'
+
 export default function Hero({ children }) {
+    const { closeSubmenu } = useGlobalStripeContext()
+
     const stripeHeroImage = "/stripe/stripe-hero-image.png"
 
     const bgImage = { backgroundImage: `url(${stripeHeroImage})` }
@@ -16,7 +20,9 @@ export default function Hero({ children }) {
         //     backgroundImage: `url(${stripeHeroImage})`
         // }}>
 
-        <div className="w-full bg-cover bg-no-repeat" style={bgSVG}>
+        <div className="w-full bg-cover bg-no-repeat" style={bgSVG}
+        // onMouseOver={closeSubmenu}
+        >
             {children}
         </div >
     )
