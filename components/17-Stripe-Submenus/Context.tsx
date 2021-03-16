@@ -8,9 +8,14 @@ const StripeProvider = ({ children }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
     const [coords, setCoords] = useState({})
+    // Text to show in Submenu
     const [navButtonToShow, setNavButtonToShow] = useState('')
+    // navButtonIndex and navPrevButtonIndex used to determine Transition Toggle
+    // of Submenu (#SubmenuTransition)
     const [navButtonIndex, setNavButtonIndex] = useState(0)
     const [navPrevButtonIndex, setNavPrevButtonIndex] = useState(-1)
+    // This is used to update navPrevButtonIndex only from the second time
+    // any submenu is displayed
     const [secondTime, setSecondTime] = useState(false)
 
     useEffect(() => {

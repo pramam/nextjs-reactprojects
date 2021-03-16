@@ -1,6 +1,7 @@
 import SVGPhone from './svgimages/SVGPhone'
 import Button from './Button'
 
+// Home contains the main text on the page, the Start Now button, and the Phone image
 export default function Home() {
     return (
         <div className="ml-10 sm:ml-16">

@@ -20,6 +20,7 @@ export default function Submenu() {
                 <Transition
                     // appear doesn't seem to do what I expect
                     appear={false}
+                    // #SubmenuTransition
                     show={navButtonIndex != navPrevButtonIndex}
                     // enter="transform duration-700"
                     // enterFrom="scale-0 "

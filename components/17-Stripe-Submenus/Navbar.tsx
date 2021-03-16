@@ -5,12 +5,16 @@ import { useGlobalStripeContext } from './Context'
 import Link from 'next/link'
 import submenuData from './submenudata'
 
+
+// Navbar displays:
+// on lg: screens:   the Stripe logo, the Nav bar, the Sign In Button
+// on < lg: screens: the Stripe logo, the Menu button(which opens the Sidebar)
 export default function Navbar() {
     const { openSidebar, openSubmenu, closeSubmenu, navButtonIndex } = useGlobalStripeContext();
 
     // onMouseOver could call openSubmenu, but it calls this function instead
     // to add additional functionality
-    const displaySubmenu = (e) => {
+    const displaySubmenu = (e, menuIndex) => {
         const btn = e.target.getBoundingClientRect()
         // Left is left shifted to half the width
         // Bottom is used to position the top of the Submenu
@@ -20,9 +24,6 @@ export default function Navbar() {
         const center = (btn.right - btn.left) / 2
 
         const label = e.target.textContent
-        // Find index of label
-        const menuIndex = submenuData.findIndex(elem => elem.page === label)
-        // setMenuIndex(menuIndex)
         console.log(btn)
         console.log(e.target.textContent)
         // console.log(`displaySubmenu: e.target.value ${e.target.value}`)
@@ -70,7 +71,7 @@ export default function Navbar() {
                                 <button
                                     // Don't wrap 'Use cases' on 2 lines:whitespace-nowrap
                                     className="stripedummy whitespace-nowrap text-xl font-semibold"
-                                    onMouseOver={displaySubmenu}
+                                    onMouseOver={(e) => displaySubmenu(e, index)}
                                 // onMouseLeave={handleLeave}
                                 >
                                     {/* px-4 py-2 here prevents the bottom-px reading from shifting as the mouse moves */}
@@ -79,59 +80,6 @@ export default function Navbar() {
                             </li>
                         )
                     })}
-                    {/* <li>
-                        <button
-                            className="stripedummy text-xl font-semibold"
-                            onMouseOver={displaySubmenu}
-                        // onMouseLeave={handleLeave}
-                        >
-                            <div className="mx-8 my-2">Products</div>
-                        </button>
-                    </li> */}
-                    {/* <li>
-                        <button
-                            className="stripedummy text-xl font-semibold"
-                            onMouseOver={displaySubmenu}
-                        // onMouseLeave={handleLeave}
-                        >
-                            <div className="mx-8 my-2">Developers</div>
-                        </button>
-                    </li> */}
-                    {/* <li>
-                        <button
-                            className="stripedummy text-xl font-semibold"
-                            onMouseOver={displaySubmenu}
-                        // onMouseLeave={handleLeave}
-                        >
-                            <div className="mx-8 my-2">Company</div>
-                        </button>
-                    </li> */}
-                    {/* <button className="stripedummy border-1 border-yellow-400"
-                        onMouseOver={displaySubmenu}
-                        // onMouseLeave={handleLeave}
-                    >
-                        <li className="stripedummy mx-8 text-xl font-semibold">Products</li>
-                    </button> */}
-                    {/* <button className="stripedummy border border-transparent"
-                        onMouseOver={displaySubmenu}
-                        // onMouseLeave={handleLeave}
-                    >
-                        <li className="stripedummy mx-8 text-xl font-semibold">Developers</li>
-                    </button> */}
-                    {/* <button className="stripedummy border border-transparent"
-                        onMouseOver={displaySubmenu}
-                        // onMouseLeave={handleLeave}
-                    >
-                        <li className="stripedummy mx-8 text-xl font-semibold">Company</li>
-                    </button> */}
-                    {/* <button>
-                        <Link href={"/stripe/company"} >
-                            <a className="hover:cursor-pointer">
-
-                                <span className="text-xl font-semibold">Company</span>
-                            </a>
-                        </Link>
-                    </button> */}
                 </ul>
                 {/* Sign in Button shows on large screens only */}
                 <div className="hidden lg:flex mt-10 mr-1/12">
