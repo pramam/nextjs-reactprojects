@@ -1,6 +1,7 @@
 import SVGX from '../svgicons/SVGX'
 import { useGlobalStripeContext } from './Context'
 import Button from './Button'
+import submenuData from './submenudata'
 
 export default function Sidebar() {
     const { closeSidebar } = useGlobalStripeContext();
@@ -14,15 +15,49 @@ export default function Sidebar() {
                     <div className="flex flex-col">
                         <div className="flex justify-end mt-2 mr-2">
                             <button onClick={closeSidebar}
-                                className="mt-3 mr-3 focus:outline-none border border-transparent">
-                                <SVGX css="mt-1.5 h-8 w-8 text-red-700" />
+                                className="mt-2 mr-2 focus:outline-none border border-transparent">
+                                <SVGX css="mt-1.5 h-4 w-4 text-gray-700" />
                             </button>
                         </div>
-                        <p className="flex text-center mx-auto mt-10 text-3xl">Sidebar Content</p>
-                        <p className="flex text-center mx-auto mt-10 text-3xl">Sidebar Content</p>
+                        {/* <p className="flex text-center mx-auto mt-10 text-3xl">Sidebar Content</p>
+                        <p className="flex text-center mx-auto mt-10 text-3xl">Sidebar Content</p> */}
 
                         {/* List of items and Sign in Button  */}
-                        <span className="flex justify-center">
+                        <ul>
+                            {submenuData.map((menu, index) => {
+                                return (
+                                    <li key={index} className="">
+                                        <h1 className="ml-3 mb-5 font-bold text-gray-900 uppercase text-sm">{menu.page}</h1>
+                                        <div className="grid grid-cols-2 gap-1 mb-3">
+                                            {menu.links.map((item, index2) => {
+                                                return (
+                                                    <div key={index2}>
+                                                        <div className="ml-3 flex flex-row whitespace-nowrap">
+                                                            {item.icon({ css: `h-6 w-6 ${item.textcolor}` })}
+                                                            <div className="ml-2 mr-10">{item.name}</div>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+
+                                        {/* <ul className="flex flex-row flex-wrap mb-5">
+                                            {menu.links.map((item, index2) => {
+                                                return (
+                                                    <li key={index2}>
+                                                        <div className="ml-3 flex flex-row flex-wrap">
+                                                            {item.icon({ css: `h-6 w-6 ${item.textcolor}` })}
+                                                            <div className="ml-2 mr-10">{item.name}</div>
+                                                        </div>
+                                                    </li>
+                                                )
+                                            })}
+                                        </ul> */}
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                        <span className="flex justify-center mt-4 mb-4">
                             <Button text="Sign in" />
                         </span>
                     </div>
