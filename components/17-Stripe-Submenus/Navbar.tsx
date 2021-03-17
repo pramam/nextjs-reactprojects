@@ -23,13 +23,13 @@ export default function Navbar() {
         // Center is needed for the arrow
         const left = btn.left - (btn.width / 2)
         const bottom = btn.bottom + submenuTopAdjustment
-        const center = (btn.right - btn.left) / 2
+        const center = (btn.right + btn.left) / 2
 
         const label = e.target.textContent
         console.log(btn)
         console.log(e.target.textContent)
         // console.log(`displaySubmenu: e.target.value ${e.target.value}`)
-        // console.log(`displaySubmenu button, ${btn}, center ${center}, bottom ${btn.bottom}`)
+        console.log(`displaySubmenu button, ${btn}, left ${left}, center ${center}, bottom ${btn.bottom}`)
         openSubmenu(label, menuIndex, { left, bottom, center })
     }
     const handleLeave = (e) => {

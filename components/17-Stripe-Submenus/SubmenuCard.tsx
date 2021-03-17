@@ -1,6 +1,7 @@
 import { useGlobalStripeContext } from './Context'
 import submenuData from './submenudata'
 import Link from 'next/link'
+import Arrow from './Arrow'
 
 export default function SubmenuCard() {
     const { navButtonToShow, navButtonIndex, navPrevButtonIndex, coordinates } = useGlobalStripeContext()
@@ -9,6 +10,12 @@ export default function SubmenuCard() {
 
     return (
         <div>
+            <div className="absolute z-20"
+                // These pixels are calculated based on the size of the arrow(7px) in globals.css
+                style={{ left: `${coordinates.center - 4}px`, top: `${coordinates.bottom - 8}px ` }}>
+                <Arrow />
+            </div>
+
             <div className="absolute py-7 bg-white z-10 inline-block rounded-md shadow-lg"
                 style={{ left: `${coordinates.left}px`, top: `${coordinates.bottom + topSpacePx}px` }}
             >
