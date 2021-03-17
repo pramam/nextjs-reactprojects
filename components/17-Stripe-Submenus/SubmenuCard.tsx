@@ -22,8 +22,8 @@ export default function SubmenuCard() {
                             return (
                                 <li key={index}>
                                     <div className="flex flex-row">
-                                        {obj.icon({ css: `h-4 w-4 ${obj.textcolor} mt-1` })}
-                                        <div className="ml-3 mr-10">{obj.name}</div>
+                                        {obj.icon({ css: `h-6 w-6 ${obj.textcolor}` })}
+                                        <div className="ml-2 mr-10">{obj.name}</div>
                                     </div>
                                 </li>
                             )
