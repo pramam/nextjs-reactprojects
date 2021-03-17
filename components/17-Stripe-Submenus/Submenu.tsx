@@ -1,21 +1,11 @@
-import { useEffect } from 'react'
 import { useGlobalStripeContext } from './Context'
 import { Transition } from '@headlessui/react'
 import SubmenuCard from './SubmenuCard'
 
 export default function Submenu() {
-    const { isSubmenuOpen, navButtonToShow, navButtonIndex, navPrevButtonIndex, coordinates } = useGlobalStripeContext()
-    const topSpacePx = 0 //-3
-    // const refContainer = useRef(null)
-    useEffect(() => {
-        // const submenu = refContainer.current
-        // const { center, bottom } = coords
-        // // He used this for inline styling which I don't need
-    }, [coordinates])
+    const { isSubmenuOpen, navButtonIndex, navPrevButtonIndex } = useGlobalStripeContext()
     return (
-        <div
-        // ref={refContainer}
-        >
+        <div>
             {isSubmenuOpen ?
                 // <Transition
                 //     // appear doesn't seem to do what I expect

@@ -2,7 +2,6 @@ import SVGLogo from './svgimages/SVGLogo'
 import Button from './Button'
 import SVGMenu from '../svgicons/SVGMenu'
 import { useGlobalStripeContext } from './Context'
-import Link from 'next/link'
 import submenuData from './submenudata'
 
 import { signin_url } from './submenudata'
@@ -32,38 +31,21 @@ export default function Navbar() {
         console.log(`displaySubmenu button, ${btn}, left ${left}, center ${center}, bottom ${btn.bottom}`)
         openSubmenu(label, menuIndex, { left, bottom, center })
     }
+
     const handleLeave = (e) => {
         //https://www.designcise.com/web/tutorial/how-to-fix-property-does-not-exist-on-type-eventtarget-typescript-error
-        let classList = e.target.classList;
+        // let id = (e.target as Element).id;
+        // console.log(`handleLeave: e.target.id: ${id}`)
 
-        console.log(`handleLeave: e.target.classList: ${e.target.classList}`)
-        const containsresult = e.target.classList.contains('stripedummy')
         if (!e.target.classList.contains('stripedummy')) {
-            console.log(`handleLeave: Does not contain stripedummy`)
-            // console.log(containsresult)
+            // console.log(`handleLeave: Does not contain stripedummy`)
             closeSubmenu()
         }
         else {
-            console.log(`handleLeave: Contains stripedummy`)
-            // console.log(containsresult)
+            // console.log(`handleLeave: Contains stripedummy`)
         }
-        // console.log(e.target.classList)
-
-        // if (e.target.classList.item[0] = 'stripedummy') {
-        //     console.log(`handleLeave: Staying`)
-        //     // closeSubmenu()
-        // }
-        // else {
-        //     console.log(`handleLeave: Closing`)
-        //     closeSubmenu()
-        // }
-            // if (!e.target.classList.contains('stripedummy')) {
-        //     closeSubmenu()
-        // }
-        // else
-        //     console.log(`handleLeave: not leaving`)
-
     }
+
     return (
         <div className="w-full" onMouseOver={handleLeave}>
             <div className="flex flex-row justify-between">
@@ -73,7 +55,11 @@ export default function Navbar() {
                         return (
                             <li key={index}>
                                 <button
-                                    // Don't wrap 'Use cases' on 2 lines:whitespace-nowrap
+                                    // id="stripenavbutton"
+                                    // * 1. Don't wrap 'Use cases' on 2 lines:whitespace-nowrap
+                                    // * 2. `stripedummy` is read from classList to determine if we are on top of this button.
+                                    // *    Do not change the name or remove from styles/globals.css 
+                                    // * 3. Do not  use `stripedummy` on any other element other than these buttons
                                     className="stripedummy whitespace-nowrap text-xl font-semibold"
                                     onMouseOver={(e) => displaySubmenu(e, index)}
 

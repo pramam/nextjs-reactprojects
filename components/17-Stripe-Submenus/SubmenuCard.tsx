@@ -5,19 +5,18 @@ import Arrow from './Arrow'
 
 export default function SubmenuCard() {
     const { navButtonToShow, navButtonIndex, navPrevButtonIndex, coordinates } = useGlobalStripeContext()
-    const topSpacePx = 0 //-3
     const links = submenuData[navButtonIndex].links;
 
     return (
         <div>
             <div className="absolute z-20"
-                // These pixels are calculated based on the size of the arrow(7px) in globals.css
+                // These pixels are calculated based on the size of the arrow(8px) in globals.css
                 style={{ left: `${coordinates.center - 4}px`, top: `${coordinates.bottom - 8}px ` }}>
                 <Arrow />
             </div>
 
             <div className="absolute py-7 bg-white z-10 inline-block rounded-md shadow-lg"
-                style={{ left: `${coordinates.left}px`, top: `${coordinates.bottom + topSpacePx}px` }}
+                style={{ left: `${coordinates.left}px`, top: `${coordinates.bottom}px` }}
             >
                 <div className="flex flex-col">
 

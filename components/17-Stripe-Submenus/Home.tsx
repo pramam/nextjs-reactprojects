@@ -7,7 +7,7 @@ export default function Home() {
     const { closeSubmenu } = useGlobalStripeContext();
 
     const onHome = () => {
-        console.log(`Mouse on Home`)
+        // console.log(`Mouse on Home`)
         closeSubmenu()
     }
     return (

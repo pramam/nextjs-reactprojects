@@ -14,10 +14,17 @@ body {
   height: 13rem;
 }
 
+/* 17: Stripe Submenus
+Do not change the name or remove this
+This declaration name is used in Stripe to determine if the mouse is :-moz-drag-over
+a Navbar button or not */
 #stripedummy {
   cursor: pointer;
 }
 
+/* 17: Stripe Submenus
+This vanilla CSS is used to create an up arrow on top of the Submenu in
+the Stripe project */
 .arrow-up {
   width: 0; 
   height: 0; 
