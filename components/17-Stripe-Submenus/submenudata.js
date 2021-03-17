@@ -13,7 +13,7 @@ import SVGGlobeAltSmall from '../svgicons/SVGGlobeAltSmall'
 import SVGBriefcaseSmall from '../svgicons/SVGBriefcaseSmall'
 
 export const signin_url = "/stripe/products"
-export const starthere_url = "/stripe/products"
+export const startnow_url = "/stripe/products"
 
 export const submenuData = [
     {
