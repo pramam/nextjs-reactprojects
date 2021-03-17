@@ -283,5 +283,20 @@
         "about": "/general/about",
         "checkins": 28,
         "timetocomplete": "3 days"
+    },
+    {
+        "id": 17,
+        "isproject": true,
+        "day": 51,
+        "image": "/screenshots/Screenshot-Stripe-Submenus.png",
+        "title": "Stripe Submenus",
+        "url": "/stripe",
+        "blogurl": "",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/17-Stripe-Submenus",
+        "inspiration": "https://react-projects-13-stripe-submenus.netlify.app/",
+        "timeline": "/",
+        "about": "/general/about",
+        "checkins": 32,
+        "timetocomplete": "4 days"
     }
 ]
