@@ -34,27 +34,29 @@ export default function Navbar() {
     }
     const handleLeave = (e) => {
         //https://www.designcise.com/web/tutorial/how-to-fix-property-does-not-exist-on-type-eventtarget-typescript-error
-        // let classList = e.target.classList;
+        let classList = e.target.classList;
 
-        // console.log(`handleLeave: e.target.classList: ${e.target.classList}`)
-        // const containsresult = e.target.classList.contains('stripedummy')
-        // if (!e.target.classList.contains('stripedummy')) {
-        //     console.log(`handleLeave does not contain stripedummy`)
-        //     // console.log(containsresult)
-        //     closeSubmenu()
-        // }
-        // else {
-        //     console.log(`handleLeave: contains YES`)
-        //     // console.log(containsresult)
-        // }
-        if (e.target.classList.item[0] = 'stripedummy') {
-            console.log(`handleLeave: YES stripedummy`)
+        console.log(`handleLeave: e.target.classList: ${e.target.classList}`)
+        const containsresult = e.target.classList.contains('stripedummy')
+        if (!e.target.classList.contains('stripedummy')) {
+            console.log(`handleLeave: Does not contain stripedummy`)
+            // console.log(containsresult)
             closeSubmenu()
         }
         else {
-            console.log(`handleLeave: Staying`)
-            // closeSubmenu()
+            console.log(`handleLeave: Contains stripedummy`)
+            // console.log(containsresult)
         }
+        // console.log(e.target.classList)
+
+        // if (e.target.classList.item[0] = 'stripedummy') {
+        //     console.log(`handleLeave: Staying`)
+        //     // closeSubmenu()
+        // }
+        // else {
+        //     console.log(`handleLeave: Closing`)
+        //     closeSubmenu()
+        // }
             // if (!e.target.classList.contains('stripedummy')) {
         //     closeSubmenu()
         // }
@@ -63,7 +65,7 @@ export default function Navbar() {
 
     }
     return (
-        <div className="w-full">
+        <div className="w-full" onMouseOver={handleLeave}>
             <div className="flex flex-row justify-between">
                 <h1 className="mt-8 ml-10 sm:ml-16"><SVGLogo /></h1>
                 <ul className="hidden text-white w-5/12 mt-10 lg:flex lg:flex-row">
@@ -74,10 +76,10 @@ export default function Navbar() {
                                     // Don't wrap 'Use cases' on 2 lines:whitespace-nowrap
                                     className="stripedummy whitespace-nowrap text-xl font-semibold"
                                     onMouseOver={(e) => displaySubmenu(e, index)}
-                                // onMouseLeave={handleLeave}
+
                                 >
                                     {/* px-4 py-2 here prevents the bottom-px reading from shifting as the mouse moves */}
-                                    <div className="px-4 py-2">{obj.page}</div>
+                                    <div className="stripedummy px-4 py-2">{obj.page}</div>
                                 </button>
                             </li>
                         )

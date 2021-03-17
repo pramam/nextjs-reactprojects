@@ -1,11 +1,18 @@
 import SVGPhone from './svgimages/SVGPhone'
 import Button from './Button'
 import { startnow_url } from './submenudata'
-
+import { useGlobalStripeContext } from './Context'
 // Home contains the main text on the page, the Start Now button, and the Phone image
 export default function Home() {
+    const { closeSubmenu } = useGlobalStripeContext();
+
+    const onHome = () => {
+        console.log(`Mouse on Home`)
+        closeSubmenu()
+    }
     return (
-        <div className="ml-10 sm:ml-16">
+        <div onMouseOver={onHome}>
+            <div className="ml-10 sm:ml-16">
             <div className="flex flex-row justify-between">
                 <div className="w-10/12 sm:w-6/12 lg:w-7/12">
                     <h1 className="mt-10 text-4xl sm:text-5xl lg:text-8xl font-semibold font-roboto text-gray-800 lg:leading-tight">Payments <br />infrastructure <br /> for the internet</h1>
@@ -19,6 +26,7 @@ export default function Home() {
                     <SVGPhone css="" />
                 </div>
             </div>
+        </div>
         </div>
     )
 }
