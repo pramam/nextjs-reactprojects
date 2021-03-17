@@ -5,6 +5,7 @@ import submenuData from './submenudata'
 import Link from 'next/link'
 import { signin_url } from './submenudata'
 
+//TODO: #BUG: When there is a lot of data on the Sidebar Modal I cannot scroll down on small screens in landscape mode
 export default function Sidebar() {
     const { closeSidebar } = useGlobalStripeContext();
 
@@ -34,14 +35,17 @@ export default function Sidebar() {
                                             {menu.links.map((item, index2) => {
                                                 return (
                                                     <div key={index2}>
-                                                        <div className="ml-3 flex flex-row whitespace-nowrap">
+
                                                             {/* TODO: #BUG: Document icon not displaying in Sidebar,
                                                               *             It displays on lg: screens*/}
-                                                            {item.icon({ css: `h-6 w-6 ${item.textcolor}` })}
-                                                            <Link href={item.url}>
-                                                                <a className="ml-2 mr-10">{item.name}</a>
+                                                        <Link href={item.url}>
+                                                            <a>
+                                                                <div className="ml-3 flex flex-row whitespace-nowrap">
+                                                                    {item.icon({ css: `h-6 w-6 ${item.textcolor}` })}
+                                                                    <div className="ml-2 mr-10">{item.name}</div>
+                                                                </div>
+                                                            </a>
                                                             </Link>
-                                                        </div>
                                                     </div>
                                                 )
                                             })}

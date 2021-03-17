@@ -9,7 +9,7 @@ export default function SubmenuCard() {
 
     return (
         <div>
-            <div className="absolute py-7 bg-gray-50 z-10 inline-block rounded-md shadow-lg"
+            <div className="absolute py-7 bg-white z-10 inline-block rounded-md shadow-lg"
                 style={{ left: `${coordinates.left}px`, top: `${coordinates.bottom + topSpacePx}px` }}
             >
                 <div className="flex flex-col">
@@ -22,14 +22,16 @@ export default function SubmenuCard() {
                         {links.map((obj, index) => {
                             return (
                                 <li key={index}>
-                                    <div className="flex flex-row">
                                         {/* TODO: #BUG: Document icon displays here,
                                           *             not displaying on < lg: screens*/}
-                                        {obj.icon({ css: `h-6 w-6 ${obj.textcolor}` })}
-                                        <Link href={obj.url}>
-                                            <a className="ml-2 mr-10">{obj.name}</a>
-                                        </Link>
-                                    </div>
+                                    <Link href={obj.url}>
+                                        <a>
+                                            <div className="flex flex-row">
+                                                {obj.icon({ css: `h-6 w-6 ${obj.textcolor}` })}
+                                                <div className="ml-2 mr-10">{obj.name}</div>
+                                            </div>
+                                        </a>
+                                    </Link>
                                 </li>
                             )
                         })}
