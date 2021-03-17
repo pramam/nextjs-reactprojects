@@ -4,14 +4,14 @@ import { Transition } from '@headlessui/react'
 import SubmenuCard from './SubmenuCard'
 
 export default function Submenu() {
-    const { isSubmenuOpen, navButtonToShow, navButtonIndex, navPrevButtonIndex, coords } = useGlobalStripeContext()
+    const { isSubmenuOpen, navButtonToShow, navButtonIndex, navPrevButtonIndex, coordinates } = useGlobalStripeContext()
     const topSpacePx = 0 //-3
     // const refContainer = useRef(null)
-    // useEffect(() => {
-    //     // const submenu = refContainer.current
-    //     // const { center, bottom } = coords
-    //     // // He used this for inline styling which I don't need
-    // }, [coords])
+    useEffect(() => {
+        // const submenu = refContainer.current
+        // const { center, bottom } = coords
+        // // He used this for inline styling which I don't need
+    }, [coordinates])
     return (
         <div
         // ref={refContainer}

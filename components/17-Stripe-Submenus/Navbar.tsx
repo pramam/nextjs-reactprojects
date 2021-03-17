@@ -11,7 +11,8 @@ import submenuData from './submenudata'
 // on < lg: screens: the Stripe logo, the Menu button(which opens the Sidebar)
 export default function Navbar() {
     const { openSidebar, openSubmenu, closeSubmenu, navButtonIndex } = useGlobalStripeContext();
-
+    // The submenu needs to overlap the bounds of the button it represents
+    const submenuTopAdjustment = -3 // 3px
     // onMouseOver could call openSubmenu, but it calls this function instead
     // to add additional functionality
     const displaySubmenu = (e, menuIndex) => {
@@ -20,7 +21,7 @@ export default function Navbar() {
         // Bottom is used to position the top of the Submenu
         // Center is needed for the arrow
         const left = btn.left - (btn.width / 2)
-        const bottom = btn.bottom
+        const bottom = btn.bottom + submenuTopAdjustment
         const center = (btn.right - btn.left) / 2
 
         const label = e.target.textContent
@@ -28,7 +29,7 @@ export default function Navbar() {
         console.log(e.target.textContent)
         // console.log(`displaySubmenu: e.target.value ${e.target.value}`)
         // console.log(`displaySubmenu button, ${btn}, center ${center}, bottom ${btn.bottom}`)
-        openSubmenu(label, menuIndex, left, bottom, center)
+        openSubmenu(label, menuIndex, { left, bottom, center })
     }
     const handleLeave = (e) => {
         //https://www.designcise.com/web/tutorial/how-to-fix-property-does-not-exist-on-type-eventtarget-typescript-error
