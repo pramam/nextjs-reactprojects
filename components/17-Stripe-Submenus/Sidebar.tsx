@@ -3,6 +3,7 @@ import { useGlobalStripeContext } from './Context'
 import Button from './Button'
 import submenuData from './submenudata'
 import Link from 'next/link'
+import { signin_url } from './submenudata'
 
 export default function Sidebar() {
     const { closeSidebar } = useGlobalStripeContext();
@@ -34,6 +35,8 @@ export default function Sidebar() {
                                                 return (
                                                     <div key={index2}>
                                                         <div className="ml-3 flex flex-row whitespace-nowrap">
+                                                            {/* TODO: #BUG: Document icon not displaying in Sidebar,
+                                                              *             It displays on lg: screens*/}
                                                             {item.icon({ css: `h-6 w-6 ${item.textcolor}` })}
                                                             <Link href={item.url}>
                                                                 <a className="ml-2 mr-10">{item.name}</a>
@@ -61,7 +64,7 @@ export default function Sidebar() {
                             })}
                         </ul>
                         <span className="flex justify-center mt-4 mb-4">
-                            <Button text="Sign in" />
+                            <Button text="Sign in" url={signin_url} />
                         </span>
                     </div>
                     {/* <div className="absolute mt-2">

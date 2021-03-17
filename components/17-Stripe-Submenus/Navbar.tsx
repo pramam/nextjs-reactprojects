@@ -5,6 +5,7 @@ import { useGlobalStripeContext } from './Context'
 import Link from 'next/link'
 import submenuData from './submenudata'
 
+import { signin_url } from './submenudata'
 
 // Navbar displays:
 // on lg: screens:   the Stripe logo, the Nav bar, the Sign In Button
@@ -84,7 +85,7 @@ export default function Navbar() {
                 </ul>
                 {/* Sign in Button shows on large screens only */}
                 <div className="hidden lg:flex mt-10 mr-1/12">
-                    <Button text="Sign in" />
+                    <Button text="Sign in" url={signin_url} />
                 </div>
                 {/* Menu Button shows on small screens only  */}
                 {/* The Sign In button appears in the Sidebar on small screens  */}

@@ -23,6 +23,8 @@ export default function SubmenuCard() {
                             return (
                                 <li key={index}>
                                     <div className="flex flex-row">
+                                        {/* TODO: #BUG: Document icon displays here,
+                                          *             not displaying on < lg: screens*/}
                                         {obj.icon({ css: `h-6 w-6 ${obj.textcolor}` })}
                                         <Link href={obj.url}>
                                             <a className="ml-2 mr-10">{obj.name}</a>

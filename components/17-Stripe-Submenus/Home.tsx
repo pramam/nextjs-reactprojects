@@ -1,5 +1,6 @@
 import SVGPhone from './svgimages/SVGPhone'
 import Button from './Button'
+import { starthere_url } from './submenudata'
 
 // Home contains the main text on the page, the Start Now button, and the Phone image
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
                     <p className="text-gray-700 text-xl mt-10">Millions of companies of all sizes&#8212;from startups to Fortune 500s&#8212;use Stripe's software and APIs to accept payments, send payouts, and manage their businesses online.
                     </p>
                     <div className="mt-7 sm:mt-5">
-                        <Button text="Start now" />
+                        <Button text="Start now" url={starthere_url} />
                     </div>
                 </div>
                 <div className="hidden sm:block mt-6 lg:mr-2/12">
