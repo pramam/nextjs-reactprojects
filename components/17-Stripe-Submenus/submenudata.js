@@ -1,4 +1,16 @@
-import SVGHome from '../svgicons/SVGHome'
+import SVGHomeSmall from '../svgicons/SVGHomeSmall'
+import SVGCreditCardSmall from '../svgicons/SVGCreditCardSmall'
+import SVGDesktopComputerSmall from '../svgicons/SVGDesktopComputerSmall'
+import SVGAnnotationSmall from '../svgicons/SVGAnnotationSmall'
+import SVGArrowsExpandSmall from '../svgicons/SVGArrowsExpandSmall'
+import SVGServerSmall from '../svgicons/SVGServerSmall'
+import SVGUserAddSmall from '../svgicons/SVGUserAddSmall'
+import SVGDocumentTextSmall from '../svgicons/SVGDocumentTextSmall'
+import SVGDocumentSearchSmall from '../svgicons/SVGDocumentSearchSmall'
+import SVGPhoneSmall from '../svgicons/SVGPhoneSmall'
+import SVGUsersSmall from '../svgicons/SVGUsersSmall'
+import SVGGlobeAltSmall from '../svgicons/SVGGlobeAltSmall'
+import SVGBriefcaseSmall from '../svgicons/SVGBriefcaseSmall'
 
 export const submenuData = [
     {
@@ -7,21 +19,21 @@ export const submenuData = [
             {
                 id: 1,
                 name: "Payment",
-                icon: SVGHome,
+                icon: SVGCreditCardSmall,
                 textcolor: "text-blue-500",
                 url: "/stripe/products"
             },
             {
                 id: 2,
                 name: "Terminal",
-                icon: SVGHome,
+                icon: SVGDesktopComputerSmall,
                 textcolor: "text-red-500",
                 url: "/stripe/products"
             },
             {
                 id: 3,
                 name: "Connect",
-                icon: SVGHome,
+                icon: SVGAnnotationSmall,
                 textcolor: "text-green-500",
                 url: "/stripe/products"
             },
@@ -34,22 +46,22 @@ export const submenuData = [
                 {
                     id: 1,
                     name: "Ecommerce",
-                    icon: SVGHome,
-                    textcolor: "text-blue-500",
+                    icon: SVGArrowsExpandSmall,
+                    textcolor: "text-pink-400",
                     url: "/stripe/products"
                 },
                 {
                     id: 2,
                     name: "SaaS",
-                    icon: SVGHome,
-                    textcolor: "text-red-500",
+                    icon: SVGServerSmall,
+                    textcolor: "text-green-500",
                     url: "/stripe/products"
                 },
                 {
                     id: 3,
                     name: "Marketplaces",
-                    icon: SVGHome,
-                    textcolor: "text-green-500",
+                    icon: SVGUserAddSmall,
+                    textcolor: "text-blue-500",
                     url: "/stripe/products"
                 },
             ]
@@ -60,21 +72,21 @@ export const submenuData = [
             {
                 id: 1,
                 name: "Documentation",
-                icon: SVGHome,
+                icon: SVGDocumentTextSmall,
                 textcolor: "text-blue-500",
                 url: "/stripe/products"
             },
             {
                 id: 2,
                 name: "API Reference",
-                icon: SVGHome,
-                textcolor: "text-red-500",
+                icon: SVGDocumentSearchSmall,
+                textcolor: "text-pink-500",
                 url: "/stripe/products"
             },
             {
                 id: 3,
                 name: "Support",
-                icon: SVGHome,
+                icon: SVGPhoneSmall,
                 textcolor: "text-green-500",
                 url: "/stripe/products"
             },
@@ -86,29 +98,29 @@ export const submenuData = [
             {
                 id: 1,
                 name: "About Stripe",
-                icon: SVGHome,
-                textcolor: "text-blue-500",
-                url: "/stripe/products"
+                icon: SVGHomeSmall,
+                textcolor: "text-red-500",
+                url: "/stripe/company"
             },
             {
                 id: 2,
                 name: "Customers",
-                icon: SVGHome,
-                textcolor: "text-red-500",
+                icon: SVGUsersSmall,
+                textcolor: "text-green-500",
                 url: "/stripe/products"
             },
             {
                 id: 3,
                 name: "Enterprise",
-                icon: SVGHome,
-                textcolor: "text-red-300",
+                icon: SVGGlobeAltSmall,
+                textcolor: "text-blue-700",
                 url: "/stripe/products"
             },
             {
                 id: 4,
                 name: "Jobs",
-                icon: SVGHome,
-                textcolor: "text-green-500",
+                icon: SVGBriefcaseSmall,
+                textcolor: "text-purple-500",
                 url: "/stripe/products"
             },
         ]
