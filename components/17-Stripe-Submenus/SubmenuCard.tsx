@@ -1,5 +1,6 @@
 import { useGlobalStripeContext } from './Context'
 import submenuData from './submenudata'
+import Link from 'next/link'
 
 export default function SubmenuCard() {
     const { navButtonToShow, navButtonIndex, navPrevButtonIndex, coordinates } = useGlobalStripeContext()
@@ -23,7 +24,9 @@ export default function SubmenuCard() {
                                 <li key={index}>
                                     <div className="flex flex-row">
                                         {obj.icon({ css: `h-6 w-6 ${obj.textcolor}` })}
-                                        <div className="ml-2 mr-10">{obj.name}</div>
+                                        <Link href={obj.url}>
+                                            <a className="ml-2 mr-10">{obj.name}</a>
+                                        </Link>
                                     </div>
                                 </li>
                             )

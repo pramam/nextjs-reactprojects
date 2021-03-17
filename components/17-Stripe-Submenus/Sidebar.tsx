@@ -2,6 +2,7 @@ import SVGX from '../svgicons/SVGX'
 import { useGlobalStripeContext } from './Context'
 import Button from './Button'
 import submenuData from './submenudata'
+import Link from 'next/link'
 
 export default function Sidebar() {
     const { closeSidebar } = useGlobalStripeContext();
@@ -34,7 +35,9 @@ export default function Sidebar() {
                                                     <div key={index2}>
                                                         <div className="ml-3 flex flex-row whitespace-nowrap">
                                                             {item.icon({ css: `h-6 w-6 ${item.textcolor}` })}
-                                                            <div className="ml-2 mr-10">{item.name}</div>
+                                                            <Link href={item.url}>
+                                                                <a className="ml-2 mr-10">{item.name}</a>
+                                                            </Link>
                                                         </div>
                                                     </div>
                                                 )
