@@ -4,17 +4,17 @@ import ProjectNavbarContainerSimple from '../../components/projects/ProjectNavba
 export default function DisplayStripe() {
     return (
         <div>
-            {/* <ProjectNavbarContainerSimple
-                projectId={17}
-                textColor="text-gray-900"
-                includeBlogs={false}
-            /> */}
-            <Stripe />
             <ProjectNavbarContainerSimple
                 projectId={17}
                 textColor="text-gray-900"
                 includeBlogs={false}
             />
+            <Stripe />
+            {/* <ProjectNavbarContainerSimple
+                projectId={17}
+                textColor="text-gray-900"
+                includeBlogs={false}
+            /> */}
         </div>
     )
 }

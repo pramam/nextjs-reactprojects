@@ -19,7 +19,7 @@ export default function SubmenuCard() {
 
     return (
         <div>
-            <div className="absolute z-30"
+            <div className="fixed z-10"
                 // These pixels are calculated based on the size of the arrow(8px) in globals.css
                 // style={{ left: `${coordinates.center - 4}px`, top: `${coordinates.bottom - 8}px ` }}
                 ref={refArrow}>
@@ -27,11 +27,12 @@ export default function SubmenuCard() {
             </div>
 
 
-            <div className="absolute py-7 bg-white z-10 inline-block rounded-md shadow-lg"
+            <div className="fixed py-7 bg-white z-10 inline-block rounded-md shadow-lg"
                 // Adding inline style here gives me a bug when TIMELINE is added
                 // The submenu is too low and I cannot close it
                 // Follow the original tutorial that uses a useRef here to do inline styles on the submenu           
                 // style={{ left: `${coordinates.left}px`, top: `${coordinates.bottom}px` }}
+                // Update: Changed `absolute` positioning to `fixed`
                 ref={refSubmenuCard}
             >
                 <div className="flex flex-col">
