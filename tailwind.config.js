@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
@@ -7,6 +9,10 @@ module.exports = {
         'wiggle': 'wiggle 1s ease-in-out infinite',
         'slidy': 'slidy 30s ease-in-out infinite',
         'expandcontract': 'expandcontract 2s ease-in-out infinite'
+      },
+      fontFamily: {
+        'tuliplogo': ['"Bilbo Swash Caps"', ...fontFamily.serif],
+        'tuliptext': ['Raleway', ...fontFamily.sans],
       },
       keyframes: {
         'wiggle': {

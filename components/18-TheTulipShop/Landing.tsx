@@ -4,7 +4,7 @@ export default function Landing() {
     return (
         <div>
             <div className="grid h-1/5">
-                <h1 className="text-yellow-50 text-center py-10 text-4xl"> The Tulip Shop</h1>
+                <h1 className="font-tuliplogo text-yellow-50 text-center py-10 text-6xl"> The Tulip Shop</h1>
             </div>
             <div className="grid grid-cols-1 relative">
                 <img
