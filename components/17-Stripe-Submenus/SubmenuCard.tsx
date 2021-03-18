@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react'
 import { useGlobalStripeContext } from './Context'
 import submenuData from './submenudata'
 import Link from 'next/link'
@@ -5,18 +6,33 @@ import Arrow from './Arrow'
 
 export default function SubmenuCard() {
     const { navButtonToShow, navButtonIndex, navPrevButtonIndex, coordinates } = useGlobalStripeContext()
+    const refSubmenuCard = useRef(null)
+    const refArrow = useRef(null)
     const links = submenuData[navButtonIndex].links;
+
+    useEffect(() => {
+        refSubmenuCard.current.style.left = `${coordinates.left}px`
+        refSubmenuCard.current.style.top = `${coordinates.bottom}px`
+        refArrow.current.style.left = `${coordinates.center - 4}px`
+        refArrow.current.style.top = `${coordinates.bottom - 8}px `
+    }, [coordinates])
 
     return (
         <div>
-            <div className="absolute z-20"
+            <div className="absolute z-30"
                 // These pixels are calculated based on the size of the arrow(8px) in globals.css
-                style={{ left: `${coordinates.center - 4}px`, top: `${coordinates.bottom - 8}px ` }}>
+                // style={{ left: `${coordinates.center - 4}px`, top: `${coordinates.bottom - 8}px ` }}
+                ref={refArrow}>
                 <Arrow />
             </div>
 
+
             <div className="absolute py-7 bg-white z-10 inline-block rounded-md shadow-lg"
-                style={{ left: `${coordinates.left}px`, top: `${coordinates.bottom}px` }}
+                // Adding inline style here gives me a bug when TIMELINE is added
+                // The submenu is too low and I cannot close it
+                // Follow the original tutorial that uses a useRef here to do inline styles on the submenu           
+                // style={{ left: `${coordinates.left}px`, top: `${coordinates.bottom}px` }}
+                ref={refSubmenuCard}
             >
                 <div className="flex flex-col">
 
