@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="w-full" onMouseOver={handleLeave}>
             <div className="flex flex-row justify-between">
                 <h1 className="mt-8 ml-10 sm:ml-16"><SVGLogo /></h1>
-                <ul className="hidden text-white w-5/12 mt-10 lg:flex lg:flex-row">
+                <ul className="hidden text-white w-6/12 justify-center mt-9 lg:flex lg:flex-row">
                     {submenuData.map((obj, index) => {
                         return (
                             <li key={index}>
@@ -72,7 +72,7 @@ export default function Navbar() {
                     })}
                 </ul>
                 {/* Sign in Button shows on large screens only */}
-                <div className="hidden lg:flex mt-10 mr-1/12">
+                <div className="hidden lg:flex mt-9 mr-10">
                     <Button text="Sign in" url={signin_url} />
                 </div>
                 {/* Menu Button shows on small screens only  */}
