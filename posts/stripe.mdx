@@ -1,5 +1,5 @@
 ---
-title: Stripe Menus
+title: Stripe Submenus
 id: 17
 keywords: [react, react hooks, useRef, useEffect, navbar, useContext, menus, submenus, sidebar, stripe website]
 description: A replication of stripe.com website with menus and a sidebar
@@ -7,3 +7,46 @@ description: A replication of stripe.com website with menus and a sidebar
 Here's the website embedded here as a React component:
 
 <Stripe/>
+
+
+
+Initially this project looked intimidating and I'd watched some of the tutorial on how to build it one night. Even after watching it, it seemed like
+a big project. But the next day I had sketchy internet for most of the day and landed up coding the layout, the sidebar/Menu button along with useContext to store all the context.
+So it seems like one just has to dive in and take small steps and the path becomes clear as you code the website.
+The experience I've built on all the previous projects is helping.
+
+
+This website has pretty complex interactions with the context and Submenu which is going to be hard to blog about. Instead I'm going to list some big takeaways:
+
+
+- Coding the Submenus(the dropdown that appears when you hover over the Navbar[Products, Use cases, Developers, Company]) was the hardest part. There were a lot of moving pieces:
+  * How to position the drop down to be right below the Nav button. Basically one has to get the coordinates of the button when you mouse over it. Store those coordinates in useContext, and then when the Submenu is displayed, use those coordinates to position it correctly.
+  * How to create the tiny up arrow on top of the Submenu? I used vanilla css to create an arrow and position it along with the Submenu using the coordinates of the Navbar button. This [link](https://css-tricks.com/snippets/css/css-triangle/) has a nifty animation explaining how a triangle is created in CSS.
+  * Hiding the Submenu when you mouse out from the Navbar button was tricky. I tried it my way and it wasn't working and so I had to resort to the solution used by the tutorial.
+
+
+- Background Hero Image:
+  * Though I am mainly focused on React Hooks so far and am not delving into the architecture of Next.js(this website is built on next.js) as yet, I wondered how to optimize the Hero image (the blue background SVG file) on this website. Something to look into later.
+  * The instructor of the course provided an SVG for the Hero image that had the diagonal cut on it already. It would be interesting to try and transform a full rectangular image on the fly using CSS.
+  * The original [stripe.com](stripe.com) website that serves as an inspiration for the instructor of the course, has a moving background image. Is that done with Canvas? Something else to explore in the future.
+
+
+- Positioning trauma ;-)
+  * Upon finishing the project I added the top Project Navbar on top(the one with the Timeline). That messed up the positioning of my submenus. 
+  * Initially the submenus and their arrows were `absolutely` positioned, based on the coordinates of the Navbar button. But on adding a top timeline, or upon embedding the website in MDX(on this blog),
+  the Submenus shifted down. To fix this I had to change the Submenu positioning to `fixed`, while also updating its coordinates by getting them from useContext, and using useRef on the element to set the left and top coordinates using inline styles.
+
+
+- Pending Bugs:
+  
+  * On small screens in landscape mode, when you click on the Menu button on the top right, the Sidebar appears showing you the menu options for Products, Use cases, Developers, Company and the Sign in button.
+    In landscape mode, you cannot see the whole sidebar and scrolling down scrolls the background but not the Sidebar. I suspect this is because it has position fixed. I'll have to figure out how to fix it.
+  * The Documentation icon is not displaying in the Sidebar on small screens. It displays ok in the Submenu on lg: screens.
+
+
+- Open Issues:
+  
+  I tried using the `<Transition>` component from Tailwind's `@headlessui/react` library to make the Submenus transition smoothly as you move from one Submenu to the next. I couldn't figure out the transition/transform settings for it to work smoothly, so I've shelved this for now. Maybe animation is not possible because the coordinates of the Submenu are plugged in at run time.
+
+
+This has been fun and I hope you are inspired to start building your own portfolio. 
