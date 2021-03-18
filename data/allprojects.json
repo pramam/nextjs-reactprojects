@@ -298,5 +298,20 @@
         "about": "/general/about",
         "checkins": 41,
         "timetocomplete": "4 days"
+    },
+    {
+        "id": 1616090129774,
+        "isproject": false,
+        "day": 52,
+        "image": "",
+        "title": "Adding Custom Fonts",
+        "url": "/thetulipshop",
+        "blogurl": "/posts/adding-custom-fonts",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/commit/a7f99c1400888480c225d0fabae19b195f82455c",
+        "inspiration": "https://bohemiantraders.com/",
+        "timeline": "/",
+        "about": "/general/about",
+        "checkins": 1,
+        "timetocomplete": "2 hours"
     }
 ]

@@ -42,6 +42,7 @@ const components = {
     Stripe: dynamic(() => import('../../components/17-Stripe-Submenus')),
     Tabs: dynamic(() => import('../../components/8-Tabs/Tabs')),
     TailwindTransitionExample: dynamic(() => import('../../components/examplecode/TailwindTransitionExample')),
+    TheTulipLogo: dynamic(() => import('../../components/examplecode/TheTulipLogo')),
     Tours: dynamic(() => import('../../components/3-Tours/Tours')),
     TransitionHeightExample: dynamic(() => import('../../components/examplecode/TransitionHeightExample')),
     UseReducerExample: dynamic(() => import('../../components/examplecode/UseReducerExample'))

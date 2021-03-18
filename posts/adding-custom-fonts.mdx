@@ -1,0 +1,83 @@
+---
+title: Adding custom fonts to Tailwind in Next.js 
+id: 1616090129774
+keywords: [custom fonts, tailwindcss, tailwind CSS, next.js, google font, config]
+description: How to add custom fonts to Tailwind in Next.js
+---
+Here's a Logo React component that has added a custom font to it's Head component:
+
+   <TheTulipLogo/>
+
+
+Here's how to add a custom font to your next.js project:
+
+
+1. Go to [fonts.google.com](fonts.google.com) and choose a custom font and a pairing. Add it to your 'cart', and on the right panel, copy the link. I chose ["Bilbo Swash Caps" and Raleway](https://fonts.google.com/specimen/Bilbo+Swash+Caps?preview.text=The%20Tulip%20Shop&preview.text_type=custom#about).
+
+
+2. The link to include in your code looks like this:
+
+
+```jsx <link rel="preconnect" href="https://fonts.gstatic.com"/>```
+
+
+```jsx <link href="https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Raleway&display=swap" rel="stylesheet"/>```
+
+
+The copied link was in html. Be sure to add a closing tag to `<link>` when you copy it to your code.
+
+
+3. You can add this to your `head` component for the entire website in next.js's [pages/_document.js](https://dev.to/jameswallis/using-tailwind-css-google-fonts-and-react-icons-with-a-next-js-application-50l5). Since I am showcasing many projects/websites in this git repo, I chose to include this font just for [The Tulip Shop](/thetulipshop) project.
+
+
+4. Add the font to tailwind.config.js:
+
+   ```js
+    const { fontFamily } = require('tailwindcss/defaultTheme');
+    module.exports = {
+        theme: {
+            extend: {
+                fontFamily: {
+                'tuliplogo': ['"Bilbo Swash Caps"', ...fontFamily.serif],
+                'tuliptext': ['Raleway', ...fontFamily.sans],
+      },
+            }
+        }
+    }
+
+```
+Note that a font that has spaces in it has extra double quotes.
+
+
+5. To use this font in your jsx/html, you'll have to use the utility class `font-tuliplogo` or `font-tuliptext`.
+
+
+6. Here's my index component:
+```typescript
+export default function Index() {
+    return (
+        <>
+            <Head>
+                <title>The Tulip Shop</title>
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link href="https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=Raleway&display=swap" rel="stylesheet" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <body className="font-tuliptext">
+                <div className="min-h-screen relative bg-gray-900">
+                    <Landing />
+                </div>
+            </body>
+        </>
+    )
+}
+```
+
+
+7. Here's a snippet from the Landing component:
+
+```tsx
+    <div className="grid h-1/5">
+        <h1 className="font-tuliplogo text-yellow-50 text-center py-10 text-6xl"> The Tulip Shop</h1>
+    </div>
+```
