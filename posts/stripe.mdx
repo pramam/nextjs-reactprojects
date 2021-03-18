@@ -22,6 +22,7 @@ This website has pretty complex interactions with the context and Submenu which 
 - Coding the Submenus(the dropdown that appears when you hover over the Navbar[Products, Use cases, Developers, Company]) was the hardest part. There were a lot of moving pieces:
   * How to position the drop down to be right below the Nav button. Basically one has to get the coordinates of the button when you mouse over it. Store those coordinates in useContext, and then when the Submenu is displayed, use those coordinates to position it correctly.
   * How to create the tiny up arrow on top of the Submenu? I used vanilla css to create an arrow and position it along with the Submenu using the coordinates of the Navbar button. This [link](https://css-tricks.com/snippets/css/css-triangle/) has a nifty animation explaining how a triangle is created in CSS.
+  * Adam Wathan recommends creating a real element instead of a pseudo element(attached to the Submenu), so I created a real Arrow and attached it to the Submenu setting the coordinates using inline styles.
   * Hiding the Submenu when you mouse out from the Navbar button was tricky. I tried it my way and it wasn't working and so I had to resort to the solution used by the tutorial.
 
 
@@ -42,6 +43,11 @@ This website has pretty complex interactions with the context and Submenu which 
   * On small screens in landscape mode, when you click on the Menu button on the top right, the Sidebar appears showing you the menu options for Products, Use cases, Developers, Company and the Sign in button.
     In landscape mode, you cannot see the whole sidebar and scrolling down scrolls the background but not the Sidebar. I suspect this is because it has position fixed. I'll have to figure out how to fix it.
   * The Documentation icon is not displaying in the Sidebar on small screens. It displays ok in the Submenu on lg: screens.
+
+
+- General comment:
+
+  * [My code](https://github.com/pramam/nextjs-reactprojects/tree/main/components/17-Stripe-Submenus) is looking pretty gnarly with all the Tailwind CSS embedded in it. [The course source code](https://github.com/john-smilga/react-projects/tree/master/13-stripe-submenus) uses vanilla CSS and looks much cleaner. 
 
 
 - Open Issues:
