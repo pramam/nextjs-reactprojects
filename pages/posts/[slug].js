@@ -39,6 +39,7 @@ const components = {
     SliderKeyframeWrapper: dynamic(() => import('../../components/9-Slider/SliderKeyframe/SliderKeyframeWrapper')),
     SliderWrapper: dynamic(() => import('../../components/9-Slider/SliderWrapper')),
     SidebarModal: dynamic(() => import('../../components/16-SidebarModal')),
+    Stripe: dynamic(() => import('../../components/17-Stripe-Submenus')),
     Tabs: dynamic(() => import('../../components/8-Tabs/Tabs')),
     TailwindTransitionExample: dynamic(() => import('../../components/examplecode/TailwindTransitionExample')),
     Tours: dynamic(() => import('../../components/3-Tours/Tours')),
