@@ -66,7 +66,9 @@ module.exports = {
       spacing: {
         // Comments below are correct:
         '112': '28rem', // * lg:-translate-x-112 used in Slider(Arrow), Also used in Slider(Dots)
+                        // * sm:h-112 used in TheTulipShop
         '128': '32rem', // * sm:w-128 used in Slider
+                        // * lg:h-128 in TheTulipShop
         '140': '35rem', // * lg:h-140 used in Slider
         '148': '37rem', // * Dots, Slider
         '152': '38rem', // * lg:h-152 used in Slider

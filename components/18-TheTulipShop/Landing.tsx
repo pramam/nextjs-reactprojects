@@ -14,7 +14,7 @@ export default function Landing() {
                     src={tulipphotos[0].img}
                     alt={tulipphotos[0].img}
                 />
-                <div className="absolute inset-0 bg-gray-900 bg-opacity-30 sm:bg-opacity-40 lg:bg-opacity-50"></div>
+                <div className="absolute inset-0 bg-gray-900 h-32 sm:h-48 md:h-60 lg:h-96 bg-opacity-30 sm:bg-opacity-40 lg:bg-opacity-50"></div>
                 <div className="flex items-center justify-center relative transform -translate-y-2 sm:-translate-y-5 h-32 sm:h-48 md:h-60 lg:h-96 text-center">
                     <span className="border-2 md:border-4 justify-center border-yellow-50 px-3 py-1 sm:px-6 sm:py-2 md:px-10 md:py-4 lg:px-20 lg:py-8 text-yellow-50 uppercase text-center text-xl sm:text-2xl md:text-3xl lg:text-5xl tracking-wider">
                         Bring Beauty Inside
@@ -80,23 +80,23 @@ export default function Landing() {
                                 alt={tulipphotos[4].img}
                             />
                         </li>
-                        <li className="col-span-12 sm:col-span-6 relative h-80 sm:h-112">
+                        <li className="col-span-12 sm:col-span-6 relative h-80 sm:h-96 md:h-112 lg:h-128">
                             <img
-                                className="object-cover inset-0 absolute h-80 sm:h-112 w-full opacity-80"
+                                className="object-cover inset-0 absolute h-80 sm:h-96 md:h-112 lg:h-128 w-full opacity-80"
                                 src={tulipphotos[5].img}
                                 alt={tulipphotos[5].img}
                             />
-                            <div className="flex items-center justify-center relative transform translate-y-52 text-center">
+                            <div className="flex items-center justify-center relative transform translate-y-36 sm:translate-y-44 md:translate-y-52 lg:translate-y-60 text-center">
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Bunches</span>
                             </div>
                         </li>
-                        <li className="col-span-12 sm:col-span-6 relative h-80 sm:h-112">
+                        <li className="col-span-12 sm:col-span-6 relative h-80 sm:h-96 md:h-112 lg:h-128">
                             <img
-                                className="object-cover inset-0 absolute h-80 sm:h-112 w-full opacity-80"
+                                className="object-cover inset-0 absolute h-80 sm:h-96 md:h-112 lg:h-128 w-full opacity-80"
                                 src={tulipphotos[6].img}
                                 alt={tulipphotos[6].img}
                             />
-                            <div className="flex items-center justify-center relative transform translate-y-52 text-center">
+                            <div className="flex items-center justify-center relative transform translate-y-36 sm:translate-y-44 md:translate-y-52 lg:translate-y-60 text-center">
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Bunches</span>
                             </div>
                         </li>
@@ -106,7 +106,7 @@ export default function Landing() {
                                 src={tulipphotos[7].img}
                                 alt={tulipphotos[7].img}
                             />
-                            <div className="flex items-center justify-center relative transform -translate-y-40 text-center">
+                            <div className="flex items-center justify-center relative transform -translate-y-24 sm:-translate-y-40 text-center">
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop weddings and special occasions</span>
                             </div>
                         </li>
