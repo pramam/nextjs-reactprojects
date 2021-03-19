@@ -3,9 +3,10 @@ import tulipphotos from './tulipphotos.json'
 export default function Landing() {
     return (
         <div>
-            <div className="grid h-1/5">
+            <div className="flex items-center justify-center h-1/5">
                 <h1 className="font-tuliplogo text-yellow-50 text-center py-10 text-6xl"> The Tulip Shop</h1>
             </div>
+            {/* Hero Image  */}
             <div className="grid grid-cols-1 relative">
                 {/* Putting text over image: https://www.youtube.com/watch?v=Zo1JtXnLDdA  */}
                 <img
@@ -24,6 +25,14 @@ export default function Landing() {
                 </div>
             </div>
 
+            {/* <--Image[1]--><--Image[2]--><--Image[3]-->
+                <----------------Image[4]---------------->
+                <------Image[5]-----><------Image[6]----->
+                <----------------Image[7]---------------->
+                <----------------Image[8]----------------> */}
+
+            {/* Images 1, 3, 5, 6 have text overlay on top */}
+
             <div className="flex items-center">
                 <div className="flex-1 max-w-4xl mx-auto p-10">
                     <ul className="grid grid-cols-12 gap-x-3 gap-y-4 grid-flow-row">
@@ -37,23 +46,22 @@ export default function Landing() {
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Reds</span>
                             </div>
                         </li>
-                        <li className="col-span-4 relative">
+                        <li className="col-span-4 relative h-80">
                             <img
                                 className="object-cover h-80 w-full opacity-80"
                                 src={tulipphotos[2].img}
                                 alt={tulipphotos[2].img}
                             />
                         </li>
-                        <li className="col-span-4 relative">
+                        <li className="col-span-4 relative h-80">
                             <img
                                 className="object-cover inset-0 absolute h-80 w-full opacity-80"
                                 src={tulipphotos[3].img}
                                 alt={tulipphotos[3].img}
                             />
-                            {/* <div className="flex items-center justify-center relative transform translate-y-40 text-center">
-                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Reds</span>
-                            </div> */}
-
+                            <div className="flex items-center justify-center relative transform translate-y-40 text-center">
+                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Multicolors</span>
+                            </div>
                         </li>
                         <li className="col-span-12 relative">
                             <img
@@ -62,7 +70,7 @@ export default function Landing() {
                                 alt={tulipphotos[4].img}
                             />
                         </li>
-                        <li className="col-span-6 relative">
+                        <li className="col-span-6 relative h-112">
                             <img
                                 className="object-cover inset-0 absolute h-112 w-full opacity-80"
                                 src={tulipphotos[5].img}
@@ -72,21 +80,27 @@ export default function Landing() {
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Bunches</span>
                             </div>
                         </li>
-                        <li className="col-span-6 relative">
+                        <li className="col-span-6 relative h-112">
                             <img
-                                className="object-cover h-112 w-full opacity-80"
+                                className="object-cover inset-0 absolute h-112 w-full opacity-80"
                                 src={tulipphotos[6].img}
                                 alt={tulipphotos[6].img}
                             />
+                            <div className="flex items-center justify-center relative transform translate-y-52 text-center">
+                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Bunches</span>
+                            </div>
                         </li>
-                        <li className="col-span-12 relative">
+                        <li className="col-span-12 relative h-72">
                             <img
                                 className="object-cover h-72 w-full opacity-80"
                                 src={tulipphotos[7].img}
                                 alt={tulipphotos[7].img}
                             />
+                            <div className="flex items-center justify-center relative transform -translate-y-40 text-center">
+                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop weddings and special occasions</span>
+                            </div>
                         </li>
-                        <li className="col-span-12 relative">
+                        <li className="col-span-12 relative h-72">
                             <img
                                 className="object-cover h-72 w-full opacity-80"
                                 src={tulipphotos[8].img}
