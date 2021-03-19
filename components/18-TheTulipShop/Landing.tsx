@@ -27,56 +27,66 @@ export default function Landing() {
             <div className="flex items-center">
                 <div className="flex-1 max-w-4xl mx-auto p-10">
                     <ul className="grid grid-cols-12 gap-x-3 gap-y-4 grid-flow-row">
-                        <li className="col-span-4">
+                        <li className="col-span-4 relative">
                             <img
-                                className="object-cover h-80 w-full bg-yellow-50 opacity-80"
+                                className="object-cover inset-0 absolute h-80 w-full bg-yellow-50 opacity-80"
                                 src={tulipphotos[1].img}
                                 alt={tulipphotos[1].img}
                             />
+                            <div className="flex items-center justify-center relative transform translate-y-40 text-center">
+                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Reds</span>
+                            </div>
                         </li>
-                        <li className="col-span-4">
+                        <li className="col-span-4 relative">
                             <img
                                 className="object-cover h-80 w-full opacity-80"
                                 src={tulipphotos[2].img}
                                 alt={tulipphotos[2].img}
                             />
                         </li>
-                        <li className="col-span-4">
+                        <li className="col-span-4 relative">
                             <img
-                                className="object-cover h-80 w-full opacity-80"
+                                className="object-cover inset-0 absolute h-80 w-full opacity-80"
                                 src={tulipphotos[3].img}
                                 alt={tulipphotos[3].img}
                             />
+                            {/* <div className="flex items-center justify-center relative transform translate-y-40 text-center">
+                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Reds</span>
+                            </div> */}
+
                         </li>
-                        <li className="col-span-12">
+                        <li className="col-span-12 relative">
                             <img
                                 className="object-cover h-72 w-full opacity-80"
                                 src={tulipphotos[4].img}
                                 alt={tulipphotos[4].img}
                             />
                         </li>
-                        <li className="col-span-6">
+                        <li className="col-span-6 relative">
                             <img
-                                className="object-cover h-112 w-full opacity-80"
+                                className="object-cover inset-0 absolute h-112 w-full opacity-80"
                                 src={tulipphotos[5].img}
                                 alt={tulipphotos[5].img}
                             />
+                            <div className="flex items-center justify-center relative transform translate-y-52 text-center">
+                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Bunches</span>
+                            </div>
                         </li>
-                        <li className="col-span-6">
+                        <li className="col-span-6 relative">
                             <img
                                 className="object-cover h-112 w-full opacity-80"
                                 src={tulipphotos[6].img}
                                 alt={tulipphotos[6].img}
                             />
                         </li>
-                        <li className="col-span-12">
+                        <li className="col-span-12 relative">
                             <img
                                 className="object-cover h-72 w-full opacity-80"
                                 src={tulipphotos[7].img}
                                 alt={tulipphotos[7].img}
                             />
                         </li>
-                        <li className="col-span-12">
+                        <li className="col-span-12 relative">
                             <img
                                 className="object-cover h-72 w-full opacity-80"
                                 src={tulipphotos[8].img}
