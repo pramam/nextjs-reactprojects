@@ -44,7 +44,7 @@ export default function Landing() {
                 Image 5, 6: lg: h-112
                 Image 7, 8: lg:h-72 */}
             <div className="flex items-center">
-                <div className="flex-1 max-w-4/6 mx-auto sm:mt-6 lg:mt-10">
+                <div className="flex-1 sm:max-w-10/12 lg:max-w-4/6 mx-auto sm:mt-4 lg:mt-10">
                     <ul className="grid grid-cols-12 gap-x-3 gap-y-4 grid-flow-row">
                         <li className="col-span-4 relative">
                             <img
