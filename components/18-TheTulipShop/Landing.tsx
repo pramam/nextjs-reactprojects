@@ -1,4 +1,7 @@
+import Link from 'next/link'
 import tulipphotos from './tulipphotos.json'
+
+const shoppingurl = "/thetulipshop/selections"
 
 export default function Landing() {
     return (
@@ -20,9 +23,11 @@ export default function Landing() {
                         Bring Beauty Inside
                     </span>
                 </div>
-                <div className="flex items-center justify-center relative transform -translate-y-8 sm:-translate-y-16 md:-translate-y-20 lg:-translate-y-24 text-center">
+                <Link href={shoppingurl}>
+                    <a className="flex items-center justify-center relative transform -translate-y-8 sm:-translate-y-16 md:-translate-y-20 lg:-translate-y-24 text-center">
                     <span className="border justify-center border-yellow-50 px-2 py-1 sm:px-8 sm:py-2 text-yellow-50 text-sm sm:text-base md:text-lg uppercase text-center tracking-widest">Shop now</span>
-                </div>
+                    </a>
+                </Link>
             </div>
 
             {/* <--Image[1]--><--Image[2]--><--Image[3]-->
