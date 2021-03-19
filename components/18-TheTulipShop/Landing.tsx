@@ -33,6 +33,16 @@ export default function Landing() {
 
             {/* Images 1, 3, 5, 6 have text overlay on top */}
 
+            {/* I cannot specify max-h as a percentage in the parent and then say h-full in the child.
+                I need to specify an actual h-{num} 
+                So here are the documented heights of the images:
+
+                All images have max-w-4xl
+                Hero image: lg:h-96
+                Images 1, 2, 3: lg:h-80
+                Image 4: lg:h-72
+                Image 5, 6: lg: h-112
+                Image 7, 8: lg:h-72 */}
             <div className="flex items-center">
                 <div className="flex-1 max-w-4xl mx-auto p-10">
                     <ul className="grid grid-cols-12 gap-x-3 gap-y-4 grid-flow-row">
