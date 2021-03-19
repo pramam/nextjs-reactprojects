@@ -18,7 +18,9 @@ export default function ProjectCard({ id, image, title, url, blogurl, inspiratio
         <div className="mt-2 flex flex-col flex-shrink shadow-xl mx-4">
             {/* Display a text card if not a project */}
             {isproject ?
-            <div className="max-w-4/6 sm:max-w-4/5">
+                // <div className="max-w-4/6 sm:max-w-4/5">
+                <div className="max-w-full sm:max-w-full">
+
                 <img
                     className="w-full h-64 object-cover flex justify-center items-center"
                     src={image}
