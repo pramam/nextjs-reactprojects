@@ -44,9 +44,9 @@ export default function Landing() {
                 Image 5, 6: lg: h-112
                 Image 7, 8: lg:h-72 */}
             <div className="flex items-center">
-                <div className="flex-1 sm:max-w-10/12 lg:max-w-4/6 mx-auto sm:mt-4 lg:mt-10">
-                    <ul className="grid grid-cols-12 gap-x-3 gap-y-4 grid-flow-row">
-                        <li className="col-span-4 relative">
+                <div className="flex-1 max-w-10/12 sm:max-w-10/12 lg:max-w-4/6 mx-auto pb-6 sm:pt-4 sm:pb-4 lg:pt-10 lg:pb-10">
+                    <ul className="grid grid-cols-12 sm:gap-x-3 gap-y-6 sm:gap-y-4 grid-flow-row">
+                        <li className="col-span-12 sm:col-span-4 relative h-80">
                             <img
                                 className="object-cover inset-0 absolute h-80 w-full bg-yellow-50 opacity-80"
                                 src={tulipphotos[1].img}
@@ -56,14 +56,14 @@ export default function Landing() {
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Reds</span>
                             </div>
                         </li>
-                        <li className="col-span-4 relative h-80">
+                        <li className="col-span-12 sm:col-span-4 relative h-80">
                             <img
-                                className="object-cover h-80 w-full opacity-80"
+                                className="object-cover inset-0 absolute h-80 w-full opacity-80"
                                 src={tulipphotos[2].img}
                                 alt={tulipphotos[2].img}
                             />
                         </li>
-                        <li className="col-span-4 relative h-80">
+                        <li className="col-span-12 sm:col-span-4 relative h-80">
                             <img
                                 className="object-cover inset-0 absolute h-80 w-full opacity-80"
                                 src={tulipphotos[3].img}
@@ -75,14 +75,14 @@ export default function Landing() {
                         </li>
                         <li className="col-span-12 relative">
                             <img
-                                className="object-cover h-72 w-full opacity-80"
+                                className="object-cover h-32 sm:h-72 w-full opacity-80"
                                 src={tulipphotos[4].img}
                                 alt={tulipphotos[4].img}
                             />
                         </li>
-                        <li className="col-span-6 relative h-112">
+                        <li className="col-span-12 sm:col-span-6 relative h-80 sm:h-112">
                             <img
-                                className="object-cover inset-0 absolute h-112 w-full opacity-80"
+                                className="object-cover inset-0 absolute h-80 sm:h-112 w-full opacity-80"
                                 src={tulipphotos[5].img}
                                 alt={tulipphotos[5].img}
                             />
@@ -90,9 +90,9 @@ export default function Landing() {
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Bunches</span>
                             </div>
                         </li>
-                        <li className="col-span-6 relative h-112">
+                        <li className="col-span-12 sm:col-span-6 relative h-80 sm:h-112">
                             <img
-                                className="object-cover inset-0 absolute h-112 w-full opacity-80"
+                                className="object-cover inset-0 absolute h-80 sm:h-112 w-full opacity-80"
                                 src={tulipphotos[6].img}
                                 alt={tulipphotos[6].img}
                             />
@@ -100,9 +100,9 @@ export default function Landing() {
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Bunches</span>
                             </div>
                         </li>
-                        <li className="col-span-12 relative h-72">
+                        <li className="col-span-12 relative h-32 sm:h-72">
                             <img
-                                className="object-cover h-72 w-full opacity-80"
+                                className="object-cover h-32 sm:h-72 w-full opacity-80"
                                 src={tulipphotos[7].img}
                                 alt={tulipphotos[7].img}
                             />
@@ -110,9 +110,9 @@ export default function Landing() {
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop weddings and special occasions</span>
                             </div>
                         </li>
-                        <li className="col-span-12 relative h-72">
+                        <li className="col-span-12 relative h-32 sm:h-72">
                             <img
-                                className="object-cover h-72 w-full opacity-80"
+                                className="object-cover h-32 sm:h-72 w-full opacity-80"
                                 src={tulipphotos[8].img}
                                 alt={tulipphotos[8].img}
                             />
