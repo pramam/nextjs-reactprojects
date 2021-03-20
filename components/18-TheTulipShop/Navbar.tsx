@@ -12,7 +12,7 @@ export default function Navbar({ navheight }: IProps) {
                 {/* <h1 className="font-tuliplogo text-yellow-50 text-center py-6 lg:py-10 text-4xl sm:text-5xl lg:text-6xl"> The Tulip Shop</h1> */}
                 <h1 className="font-tuliplogo text-yellow-50 text-center py-6 lg:py-4 text-4xl sm:text-5xl lg:text-6xl"> The Tulip Shop</h1>
                 <h2 className="hidden lg:block text-base">
-                    <div className="flex flex-row">
+                    <div className="flex flex-row mb-2">
                         <div className="mr-3">Reds</div>
                         <div className="mr-3">Multicolors</div>
                         <div className="mr-3">Bunches</div>
