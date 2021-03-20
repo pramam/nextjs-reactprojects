@@ -60,37 +60,37 @@ export default function Landing() {
                 All images have max-w-[%]: max-w-10/12 sm:max-w-10/12 lg:max-w-4/6
                 Hero image: w-full h-32 sm:h-48 md:h-60 lg:h-96
                 Images 1-8, widths: max-w-10/12 sm:max-w-10/12 lg:max-w-4/6
-                Images 1, 2, 3: h-80 TODO: sm:h-80 is too short for Image[2], mobile:h-80 and md:h-80 are fine
+                Images 1, 2, 3: h-88 sm:h-80 (mobile:h-80 is too short for Image[2] cuts off her face)
                 Image 4: h-32 sm:h-72
                 Image 5, 6: h-80 sm:h-96 md:h-112 lg:h-128
                 Image 7, 8: h-32 sm:h-72 */}
             <div className="flex items-center">
                 <div className="flex-1 max-w-10/12 sm:max-w-10/12 lg:max-w-4/6 mx-auto pb-6 sm:pt-4 sm:pb-4 lg:pt-10 lg:pb-10">
                     <ul className="grid grid-cols-12 sm:gap-x-3 gap-y-6 sm:gap-y-4 grid-flow-row">
-                        <li className="col-span-12 sm:col-span-4 relative h-80">
+                        <li className="col-span-12 sm:col-span-4 relative h-88 sm:h-80">
                             <img
-                                className="object-cover inset-0 absolute h-80 w-full bg-yellow-50 opacity-80"
+                                className="object-cover inset-0 absolute h-88 sm:h-80 w-full bg-yellow-50 opacity-80"
                                 src={tulipphotos[1].img}
                                 alt={tulipphotos[1].img}
                             />
-                            <div className="flex items-center justify-center relative transform translate-y-40 text-center">
+                            <div className="flex items-center justify-center relative transform translate-y-44 sm:translate-y-40 text-center">
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Reds</span>
                             </div>
                         </li>
-                        <li className="col-span-12 sm:col-span-4 relative h-80">
+                        <li className="col-span-12 sm:col-span-4 relative h-88 sm:h-80">
                             <img
-                                className="object-cover inset-0 absolute h-80 w-full opacity-80"
+                                className="object-cover inset-0 absolute h-88 sm:h-80 w-full opacity-80"
                                 src={tulipphotos[2].img}
                                 alt={tulipphotos[2].img}
                             />
                         </li>
-                        <li className="col-span-12 sm:col-span-4 relative h-80">
+                        <li className="col-span-12 sm:col-span-4 relative h-88 sm:h-80">
                             <img
-                                className="object-cover inset-0 absolute h-80 w-full opacity-80"
+                                className="object-cover inset-0 absolute h-88 sm:h-80 w-full opacity-80"
                                 src={tulipphotos[3].img}
                                 alt={tulipphotos[3].img}
                             />
-                            <div className="flex items-center justify-center relative transform translate-y-40 text-center">
+                            <div className="flex items-center justify-center relative transform translate-y-44 sm:translate-y-40 text-center">
                                 <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Multicolors</span>
                             </div>
                         </li>

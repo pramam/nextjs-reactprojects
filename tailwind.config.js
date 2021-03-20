@@ -120,10 +120,10 @@ module.exports = {
         '10/12': '83.333333%',
         '11/12': '91.666667%',
         '1/10': '10%', // TheTulipShop fixed navbar
-        '1/8': '12.5%',// TheTulipShop fixed navbar
       },
       spacing: {
         // Comments below are correct:
+        '88': '22rem',  // * h-88 used in TheTulipShop
         '112': '28rem', // * lg:-translate-x-112 used in Slider(Arrow), Also used in Slider(Dots)
                         // * sm:h-112 used in TheTulipShop
         '128': '32rem', // * sm:w-128 used in Slider
