@@ -5,9 +5,23 @@ const shoppingurl = "/thetulipshop/selections"
 
 export default function Landing() {
     return (
-        <div>
-            <div className="flex items-center justify-center h-1/4 lg:h-1/5">
-                <h1 className="font-tuliplogo text-yellow-50 text-center py-6 lg:py-10 text-4xl sm:text-5xl lg:text-6xl"> The Tulip Shop</h1>
+        // This should be lg:py-1/5 I can't understand why it is 1/10
+        <div className="lg:py-1/10">
+            {/* fixed left-0 right-0 makes it centered and fixed */}
+            <div className="lg:z-50 lg:bg-gray-900 lg:fixed lg:opacity-100 inset-x-0 top-0 flex items-center justify-center h-1/4 lg:h-1/5">
+                <div className="flex flex-col justify-center items-center">
+                    {/* <h1 className="font-tuliplogo text-yellow-50 text-center py-6 lg:py-10 text-4xl sm:text-5xl lg:text-6xl"> The Tulip Shop</h1> */}
+                    <h1 className="font-tuliplogo text-yellow-50 text-center py-6 lg:py-4 text-4xl sm:text-5xl lg:text-6xl"> The Tulip Shop</h1>
+                    <h2 className="hidden lg:block text-base">
+                        <div className="flex flex-row">
+                            <div className="mr-3">Reds</div>
+                            <div className="mr-3">Multicolors</div>
+                            <div className="mr-3">Bunches</div>
+                            <div className="mr-3">Weddings</div>
+                            <div className="mr-3">Subscribe</div>
+                        </div>
+                    </h2>
+                </div>
             </div>
             {/* Hero Image  */}
             <div className="grid grid-cols-1 relative">
