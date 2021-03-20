@@ -5,13 +5,13 @@ export default function Index() {
     return (
         <>
             <Header />
-            <body className="font-tuliptext text-yellow-50">
+            <div className="font-tuliptext text-yellow-50">
                 <div className="min-h-screen relative bg-gray-900">
                     <TulipProvider>
                         <App />
                     </TulipProvider>
                 </div>
-            </body>
+            </div>
         </>
     )
 }
