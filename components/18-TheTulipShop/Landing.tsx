@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Navbar from './Navbar'
 import tulipphotos from './tulipphotos.json'
 
 const shoppingurl = "/thetulipshop/selections"
@@ -9,9 +10,9 @@ export default function Landing() {
         // Add pb for the <Footer/>
         <div className="pt-24 pb-12 md:pt-36 md:pb-16 lg:pt-1/10">
             {/* fixed left-0 right-0 makes it centered and fixed */}
-            <div className="z-50 bg-gray-900 fixed opacity-100 inset-x-0 top-0 flex items-center justify-center h-24 md:h-36 lg:h-1/5">
+            <Navbar navheight="h-24 md:h-36 lg:h-1/5" />
+            {/* <div className="z-50 bg-gray-900 fixed opacity-100 inset-x-0 top-0 flex items-center justify-center h-24 md:h-36 lg:h-1/5">
                 <div className="flex flex-col justify-center items-center">
-                    {/* <h1 className="font-tuliplogo text-yellow-50 text-center py-6 lg:py-10 text-4xl sm:text-5xl lg:text-6xl"> The Tulip Shop</h1> */}
                     <h1 className="font-tuliplogo text-yellow-50 text-center py-6 lg:py-4 text-4xl sm:text-5xl lg:text-6xl"> The Tulip Shop</h1>
                     <h2 className="hidden lg:block text-base">
                         <div className="flex flex-row">
@@ -23,7 +24,7 @@ export default function Landing() {
                         </div>
                     </h2>
                 </div>
-            </div>
+            </div> */}
             {/* Hero Image  */}
             <div className="grid grid-cols-1 relative">
                 {/* Putting text over image: https://www.youtube.com/watch?v=Zo1JtXnLDdA  */}
