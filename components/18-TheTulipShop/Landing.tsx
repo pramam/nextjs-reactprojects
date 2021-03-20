@@ -32,14 +32,20 @@ export default function Landing() {
                     alt={tulipphotos[0].img}
                 />
                 <div className="absolute inset-0 bg-gray-900 h-32 sm:h-48 md:h-60 lg:h-96 bg-opacity-30 sm:bg-opacity-40 lg:bg-opacity-50"></div>
-                <div className="flex items-center justify-center relative transform -translate-y-2 sm:-translate-y-5 h-32 sm:h-48 md:h-60 lg:h-96 text-center">
-                    <span className="border-2 md:border-4 justify-center border-yellow-50 px-3 py-1 sm:px-6 sm:py-2 md:px-10 md:py-4 lg:px-20 lg:py-8 text-yellow-50 uppercase text-center text-xl sm:text-2xl md:text-3xl lg:text-5xl tracking-wider">
-                        Bring Beauty Inside
-                    </span>
-                </div>
                 <Link href={shoppingurl}>
-                    <a className="flex items-center justify-center relative transform -translate-y-8 sm:-translate-y-16 md:-translate-y-20 lg:-translate-y-24 text-center">
-                    <span className="border justify-center border-yellow-50 px-2 py-1 sm:px-8 sm:py-2 text-yellow-50 text-sm sm:text-base md:text-lg uppercase text-center tracking-widest">Shop now</span>
+                    <a>
+                        <div className="flex items-center justify-center relative transform -translate-y-2 sm:-translate-y-5 h-32 sm:h-48 md:h-60 lg:h-96 text-center">
+                            <span className="border-2 md:border-4 justify-center border-yellow-50 px-3 py-1 sm:px-6 sm:py-2 md:px-10 md:py-4 lg:px-20 lg:py-8 text-yellow-50 uppercase text-center text-xl sm:text-2xl md:text-3xl lg:text-5xl tracking-wider">
+                                Bring Beauty Inside
+                            </span>
+                        </div>
+                    </a>
+                </Link>
+                <Link href={shoppingurl}>
+                    <a>
+                        <div className="flex items-center justify-center relative transform -translate-y-8 sm:-translate-y-16 md:-translate-y-20 lg:-translate-y-24 text-center">
+                            <span className="border justify-center border-yellow-50 px-2 py-1 sm:px-8 sm:py-2 text-yellow-50 text-sm sm:text-base md:text-lg uppercase text-center tracking-widest">Shop now</span>
+                        </div>
                     </a>
                 </Link>
             </div>
