@@ -6,7 +6,8 @@ const shoppingurl = "/thetulipshop/selections"
 export default function Landing() {
     return (
         // This should be lg:py-1/5 I can't understand why it is 1/10
-        <div className="pt-24 md:pt-36 lg:py-1/10">
+        // Add pb for the <Footer/>
+        <div className="pt-24 pb-12 md:pt-36 md:pb-16 lg:pt-1/10">
             {/* fixed left-0 right-0 makes it centered and fixed */}
             <div className="z-50 bg-gray-900 fixed opacity-100 inset-x-0 top-0 flex items-center justify-center h-24 md:h-36 lg:h-1/5">
                 <div className="flex flex-col justify-center items-center">
