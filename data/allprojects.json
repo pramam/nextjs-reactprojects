@@ -313,5 +313,20 @@
         "about": "/general/about",
         "checkins": 1,
         "timetocomplete": "2 hours"
+    },
+    {
+        "id": 18,
+        "isproject": true,
+        "day": 54,
+        "image": "/screenshots/Screenshot-TheTulipShop.png",
+        "title": "The Tulip Shop: Cart",
+        "url": "/thetulipshop",
+        "blogurl": "/posts/thetulipshop",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/18-TheTulipShop",
+        "inspiration": "https://react-projects-14-usereducer-cart.netlify.app/",
+        "timeline": "/",
+        "about": "/general/about",
+        "checkins": 35,
+        "timetocomplete": "3.5 days"
     }
 ]
