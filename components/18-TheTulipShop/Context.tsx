@@ -29,7 +29,9 @@ const TulipProvider = ({ children }) => {
     return (
         <TulipContext.Provider
             value={{
-                "cart": "sample",
+                isMenuOpen,
+                openSidebar,
+                closeSidebar
             }}>
             {children}
         </TulipContext.Provider>

@@ -26,7 +26,7 @@ export default function Landing() {
                     src={tulipphotos[0].img}
                     alt={tulipphotos[0].img}
                 />
-                <div className="absolute inset-0 h-32 sm:h-48 md:h-60 lg:h-96 bg-opacity-30 sm:bg-opacity-40 lg:bg-opacity-50"></div>
+                <div className="bg-gray-900 absolute inset-0 h-32 sm:h-48 md:h-60 lg:h-96 bg-opacity-30 sm:bg-opacity-40 lg:bg-opacity-50"></div>
                 <div className="flex items-center justify-center relative transform -translate-y-2 sm:-translate-y-5 h-32 sm:h-48 md:h-60 lg:h-96 text-center">
                     <Link href={shoppingurl}>
                         <a>
