@@ -2,6 +2,7 @@ import Header from './Header'
 import Cart from './Cart'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import Sidebar from './Sidebar'
 import { TulipProvider } from './Context'
 
 export default function CartLanding() {
@@ -19,6 +20,10 @@ export default function CartLanding() {
                             <Navbar
                                 navheight="transform -translate-y-24 md:-translate-y-36 lg:-translate-y-30 h-24 md:h-36 lg:h-30"
                                 navcartheightlg="transform lg:-translate-y-24" />
+                            <div className="lg:hidden">
+                                <Sidebar />
+                            </div>
+
                         </div>
                         <Cart />
                         {/* <Footer /> */}

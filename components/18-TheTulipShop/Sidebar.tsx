@@ -5,7 +5,7 @@ import menuoptionsData from './menuoptions.json'
 
 // This is lg:hidden, controlled in <Landing/>
 export default function Sidebar() {
-    const { isMenuOpen } = useGlobalTulipContext()
+    const { isMenuOpen, menuHandler } = useGlobalTulipContext()
     return (
         <div>
             <Transition
@@ -23,7 +23,10 @@ export default function Sidebar() {
                             return (
                                 <li key={index}>
                                     <Link href={obj.url}>
-                                        <a className="text-gray-900 uppercase text-base">
+                                        {/* Menu is open here. On clicking an option, menuHandler closes the menu  */}
+                                        <a className="text-gray-900 uppercase text-base"
+                                            onClick={menuHandler}
+                                        >
                                             <div className="mb-3 ml-10">
                                                 {obj.label}
                                             </div>
