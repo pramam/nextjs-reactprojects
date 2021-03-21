@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { homeurl } from './definitions'
+import menuoptionsData from './menuoptions.json'
 
 export default function Logo() {
     return (
@@ -10,13 +11,28 @@ export default function Logo() {
                 </a>
             </Link>
             <h2 className="hidden lg:block text-base">
-                <div className="flex flex-row mb-2">
+                <ul className="flex flex-row mb-2">
+                    {menuoptionsData.map((obj, index) => {
+                        // Don't have right margin on last item so it is centered nicely
+                        return (
+                            <li key={index}
+                                className={`${index === menuoptionsData.length - 1 ? `` : `mr-3`}`}>
+                                <Link href={obj.url}>
+                                    <a>
+                                        {obj.label}
+                                    </a>
+                                </Link>
+                            </li>
+                        )
+                    })}
+                </ul>
+                {/* <div className="flex flex-row mb-2">
                     <div className="mr-3">Reds</div>
                     <div className="mr-3">Multicolors</div>
                     <div className="mr-3">Bunches</div>
                     <div className="mr-3">Weddings</div>
                     <div className="">Subscribe</div>
-                </div>
+                </div> */}
             </h2>
         </div>
     )

@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "label": "Reds",
+        "url": "/thetulipshop/selections"
+    },
+    {
+        "id": 2,
+        "label": "Multicolors",
+        "url": "/thetulipshop/selections"
+    },
+    {
+        "id": 3,
+        "label": "Bunches",
+        "url": "/thetulipshop/selections"
+    },
+    {
+        "id": 4,
+        "label": "Weddings",
+        "url": "/thetulipshop/selections"
+    },
+    {
+        "id": 5,
+        "label": "Subscribe",
+        "url": "/thetulipshop/subscription"
+    }
+]

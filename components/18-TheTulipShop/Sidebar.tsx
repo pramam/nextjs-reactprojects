@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import { Transition } from '@headlessui/react'
 import { useGlobalTulipContext } from "./Context"
+import menuoptionsData from './menuoptions.json'
 
 // This is lg:hidden, controlled in <Landing/>
 export default function Sidebar() {
@@ -15,14 +17,22 @@ export default function Sidebar() {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0">
                 <div className="relative bg-yellow-50 w-full h-screen">
-                    <div className="flex flex-row justify-between mb-10">
-                        <div className="ml-10 md:mr-7 mt-5 md:mt-7 lg:mt-7 lg:mr-7 text-3xl flex flex-row">
-                            <div className="hidden sm:block text-gray-900 font-semibold">Your&nbsp;</div>
-                            <div className="text-indigo-700 font-bold">Logo&nbsp;</div>
-                            <div className="hidden sm:block text-gray-900 font-semibold">Here</div>
-                        </div>
-                    </div>
-                    <div className="text-gray-900">Tulip Shop content</div>
+                    <div className="pt-5 md:pt-7"></div>
+                    <ul className="flex flex-col">
+                        {menuoptionsData.map((obj, index) => {
+                            return (
+                                <li key={index}>
+                                    <Link href={obj.url}>
+                                        <a className="text-gray-900 uppercase text-base">
+                                            <div className="mb-3 ml-10">
+                                                {obj.label}
+                                            </div>
+                                        </a>
+                                    </Link>
+                                </li>
+                            )
+                        })}
+                    </ul>
                 </div>
             </Transition>
         </div >
