@@ -1,21 +1,19 @@
 import { useContext } from 'react'
-// import Sidebar from './Sidebar'
-// import Navbar from './Navbar'
 import Landing from './Landing'
-import Footer from './Footer'
+// import Footer from './Footer'
 
 import { useGlobalTulipContext } from './Context'
 
 export default function App() {
-    const { isMenuOpen, showModal } = useGlobalTulipContext()
+    // const { isMenuOpen, showModal } = useGlobalTulipContext()
 
     return (
         <div className="relative">
-            {/* {isMenuOpen ?
-                            <Sidebar /> : <Navbar />} */}
-            {/* <Navbar/> */}
+            {/* <Navbar/> and <Sidebar/> are in <Landing/>
+              * Sidebar is before the Hero Image so its content
+              * shows up `relative` to the fixed Navbar */}
             <Landing />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

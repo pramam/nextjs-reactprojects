@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Navbar from './Navbar'
+import Sidebar from './Sidebar'
 import tulipphotos from './tulipphotos.json'
 
 const shoppingurl = "/thetulipshop/selections"
@@ -15,6 +16,9 @@ export default function Landing() {
             {/* <Navbar navheight="transform -translate-y-24 md:-translate-y-36 lg:-translate-y-1/5 h-24 md:h-36 lg:h-1/5" /> */}
             <Navbar navheight="transform -translate-y-24 md:-translate-y-36 lg:-translate-y-30 h-24 md:h-36 lg:h-30" />
 
+            <div className="lg:hidden">
+                <Sidebar />
+            </div>
             {/* All the images below are `absolute` in `relative` container(grid for the hero image, and 
               * cols-span-{num} container for the other images.  
               */}

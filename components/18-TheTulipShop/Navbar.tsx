@@ -1,9 +1,11 @@
 import { useGlobalTulipContext } from './Context'
-import SVGX from '../svgicons/SVGX'
-import SVGMenu from '../svgicons/SVGMenu'
-import Menu from './Menu'
+// import SVGX from '../svgicons/SVGX'
+// import SVGMenu from '../svgicons/SVGMenu'
+import MenuXButton from './MenuButton'
 import Logo from './Logo'
-import SVGShoppingCart from '../svgicons/SVGShoppingCart'
+// import SVGShoppingCart from '../svgicons/SVGShoppingCart'
+import CartIconWithCount from './CartIconWithCount'
+// import Sidebar from './Sidebar'
 // import Link from 'next/link'
 // import { homeurl } from './definitions'
 
@@ -12,7 +14,7 @@ export interface IProps {
 }
 
 export default function Navbar({ navheight }: IProps) {
-    const { isMenuOpen, openSidebar } = useGlobalTulipContext()
+    const { isMenuOpen, openSidebar, closeSidebar } = useGlobalTulipContext()
 
     // fixed left-0 right-0 makes it centered and fixed; inset-x-0 also centers it
     // To work with translate: 
@@ -27,12 +29,22 @@ export default function Navbar({ navheight }: IProps) {
                         <button type="button"
                             className="focus:outline-none border border-transparent"
                             onClick={openSidebar}>
-                            {isMenuOpen ? <SVGX css="h-10 w-10 text-yellow-50" />
+                            {isMenuOpen ?
+
+                                <button onClick={closeSidebar}
+                                    className="focus:outline-none border border-transparent">
+                                    <SVGX css="h-8 w-8 md:h-10 md:w-10 text-yellow-50" />
+                                </button>
+
+
+                            // <SVGX css="h-10 w-10 text-yellow-50" />
                                 : <SVGMenu css="h-10 w-10 text-yellow-50" />
                             }
                         </button>
                     </div> */}
-                    <Menu />
+
+                    <MenuXButton />
+                    {/* {isMenuOpen ? <MenuXButton /> : <MenuXButton />} */}
                     {/* <div className="flex flex-col justify-center items-center">
                         <Link href={homeurl}>
                             <a>
@@ -50,9 +62,10 @@ export default function Navbar({ navheight }: IProps) {
                         </h2>
                     </div> */}
                     <Logo />
-                    <div className="flex flex-col justify-center mr-3 lg:mr-10">
+                    <CartIconWithCount />
+                    {/* <div className="flex flex-col justify-center mr-3 lg:mr-10">
                         <SVGShoppingCart css="h-10 w-10 text-yellow-50" />
-                    </div>
+                    </div> */}
                 </div>
             </div >
         </div>
