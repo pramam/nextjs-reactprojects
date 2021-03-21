@@ -11,9 +11,20 @@ import CartIconWithCount from './CartIconWithCount'
 
 export interface IProps {
     navheight: string
+    navcartheightlg: string
 }
 
-export default function Navbar({ navheight }: IProps) {
+// * navheight is the height of the navbar, needed because it's container has that same mt, 
+//   and the nav has to be shifted up by that amount (-translate-y-{num})
+// * For md: and lower screens, the MenuButton on the left, Logo in center, Cart on right can be flex centered
+// * navcartheightlg:
+//   For lg: screens, there is no Menu Button on the left. We want the Logo in center, Cart on right.
+//   This is accomplished by `flex justify-center` of Logo. And then a `flex justify-end` of Cart
+//   and then UP shifting the Cart to be level with the Logo.
+//   That is why navcartheightlg is required. It is not 1/2 the navbarheight, but eyeballed
+//   to be leveled with The Tulip Shop.
+//   It works because the Cart is position `absolute` and the container Navbar is position `fixed`.
+export default function Navbar({ navheight, navcartheightlg }: IProps) {
     const { isMenuOpen, openSidebar, closeSidebar } = useGlobalTulipContext()
 
     // fixed left-0 right-0 makes it centered and fixed; inset-x-0 also centers it
@@ -66,6 +77,15 @@ export default function Navbar({ navheight }: IProps) {
                     {/* <div className="flex flex-col justify-center mr-3 lg:mr-10">
                         <SVGShoppingCart css="h-10 w-10 text-yellow-50" />
                     </div> */}
+                </div>
+                <div className="hidden lg:flex flex-row justify-center">
+                    <Logo />
+                </div>
+                <div className="hidden lg:flex flex-row justify-end">
+                    {/* Note the absolute here  */}
+                    <div className={`absolute ${navcartheightlg}`}>
+                        <CartIconWithCount />
+                    </div>
                 </div>
             </div >
         </div>
