@@ -12,6 +12,8 @@ export default function Landing() {
         // The sizes of the top margins here(in the container) need to be passed
         // to Navbar as navheight. The top margin compensates for the height of the Navbar.
         // The Navbar has `fixed` positioning. Removed lg:pt-1/10 ; Navbar lg:h-1/5
+
+        // IMP: Update the container mt-{num} and Navbar parameters in CartLanding
         <div className="pt-24 pb-12 md:pt-36 md:pb-16 lg:pt-30 relative">
             {/* <Navbar navheight="transform -translate-y-24 md:-translate-y-36 lg:-translate-y-1/5 h-24 md:h-36 lg:h-1/5" /> */}
             <Navbar
