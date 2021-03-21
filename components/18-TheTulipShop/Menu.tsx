@@ -10,7 +10,7 @@ export default function Menu() {
     // const gray_out_function_props = "pointer-events-none"
 
     return (
-        <div className="flex flex-col justify-center ml-10">
+        <div className="flex flex-col justify-center ml-3 md:ml-10">
             <button type="button"
                 className="focus:outline-none border border-transparent"
                 onClick={openSidebar}>

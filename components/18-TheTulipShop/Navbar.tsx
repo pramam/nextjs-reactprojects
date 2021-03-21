@@ -23,7 +23,7 @@ export default function Navbar({ navheight }: IProps) {
         <div className={`${nav_common_props} ${navheight}`}>
             <div className="w-full">
                 <div className="flex flex-row justify-between lg:hidden">
-                    <div className="flex flex-col justify-center ml-3 md:ml-10">
+                    {/* <div className="flex flex-col justify-center ml-3 md:ml-10">
                         <button type="button"
                             className="focus:outline-none border border-transparent"
                             onClick={openSidebar}>
@@ -31,8 +31,8 @@ export default function Navbar({ navheight }: IProps) {
                                 : <SVGMenu css="h-10 w-10 text-yellow-50" />
                             }
                         </button>
-                    </div>
-                    {/* <Menu /> */}
+                    </div> */}
+                    <Menu />
                     {/* <div className="flex flex-col justify-center items-center">
                         <Link href={homeurl}>
                             <a>
