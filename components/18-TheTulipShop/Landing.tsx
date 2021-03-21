@@ -11,8 +11,8 @@ export default function Landing() {
         // The sizes of the top margins here(in the container) need to be pased
         // to Navbar as navheight. The top margin compensates for the height of the Navbar.
         // The Navbar has `fixed` positioning.
-        <div className="pt-24 pb-12 md:pt-36 md:pb-16 lg:pt-1/10">
-            <Navbar navheight="h-24 md:h-36 lg:h-1/5" />
+        <div className="pt-24 pb-12 md:pt-36 md:pb-16 lg:pt-1/10 relative">
+            <Navbar navheight="transform -translate-y-24 md:-translate-y-36 lg:-translate-y-1/5 h-24 md:h-36 lg:h-1/5" />
 
             {/* All the images below are `absolute` in `relative` container(grid for the hero image, and 
               * cols-span-{num} container for the other images.  

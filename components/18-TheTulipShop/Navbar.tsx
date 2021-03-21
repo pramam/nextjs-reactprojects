@@ -7,7 +7,10 @@ export interface IProps {
 
 export default function Navbar({ navheight }: IProps) {
     // fixed left-0 right-0 makes it centered and fixed; inset-x-0 also centers it
-    const nav_common_props = "z-50 bg-gray-900 fixed opacity-100 inset-x-0 top-0 flex items-center justify-center"
+    // To work with translate: 
+    //      - inset-x-0 top-0 removed
+    //      - left-0 right-0 added 
+    const nav_common_props = "z-50 bg-gray-900 fixed left-0 right-0 opacity-100 flex items-center justify-center"
     return (
         <div className={`${nav_common_props} ${navheight}`}>
             <div className="flex flex-col justify-center items-center">
