@@ -1,12 +1,15 @@
 import Link from 'next/link'
+import { useGlobalTulipContext } from './Context'
 import { homeurl } from './definitions'
 import menuoptionsData from './menuoptions.json'
 
 export default function Logo() {
+    const { menuHandler } = useGlobalTulipContext()
+
     return (
         <div className="flex flex-col justify-center items-center">
             <Link href={homeurl}>
-                <a>
+                <a onClick={menuHandler}>
                     <h1 className="font-tuliplogo text-yellow-50 text-center py-6 lg:py-4 text-4xl sm:text-5xl lg:text-6xl"> The Tulip Shop</h1>
                 </a>
             </Link>
