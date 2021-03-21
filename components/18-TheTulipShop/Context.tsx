@@ -5,21 +5,21 @@ const TulipContext = React.createContext(null)
 
 const TulipProvider = ({ children }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+    // const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     // const [showCart, setShowCart] = useState(false)
 
     const menuHandler = () => {
         setIsMenuOpen(!isMenuOpen)
-        console.log(`MenuXHandler, isMenuOpen: ${isMenuOpen}`)
+        console.log(`MenuHandler, isMenuOpen: ${isMenuOpen}`)
     }
 
-    const openSidebar = () => {
+    const openMenu = () => {
         setIsMenuOpen(true)
-        console.log(`openSidebar, isMenuOpen: ${isMenuOpen}`)
+        console.log(`openMenu, isMenuOpen: ${isMenuOpen}`)
     }
-    const closeSidebar = () => {
+    const closeMenu = () => {
         setIsMenuOpen(false)
-        console.log(`closeSidebar, isMenuOpen: ${isMenuOpen}`)
+        console.log(`closeMenu, isMenuOpen: ${isMenuOpen}`)
     }
 
     // const openCart = () => {
@@ -37,8 +37,8 @@ const TulipProvider = ({ children }) => {
             value={{
                 isMenuOpen,
                 menuHandler,
-                openSidebar,
-                closeSidebar
+                openMenu,
+                closeMenu
             }}>
             {children}
         </TulipContext.Provider>

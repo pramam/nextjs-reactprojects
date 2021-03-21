@@ -4,12 +4,16 @@ import { homeurl } from './definitions'
 import menuoptionsData from './menuoptions.json'
 
 export default function Logo() {
-    const { menuHandler } = useGlobalTulipContext()
+    const { isMenuOpen, closeMenu } = useGlobalTulipContext()
 
+    const LogoHandler = () => {
+        if (isMenuOpen)
+            closeMenu()
+    }
     return (
         <div className="flex flex-col justify-center items-center">
             <Link href={homeurl}>
-                <a onClick={menuHandler}>
+                <a onClick={LogoHandler}>
                     <h1 className="font-tuliplogo text-yellow-50 text-center py-6 lg:py-4 text-4xl sm:text-5xl lg:text-6xl"> The Tulip Shop</h1>
                 </a>
             </Link>
