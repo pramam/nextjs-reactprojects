@@ -1,10 +1,12 @@
 import { useState, useContext } from 'react'
 import React from 'react'
+import inventoryData from './tulipinventory.json'
 
 const TulipContext = React.createContext(null)
 
 const TulipProvider = ({ children }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [inventory, setInventory] = useState(inventoryData)
     // const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     // const [showCart, setShowCart] = useState(false)
 
@@ -38,7 +40,8 @@ const TulipProvider = ({ children }) => {
                 isMenuOpen,
                 menuHandler,
                 openMenu,
-                closeMenu
+                closeMenu,
+                inventory
             }}>
             {children}
         </TulipContext.Provider>
