@@ -14,16 +14,19 @@ export default function Landing() {
         // The Navbar has `fixed` positioning. Removed lg:pt-1/10 ; Navbar lg:h-1/5
 
         // IMP: Update the container mt-{num} and Navbar parameters in CartLanding
-        <div className="pt-24 pb-12 md:pt-36 md:pb-16 lg:pt-30 relative">
-            {/* <Navbar navheight="transform -translate-y-24 md:-translate-y-36 lg:-translate-y-1/5 h-24 md:h-36 lg:h-1/5" /> */}
-            <Navbar
-                navheight="transform -translate-y-24 md:-translate-y-36 lg:-translate-y-30 h-24 md:h-36 lg:h-30"
-                navcartheightlg="transform lg:-translate-y-24" />
+        // COMMENTED:
+        // <div className="pt-24 pb-12 md:pt-36 md:pb-16 lg:pt-30 relative">
+            // {/* <Navbar navheight="transform -translate-y-24 md:-translate-y-36 lg:-translate-y-1/5 h-24 md:h-36 lg:h-1/5" /> */}
+            // {/* COMMENTED: */}
+            // {/* <Navbar
+            //     navheight="transform -translate-y-24 md:-translate-y-36 lg:-translate-y-30 h-24 md:h-36 lg:h-30"
+            //     navcartheightlg="transform lg:-translate-y-24" />
 
-            <div className="lg:hidden">
-                <Sidebar />
-            </div>
-            {/* All the images below are `absolute` in `relative` container(grid for the hero image, and 
+        // <div className="lg:hidden">
+        //     <Sidebar />
+        // </div> */}
+        <div>
+            {/* All the images below are `absolute` in `relative` container(grid for the hero image, and
               * cols-span-{num} container for the other images.  
               */}
             {/* Hero Image  */}
@@ -204,6 +207,7 @@ export default function Landing() {
                     </ul>
                 </div>
             </div>
-        </div >
+        </div>
+        // </div >
     )
 }
