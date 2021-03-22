@@ -85,7 +85,7 @@ export default function Landing() {
                                         alt={tulipphotos[1].alt}
                                     />
                                     <div className="hover:text-white text-yellow-50 hover:opacity-100 motion-reduce:transform-none transition duration-700 ease-in-out flex items-center justify-center relative transform translate-y-44 sm:translate-y-40 text-center">
-                                        <span className="justify-center px-8 py-2 uppercase text-center tracking-widest">Shop Reds</span>
+                                        <span className="justify-center px-8 py-2 uppercase text-center tracking-widest">Shop Single Colors</span>
                                     </div>
                                 </a>
                             </Link>
