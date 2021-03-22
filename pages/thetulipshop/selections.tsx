@@ -1,7 +1,7 @@
-import CartLanding from '../../components/18-TheTulipShop/CartLanding'
+import SelectionsLanding from '../../components/18-TheTulipShop/SelectionsLanding'
 
-export default function DisplayCart() {
+export default function DisplaySelections() {
     return (
-        <CartLanding />
+        <SelectionsLanding />
     )
 }

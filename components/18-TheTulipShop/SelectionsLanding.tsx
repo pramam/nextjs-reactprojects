@@ -1,14 +1,14 @@
 import Header from './Header'
-import Cart from './Cart'
+import Selections from './Selections'
 import Navbar from './Navbar'
 // import Footer from './Footer'
 import Sidebar from './Sidebar'
 import { TulipProvider } from './Context'
 import Layout from './Layout'
-export default function CartLanding() {
+export default function SelectionsLanding() {
     return (
         <Layout>
-            <Cart />
+            <Selections />
         </Layout>
         // <>
         //     <Header />

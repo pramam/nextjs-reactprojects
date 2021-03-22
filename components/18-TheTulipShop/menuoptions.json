@@ -1,27 +1,38 @@
 [
     {
+        "id": 6,
+        "label": "All",
+        "url": "/thetulipshop/selections",
+        "category": "All"
+    },
+    {
         "id": 1,
         "label": "Single Colors",
-        "url": "/thetulipshop/selections"
+        "url": "/thetulipshop/selections",
+        "category": "Single Colors"
     },
     {
         "id": 2,
         "label": "Multicolors",
-        "url": "/thetulipshop/selections"
+        "url": "/thetulipshop/selections",
+        "category": "Multicolors"
     },
     {
         "id": 3,
         "label": "Bunches",
-        "url": "/thetulipshop/selections"
+        "url": "/thetulipshop/selections",
+        "category": "Bunches"
     },
     {
         "id": 4,
         "label": "Weddings",
-        "url": "/thetulipshop/selections"
+        "url": "/thetulipshop/selections",
+        "category": "Weddings"
     },
     {
         "id": 5,
         "label": "Subscribe",
-        "url": "/thetulipshop/subscription"
+        "url": "/thetulipshop/subscription",
+        "category": "Subscribe"
     }
 ]

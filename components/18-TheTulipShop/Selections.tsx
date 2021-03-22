@@ -1,6 +1,6 @@
-import cartphotosData from './cartphotos.json'
+import cartphotosData from './tulipinventory.json'
 
-export default function Cart() {
+export default function Selections() {
     return (
         <div className="flex items-center">
             <div className="flex-1 max-w-10/12 sm:max-w-10/12 lg:max-w-10/12 mx-auto pt-5 pb-10 sm:pt-4 sm:pb-8 lg:pt-5 lg:pb-10">
