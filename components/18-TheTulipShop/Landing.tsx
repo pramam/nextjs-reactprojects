@@ -32,7 +32,7 @@ export default function Landing() {
                 <img
                     className="absolute inset-0 object-cover w-full h-32 sm:h-48 md:h-60 lg:h-96"
                     src={tulipphotos[0].img}
-                    alt={tulipphotos[0].img}
+                    alt={tulipphotos[0].alt}
                 />
                 <div className="bg-gray-900 absolute inset-0 h-32 sm:h-48 md:h-60 lg:h-96 bg-opacity-30 sm:bg-opacity-40 lg:bg-opacity-50"></div>
                 <div className="flex items-center justify-center relative transform -translate-y-2 sm:-translate-y-5 h-32 sm:h-48 md:h-60 lg:h-96 text-center">
@@ -77,74 +77,94 @@ export default function Landing() {
                 <div className="flex-1 max-w-10/12 sm:max-w-10/12 lg:max-w-4/6 mx-auto pt-10 pb-10 sm:pt-8 sm:pb-8 lg:pt-10 lg:pb-10">
                     <ul className="grid grid-cols-12 sm:gap-x-3 gap-y-6 sm:gap-y-4 grid-flow-row">
                         <li className="col-span-12 sm:col-span-4 relative h-88 sm:h-80">
-                            <img
-                                className="object-cover inset-0 absolute h-88 sm:h-80 w-full bg-yellow-50 opacity-80"
-                                src={tulipphotos[1].img}
-                                alt={tulipphotos[1].img}
-                            />
-                            <div className="flex items-center justify-center relative transform translate-y-44 sm:translate-y-40 text-center">
-                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Reds</span>
-                            </div>
+                            <Link href={tulipphotos[1].url}>
+                                <a>
+                                    <img
+                                        className="transform hover:opacity-60 motion-reduce:transform-none transition duration-700 ease-in-out object-cover inset-0 absolute h-88 sm:h-80 w-full bg-yellow-50 opacity-80"
+                                        src={tulipphotos[1].img}
+                                        alt={tulipphotos[1].alt}
+                                    />
+                                    <div className="hover:text-white text-yellow-50 hover:opacity-100 motion-reduce:transform-none transition duration-700 ease-in-out flex items-center justify-center relative transform translate-y-44 sm:translate-y-40 text-center">
+                                        <span className="justify-center px-8 py-2 uppercase text-center tracking-widest">Shop Reds</span>
+                                    </div>
+                                </a>
+                            </Link>
                         </li>
                         <li className="col-span-12 sm:col-span-4 relative h-88 sm:h-80">
                             <img
                                 className="object-cover inset-0 absolute h-88 sm:h-80 w-full opacity-80"
                                 src={tulipphotos[2].img}
-                                alt={tulipphotos[2].img}
+                                alt={tulipphotos[2].alt}
                             />
                         </li>
                         <li className="col-span-12 sm:col-span-4 relative h-88 sm:h-80">
-                            <img
-                                className="object-cover inset-0 absolute h-88 sm:h-80 w-full opacity-80"
-                                src={tulipphotos[3].img}
-                                alt={tulipphotos[3].img}
-                            />
-                            <div className="flex items-center justify-center relative transform translate-y-44 sm:translate-y-40 text-center">
-                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Multicolors</span>
-                            </div>
+                            <Link href={tulipphotos[3].url}>
+                                <a>
+                                    <img
+                                        className="transform hover:opacity-60 motion-reduce:transform-none transition duration-700 ease-in-out object-cover inset-0 absolute h-88 sm:h-80 w-full opacity-80"
+                                        src={tulipphotos[3].img}
+                                        alt={tulipphotos[3].alt}
+                                    />
+                                    <div className="hover:text-white text-yellow-50 hover:opacity-100 motion-reduce:transform-none transition duration-700 ease-in-out flex items-center justify-center relative transform translate-y-44 sm:translate-y-40 text-center">
+                                        <span className="justify-center px-8 py-2 uppercase text-center tracking-widest">Shop Multicolors</span>
+                                    </div>
+                                </a>
+                            </Link>
                         </li>
                         <li className="col-span-12 relative h-32 sm:h-72">
                             <img
                                 className="object-cover h-32 sm:h-72 w-full opacity-80"
                                 src={tulipphotos[4].img}
-                                alt={tulipphotos[4].img}
+                                alt={tulipphotos[4].alt}
                             />
                         </li>
                         <li className="col-span-12 sm:col-span-6 relative h-80 sm:h-96 md:h-112 lg:h-128">
-                            <img
-                                className="object-cover inset-0 absolute h-80 sm:h-96 md:h-112 lg:h-128 w-full opacity-80"
-                                src={tulipphotos[5].img}
-                                alt={tulipphotos[5].img}
-                            />
-                            <div className="flex items-center justify-center relative transform translate-y-36 sm:translate-y-44 md:translate-y-52 lg:translate-y-60 text-center">
-                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Bunches</span>
-                            </div>
+                            <Link href={tulipphotos[5].url}>
+                                <a>
+                                    <img
+                                        className="transform hover:opacity-60 motion-reduce:transform-none transition duration-700 ease-in-out object-cover inset-0 absolute h-80 sm:h-96 md:h-112 lg:h-128 w-full opacity-80"
+                                        src={tulipphotos[5].img}
+                                        alt={tulipphotos[5].alt}
+                                    />
+                                    <div className="hover:text-white text-yellow-50 hover:opacity-100 motion-reduce:transform-none transition duration-700 ease-in-out flex items-center justify-center relative transform translate-y-36 sm:translate-y-44 md:translate-y-52 lg:translate-y-60 text-center">
+                                        <span className="justify-center px-8 py-2 uppercase text-center tracking-widest">Shop Bunches</span>
+                                    </div>
+                                </a>
+                            </Link>
                         </li>
                         <li className="col-span-12 sm:col-span-6 relative h-80 sm:h-96 md:h-112 lg:h-128">
-                            <img
-                                className="object-cover inset-0 absolute h-80 sm:h-96 md:h-112 lg:h-128 w-full opacity-80"
-                                src={tulipphotos[6].img}
-                                alt={tulipphotos[6].img}
-                            />
-                            <div className="flex items-center justify-center relative transform translate-y-36 sm:translate-y-44 md:translate-y-52 lg:translate-y-60 text-center">
-                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop Bunches</span>
-                            </div>
+                            <Link href={tulipphotos[6].url}>
+                                <a>
+                                    <img
+                                        className="transform hover:opacity-60 motion-reduce:transform-none transition duration-700 ease-in-out object-cover inset-0 absolute h-80 sm:h-96 md:h-112 lg:h-128 w-full opacity-80"
+                                        src={tulipphotos[6].img}
+                                        alt={tulipphotos[6].alt}
+                                    />
+                                    <div className="hover:text-white text-yellow-50 hover:opacity-100 motion-reduce:transform-none transition duration-700 ease-in-out flex items-center justify-center relative transform translate-y-36 sm:translate-y-44 md:translate-y-52 lg:translate-y-60 text-center">
+                                        <span className="justify-center px-8 py-2 uppercase text-center tracking-widest">Shop Bunches</span>
+                                    </div>
+                                </a>
+                            </Link>
                         </li>
                         <li className="col-span-12 relative h-32 sm:h-72">
-                            <img
-                                className="object-cover h-32 sm:h-72 w-full opacity-80"
-                                src={tulipphotos[7].img}
-                                alt={tulipphotos[7].img}
-                            />
-                            <div className="flex items-center justify-center relative transform -translate-y-24 sm:-translate-y-40 text-center">
-                                <span className="justify-center px-8 py-2 text-yellow-50 uppercase text-center tracking-widest">Shop weddings and special occasions</span>
-                            </div>
+                            <Link href={tulipphotos[7].url}>
+                                <a>
+                                    <img
+                                        className="transform hover:opacity-60 motion-reduce:transform-none transition duration-700 ease-in-out object-cover h-32 sm:h-72 w-full opacity-80"
+                                        src={tulipphotos[7].img}
+                                        alt={tulipphotos[7].alt}
+                                    />
+                                    <div className="hover:text-white text-yellow-50 hover:opacity-100 motion-reduce:transform-none transition duration-700 ease-in-out flex items-center justify-center relative transform -translate-y-24 sm:-translate-y-40 text-center">
+                                        <span className="justify-center px-8 py-2 uppercase text-center tracking-widest">Shop weddings and special occasions</span>
+                                    </div>
+                                </a>
+                            </Link>
                         </li>
                         <li className="col-span-12 relative h-32 sm:h-72">
                             <img
                                 className="object-cover h-32 sm:h-72 w-full opacity-80"
                                 src={tulipphotos[8].img}
-                                alt={tulipphotos[8].img}
+                                alt={tulipphotos[8].alt}
                             />
                             <div className="absolute inset-0 bg-gray-900 h-32 sm:h-72 bg-opacity-70 sm:bg-opacity-0"></div>
 
