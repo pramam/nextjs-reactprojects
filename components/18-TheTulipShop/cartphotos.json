@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "img": "/thetulipshop/cart/redbunch.jpeg",
+        "alt": "Red Tulips",
+        "name": "Red Tulips",
+        "price": "20.00",
+        "quantity": 0
+    },
+    {
+        "id": 2,
+        "img": "/thetulipshop/cart/orange.jpeg",
+        "alt": "Orange Tulips",
+        "name": "Orange Tulips",
+        "price": "20.00",
+        "quantity": 0
+    },
+    {
+        "id": 3,
+        "img": "/thetulipshop/cart/pinksbeautiful.jpeg",
+        "alt": "Pink Tulips",
+        "name": "Pink Tulips",
+        "price": "20.00",
+        "quantity": 0
+    },
+    {
+        "id": 4,
+        "img": "/thetulipshop/cart/whitebunch.jpeg",
+        "alt": "White Tulips",
+        "name": "White Tulips",
+        "price": "20.00",
+        "quantity": 0
+    },
+    {
+        "id": 5,
+        "img": "/thetulipshop/cart/yellowbright.jpeg",
+        "alt": "Yellow Tulips",
+        "name": "Yellow Tulips",
+        "price": "20.00",
+        "quantity": 0
+    },
+    {
+        "id": 6,
+        "img": "/thetulipshop/cart/whitewithpinkstreaks2.jpeg",
+        "alt": "White With Pink Streaks Tulips",
+        "name": "White With Pink Streaks",
+        "price": "25.00",
+        "quantity": 0
+    },
+    {
+        "id": 7,
+        "img": "/thetulipshop/cart/colormedley.webp",
+        "alt": "Colorful Tulips",
+        "name": "Colorful Tulips",
+        "price": "30.00",
+        "quantity": 0
+    },
+    {
+        "id": 8,
+        "img": "/thetulipshop/cart/tulipsinbucket.webp",
+        "alt": "Multicolored tulips in bucket",
+        "name": "Multicolored Tulips",
+        "price": "40.00",
+        "quantity": 0
+    },
+    {
+        "id": 9,
+        "img": "/thetulipshop/cart/multicolorbouquet.jpeg",
+        "alt": "Multicolor bouquet",
+        "name": "Multicolor Bouquet",
+        "price": "30.00",
+        "quantity": 0
+    },
+    {
+        "id": 10,
+        "img": "/thetulipshop/cart/tulipspringbouquet.jpeg",
+        "alt": "Tulip Spring Arrangement",
+        "name": "Tulip Spring Arrangement",
+        "price": "55.00",
+        "quantity": 0
+    },
+    {
+        "id": 11,
+        "img": "/thetulipshop/cart/tulipsandroses.webp",
+        "alt": "Tulips and Roses",
+        "name": "Tulips and Roses",
+        "price": "45.00",
+        "quantity": 0
+    },
+    {
+        "id": 12,
+        "img": "/thetulipshop/cart/weddingbouquet.webp",
+        "alt": "Wedding Bouquet",
+        "name": "Wedding Bouquet",
+        "price": "37.00",
+        "quantity": 0
+    },
+    {
+        "id": 13,
+        "img": "/thetulipshop/cart/tulipsinyellowceadonvase.webp",
+        "alt": "Tulips in Yellow-Celadon Vase",
+        "name": "Tulips in Yellow-Celadon Vase",
+        "price": "85.00",
+        "quantity": 0
+    },
+    {
+        "id": 14,
+        "img": "/thetulipshop/cart/bluevase.jpg",
+        "alt": "Tulips in Blue Vase",
+        "name": "Tulips in Blue Vase",
+        "price": "105.00",
+        "quantity": 0
+    },
+    {
+        "id": 15,
+        "img": "/thetulipshop/cart/basketofflowers.webp",
+        "alt": "Basket of flowers",
+        "name": "Basket of Tulips",
+        "price": "135.00",
+        "quantity": 0
+    }
+]
