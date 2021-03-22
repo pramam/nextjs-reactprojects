@@ -33,18 +33,18 @@
     },
     {
         "id": 5,
-        "img": "/thetulipshop/cart/yellowbright.jpeg",
-        "alt": "Yellow Tulips",
-        "name": "Yellow Tulips",
-        "price": "20.00",
-        "quantity": 0
-    },
-    {
-        "id": 6,
         "img": "/thetulipshop/cart/whitewithpinkstreaks2.jpeg",
         "alt": "White With Pink Streaks Tulips",
         "name": "White With Pink Streaks",
         "price": "25.00",
+        "quantity": 0
+    },
+    {
+        "id": 6,
+        "img": "/thetulipshop/cart/yellowbright.jpeg",
+        "alt": "Yellow Tulips",
+        "name": "Yellow Tulips",
+        "price": "20.00",
         "quantity": 0
     },
     {
@@ -75,12 +75,12 @@
         "id": 10,
         "img": "/thetulipshop/cart/tulipspringbouquet.jpeg",
         "alt": "Tulip Spring Arrangement",
-        "name": "Tulip Spring Arrangement",
+        "name": "Spring Arrangement",
         "price": "55.00",
         "quantity": 0
     },
     {
-        "id": 11,
+            "id": 11,
         "img": "/thetulipshop/cart/tulipsandroses.webp",
         "alt": "Tulips and Roses",
         "name": "Tulips and Roses",
@@ -97,26 +97,34 @@
     },
     {
         "id": 13,
-        "img": "/thetulipshop/cart/tulipsinyellowceadonvase.webp",
-        "alt": "Tulips in Yellow-Celadon Vase",
-        "name": "Tulips in Yellow-Celadon Vase",
+        "img": "/thetulipshop/cart/tulipsinyellowceladonvase.webp",
+        "alt": "Tulips in Yellow Celadon Vase",
+        "name": "Tulips in Yellow Vase",
         "price": "85.00",
         "quantity": 0
     },
     {
         "id": 14,
-        "img": "/thetulipshop/cart/bluevase.jpg",
-        "alt": "Tulips in Blue Vase",
-        "name": "Tulips in Blue Vase",
-        "price": "105.00",
+        "img": "/thetulipshop/cart/tulipsandlilyarrangementcropped.jpeg",
+        "alt": "Tulip Lily arrangement in vase",
+        "name": "Arrangement in Vase",
+        "price": "79.00",
         "quantity": 0
     },
     {
         "id": 15,
         "img": "/thetulipshop/cart/basketofflowers.webp",
         "alt": "Basket of flowers",
-        "name": "Basket of Tulips",
+        "name": "Basket of rare Tulips",
         "price": "135.00",
+        "quantity": 0
+    },
+    {
+        "id": 16,
+        "img": "/thetulipshop/cart/footerimage.webp",
+        "alt": "Weekly Subscription",
+        "name": "Weekly Subscription",
+        "price": "16.00",
         "quantity": 0
     }
 ]

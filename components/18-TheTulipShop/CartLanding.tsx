@@ -1,7 +1,7 @@
 import Header from './Header'
 import Cart from './Cart'
 import Navbar from './Navbar'
-import Footer from './Footer'
+// import Footer from './Footer'
 import Sidebar from './Sidebar'
 import { TulipProvider } from './Context'
 
@@ -23,9 +23,9 @@ export default function CartLanding() {
                             <div className="lg:hidden">
                                 <Sidebar />
                             </div>
-
+                            <Cart />
                         </div>
-                        <Cart />
+
                         {/* <Footer /> */}
                     </TulipProvider>
                 </div>
