@@ -10,7 +10,10 @@ export default function Layout({ children }) {
             <Header />
             <div className="font-tuliptext text-yellow-50">
                 <div className="min-h-screen relative bg-gray-900">
-                    <TulipProvider>
+                    {/* Move <TulipProvider> to /pages/_app.js to
+                      * maintain cart state between the pages
+                      */}
+                    {/* <TulipProvider> */}
                         {/* This should be lg:py-1/5 I can't understand why it is 1/10
                         Add pb for the <Footer/>
                         The sizes of the top margins here(in the container) need to be passed
@@ -34,7 +37,7 @@ export default function Layout({ children }) {
                         </div>
 
                         {/* <Footer /> */}
-                    </TulipProvider>
+                    {/* </TulipProvider> */}
                 </div>
             </div>
         </>

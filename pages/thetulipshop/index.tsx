@@ -4,13 +4,15 @@ import ProjectNavbarContainerSimple from '../../components/projects/ProjectNavba
 
 export default function DisplayTheTulipShop() {
     return (
-        <div className="relative">
-            <ProjectNavbarContainerSimple
-                projectId={18}
-                textColor="text-gray-900"
-                includeBlogs={false}
-            />
-            <TheTulipShop />
-        </div>
+        <TheTulipShop />
+        // <div className="relative">
+        //     Move this to /pages/_app.js
+        //     <ProjectNavbarContainerSimple
+        //         projectId={18}
+        //         textColor="text-gray-900"
+        //         includeBlogs={false}
+        //     />
+        //     <TheTulipShop />
+        // </div>
     )
 }
