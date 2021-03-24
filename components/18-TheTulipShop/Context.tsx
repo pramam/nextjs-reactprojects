@@ -1,14 +1,17 @@
-import { useState, useContext } from 'react'
+import { useState, useEffect, useContext, useReducer } from 'react'
 import React from 'react'
 import inventoryData from './tulipinventory.json'
+import { reducer } from './reducer'
 
 const TulipContext = React.createContext(null)
 
+const initialCartState = {
+    cartItems: inventoryData,
+}
+
 const TulipProvider = ({ children }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [inventory, setInventory] = useState(inventoryData)
-    // const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-    // const [showCart, setShowCart] = useState(false)
+    const [cartState, cartDispatch] = useReducer(reducer, initialCartState)
 
     const menuHandler = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -24,15 +27,17 @@ const TulipProvider = ({ children }) => {
         console.log(`closeMenu, isMenuOpen: ${isMenuOpen}`)
     }
 
-    // const openCart = () => {
-    //     setShowCart(true)
-    //     console.log("openCart")
-    // }
+    const decrementCartItemCount = (id) => {
+        // once you dispatch your action, you need to handle it in reducer
+        console.log(`decrementCountHandler: id: ${id}`)
+        cartDispatch({ type: "DECREMENT_COUNT", payload: { id } })
+    }
 
-    // const closeCart = () => {
-    //     setShowCart(false)
-    //     console.log("closeCart")
-    // }
+    const incrementCartItemCount = (id) => {
+        // once you dispatch your action, you need to handle it in reducer
+        console.log(`incrementCartItemCount: id: ${id}`)
+        cartDispatch({ type: "INCREMENT_COUNT", payload: { id } })
+    }
 
     return (
         <TulipContext.Provider
@@ -41,7 +46,9 @@ const TulipProvider = ({ children }) => {
                 menuHandler,
                 openMenu,
                 closeMenu,
-                inventory
+                ...cartState,// cartItems gets put in the context
+                decrementCartItemCount,
+                incrementCartItemCount
             }}>
             {children}
         </TulipContext.Provider>
