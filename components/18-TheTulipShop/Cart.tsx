@@ -4,9 +4,8 @@ import ShopItemCounter from './ShopItemCounter'
 
 // This component displays the items from the inventory, stored in cartItems
 // For the amount to display, it fetches it from the global cartState
-export default function Selections() {
-    const { cartItems,
-        decrementCartItemCount, incrementCartItemCount } = useGlobalTulipContext()
+export default function Cart() {
+    const { getItemsInCart, decrementCartItemCount, incrementCartItemCount } = useGlobalTulipContext()
 
     const incrHandler = (id) => {
         incrementCartItemCount(id)
@@ -21,7 +20,7 @@ export default function Selections() {
                 <ul className="grid grid-cols-12 sm:gap-x-3 gap-y-6 sm:gap-y-8 lg:gap-y-8 grid-flow-row">
                     {/* We are iterating over the inventory here and displaying all the Selections
                     obj.quantity holds the number in your cart, reflected on the Selections page */}
-                    {cartItems.map((obj, index) => {
+                    {getItemsInCart().map((obj, index) => {
                         const all_props = "col-span-12 sm:col-span-6 md:col-span-4"
                         const footer_props = `col-span-12`
 

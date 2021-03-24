@@ -46,6 +46,15 @@ const TulipProvider = ({ children }) => {
     const getTotals = () => {
         cartDispatch({ type: "GET_TOTALS" })
     }
+
+    // I do not want to 'reduce' the inventory. I just want to filter out what I need,
+    // so it looks like this cannot be done through the dispatcher as the returned state updates
+    // the global cartState.
+    const getItemsInCart = () => {
+        const incart = cartState.cartItems.filter(item => item.quantity > 0)
+        return incart
+    }
+
     return (
         <TulipContext.Provider
             value={{
@@ -56,7 +65,8 @@ const TulipProvider = ({ children }) => {
                 ...cartState,// cartItems gets put in the context
                 decrementCartItemCount,
                 incrementCartItemCount,
-                getTotals
+                getTotals,
+                getItemsInCart
             }}>
             {children}
         </TulipContext.Provider>
