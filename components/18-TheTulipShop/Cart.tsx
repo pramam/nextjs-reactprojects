@@ -17,7 +17,7 @@ export default function Selections() {
     return (
         <div className="flex items-center">
             <div className="flex-1 max-w-10/12 sm:max-w-10/12 lg:max-w-10/12 mx-auto pt-5 pb-10 sm:pt-4 sm:pb-8 lg:pt-5 lg:pb-10">
-                {/* <div className="flex justify-center">Cart Total</div> */}
+                <div className="flex justify-center">Cart Landing</div>
                 <ul className="grid grid-cols-12 sm:gap-x-3 gap-y-6 sm:gap-y-8 lg:gap-y-8 grid-flow-row">
                     {/* We are iterating over the inventory here and displaying all the Selections
                     obj.quantity holds the number in your cart, reflected on the Selections page */}
