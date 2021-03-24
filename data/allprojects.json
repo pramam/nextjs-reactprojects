@@ -315,9 +315,24 @@
         "timetocomplete": "2 hours"
     },
     {
+        "id": 1616614697283,
+        "isproject": false,
+        "day": 59,
+        "image": "",
+        "title": "Saving Cart state across pages in an app",
+        "url": "/thetulipshop",
+        "blogurl": "/posts/preserving-state-based-on-path",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/commit/31360bd3da00176ecca3a34816c64ada1362e9d1",
+        "inspiration": "https://bohemiantraders.com/",
+        "timeline": "/",
+        "about": "/general/about",
+        "checkins": 1,
+        "timetocomplete": "3 hours"
+    },
+    {
         "id": 18,
         "isproject": true,
-        "day": 54,
+        "day": 59,
         "image": "/screenshots/Screenshot-TheTulipShop.png",
         "title": "The Tulip Shop: Cart",
         "url": "/thetulipshop",
@@ -326,7 +341,7 @@
         "inspiration": "https://react-projects-14-usereducer-cart.netlify.app/",
         "timeline": "/",
         "about": "/general/about",
-        "checkins": 35,
-        "timetocomplete": "3.5 days"
+        "checkins": 54,
+        "timetocomplete": "7 days"
     }
 ]

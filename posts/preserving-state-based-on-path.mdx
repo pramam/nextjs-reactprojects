@@ -1,0 +1,257 @@
+---
+title: Saving Cart state across pages in an app
+id: 1616614697283
+day: 59
+keywords: [next.js, nextjs, routing, path based, Router, useContext, Context API, preserve state across pages]
+description: Preserving state in a Next.js app based on the Path
+---
+If you've been looking at this portfolio and the github repos you might have noticed that all these projects are so far in the same git repo. Most of the projects in the portfolio are all single page apps.
+[The Cart](https://react-projects-14-usereducer-cart.netlify.app/) example in the inspiration was a single page app, but inspired by [The Bohemian Traders](https://bohemiantraders.com),
+I decided to build [The Tulip Shop](/thetulipshop).
+
+The Tulip Shop has 4 pages in the app:
+/thetulipshop/index.tsx
+/thetulipshop/selections.tsx
+/thetulipshop/cart.tsx
+/thetulipshop/subscription.tsx 
+
+- Page 1
+  /thetulipshop : Landing page
+- Page 2
+  /thetulipshop/selections: Listing of all items on sale with prices. This page also has the option
+  of adding items to your cart.
+- Page 3
+  /thetulipshop/cart: Shows the items in your cart with the tutorial
+- Page 4
+  /thetulipshop/subscription: Takes you to this page once you submit your email address for the newsletter
+
+All the pages have a navbar on top which displays a Cart icon with the number of items in the cart, and the total price of all the items in your cart.
+
+I added items to my cart on Page 2, but when I navigated back to Page 1, even using next.js's `<Link>` component,
+all my cart state was lost.
+Note: I am storing my state in a useReducer hook like so:
+
+```typescript
+
+import { useContext, useReducer } from 'react'
+import React from 'react'
+import inventoryData from './tulipinventory.json'
+import { reducer } from './reducer'
+
+const TulipContext = React.createContext(null)
+
+export type CartStateType = {
+    cartItems: {
+        id: number,
+        img: string,
+        alt: string,
+        price: number,
+        quantity: number // Number of items in your cart
+    }[],
+    totalCount: number,
+    totalPrice: number
+}
+
+export type CartActionType =
+    | { type: 'INCREMENT_COUNT', payload: { id: number } }
+    | { type: 'DECREMENT_COUNT', payload: { id: number } }
+    | { type: 'GET_TOTALS' }
+
+const initialCartState = {
+    cartItems: inventoryData,
+    totalCount: 0,
+    totalPrice: 0
+}
+
+const TulipProvider = ({ children }) => {
+    const [cartState, cartDispatch] = useReducer(reducer, initialCartState)
+
+    const decrementCartItemCount = (id) => {
+        cartDispatch({ type: "DECREMENT_COUNT", payload: { id } })
+        getTotals()
+    }
+
+    const incrementCartItemCount = (id) => {
+        cartDispatch({ type: "INCREMENT_COUNT", payload: { id } })
+        getTotals()
+    }
+
+    const getTotals = () => {
+        cartDispatch({ type: "GET_TOTALS" })
+    }
+    
+    return (
+        <TulipContext.Provider
+            value={{
+                ...cartState,
+                decrementCartItemCount,
+                incrementCartItemCount,
+                getTotals
+            }}>
+            {children}
+        </TulipContext.Provider>
+    )
+}
+
+const useGlobalTulipContext = () => {
+    return useContext(TulipContext)
+}
+
+export { TulipContext, TulipProvider, useGlobalTulipContext }
+```
+
+I have a `<Layout>` component that wraps its children in a TulipProvider:
+
+```typescript
+export default function Layout({children}){
+    return(
+        <TulipProvider>
+            <Navbar/>
+            {children}
+            <Footer/>
+        </TulipProvider>
+    )
+}
+```
+
+The /thetulipshop/selections page has the following:
+
+```typescript
+export default function SelectionsLanding() {
+    return (
+        <Layout>
+            <Selections />
+        </Layout>
+    )
+}
+```
+
+The Selections component uses the global cart context like so:
+
+```typescript
+import { useGlobalTulipContext } from './Context'
+
+export default function Selections() {
+    const { cartItems,
+        decrementCartItemCount, incrementCartItemCount } = useGlobalTulipContext()
+
+    const incrHandler = (id) => {
+        incrementCartItemCount(id)
+    }
+    const decrHandler = (id) => {
+        decrementCartItemCount(id)
+    }
+    
+    return(
+        <div>
+        {cartItems.map((obj,index)=> {
+            return(
+                <li key={obj.id}>
+                {/* Display image and price*/}
+                <ShopItemCounter
+                    id={obj.id}
+                    incrHandler={incrHandler}
+                    decrHandler={decrHandler}
+                    // obj.quantity is the count of this item in the cart, in state,
+                    // as changed by the user
+                    count={obj.quantity}
+                />
+                </li>
+            )
+        })}
+        </div>
+    )
+```
+
+As you can see, each page is wrapped in a Layout component that uses the TulipProvider,
+but as you navigate from one page to the next, that state is not carried forward.
+
+These 3 links have information on how to move the context to your /pages/_app.js.
+
+- [Role based routing with next.js](https://spin.atomicobject.com/2019/12/11/role-based-routing-with-next-js/)
+
+- [Sharing global data in next.js with useContext hook](https://reacttricks.com/sharing-global-data-in-next-with-custom-app-and-usecontext-hook/)
+
+- [Simple sample code with context API](https://github.com/vercel/next.js/tree/master/examples/with-context-api)
+
+In my case, The Tulip Shop is only one of the apps on this repo at
+
+/pages/thetulipshop/index.tsx
+
+/pages/thetulipshop/selections.tsx
+
+/pages/thetulipshop/cart.tsx
+
+/pages/thetulipshop/subscription.tsx
+
+/pages/`<xyz>`
+
+
+where `<xyz>` are all the other projects in this repo.
+
+So I needed path based routing to preserve state only among the pages inside /pages/thetulipshop and not to share that state with the other projects.
+
+To do this I pulled out `<TulipProvider>` from the Layout component:
+
+```typescript
+export default function Layout({children}){
+    return(
+        <> {/* was <TulipProvider> */}
+            <Navbar/>
+            {children}
+            <Footer/>
+        </> {/* was </TulipProvider> */}
+    )
+}
+```
+
+And I added the TulipProvider wrapper in /pages/_app.js based on path based routing:
+
+```typescript
+// pages/_app.js
+import { useRouter } from 'next/router'
+import '../styles/globals.css'
+import { TulipProvider } from '../components/18-TheTulipShop/Context'
+import ProjectNavbarContainerSimple from '../components/projects/ProjectNavbarContainerSimple'
+
+// https://spin.atomicobject.com/2019/12/11/role-based-routing-with-next-js/
+function MyApp({ Component, pageProps }) {
+    const router = useRouter()
+
+    if (router.pathname.startsWith("/thetulipshop")) {
+        console.log(`_app.js:  ${router.pathname}`)
+
+        // Use the <TulipProvider> context  only for The Tulip Shop
+        if (router.pathname.endsWith("/thetulipshop")) {
+            return (
+                <TulipProvider>
+                    <div className="relative">
+                        {/* Display the TIMELINE/ABOUT bar on the landing page */}
+                        <ProjectNavbarContainerSimple
+                            projectId={18}
+                            textColor="text-gray-900"
+                            includeBlogs={false}
+                        />
+                        <Component {...pageProps} />
+                    </div>
+                </TulipProvider>
+            )
+        }
+        else {
+            return (
+                <TulipProvider>
+                    <Component {...pageProps} />
+                </TulipProvider>
+            )
+        }
+    }
+    else
+        return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+
+And now when I navigate from one page in the app to another page in the app,my cart state is maintained as long as I do not refresh the page in the browser.
+
+
