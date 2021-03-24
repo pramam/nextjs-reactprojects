@@ -12,11 +12,13 @@ export type CartStateType = {
         alt: string,
         price: number,
         quantity: number // Number of items in your cart
-    }[]
+    }[],
+    totalCount: number,
+    totalPrice: number
 }
 
 export type CartActionType =
     | { type: 'INCREMENT_COUNT', payload: { id: number } }
     | { type: 'DECREMENT_COUNT', payload: { id: number } }
-
+    | { type: 'GET_TOTALS' }
 export { shoppingurl, homeurl }

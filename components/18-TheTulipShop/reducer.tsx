@@ -1,9 +1,10 @@
 import { CartStateType, CartActionType } from './definitions'
 
 export const reducer = (state: CartStateType, action: CartActionType): CartStateType => {
-    console.log(`reducer: state: ${state}, action:${action.payload.id}`)
+
     switch (action.type) {
         case 'INCREMENT_COUNT':
+            console.log(`reducer: state: ${state}, action:${action.payload.id}`)
             let incrCart = state.cartItems.map((item) => {
                 if (item.id === action.payload.id) {
                     return { ...item, quantity: item.quantity + 1 }
@@ -13,6 +14,7 @@ export const reducer = (state: CartStateType, action: CartActionType): CartState
             return { ...state, cartItems: incrCart }
 
         case 'DECREMENT_COUNT':
+            console.log(`reducer: state: ${state}, action:${action.payload.id}`)
             let decrCart = state.cartItems.map((item) => {
                 if (item.id === action.payload.id) {
                     // console.log(`DECREMENT_COUNT: id: ${item.id} current qty: ${item.quantity}`)
@@ -24,6 +26,21 @@ export const reducer = (state: CartStateType, action: CartActionType): CartState
                 return item
             })
             return { ...state, cartItems: decrCart }
+
+        case 'GET_TOTALS':
+            let { totalCount, totalPrice } =
+                state.cartItems.reduce((acc, item) => {
+                    const { price, quantity } = item
+                    const itemTotal = price * quantity
+                    acc.totalPrice += itemTotal
+                    acc.totalCount += quantity
+                    return acc
+                }, { totalCount: 0.00, totalPrice: 0.00 })
+            // const totalCount = state.cartItems.reduce((acc, item) => acc + item.quantity, 0)
+            // const totalPrice = state.cartItems.reduce((acc, item) => acc + item.price, 0)
+            // console.log(`GET_TOTALS: totalCount: ${totalCount}, totalPrice: ${totalPrice}`)
+
+            return { ...state, totalCount, totalPrice }
 
         default:
             throw new Error('No matching action type')

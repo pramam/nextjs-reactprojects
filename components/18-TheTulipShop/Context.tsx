@@ -7,6 +7,8 @@ const TulipContext = React.createContext(null)
 
 const initialCartState = {
     cartItems: inventoryData,
+    totalCount: 0,
+    totalPrice: 0
 }
 
 const TulipProvider = ({ children }) => {
@@ -31,14 +33,19 @@ const TulipProvider = ({ children }) => {
         // once you dispatch your action, you need to handle it in reducer
         console.log(`decrementCountHandler: id: ${id}`)
         cartDispatch({ type: "DECREMENT_COUNT", payload: { id } })
+        getTotals()
     }
 
     const incrementCartItemCount = (id) => {
         // once you dispatch your action, you need to handle it in reducer
         console.log(`incrementCartItemCount: id: ${id}`)
         cartDispatch({ type: "INCREMENT_COUNT", payload: { id } })
+        getTotals()
     }
 
+    const getTotals = () => {
+        cartDispatch({ type: "GET_TOTALS" })
+    }
     return (
         <TulipContext.Provider
             value={{
@@ -48,7 +55,8 @@ const TulipProvider = ({ children }) => {
                 closeMenu,
                 ...cartState,// cartItems gets put in the context
                 decrementCartItemCount,
-                incrementCartItemCount
+                incrementCartItemCount,
+                getTotals
             }}>
             {children}
         </TulipContext.Provider>
