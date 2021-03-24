@@ -1,5 +1,6 @@
 const shoppingurl = "/thetulipshop/selections"
 const homeurl = "/thetulipshop"
+const shoppingcarturl = "/thetulipshop/cart"
 
 // This holds the entire inventory and is used to display the /thetulipshop/selections page. 
 // quantity is initialized to 0 from the json file
@@ -21,4 +22,4 @@ export type CartActionType =
     | { type: 'INCREMENT_COUNT', payload: { id: number } }
     | { type: 'DECREMENT_COUNT', payload: { id: number } }
     | { type: 'GET_TOTALS' }
-export { shoppingurl, homeurl }
+export { shoppingurl, homeurl, shoppingcarturl }
