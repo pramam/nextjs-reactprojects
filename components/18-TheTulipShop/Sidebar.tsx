@@ -3,7 +3,7 @@ import { Transition } from '@headlessui/react'
 import { useGlobalTulipContext } from "./Context"
 import menuoptionsData from './menuoptions.json'
 
-// This is lg:hidden, controlled in <Landing/>
+// This is lg:hidden, controlled in <Layout/>
 export default function Sidebar() {
     const { isMenuOpen, menuHandler } = useGlobalTulipContext()
     return (

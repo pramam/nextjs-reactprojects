@@ -6,7 +6,7 @@ import { shoppingcarturl } from './definitions'
 export default function CartIconWithCount() {
     const { totalCount, totalPrice } = useGlobalTulipContext()
 
-    console.log(`CartIconWithCount: count: ${totalCount}, price: ${totalPrice}`)
+    // console.log(`CartIconWithCount: count: ${totalCount}, price: ${totalPrice}`)
     return (
         // lg:mr-7 has no corresponding lg:ml-7 on the Menu since there is no MenuButton on the left
         // for lg: screens

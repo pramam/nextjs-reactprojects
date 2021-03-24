@@ -13,7 +13,7 @@ export default function Layout({ children }) {
                     {/* Move <TulipProvider> to /pages/_app.js to
                       * maintain cart state between the pages
                       */}
-                    {/* <TulipProvider> */}
+
                         {/* This should be lg:py-1/5 I can't understand why it is 1/10
                         Add pb for the <Footer/>
                         The sizes of the top margins here(in the container) need to be passed
@@ -36,8 +36,7 @@ export default function Layout({ children }) {
                             {children}
                         </div>
 
-                        {/* <Footer /> */}
-                    {/* </TulipProvider> */}
+                    {/* <Footer /> */}
                 </div>
             </div>
         </>
