@@ -34,6 +34,7 @@ export type CartActionType =
     | { type: 'DECREMENT_COUNT', payload: { id: number } }
     | { type: 'GET_TOTALS' }
     | { type: 'SET_CATEGORY', payload: { category: string } }
+    | { type: 'CLEAR_CART' }
 
 export { shoppingurl, homeurl, shoppingcarturl }
 export { Category_All, Category_SingleColors, Category_Multicolors, Category_Bunches, Category_Weddings, Category_Subscribe }

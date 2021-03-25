@@ -1,4 +1,5 @@
 import { CartStateType, CartActionType } from './definitions'
+import ShopItemCounter from './ShopItemCounter'
 
 export const reducer = (state: CartStateType, action: CartActionType): CartStateType => {
 
@@ -46,7 +47,15 @@ export const reducer = (state: CartStateType, action: CartActionType): CartState
             const displayCategory = action.payload.category;
             console.log(`SET_CATEGORY: Set to ${displayCategory}`)
             return { ...state, displayCategory }
-
+        
+        case 'CLEAR_CART':
+            let clearCart = state.cartItems.map((item) => {
+                if (item.quantity > 0)
+                    return { ...item, quantity: 0 }
+                return item
+            })
+            console.log(`CLEAR_CART: Cart cleared`)
+            return { ...state, cartItems: clearCart, totalCount: 0, totalPrice: 0 }
         default:
             throw new Error('No matching action type')
     }

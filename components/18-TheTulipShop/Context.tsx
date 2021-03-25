@@ -82,6 +82,9 @@ const TulipProvider = ({ children }) => {
     useEffect(() => {
     }, [cartState.displayCategory])
 
+    const clearCart = () => {
+        cartDispatch({ type: "CLEAR_CART" })
+    }
     return (
         <TulipContext.Provider
             value={{
@@ -95,7 +98,8 @@ const TulipProvider = ({ children }) => {
                 // getTotals,
                 getItemsInCart,
                 setCategory,
-                getCategory
+                getCategory,
+                clearCart
             }}>
             {children}
         </TulipContext.Provider>

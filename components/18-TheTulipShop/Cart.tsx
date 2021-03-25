@@ -5,7 +5,9 @@ import ShopItemCounter from './ShopItemCounter'
 // For the amount to display, it fetches it from the global cartState by calling getItemsInCart()
 // which is a `filter` on cartItems
 export default function Cart() {
-    const { getItemsInCart, totalCount, totalPrice, decrementCartItemCount, incrementCartItemCount } = useGlobalTulipContext()
+    const { getItemsInCart, totalCount, totalPrice,
+        decrementCartItemCount, incrementCartItemCount,
+        clearCart } = useGlobalTulipContext()
 
     const incrHandler = (id) => {
         incrementCartItemCount(id)
@@ -140,6 +142,12 @@ export default function Cart() {
                                     </tr>
                                 </tbody>
                             </table>
+                            <div className="flex items-center justify-center mx-auto py-5">
+                                <button className="focus:outline none"
+                                    onClick={() => clearCart()}>
+                                    <span className="border justify-center border-yellow-50 px-2 py-1 sm:px-8 sm:py-2 text-yellow-50 text-sm sm:text-base md:text-lg uppercase text-center tracking-widest">Clear Cart</span>
+                                </button>
+                            </div>
                         </div>
                     </>
                 }
