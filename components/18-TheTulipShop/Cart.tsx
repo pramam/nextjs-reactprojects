@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useGlobalTulipContext } from './Context'
 import ShopItemCounter from './ShopItemCounter'
 
@@ -22,7 +21,9 @@ export default function Cart() {
                     <>
                         <h2 className="flex justify-center text-3x py-10 font-semibold">Your Cart</h2>
                         <div className="max-w-full">
-                            <table className="table-fixed">
+                            {/* Show in table format for sm: and larger
+                            Images disappearing on < sm:,change format for mobiles */}
+                            <table className="hidden sm:table-fixed">
                                 <thead>
                                     <tr>
                                         <th className="w-1/5"></th>
@@ -39,13 +40,13 @@ export default function Cart() {
                                             <tr className="">
                                                 <td className="">
                                                     <img
-                                                        className="bg-white object-cover h-32 w-32 sm:h-40 sm:w-40"
+                                                        className="bg-white object-cover h-16 w-16 sm:h-40 sm:w-40"
                                                         src={obj.img}
                                                         alt={obj.alt}
                                                     />
                                                 </td>
                                                 <td>
-                                                    <div className="capitalize tracking-widest text-left ml-5">{obj.name}</div>
+                                                    <div className="capitalize tracking-widest text-center sm:text-left sm:ml-5">{obj.name}</div>
                                                 </td>
                                                 <td>
                                                     <h3 className="text-center">${obj.price}</h3>
@@ -76,6 +77,64 @@ export default function Cart() {
                                         <td className="uppercase font-semibold text-lg text-center">Total</td>
                                         <td className="text-center font-semibold text-lg">{totalCount}</td>
                                         <td className="text-center font-semibold text-lg">${totalPrice}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            {/* For mobiles */}
+                            <table className="table-fixed sm:hidden">
+                                <thead>
+                                    <tr>
+                                        <th className="w-1/4"></th>
+                                        <th className="w-1/4"></th>
+                                        <th className="w-1/4"></th>
+                                        <th className="w-1/4">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {/* getItemsInCart returns positive counts in Cart. */}
+                                    {getItemsInCart().map((obj, index) => {
+                                        return (
+                                            <tr className="">
+                                                <td className="">
+                                                    <div className="flex flex-col">
+                                                        <img
+                                                            className="bg-white object-cover h-16 w-16 sm:h-40 sm:w-40"
+                                                            src={obj.img}
+                                                            alt={obj.alt}
+                                                        />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="capitalize tracking-widest text-center sm:text-left sm:ml-5">{obj.name}</div>
+                                                </td>
+                                                <td>
+                                                    <div className="flex flex-col">
+                                                        <div className="text-center">
+                                                            <ShopItemCounter
+                                                                id={obj.id}
+                                                                incrHandler={incrHandler}
+                                                                decrHandler={decrHandler}
+                                                                // obj.quantity is the count of this item in the cart, in state,
+                                                                // as changed by the user
+                                                                count={obj.quantity}
+                                                            />
+                                                        </div>
+                                                        <h3 className="text-center">${obj.price}</h3>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="text-center">
+                                                        ${obj.quantity * obj.price}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        )
+                                    })}
+                                    <tr>
+                                        <td></td>
+                                        <td className="uppercase font-semibold sm:text-lg text-center">Total</td>
+                                        <td className="text-center font-semibold sm:text-lg">{totalCount}</td>
+                                        <td className="text-center font-semibold sm:text-lg">${totalPrice}</td>
                                     </tr>
                                 </tbody>
                             </table>
