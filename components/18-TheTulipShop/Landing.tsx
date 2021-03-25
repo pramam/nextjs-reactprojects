@@ -1,12 +1,24 @@
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useGlobalTulipContext } from './Context'
 import tulipphotos from './tulipphotos.json'
 
-import { shoppingurl } from './definitions'
+import { shoppingurl, subscriptionurl } from './definitions'
 import { Category_All, Category_SingleColors, Category_Multicolors, Category_Bunches, Category_Weddings, Category_Subscribe } from './definitions'
 
 export default function Landing() {
+    const router = useRouter()
+    const [email, setEmail] = useState('')
     const { setCategory } = useGlobalTulipContext()
+
+    const handleNewsletter = (e) => {
+        e.preventDefault();
+        // console.log("in handleNewsletter")
+        // Do backend call to subscribe the user
+        // Redirect to subscription page
+        router.push(subscriptionurl)
+    }
     return (
         <div>
             {/* All the images below are `absolute` in `relative` container(grid for the hero image, and
@@ -167,18 +179,22 @@ export default function Landing() {
                                     >Button</button>
                                 </div>
                             </form> */}
-                            <form className="flex relative transform -translate-y-24 sm:-translate-y-64 text-center">
-                                <div className="mt-1 mb-4 sm:ml-10 text-base sm:text-xl text-yellow-50 text-center">Weekly flower subscription</div>
+                            <form className="flex relative transform -translate-y-24 sm:-translate-y-64 text-center"
+                                onSubmit={handleNewsletter}>
+                                <div className="mt-1 mb-4 sm:ml-10 text-base sm:text-xl text-yellow-50 text-center">Weekly email subscription</div>
                                 <div className="ml-2 sm:ml-10 flex flex-col justify-center mx-auto">
                                     <input
                                         id="email-address"
                                         name="email"
                                         type="email"
+                                        value={email}
                                         // autocomplete="email"
                                         required
                                         // className="bg-transparent text-yellow-50 border border-yellow-50 rounded-md"
                                         className="bg-transparent appearance-none relative block w-full px-3 py-2 border border-yellow-50 placeholder-yellow-50 text-yellow-100 sm:text-gray-700 rounded-md focus:outline-none focus:ring-yellow-50 focus:border-yellow-50 focus:z-10 sm:text-sm"
-                                        placeholder="Email address">
+                                        placeholder="Email address"
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    >
                                     </input>
                                     <button type="submit"
                                         // <span className="border justify-center border-yellow-50 px-2 py-1 sm:px-8 sm:py-2 text-yellow-50 text-sm sm:text-base md:text-lg uppercase text-center tracking-widest">Shop now</span>

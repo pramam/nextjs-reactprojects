@@ -1,6 +1,7 @@
 const shoppingurl = "/thetulipshop/selections"
 const homeurl = "/thetulipshop"
 const shoppingcarturl = "/thetulipshop/cart"
+const subscriptionurl = "/thetulipshop/subscription"
 
 // Categories, used in Landing, these match the categories in menuoptions.json
 
@@ -36,5 +37,5 @@ export type CartActionType =
     | { type: 'SET_CATEGORY', payload: { category: string } }
     | { type: 'CLEAR_CART' }
 
-export { shoppingurl, homeurl, shoppingcarturl }
+export { shoppingurl, homeurl, shoppingcarturl, subscriptionurl }
 export { Category_All, Category_SingleColors, Category_Multicolors, Category_Bunches, Category_Weddings, Category_Subscribe }
