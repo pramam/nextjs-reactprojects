@@ -5,7 +5,8 @@
         "alt": "Red Tulips",
         "name": "Red Tulips",
         "price": 20.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Single Colors"
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "alt": "Orange Tulips",
         "name": "Orange Tulips",
         "price": 20.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Single Colors"
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "alt": "Pink Tulips",
         "name": "Pink Tulips",
         "price": 20.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Single Colors"
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "alt": "White Tulips",
         "name": "White Tulips",
         "price": 20.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Single Colors"
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "alt": "White With Pink Streaks Tulips",
         "name": "White With Pink Streaks",
         "price": 25.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Single Colors"
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "alt": "Yellow Tulips",
         "name": "Yellow Tulips",
         "price": 20.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Single Colors"
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "alt": "Colorful Tulips",
         "name": "Colorful Tulips",
         "price": 30.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Multicolors"
     },
     {
         "id": 8,
@@ -61,7 +68,8 @@
         "alt": "Multicolored tulips in bucket",
         "name": "Multicolored Tulips",
         "price": 40.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Multicolors"
     },
     {
         "id": 9,
@@ -69,7 +77,8 @@
         "alt": "Multicolor bouquet",
         "name": "Multicolor Bouquet",
         "price": 30.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Multicolors"
     },
     {
         "id": 10,
@@ -77,7 +86,8 @@
         "alt": "Tulip Spring Arrangement",
         "name": "Spring Arrangement",
         "price": 55.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Weddings"
     },
     {
         "id": 11,
@@ -85,7 +95,8 @@
         "alt": "Tulips and Roses",
         "name": "Tulips and Roses",
         "price": 45.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Bunches"
     },
     {
         "id": 12,
@@ -93,7 +104,8 @@
         "alt": "Wedding Bouquet",
         "name": "Wedding Bouquet",
         "price": 37.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Weddings"
     },
     {
         "id": 13,
@@ -101,7 +113,8 @@
         "alt": "Tulips in Yellow Celadon Vase",
         "name": "Tulips in Yellow Vase",
         "price": 85.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Weddings"
     },
     {
         "id": 14,
@@ -109,7 +122,8 @@
         "alt": "Tulip Lily arrangement in vase",
         "name": "Arrangement in Vase",
         "price": 79.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Weddings"
     },
     {
         "id": 15,
@@ -117,7 +131,8 @@
         "alt": "Basket of flowers",
         "name": "Basket of rare Tulips",
         "price": 135.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Bunches"
     },
     {
         "id": 16,
@@ -125,6 +140,7 @@
         "alt": "Weekly Subscription",
         "name": "Weekly Subscription",
         "price": 16.00,
-        "quantity": 0
+        "quantity": 0,
+        "category": "Subscribe"
     }
 ]

@@ -8,7 +8,8 @@ const TulipContext = React.createContext(null)
 const initialCartState = {
     cartItems: inventoryData,
     totalCount: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    displayCategory: "All"
 }
 
 const TulipProvider = ({ children }) => {
@@ -57,10 +58,29 @@ const TulipProvider = ({ children }) => {
     // I do not want to 'reduce' the inventory. I just want to filter out what I need,
     // so it looks like this cannot be done through the dispatcher as the returned state updates
     // the global cartState.
+
     const getItemsInCart = () => {
+        // cartDispatch({ type: "GET_TOTALS" })
         const incart = cartState.cartItems.filter(item => item.quantity > 0)
+        console.log(`getItemsInCart: len: ${incart.length}`)
         return incart
     }
+
+    const setCategory = (category) => {
+        cartDispatch({ type: "SET_CATEGORY", payload: { category } })
+    }
+
+    const getCategory = () => {
+        if (cartState.displayCategory === "All")
+            return cartState.cartItems
+        else {
+            const categoryItems = cartState.cartItems.filter(item => item.category === cartState.displayCategory)
+            return categoryItems
+        }
+    }
+
+    useEffect(() => {
+    }, [cartState.displayCategory])
 
     return (
         <TulipContext.Provider
@@ -73,7 +93,9 @@ const TulipProvider = ({ children }) => {
                 decrementCartItemCount,
                 incrementCartItemCount,
                 // getTotals,
-                getItemsInCart
+                getItemsInCart,
+                setCategory,
+                getCategory
             }}>
             {children}
         </TulipContext.Provider>

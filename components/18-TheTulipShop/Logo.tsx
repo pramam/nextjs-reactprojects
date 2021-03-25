@@ -4,7 +4,7 @@ import { homeurl } from './definitions'
 import menuoptionsData from './menuoptions.json'
 
 export default function Logo() {
-    const { isMenuOpen, closeMenu } = useGlobalTulipContext()
+    const { isMenuOpen, closeMenu, setCategory } = useGlobalTulipContext()
 
     const LogoHandler = () => {
         if (isMenuOpen)
@@ -25,7 +25,7 @@ export default function Logo() {
                             <li key={index}
                                 className={`${index === menuoptionsData.length - 1 ? `` : `mr-3`}`}>
                                 <Link href={obj.url}>
-                                    <a>
+                                    <a onClick={() => setCategory(obj.category)}>
                                         {obj.label}
                                     </a>
                                 </Link>

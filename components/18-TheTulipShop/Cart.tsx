@@ -17,13 +17,14 @@ export default function Cart() {
         <div className="flex items-center">
             <div className="flex-1 max-w-10/12 sm:max-w-10/12 lg:max-w-10/12 mx-auto pt-5 pb-10 sm:pt-4 sm:pb-8 lg:pt-5 lg:pb-10">
                 {getItemsInCart().length === 0 ?
-                    <h2 className="flex justify-center text-3x py-10 font-semibold">Your Cart Is Empty</h2> :
+                    <h2 className="flex justify-center text-3x py-10 font-semibold">Your Cart Is Empty</h2>
+                    :
                     <>
                         <h2 className="flex justify-center text-3x py-10 font-semibold">Your Cart</h2>
                         <div className="max-w-full">
                             {/* Show in table format for sm: and larger
                             Images disappearing on < sm:,change format for mobiles */}
-                            <table className="hidden sm:table-fixed">
+                            <table className="hidden sm:block sm:table-fixed">
                                 <thead>
                                     <tr>
                                         <th className="w-1/5"></th>
@@ -36,8 +37,9 @@ export default function Cart() {
                                 <tbody>
                                     {/* getItemsInCart returns positive counts in Cart. */}
                                     {getItemsInCart().map((obj, index) => {
+                                        console.log(`Cart has: ${obj.name}`)
                                         return (
-                                            <tr className="">
+                                            <tr key={index}>
                                                 <td className="">
                                                     <img
                                                         className="bg-white object-cover h-16 w-16 sm:h-40 sm:w-40"
@@ -94,7 +96,7 @@ export default function Cart() {
                                     {/* getItemsInCart returns positive counts in Cart. */}
                                     {getItemsInCart().map((obj, index) => {
                                         return (
-                                            <tr className="">
+                                            <tr key={index}>
                                                 <td className="">
                                                     <div className="flex flex-col">
                                                         <img

@@ -41,6 +41,11 @@ export const reducer = (state: CartStateType, action: CartActionType): CartState
             // console.log(`GET_TOTALS: totalCount: ${totalCount}, totalPrice: ${totalPrice}`)
 
             return { ...state, totalCount, totalPrice }
+        
+        case 'SET_CATEGORY':
+            const displayCategory = action.payload.category;
+            console.log(`SET_CATEGORY: Set to ${displayCategory}`)
+            return { ...state, displayCategory }
 
         default:
             throw new Error('No matching action type')
