@@ -1,5 +1,7 @@
-export default function DisplaySubscription() {
+import SubscriptionLanding from '../../components/18-TheTulipShop/SubscriptionLanding'
+
+export default function DisplaySelections() {
     return (
-        <section className="text-center text-gray-900">Subscription Placeholder</section>
+        <SubscriptionLanding />
     )
 }
