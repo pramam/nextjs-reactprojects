@@ -5,7 +5,16 @@ import menuoptionsData from './menuoptions.json'
 
 // This is lg:hidden, controlled in <Layout/>
 export default function Sidebar() {
-    const { isMenuOpen, menuHandler } = useGlobalTulipContext()
+    const { isMenuOpen, menuHandler, setCategory } = useGlobalTulipContext()
+
+    // on clicking an option in the Sidebar:
+    // close the Menu
+    // Filter selections based on category in the context
+    // Go to selections page with the <Link>
+    const sidebarHandler = (category) => {
+        menuHandler()
+        setCategory(category)
+    }
     return (
         <div>
             <Transition
@@ -25,7 +34,7 @@ export default function Sidebar() {
                                     <Link href={obj.url}>
                                         {/* Menu is open here. On clicking an option, menuHandler closes the menu  */}
                                         <a className="text-gray-900 uppercase text-base"
-                                            onClick={menuHandler}
+                                            onClick={() => sidebarHandler(obj.category)}
                                         >
                                             <div className="mb-3 ml-10">
                                                 {obj.label}
