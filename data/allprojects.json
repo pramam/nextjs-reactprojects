@@ -332,7 +332,7 @@
     {
         "id": 18,
         "isproject": true,
-        "day": 59,
+        "day": 60,
         "image": "/screenshots/Screenshot-TheTulipShop.png",
         "title": "The Tulip Shop: Cart",
         "url": "/thetulipshop",
@@ -341,7 +341,7 @@
         "inspiration": "https://react-projects-14-usereducer-cart.netlify.app/",
         "timeline": "/",
         "about": "/general/about",
-        "checkins": 54,
-        "timetocomplete": "7 days"
+        "checkins": 66,
+        "timetocomplete": "9 days"
     }
 ]
