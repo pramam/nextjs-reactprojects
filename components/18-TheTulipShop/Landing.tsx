@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import Navbar from './Navbar'
-import Sidebar from './Sidebar'
+import { useGlobalTulipContext } from './Context'
 import tulipphotos from './tulipphotos.json'
 
-const shoppingurl = "/thetulipshop/selections"
+import { shoppingurl } from './definitions'
+import { Category_All, Category_SingleColors, Category_Multicolors, Category_Bunches, Category_Weddings, Category_Subscribe } from './definitions'
 
 export default function Landing() {
+    const { setCategory } = useGlobalTulipContext()
     return (
         <div>
             {/* All the images below are `absolute` in `relative` container(grid for the hero image, and
@@ -22,7 +23,7 @@ export default function Landing() {
                 <div className="bg-gray-900 absolute inset-0 h-32 sm:h-48 md:h-60 lg:h-96 bg-opacity-30 sm:bg-opacity-40 lg:bg-opacity-50"></div>
                 <div className="flex items-center justify-center relative transform -translate-y-2 sm:-translate-y-5 h-32 sm:h-48 md:h-60 lg:h-96 text-center">
                     <Link href={shoppingurl}>
-                        <a>
+                        <a onClick={() => setCategory(Category_All)}>
                             <span className="border-2 md:border-4 justify-center border-yellow-50 px-3 py-1 sm:px-6 sm:py-2 md:px-10 md:py-4 lg:px-20 lg:py-8 text-yellow-50 uppercase text-center text-xl sm:text-2xl md:text-3xl lg:text-5xl tracking-wider">
                                 Bring Beauty Inside
                             </span>
@@ -31,7 +32,7 @@ export default function Landing() {
                 </div>
                 <div className="flex items-center justify-center relative transform -translate-y-8 sm:-translate-y-16 md:-translate-y-20 lg:-translate-y-24 text-center">
                     <Link href={shoppingurl}>
-                        <a>
+                        <a onClick={() => setCategory(Category_All)}>
                             <span className="border justify-center border-yellow-50 px-2 py-1 sm:px-8 sm:py-2 text-yellow-50 text-sm sm:text-base md:text-lg uppercase text-center tracking-widest">Shop now</span>
                         </a>
                     </Link>
@@ -63,7 +64,7 @@ export default function Landing() {
                     <ul className="grid grid-cols-12 sm:gap-x-3 gap-y-6 sm:gap-y-4 grid-flow-row">
                         <li className="col-span-12 sm:col-span-4 relative h-88 sm:h-80">
                             <Link href={tulipphotos[1].url}>
-                                <a>
+                                <a onClick={() => setCategory(Category_SingleColors)}>
                                     <img
                                         className="transform hover:opacity-60 motion-reduce:transform-none transition duration-700 ease-in-out object-cover inset-0 absolute h-88 sm:h-80 w-full bg-yellow-50 opacity-80"
                                         src={tulipphotos[1].img}
@@ -84,7 +85,7 @@ export default function Landing() {
                         </li>
                         <li className="col-span-12 sm:col-span-4 relative h-88 sm:h-80">
                             <Link href={tulipphotos[3].url}>
-                                <a>
+                                <a onClick={() => setCategory(Category_Multicolors)}>
                                     <img
                                         className="transform hover:opacity-60 motion-reduce:transform-none transition duration-700 ease-in-out object-cover inset-0 absolute h-88 sm:h-80 w-full opacity-80"
                                         src={tulipphotos[3].img}
@@ -105,7 +106,7 @@ export default function Landing() {
                         </li>
                         <li className="col-span-12 sm:col-span-6 relative h-80 sm:h-96 md:h-112 lg:h-128">
                             <Link href={tulipphotos[5].url}>
-                                <a>
+                                <a onClick={() => setCategory(Category_Bunches)}>
                                     <img
                                         className="transform hover:opacity-60 motion-reduce:transform-none transition duration-700 ease-in-out object-cover inset-0 absolute h-80 sm:h-96 md:h-112 lg:h-128 w-full opacity-80"
                                         src={tulipphotos[5].img}
@@ -119,7 +120,7 @@ export default function Landing() {
                         </li>
                         <li className="col-span-12 sm:col-span-6 relative h-80 sm:h-96 md:h-112 lg:h-128">
                             <Link href={tulipphotos[6].url}>
-                                <a>
+                                <a onClick={() => setCategory(Category_Bunches)}>
                                     <img
                                         className="transform hover:opacity-60 motion-reduce:transform-none transition duration-700 ease-in-out object-cover inset-0 absolute h-80 sm:h-96 md:h-112 lg:h-128 w-full opacity-80"
                                         src={tulipphotos[6].img}
@@ -133,7 +134,7 @@ export default function Landing() {
                         </li>
                         <li className="col-span-12 relative h-32 sm:h-72">
                             <Link href={tulipphotos[7].url}>
-                                <a>
+                                <a onClick={() => setCategory(Category_Weddings)}>
                                     <img
                                         className="transform hover:opacity-60 motion-reduce:transform-none transition duration-700 ease-in-out object-cover h-32 sm:h-72 w-full opacity-80"
                                         src={tulipphotos[7].img}

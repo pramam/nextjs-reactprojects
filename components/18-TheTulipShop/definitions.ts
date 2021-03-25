@@ -2,6 +2,15 @@ const shoppingurl = "/thetulipshop/selections"
 const homeurl = "/thetulipshop"
 const shoppingcarturl = "/thetulipshop/cart"
 
+// Categories, used in Landing, these match the categories in menuoptions.json
+
+const Category_All = "All"
+const Category_SingleColors = "Single Colors"
+const Category_Multicolors = "Multicolors"
+const Category_Bunches = "Bunches"
+const Category_Weddings = "Weddings"
+const Category_Subscribe = "Subscribe"
+
 // This holds the entire inventory and is used to display the /thetulipshop/selections page. 
 // quantity is initialized to 0 from the json file
 // As you increment/decrement the items in your cart, cartItems.quantity changes
@@ -27,3 +36,4 @@ export type CartActionType =
     | { type: 'SET_CATEGORY', payload: { category: string } }
 
 export { shoppingurl, homeurl, shoppingcarturl }
+export { Category_All, Category_SingleColors, Category_Multicolors, Category_Bunches, Category_Weddings, Category_Subscribe }
