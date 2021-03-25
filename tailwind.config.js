@@ -11,7 +11,7 @@ module.exports = {
         'expandcontract': 'expandcontract 2s ease-in-out infinite'
       },
       fontFamily: {
-        'tuliplogo': ['"Bilbo Swash Caps"', ...fontFamily.serif],
+        'tuliplogo': ['"Bilbo Swash Caps"', ...fontFamily.sans],
         'tuliptext': ['Raleway', ...fontFamily.sans],
       },
       inset: {
