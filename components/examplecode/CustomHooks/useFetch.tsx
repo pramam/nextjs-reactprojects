@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 
-export default function useFetch(url: string) {
+export const useFetch = (url: string) => {
     const [loading, setLoading] = useState(true)
     const [products, setProducts] = useState([])
 
@@ -13,6 +13,6 @@ export default function useFetch(url: string) {
     }
     useEffect(() => {
         getProducts()
-    }, [])
+    }, [url]) // if I add products here in the dependency array I will get an infinite loop
     return { loading, products }
 }

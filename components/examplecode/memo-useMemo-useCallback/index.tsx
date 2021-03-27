@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect, useCallback, useMemo } from 'react'
-import useFetch from '../CustomHooks/useFetch'
+import { useFetch } from '../CustomHooks/useFetch'
 import { IElem } from './definitions'
 
 const url = "https://course-api.com/javascript-store-products"
@@ -27,6 +27,7 @@ function index() {
     const [cart, setCart] = useState(0)
 
     // Run this function only when the dependency changes
+    // Remember the value using useMemo,and only when products changes, recalculate
     const mostExpensive = useMemo(() =>
         calculateMostExpensive(products), [products])
 
