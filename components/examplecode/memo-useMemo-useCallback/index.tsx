@@ -1,10 +1,23 @@
 import React from 'react'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import useFetch from '../CustomHooks/useFetch'
 import { IElem } from './definitions'
 
 const url = "https://course-api.com/javascript-store-products"
 
+// Every time I click on count, I am calling this function
+// Remember this value and recalculate only when data changes
+const calculateMostExpensive = (data) => {
+    console.log(`calculateMostExpensive`)
+    let price = data.reduce((acc, item) => {
+        const { fields } = item
+        const { price } = fields
+        if (price > acc)
+            acc = price
+        return acc
+    }, 0)
+    return price
+}
 // every time props or state changes, component re-renders
 // React.memo is when the props change
 // useMemo is specifically for the values
@@ -12,6 +25,10 @@ function index() {
     const { products } = useFetch(url)
     const [count, setCount] = useState(0)
     const [cart, setCart] = useState(0)
+
+    // Run this function only when the dependency changes
+    const mostExpensive = useMemo(() =>
+        calculateMostExpensive(products), [products])
 
     // useCallback: Has the value of the function changed. If it hasn't changed then
     // I don't need to re-create the function from scratch. If the value of the function
@@ -53,6 +70,8 @@ function index() {
                         Add Count
                     </button>
                 </span>
+                {/* <h4 className="text-xl text-center capitalize mr-3">Most Expensive : ${calculateMostExpensive(products)}</h4> */}
+                <h4 className="text-xl text-center capitalize mr-3">Most Expensive : ${mostExpensive}</h4>
                 <h4 className="m-7 text-xl text-center capitalize mr-3">Cart : {cart}</h4>
             </div>
             <div className="flex justify-center">
