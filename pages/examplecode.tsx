@@ -11,7 +11,7 @@ import TailwindTransitionExample from '../components/examplecode/TailwindTransit
 import UseReducerExample from '../components/examplecode/UseReducerExample'
 import PropDrilling from '../components/examplecode/PropDrilling'
 import UseContextExample from '../components/examplecode/UseContextExample'
-
+import PropTypes from '../components/examplecode/PropTypes'
 
 function tutorial() {
     return (
@@ -31,6 +31,7 @@ function tutorial() {
             <UseReducerExample />
             <PropDrilling />
             <UseContextExample />
+            <PropTypes />
         </div>
     )
 }
