@@ -2,7 +2,6 @@ import React from 'react'
 
 const temp = [{ "id": 1 }, { "id": 2 }]
 
-
 export interface IElem {
     id: number
 }
