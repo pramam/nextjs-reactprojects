@@ -12,6 +12,7 @@ import UseReducerExample from '../components/examplecode/UseReducerExample'
 import PropDrilling from '../components/examplecode/PropDrilling'
 import UseContextExample from '../components/examplecode/UseContextExample'
 import PropTypes from '../components/examplecode/PropTypes'
+import UseMemo from '../components/examplecode/memo-useMemo-useCallback'
 
 function tutorial() {
     return (
@@ -25,13 +26,14 @@ function tutorial() {
             </div>
             <SampleForm />
             <FormMultipleInputs />
-            <UseRefExample />
+            {/* <UseRefExample /> */}
             <TransitionHeightExample />
             <TailwindTransitionExample />
             <UseReducerExample />
             <PropDrilling />
             <UseContextExample />
-            <PropTypes />
+            {/* <PropTypes /> */}
+            <UseMemo />
         </div>
     )
 }

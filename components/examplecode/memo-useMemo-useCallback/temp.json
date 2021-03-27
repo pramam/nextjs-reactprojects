@@ -1,0 +1,79 @@
+[
+    {
+        "id": "rec43w3ipXvP28vog",
+        "fields": {
+            "company": "ikea",
+            "colors": [
+                "#f15025",
+                "#222"
+            ],
+            "featured": true,
+            "price": 999,
+            "name": "high-back bench",
+            "image": [
+                {
+                    "id": "attcvDDMikF6G2iNi",
+                    "url": "https://dl.airtable.com/.attachments/14ac9e946e1a02eb9ce7d632c83f742f/4fd98e64/product-1.jpeg",
+                    "filename": "product-1.jpeg",
+                    "size": 62864,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://dl.airtable.com/.attachmentThumbnails/c6c5c0d7a0b2abe7494acbcf112df4f1/14292088",
+                            "width": 56,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://dl.airtable.com/.attachmentThumbnails/d86e13eec1b200e2b21282b99a9382be/6d92321b",
+                            "width": 801,
+                            "height": 512
+                        },
+                        "full": {
+                            "url": "https://dl.airtable.com/.attachmentThumbnails/1135c89c18e3edcdc125a8f94e462d6a/c8e40bb6",
+                            "width": 3000,
+                            "height": 3000
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": "rec4f2RIftFCb7aHh",
+        "fields": {
+            "company": "marcos",
+            "colors": [
+                "#f15025",
+                "#222"
+            ],
+            "price": 7999,
+            "name": "albany table",
+            "image": [
+                {
+                    "id": "attP2cUyxU35M1zbw",
+                    "url": "https://dl.airtable.com/.attachments/f3450755e165557344f7d6433242431e/93533098/product-1.jpeg",
+                    "filename": "product-1.jpeg",
+                    "size": 119274,
+                    "type": "image/jpeg",
+                    "thumbnails": {
+                        "small": {
+                            "url": "https://dl.airtable.com/.attachmentThumbnails/ff352597ed0ea2977053a6ff046fce27/b6c7863a",
+                            "width": 24,
+                            "height": 36
+                        },
+                        "large": {
+                            "url": "https://dl.airtable.com/.attachmentThumbnails/ecc03714fd1ff14f50d98834615da483/30525671",
+                            "width": 512,
+                            "height": 768
+                        },
+                        "full": {
+                            "url": "https://dl.airtable.com/.attachmentThumbnails/82c685d726bb3f9548b092b86dd91f94/a75cff2f",
+                            "width": 3000,
+                            "height": 3000
+                        }
+                    }
+                }
+            ]
+        }
+    }
+]

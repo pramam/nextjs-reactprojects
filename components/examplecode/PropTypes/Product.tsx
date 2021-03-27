@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 const defaultImage = "/examples/prop-types-default-image.jpeg"
 const defaultName = "furniture"
 export default function Product({ image, name, price }) {
-    console.log(name, price, image)
+    // console.log(name, price, image)
     const url = image && image.url
     return (
         <div className="max-w-xl mx-auto justify-center">
