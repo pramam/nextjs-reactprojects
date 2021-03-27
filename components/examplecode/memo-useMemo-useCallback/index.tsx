@@ -12,20 +12,6 @@ function index() {
     const [count, setCount] = useState(0)
 
     return (
-        // <div>
-        //     <h1 className="text-2xl text-center m-4">useMemo, useCallback Example</h1>
-        //     <div className="flex justify-center flex-col">
-        //         <h1 className="flex justify-center">Count : {count}</h1>
-        //         <button
-        //             className="flex justify-center focus:outline-none bg-blue-500 text-white"
-        //             onClick={() => setCount(prev => prev + 1)}>
-        //             <span className="inline-block">Increase Count</span>
-        //         </button>
-
-        //     </div>
-
-        // </div>
-
         <div className="flex flex-col justify-center">
             <div className="flex flex-col mb-2">
                 <h1 className="text-2xl text-center m-7">useMemo useCallback Example</h1>
@@ -47,15 +33,16 @@ function index() {
 }
 
 
-// export interface IElem {
-//     id: number
-// }
-
 export interface IProps {
     products: IElem[]
 }
 
-const BigList = ({ products }: IProps) => {
+// Every time prop changes, component re-renders, but in this case it was re-rendering
+// whenver count, which is in useState, changed. So it re-rendered BigList which
+// re-rendered SingleProduct.
+// React.memo is checking, memoizing(caching) the value of the props.
+// If {products} did not change, then we do not trigger a re-render
+const BigList = React.memo(({ products }: IProps) => {
     useEffect(() => {
         console.log(`BigList called`)
     })
@@ -66,7 +53,7 @@ const BigList = ({ products }: IProps) => {
             })}
         </section>
     )
-}
+})
 
 const SingleProduct = ({ fields }) => {
     useEffect(() => {
