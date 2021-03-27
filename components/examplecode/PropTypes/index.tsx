@@ -1,4 +1,4 @@
-import useFetch from '../CustomHooks/useFetch'
+import { useFetch } from '../CustomHooks/useFetch'
 import Product from './Product'
 
 const url = 'https://course-api.com/react-prop-types-example'
