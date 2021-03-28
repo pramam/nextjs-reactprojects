@@ -10,9 +10,19 @@ module.exports = {
         'slidy': 'slidy 30s ease-in-out infinite',
         'expandcontract': 'expandcontract 2s ease-in-out infinite'
       },
+      colors: {
+        // 19: The Monkey Bar: 
+        // Color combination inspiration(#7): Gold, Charcoal and Grey 
+        // https://99designs.com/blog/creative-inspiration/color-combinations/
+        'monkey-gold': '#f5a00c',     //19: The Monkey Bar: Logo color
+        'monkey-charcoal': '#3b4d61', //19: The Monkey Bar: Nav background
+        'monkey-gray': '#6b7b8c'      //19: The Monkey Bar: Text color on bg-gray-50
+      },
       fontFamily: {
         'tuliplogo': ['"Bilbo Swash Caps"', ...fontFamily.sans],
         'tuliptext': ['Raleway', ...fontFamily.sans],
+        'monkeylogo': ['Cinzel', ...fontFamily.serif],
+        'monkeytext': ['Lato', ...fontFamily.sans]
       },
       inset: {
         '1/2': '50%',
