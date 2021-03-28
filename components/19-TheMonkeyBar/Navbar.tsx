@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import SVGSwingingMonkey from '../../components/svgicons/SVGSwingingMonkey'
 import { useGlobalMonkeyContext } from "./Context"
-import { abouturl } from './definitions'
+import { abouturl, homeurl } from './definitions'
 
 export interface IProps {
     navheight: string
@@ -22,18 +22,32 @@ export default function Navbar({ navheight }: IProps) {
 
     const nav_common_props = "shadow-lg z-50 bg-monkey-charcoal fixed left-0 right-0 opacity-100 flex items-center justify-center"
     return (
-        <div className={`${nav_common_props} ${navheight}`}>
+        <nav className={`${nav_common_props} ${navheight}`}>
             <div className="w-full">
-                <div className="flex flex-row justify-between lg:hidden">
-                    <SVGSwingingMonkey css="h-12 w-12 text-gray-900" />
-                    <div>About</div>
+                <div className="flex flex-row justify-between sm:hidden">
+                    <Link href={homeurl}>
+                        <a>
+                            <SVGSwingingMonkey css="h-12 w-12 text-monkey-gold bg-transparent" />
+                        </a>
+                    </Link>
+                    <h2 className="font-monkeylogo text-monkey-gold mr-4 mt-4 text-sm font-semibold">
+                        <Link href={abouturl}>
+                            <a>
+                                About
+                            </a>
+                        </Link>
+                    </h2>
                 </div>
-                <div className="hidden lg:flex flex-row justify-between">
-                    <div className="flex flex-row">
-                        <SVGSwingingMonkey css="h-20 w-20 text-monkey-gold bg-transparent" />
-                        <h1 className="-ml-1 mt-2.5 font-monkeylogo font-semibold text-3xl text-monkey-gold">The Monkey Bar</h1>
-                    </div>
-                    <h1 className="font-monkeylogo text-monkey-gold mt-4 text-lg mr-10 font-semibold">
+                <div className="hidden sm:flex flex-row justify-between">
+                    <Link href={homeurl}>
+                        <a>
+                            <div className="flex flex-row">
+                                <SVGSwingingMonkey css="sm:h-12 sm:w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 text-monkey-gold bg-transparent" />
+                                <h1 className="-ml-1 sm:mt-2.5 md:mt-2.5 font-monkeylogo font-semibold md:text-xl lg:text-3xl text-monkey-gold">The Monkey Bar</h1>
+                            </div>
+                        </a>
+                    </Link>
+                    <h1 className="font-monkeylogo text-monkey-gold sm:mt-4 md:mt-3 lg:mt-4 sm:text-xs md:text-base lg:text-lg mr-10 font-semibold">
                         <Link href={abouturl}>
                             <a>
                                 About
@@ -42,6 +56,6 @@ export default function Navbar({ navheight }: IProps) {
                     </h1>
                 </div>
             </div >
-        </div>
+        </nav>
     )
 }
