@@ -6,8 +6,8 @@ function Layout({children}) {
     return (
         <div>
             <Header/>
-            <div className="font-monkeytext text-monkey-gray">
-                <div className="min-h-screen relative bg-gray-50">
+            <div className="font-monkeytext text-monkey-charcoal">
+                <div className="min-h-screen relative bg-white">
                     {/* <div className="pt-24 pb-12 md:pt-36 md:pb-16 lg:pt-30 relative"> */}
                     <div className="pt-16 pb-12 sm:pt-16 sm:pb-16 md:pb-16 md:pt-20 lg:pt-24 relative">
                         <Navbar

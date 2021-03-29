@@ -15,8 +15,10 @@ module.exports = {
         // Color combination inspiration(#7): Gold, Charcoal and Grey 
         // https://99designs.com/blog/creative-inspiration/color-combinations/
         'monkey-gold': '#f5a00c',     //19: The Monkey Bar: Logo color
+        // charcoal on white: contrast ok: #596674; not ok:#3b4d61
         'monkey-charcoal': '#3b4d61', //19: The Monkey Bar: Nav background
-        'monkey-gray': '#6b7b8c'      //19: The Monkey Bar: Text color on bg-gray-50
+        // original monkey-gray: #6b7b8c
+        'monkey-gray': '#596674'      //19: The Monkey Bar: Text color on bg-gray-50
       },
       fontFamily: {
         'tuliplogo': ['"Bilbo Swash Caps"', ...fontFamily.sans],
