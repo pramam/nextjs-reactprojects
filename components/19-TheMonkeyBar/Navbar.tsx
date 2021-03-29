@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import SVGSwingingMonkey from '../../components/svgicons/SVGSwingingMonkey'
-import { useGlobalMonkeyContext } from "./Context"
 import { abouturl, homeurl } from './definitions'
 
 export interface IProps {
@@ -18,8 +17,7 @@ export interface IProps {
 // * navheight is the height of the navbar, needed because it's container has that same mt, 
 //   and the nav has to be shifted up by that amount (-translate-y-{num})
 export default function Navbar({ navheight }: IProps) {
-    // const { hello } = useGlobalMonkeyContext()
-
+ 
     const nav_common_props = "shadow-lg z-50 bg-monkey-charcoal fixed left-0 right-0 opacity-100 flex items-center justify-center"
     return (
         <nav className={`${nav_common_props} ${navheight}`}>

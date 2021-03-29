@@ -1,9 +1,12 @@
+import Cocktails from './Cocktails'
+import SearchForm from './SearchForm'
+
 export default function Landing() {
 
     return (
         <div className="">
-            <h1 className="mt-10 font-monkeylogo text-monkey-gold font-semibold">search your favorite cocktail</h1>
-            <h1 className="mt-5 font-monkeylogo text-2xl text-center font-semibold text-monkey-gold">Cocktails</h1>
+            <SearchForm />
+            <Cocktails />
             <p className="p-20 font-monkeytext text-monkey-gray">
                 Asymmetrical tofu pariatur, gastropub tumblr tilde keytar tacos man braid +1 dreamcatcher. Glossier +1 distillery iPhone craft beer. Austin brunch quis fingerstache gluten-free consequat truffaut yuccie health goth craft beer. Chambray proident laboris whatever ennui mustache live-edge fixie helvetica dolore.
 
