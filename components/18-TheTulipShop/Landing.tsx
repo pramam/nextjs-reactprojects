@@ -17,7 +17,11 @@ export default function Landing() {
         // console.log("in handleNewsletter")
         // Do backend call to subscribe the user
         // Redirect to subscription page
-        router.push(subscriptionurl)
+        // router.push(subscriptionurl)
+        router.push({
+            pathname: `${subscriptionurl}`,
+            query: { email: email },
+        })
     }
     return (
         <div>
