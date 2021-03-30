@@ -1,4 +1,5 @@
 // Design inspiration: https://tailwindcomponents.com/component/nowruz1400-square-card
+// This uses grid for all sizes
 export default function CocktailCard({ id, name, image, alcoholic, glass }) {
     return (
         <div className="relative shadow-lg rounded-lg">  {/*border-b-4 border-monkey-gold */}

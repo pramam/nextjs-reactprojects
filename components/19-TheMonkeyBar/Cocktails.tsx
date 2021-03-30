@@ -1,6 +1,8 @@
 import CocktailCard from './CocktailCard'
 import { useGlobalMonkeyContext } from './Context'
 
+// This component uses grid for all sizes, messing up for the formatting when the title lengths are different
+// (search 'gin')
 export default function Cocktails() {
     const { cocktails, loading } = useGlobalMonkeyContext()
 

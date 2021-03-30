@@ -1,4 +1,4 @@
-import Cocktails from './Cocktails'
+import CocktailsFlex from './CocktailsFlex'
 import SearchForm from './SearchForm'
 
 export default function Landing() {
@@ -6,7 +6,7 @@ export default function Landing() {
     return (
         <div>
             <SearchForm />
-            <Cocktails />
+            <CocktailsFlex />
         </div>
     )
 }
