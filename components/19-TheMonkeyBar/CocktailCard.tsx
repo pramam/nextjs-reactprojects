@@ -1,7 +1,7 @@
 // Design inspiration: https://tailwindcomponents.com/component/nowruz1400-square-card
 export default function CocktailCard({ id, name, image, alcoholic, glass }) {
     return (
-        <div className="relative shadow-lg rounded-lg">
+        <div className="relative shadow-lg rounded-lg">  {/*border-b-4 border-monkey-gold */}
             <img className="rounded-t-lg"
                 src={image} alt={name} />
             <span className="absolute top-5 rounded-r-lg bg-monkey-charcoal text-monkey-gold font-semibold text-center py-2 px-4">{alcoholic}</span>

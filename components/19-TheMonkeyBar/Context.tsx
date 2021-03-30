@@ -14,32 +14,38 @@ const MonkeyProvider = ({ children }) => {
     // Everytime the url changes, the code of fetch drinks will change,
     // so wrap it in useCallback
     const fetchDrinks = useCallback(async () => {
-        const response = await fetch(`${searchAPIUrl}${searchTerm}`)
-        const data = await response.json()
-        // console.log(JSON.stringify(data, null, 2))
-        const { drinks } = data
-        console.log(`Got ${drinks.length} drinks`)
-        if (drinks) {
-            const newCocktails = drinks.map((obj, index) => {
-                const { idDrink,
-                    strDrink,
-                    strDrinkThumb,
-                    strAlcoholic,
-                    strGlass } = obj
-                return {
-                    id: idDrink,
-                    name: strDrink,
-                    image: strDrinkThumb,
-                    alcoholic: strAlcoholic,
-                    glass: strGlass
-                }
-            })
-            setCocktails(newCocktails)
-        } else {
-            console.log(`TheMonkeyBar: No cocktails data returned`)
-            setCocktails([])
+        setLoading(true)
+        try {
+            const response = await fetch(`${searchAPIUrl}${searchTerm}`)
+            const data = await response.json()
+            // console.log(JSON.stringify(data, null, 2))
+            const { drinks } = data
+            console.log(`Got ${drinks.length} drinks`)
+            if (drinks) {
+                const newCocktails = drinks.map((obj, index) => {
+                    const { idDrink,
+                        strDrink,
+                        strDrinkThumb,
+                        strAlcoholic,
+                        strGlass } = obj
+                    return {
+                        id: idDrink,
+                        name: strDrink,
+                        image: strDrinkThumb,
+                        alcoholic: strAlcoholic,
+                        glass: strGlass
+                    }
+                })
+                setCocktails(newCocktails)
+            } else {
+                console.log(`TheMonkeyBar: No cocktails data returned`)
+                setCocktails([])
+            }
+            setLoading(false)
+        } catch (error) {
+            console.log(error)
+            setLoading(false)
         }
-        setLoading(false)
     }, [searchTerm])
 
     useEffect(() => {
@@ -48,7 +54,7 @@ const MonkeyProvider = ({ children }) => {
 
     return (
         <MonkeyContext.Provider value={{
-            loading, cocktails, setSearchTerm
+            loading, cocktails, searchTerm, setSearchTerm
         }}>
             {children}
         </MonkeyContext.Provider>
