@@ -5,7 +5,7 @@ export default function SearchForm() {
     const { searchTerm, setSearchTerm } = useGlobalMonkeyContext()
 
     return (
-        <div className="max-w-2xl shadow-lg flex justify-center mx-auto">
+        <div className="mt-10 mx-auto max-w-md md:max-w-2xl shadow-lg flex justify-center">
             <div className="flex flex-col justify-left w-full">
                 <h1 className="mt-5 ml-5 text-left font-monkeylogo text-monkey-gold font-semibold">search your favorite cocktail</h1>
                 <div className="max-w-2xl">
