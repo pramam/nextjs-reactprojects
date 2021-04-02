@@ -1,25 +1,25 @@
 [
     {
         "id": 0,
-        "img": "/thetulipshop/pinktulipfield.jpeg",
+        "img": "/thetulipshop/pinktulipfield.webp",
         "alt": "pink tulip field",
         "url": "/thetulipshop"
     },
     {
         "id": 1,
-        "img": "/thetulipshop/redandyellow.jpg",
+        "img": "/thetulipshop/redandyellow.webp",
         "alt": "red and yellow tulips",
         "url": "/thetulipshop/selections"
     },
     {
         "id": 2,
-        "img": "/thetulipshop/girlholdingpinktulips.jpeg",
+        "img": "/thetulipshop/girlholdingpinktulips.webp",
         "alt": "girl holding pink tulips",
         "url": "/thetulipshop"
     },
     {
         "id": 3,
-        "img": "/thetulipshop/redandpurpletulip.jpeg",
+        "img": "/thetulipshop/redandpurpletulip.webp",
         "alt": "red and purple tulips",
         "url": "/thetulipshop/selections"
     },
@@ -37,19 +37,19 @@
     },
     {
         "id": 6,
-        "img": "/thetulipshop/yellowtulips2.jpeg",
+        "img": "/thetulipshop/yellowtulips2.webp",
         "alt": "yellow tulips",
         "url": "/thetulipshop/selections"
     },
     {
         "id": 7,
-        "img": "/thetulipshop/tulipbunches.jpeg",
+        "img": "/thetulipshop/tulipbunches.webp",
         "alt": "large bunches of tulips",
         "url": "/thetulipshop/selections"
     },
     {
         "id": 8,
-        "img": "/thetulipshop/hellospring.jpeg",
+        "img": "/thetulipshop/hellospring.webp",
         "alt": "tulips with a hello spring calligraphy",
         "url": "/thetulipshop/subscription"
     }
