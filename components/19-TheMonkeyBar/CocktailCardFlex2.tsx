@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 // Design inspiration: https://tailwindcomponents.com/component/nowruz1400-square-card
 export default function CocktailCardFlex2({ id, name, image, alcoholic, glass }) {
     return (
@@ -13,7 +15,11 @@ export default function CocktailCardFlex2({ id, name, image, alcoholic, glass })
             <p className="text-center sm:text-left mx-2 bg-white capitalize text-xl whitespace-nowrap ">{glass}</p>
             <footer>
                 <button className="text-center mx-2 bg-white focus:outline-none border border-transparent">
-                    <p className="mt-3 capitalize text-center text-base font-monkeylogo text-monkey-gold font-semibold">Details</p>
+                    <Link href="/themonkeybar/cocktail/[id]" as={`/themonkeybar/cocktail/${id}`}>
+                        <a>
+                            <p className="mt-3 capitalize text-center text-base font-monkeylogo text-monkey-gold font-semibold">Details</p>
+                        </a>
+                    </Link>
                 </button>
             </footer>
         </article >
