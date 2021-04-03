@@ -24,7 +24,7 @@ export default function SingleCocktail({ id }: IProps) {
             if (drinks) {
                 console.log(`Got single cocktail ${drinks.length} `)
                 const item = drinks[0]
-                console.log(item)
+                // console.log(item)
                 const ingredients = [
                     item.strIngredient1,
                     item.strIngredient2,
@@ -35,9 +35,11 @@ export default function SingleCocktail({ id }: IProps) {
                 ]
                 const newCocktail = {
                     id: id,
+                    image: item.strDrinkThumb,
                     name: item.strDrink,
                     category: item.strCategory,
                     alcoholic: item.strAlcoholic,
+                    glass: item.strGlass,
                     instructions: item.strInstructions,
                     ingredients: ingredients
                 }
@@ -69,6 +71,11 @@ export default function SingleCocktail({ id }: IProps) {
     if (!singleCocktail) {
         return (
             <Layout>
+                <Link href={homeurl}>
+                    <a>
+                        <p className="mt-5 mb-5 capitalize text-center text-base font-monkeylogo text-monkey-gold font-semibold">Back Home</p>
+                    </a>
+                </Link>
                 <h2 className="text-center mt-5 mb-5 text-xl font-monkeylogo text-monkey-gold font-semibold">No cocktail to display</h2>
             </Layout>
         )
@@ -82,8 +89,63 @@ export default function SingleCocktail({ id }: IProps) {
                     <p className="mt-5 mb-5 capitalize text-center text-base font-monkeylogo text-monkey-gold font-semibold">Back Home</p>
                 </a>
             </Link>
-            Single Cocktail for id {id}
-            <h1>{singleCocktail.name}</h1>
+            <h1 className="text-center mt-5 mb-5 text-xl font-monkeylogo text-monkey-gold font-semibold">{singleCocktail.name}</h1>
+            <section className="container mx-auto max-w-2xl">
+                <div className="flex flex-row">
+                    <img src={singleCocktail.image}
+                        alt={singleCocktail.name}
+                        className="w-1/2 rounded-md"
+                    />
+                    <div className="flex flex-col justify-between w-1/2">
+                        <div className="ml-5 flex flex-row justify-space-between">
+                            <h3 className="flex-grow w-1/2 capitalize text-left text-base font-monkeylogo text-monkey-gold font-semibold">
+                                Name
+                            </h3>
+                            <p className="w-1/2 text-left">{singleCocktail.name}</p>
+                        </div>
+                        <div className="ml-5 flex flex-row">
+                            <h3 className="flex-grow w-1/2 capitalize text-left text-base font-monkeylogo text-monkey-gold font-semibold">
+                                Category
+                            </h3>
+                            <p className="w-1/2 text-left">{singleCocktail.category}</p>
+                        </div>
+                        <div className="ml-5 flex flex-row">
+                            <h3 className="flex-grow w-1/2 capitalize text-left text-base font-monkeylogo text-monkey-gold font-semibold">
+                                Alcoholic
+                            </h3>
+                            <p className="w-1/2 text-left">{singleCocktail.alcoholic}</p>
+                        </div>
+                        <div className="ml-5 flex flex-row">
+                            <h3 className="flex-grow w-1/2 capitalize text-left text-base font-monkeylogo text-monkey-gold font-semibold">
+                                Glass
+                            </h3>
+                            <p className="w-1/2 text-left">{singleCocktail.glass}</p>
+                        </div>
+                        <div className="ml-5 flex flex-row">
+                            <h3 className="flex-grow w-1/2 capitalize text-left text-base font-monkeylogo text-monkey-gold font-semibold">
+                                Instructions
+                            </h3>
+                            <p className="w-1/2 text-left">{singleCocktail.instructions}</p>
+                        </div>
+                        <div className="ml-5 flex flex-row">
+                            <h3 className="flex-grow w-1/2 capitalize text-left text-base font-monkeylogo text-monkey-gold font-semibold">
+                                Ingredients
+                            </h3>
+                            <ul className="w-1/2 flex flex-wrap">
+                                {singleCocktail.ingredients.map((item, index) => {
+                                    return (
+                                        item ?
+                                            <li key={index}>
+                                                {item}&nbsp;
+                                        </li> : null
+
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </Layout >
     )
 }
