@@ -20,8 +20,8 @@ const MonkeyProvider = ({ children }) => {
             const data = await response.json()
             // console.log(JSON.stringify(data, null, 2))
             const { drinks } = data
-            console.log(`Got ${drinks.length} drinks`)
             if (drinks) {
+                console.log(`Got ${drinks.length} drinks`)
                 const newCocktails = drinks.map((obj, index) => {
                     const { idDrink,
                         strDrink,
@@ -37,6 +37,7 @@ const MonkeyProvider = ({ children }) => {
                     }
                 })
                 setCocktails(newCocktails)
+                // console.log(cocktails)
             } else {
                 console.log(`TheMonkeyBar: No cocktails data returned`)
                 setCocktails([])

@@ -2,7 +2,7 @@
 export default function CocktailCardFlex2({ id, name, image, alcoholic, glass }) {
     return (
         // Card
-        <div className="flex flex-col w-full justify-center items-center mx-5 sm:mx-2 lg:mx-7 shadow-lg rounded-lg">  {/*border-b-4 border-monkey-gold */}
+        <article className="flex flex-col w-full justify-center items-center mx-5 sm:mx-2 lg:mx-7 shadow-lg rounded-lg">  {/*border-b-4 border-monkey-gold */}
             <div className="relative">
                 <img className="rounded-t-lg sm:w-full sm:object-cover sm:h-64 md:h-64 2xl:h-76"
                     src={image} alt={name} />
@@ -16,6 +16,6 @@ export default function CocktailCardFlex2({ id, name, image, alcoholic, glass })
                     <p className="mt-3 capitalize text-center text-base font-monkeylogo text-monkey-gold font-semibold">Details</p>
                 </button>
             </footer>
-        </div >
+        </article >
     )
 }
