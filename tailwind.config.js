@@ -16,7 +16,7 @@ module.exports = {
         // https://99designs.com/blog/creative-inspiration/color-combinations/
         'monkey-gold': '#f5a00c',     //19: The Monkey Bar: Logo color
         // charcoal on white: contrast ok: #596674; not ok:#3b4d61
-        'monkey-charcoal': '#3b4d61', //19: The Monkey Bar: Nav background
+        'monkey-charcoal': '#344555', // was '#3b4d61', //19: The Monkey Bar: Nav background
         // original monkey-gray: #6b7b8c
         'monkey-gray': '#596674'      //19: The Monkey Bar: Text color on bg-gray-50
       },
