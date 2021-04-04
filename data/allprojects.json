@@ -343,5 +343,35 @@
         "about": "/general/about",
         "checkins": 68,
         "timetocomplete": "9 days"
-    }
+    },
+    {
+        "id": 1617495497335,
+        "isproject": false,
+        "day": 65,
+        "image": "",
+        "title": "Equal Height Cards Using Flexbox",
+        "url": "/themonkeybar",
+        "blogurl": "/posts/equal-height-cards",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/commit/ea109047bd1e7429ea9a10bb971193e5f318aaf5",
+        "inspiration": "https://mono.software/2020/07/29/equal-height-cards-with-flexbox/",
+        "timeline": "/",
+        "about": "/general/about",
+        "checkins": 1,
+        "timetocomplete": "1.5 days"
+    },
+    {
+        "id": 19,
+        "isproject": true,
+        "day": 67,
+        "image": "/screenshots/Screenshot-TheMonkeyBar.png",
+        "title": "The Monkey Bar: Search",
+        "url": "/themonkeybar",
+        "blogurl": "/posts/themonkeybar",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/19-TheMonkeyBar",
+        "inspiration": "https://react-projects-15-cocktails.netlify.app/",
+        "timeline": "/",
+        "about": "/general/about",
+        "checkins": 19,
+        "timetocomplete": "6 days"
+        }
 ]

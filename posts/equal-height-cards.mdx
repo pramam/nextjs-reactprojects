@@ -1,0 +1,88 @@
+---
+title: Equal Height Cards using Flexbox
+id: 1617495497335
+keywords: [equal height cards, flexbox, css, tailwindcss, tailwind css, flex-1]
+description: Creating equal height cards in TailwindCSS using flexbox
+---
+In [The Monkey Bar Project #19](/themonkeybar), I had a challenge creating fixed height cards that spanned rows:
+
+![UnequalHeightCards](/blog/EqualHeightCards/CocktailCardsUnequalHeight.png)
+
+As you can see, the images across the 2 cards are aligned, but the title and data below it is not aligned, giving the cards unequal heights.
+
+This is what I would like to create:
+![EqualHeightCards](/blog/EqualHeightCards/CocktailCardsEqualHeight.png)
+
+Even though 'Mango Orange Smoothie' wraps around 2 rows, the rows below it and the 'Details' are aligned.
+
+One shortcut I found was to truncate the lengthier data to make it fit nicely with the other cards, but I wasn't satisfied with this solution:
+
+![TruncatedCards](/blog/EqualHeightCards/CocktailCardsTruncate.png)
+
+It took me a lot of searching, experimenting, failing and searching again before I found a solution. There were Stack Overflow posts on using flex-1 but that didn't work when the cards wrapped around multiple rows. I finally found a solution in this [blog post](https://mono.software/2020/07/29/equal-height-cards-with-flexbox/). As of this writing, the blog post has a typo, but their codepen link is correct.
+
+Here's the solution summarized below:
+
+```typescript
+<Outer> flex flex-row flex-wrap w-full
+  <Inner> flex flex-row w-full sm:w-1/2 md:w-1/3 my-2
+    <Card> flex flex-col w-full
+      <header/>
+      <Long content> flex-grow (only 1 long content)
+      <footer/>
+    </Card>
+  </Inner>
+  <Inner> flex flex-row w-full sm:w-1/2 md:w-1/3 my-2
+    <Card> flex flex-col w-full
+      <header>
+      <Long content> flex-grow (only 1 long content)
+      <footer>
+    </Card>
+  </Inner>
+  ...
+</Outer>
+```
+
+The Outer Container div has `flex flex-row flex-wrap w-full`
+It iterates over an Inner Container which has the classes `flex flex-row w-1/3` so each card takes up 1/3rd of the width.
+
+
+```typescript
+ {/* Outer:  */}
+    <ul className="flex flex-row flex-wrap w-full">
+        {cocktails.map((obj, index) => {
+            return (
+            
+             Inner 
+                <li key={obj.id} className="flex flex-row w-full sm:w-1/2 md:w-1/3 my-2" >
+                    <CocktailCardFlex2 {...obj} />
+                </li>
+                )
+        })}
+    </ul>
+```
+
+Now, inside each card, use "flex flex-col w-full" and list the image and text.
+The image has fixed height.
+The lengthier content(there can only be one item which is extra long) has "flex-grow flex-wrap".
+"flex-grow" allows that content to grow and aligns that data with the other cards, from what I understand.
+
+
+```typescript
+ CocktailCardFlex2: (Edited for brevity. See the Github link above for the full checkin)
+<article className="flex flex-col w-full justify-center items-center mx-5 sm:mx-2 lg:mx-7 shadow-lg rounded-lg">
+    <img className="rounded-t-lg sm:w-full sm:object-cover sm:h-64 md:h-64 2xl:h-76"
+         src={image} alt={name} />
+   
+    {/* Long content: h1, has flex-grow */}
+    <h1 className="flex-grow flex-wrap text-center mx-2 bg-white font-monkeylogo font-semibold text-monkey-gold text-xl">
+        {name}
+    </h1>
+    <p className="text-center sm:text-left mx-2 bg-white capitalize text-xl whitespace-nowrap ">
+        {glass}
+    </p>
+    <footer> 
+        <p className="mt-3 capitalize text-center text-base font-monkeylogo text-monkey-gold font-semibold">Details</p>
+    </footer>
+</article >
+```

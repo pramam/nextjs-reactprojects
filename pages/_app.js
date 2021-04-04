@@ -41,11 +41,11 @@ function MyApp({ Component, pageProps }) {
             return (
                 <MonkeyProvider>
                     <div className="relative">
-                        {/* <ProjectNavbarContainerSimple
+                        <ProjectNavbarContainerSimple
                             projectId={19}
                             textColor="text-gray-900"
                             includeBlogs={false}
-                        /> */}
+                        />
                         <Component {...pageProps} />
                     </div>
                 </MonkeyProvider>
