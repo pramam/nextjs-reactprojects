@@ -8,6 +8,7 @@ export default function projects() {
                 projectId={1}
                 textColor="text-gray-900"
                 includeBlogs={false}
+                fixed={false}
             />
         <BubbleWrap rows={8} cols={10} />
         </>

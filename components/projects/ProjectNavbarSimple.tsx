@@ -11,6 +11,7 @@ export interface IProps {
     textColor: string,
     isProject: boolean
     includeBlogs: boolean
+    fixed: boolean
 }
 
 export default function ProjectNavbarSimple({
@@ -21,13 +22,16 @@ export default function ProjectNavbarSimple({
     timeline,
     textColor,
     isProject,
-    includeBlogs }: IProps) {
+    includeBlogs,
+    fixed }: IProps) {
     const text = `text-sm uppercase text-center ${textColor}`
     const textgray = "text-sm uppercase text-gray-500 cursor-not-allowed text-center"
     const chevronCss = `mt-1 h-4 w-4 text-center ${textColor}`
     const chevronCssGray = `mt-1 h-4 w-4 text-gray-500 text-center cursor-not-allowed`
 
+    const cssfixed = "z-50 bg-white fixed left-0 right-0 opacity-100 transform -translate-y-7"
     return (
+        <div className={fixed ? `${cssfixed}` : ``} >
         <div className="flex justify-center mx-auto">
             <div className="mt-2 flex flex-col">
                 <div className="flex flex-row justify-center">
@@ -74,5 +78,6 @@ export default function ProjectNavbarSimple({
                 </div>
             </div>
         </div >
+        </div>
     )
 }

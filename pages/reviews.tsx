@@ -8,6 +8,7 @@ export default function ShowReviews() {
                 projectId={5}
                 textColor="text-gray-900"
                 includeBlogs={false}
+                fixed={false}
             />
             <Reviews />
         </div>)

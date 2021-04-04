@@ -8,6 +8,7 @@ export default function ListTours() {
                 projectId={4}
                 textColor="text-gray-900"
                 includeBlogs={false}
+                fixed={false}
             />
             <Tours />
         </div>

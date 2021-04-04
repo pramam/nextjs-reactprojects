@@ -8,6 +8,7 @@ export default function DisplayGrocery() {
                 projectId={13}
                 textColor="text-gray-50"
                 includeBlogs={false}
+                fixed={false}
             />
             <GroceryList />
         </div>

@@ -8,6 +8,7 @@ export default function DisplayColorGenerator() {
                 projectId={12}
                 textColor="text-gray-900"
                 includeBlogs={false}
+                fixed={false}
             />
             <ColorGen />
         </div>

@@ -10,6 +10,7 @@ export default function DisplaySlider() {
                     projectId={10}
                     textColor="text-gray-50"
                     includeBlogs={false}
+                    fixed={false}
                 />
                 <SliderKeyframe slides={quoteDataGeneric} />
                 <footer className="flex justify-center text-center">

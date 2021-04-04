@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }) {
                             projectId={18}
                             textColor="text-gray-900"
                             includeBlogs={false}
+                            fixed={true}
                         />
                         <Component {...pageProps} />
                     </div>
@@ -45,6 +46,7 @@ function MyApp({ Component, pageProps }) {
                             projectId={19}
                             textColor="text-gray-900"
                             includeBlogs={false}
+                            fixed={true}
                         />
                         <Component {...pageProps} />
                     </div>

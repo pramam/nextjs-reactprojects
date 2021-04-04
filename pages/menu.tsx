@@ -8,6 +8,7 @@ export default function DisplayMenu() {
                 projectId={7}
                 textColor="text-gray-900"
                 includeBlogs={false}
+                fixed={false}
             />
             <Menu />
         </div>

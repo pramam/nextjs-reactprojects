@@ -10,6 +10,7 @@ export default function DisplayBirthdays() {
                 projectId={2}
                 textColor="text-gray-50"
                 includeBlogs={false}
+                fixed={false}
             />
         < AllBirthdays birthday_array={birthdayData} />
         </div>

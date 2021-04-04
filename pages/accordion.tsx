@@ -8,6 +8,7 @@ export default function DisplayAccordion() {
                 projectId={6}
                 textColor="text-white"
                 includeBlogs={false}
+                fixed={false}
             />
             <Accordion />
         </div>

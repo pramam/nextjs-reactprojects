@@ -8,6 +8,7 @@ export default function githublanding() {
                 projectId={3}
                 textColor="text-gray-500"
                 includeBlogs={false}
+                fixed={false}
             />
         <GithubUsers />
         </div>

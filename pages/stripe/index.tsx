@@ -8,13 +8,9 @@ export default function DisplayStripe() {
                 projectId={17}
                 textColor="text-gray-900"
                 includeBlogs={false}
+                fixed={false}
             />
             <Stripe />
-            {/* <ProjectNavbarContainerSimple
-                projectId={17}
-                textColor="text-gray-900"
-                includeBlogs={false}
-            /> */}
         </div>
     )
 }

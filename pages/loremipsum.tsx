@@ -8,6 +8,7 @@ export default function DisplayLoremIpsum() {
                 projectId={11}
                 textColor="text-gray-900"
                 includeBlogs={false}
+                fixed={false}
             />
             <LoremIpsum />
         </div>

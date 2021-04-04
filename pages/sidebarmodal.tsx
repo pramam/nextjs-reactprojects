@@ -8,6 +8,7 @@ export default function DisplaySidebarModal() {
                 projectId={16}
                 textColor="text-gray-900"
                 includeBlogs={false}
+                fixed={false}
             />
             <SidebarModal />
         </div>

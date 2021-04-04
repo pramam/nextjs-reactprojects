@@ -8,6 +8,7 @@ export default function DisplayTabs() {
                 projectId={8}
                 textColor="text-gray-900"
                 includeBlogs={false}
+                fixed={false}
             />
             <Tabs />
         </div>
