@@ -7,7 +7,7 @@ const MarkdownProvider = ({ children }) => {
     const [markdown, setMarkdown] = useState('')
 
     return (
-        <MarkdownContext.Provider value={{ "hello": "markdown", markdown }}>
+        <MarkdownContext.Provider value={{ markdown, setMarkdown }}>
             {children}
         </MarkdownContext.Provider>
     )
