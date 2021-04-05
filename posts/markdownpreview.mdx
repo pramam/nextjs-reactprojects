@@ -1,0 +1,27 @@
+---
+title: Markdown Preview
+id: 20
+keywords: [react, textarea, react-markdown, markdown to html, markdown, html ]
+description: Convert Markdown to HTML
+---
+This was a relatively simple project to create two "pages", the input area is a textarea.
+
+To display the Markdown text as HTML the npm package react-markdown is used which wraps the markdown.
+
+``` typescript
+<ReactMarkdown>
+{markdown}
+</ReactMarkdown>
+```
+
+The only glitch was that since Tailwind CSS wipes out all html styles, the text wasn't displayed as HTML in the output area.
+
+The solution was to wrap this in Tailwind's Typography class "prose".
+
+```typescript
+<div className="prose">
+    <ReactMarkdown>
+        {markdown}
+    </ReactMarkdown>
+</div>
+```

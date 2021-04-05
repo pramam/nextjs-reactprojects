@@ -373,5 +373,20 @@
         "about": "/general/about",
         "checkins": 19,
         "timetocomplete": "6 days"
-        }
+    },
+    {
+        "id": 20,
+        "isproject": true,
+        "day": 68,
+        "image": "/screenshots/Screenshot-MarkdownPreview.png",
+        "title": "Markdown Preview",
+        "url": "/markdownpreview",
+        "blogurl": "/posts/markdownpreview",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/20-MarkdownPreview",
+        "inspiration": "https://react-projects-16-markdown-preview.netlify.app/",
+        "timeline": "/",
+        "about": "/general/about",
+        "checkins": 3,
+        "timetocomplete": "3.5 hours"
+    }
 ]
