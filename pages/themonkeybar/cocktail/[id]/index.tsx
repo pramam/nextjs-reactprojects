@@ -16,7 +16,7 @@ export default function DisplayCocktail() {
 }
 
 // IMP: getServerSideProps is not working because I have a custom App
-// in pages/_app.js 
+// in pages/_app.js: https://nextjs.org/docs/advanced-features/custom-app#caveats
 //
 // instead of fetching data in useEffect, use getServerSideProps
 // fetches data at every request from the server
