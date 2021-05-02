@@ -35,6 +35,7 @@ const components = {
     Menu: dynamic(() => import('../../components/6-Menu/Menu')),
     Navbar: dynamic(() => import('../../components/14-Navbar/Navbar')),
     NavbarTailwind: dynamic(() => import('../../components/14-Navbar/15-NavbarTailwind/NavbarTailwind')),
+    Pagination: dynamic(() => import('../../components/21-Pagination')),
     Reviews: dynamic(() => import('../../components/4-Reviews/Reviews')),
     SliderKeyframeWrapper: dynamic(() => import('../../components/9-Slider/SliderKeyframe/SliderKeyframeWrapper')),
     SliderWrapper: dynamic(() => import('../../components/9-Slider/SliderWrapper')),

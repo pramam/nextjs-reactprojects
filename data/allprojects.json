@@ -388,5 +388,20 @@
         "about": "/general/about",
         "checkins": 3,
         "timetocomplete": "3.5 hours"
-    }
+    },
+    {
+        "id": 21,
+        "isproject": true,
+        "day": 88,
+        "image": "/screenshots/Screenshot-Pagination.png",
+        "title": "Pagination",
+        "url": "/pagination",
+        "blogurl": "/posts/pagination",
+        "githuburl": "https://github.com/pramam/nextjs-reactprojects/tree/main/components/21-Pagination",
+        "inspiration": "https://react-projects-18-pagination.netlify.app/",
+        "timeline": "/",
+        "about": "/general/about",
+        "checkins": 3,
+        "timetocomplete": "1 day"
+        }
 ]

@@ -1,0 +1,32 @@
+---
+title: Pagination
+id: 21
+keywords: [react, react hooks, useEffect, useState, pagination, github followers]
+description: Client side pagination- displaying data in pages
+---
+This is a single page application which fetches all the data in one useEffect call, splits that up into
+an array of arrays and displays one array per page when you click on a page button. The pagination happens on
+the client side.
+
+Here's the React component:
+
+<Pagination/>
+
+What did I learn? The Array.from call to split a large array into smaller arrays. Here's the code for it:
+
+```typescript
+export default function paginate(data) {
+    const itemsPerPage = 10
+    const numPages = Math.ceil(data.length / itemsPerPage)
+
+    const newArrayOfArrays = Array.from({ length: numPages }, (_, index) => {
+        const start = index * itemsPerPage
+        // console.log(start, start + itemsPerPage - 1)
+
+        return data.slice(start, start + itemsPerPage)
+
+    })
+
+    return newArrayOfArrays
+}
+```
