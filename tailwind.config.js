@@ -178,7 +178,7 @@ module.exports = {
         '5/1': '500%', // * SliderKeyframe
         'auto': 'auto',
       },
-      transtionDuration: {
+      transitionDuration: {
         '2000': '2000ms',
         '3000': '3000ms',
       },
