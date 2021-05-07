@@ -19,13 +19,13 @@ export default function Sidebar() {
         <div>
             <Transition
                 show={isMenuOpen}
-                enter="transition-opacity ease-in-out duration-3000"
+                enter="transition-opacity ease-in-out duration-100"
                 enterFrom="opacity-0"
                 enterTo="opacity-100"
-                leave="transition-opacity ease-in-out duration-3000"
+                leave="transition-opacity ease-in-out duration-100"
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0">
-                <div className="relative bg-yellow-50 w-full h-screen">
+                <div className="fixed z-50 bg-yellow-50 w-full h-screen">
                     <div className="pt-5 md:pt-7"></div>
                     <ul className="flex flex-col">
                         {menuoptionsData.map((obj, index) => {
