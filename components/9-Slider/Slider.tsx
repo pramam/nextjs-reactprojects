@@ -202,10 +202,12 @@ export default function Slider({ slides }: IProps) {
                                                 setCurrent(index)
                                             }
                                         >
-                                        <div className={`${index == current ?
-                                                `${common_dot_props} ${active_dot_props}` : `${common_dot_props} ${inactive_dot_props}`}`}>
-
-                                        </div>
+                                                <span aria-label={`Select Slide ${index + 1}`}>
+                                                    <div aria-hidden="true"
+                                                        className={`${index == current ?
+                                                            `${common_dot_props} ${active_dot_props}` : `${common_dot_props} ${inactive_dot_props}`}`}>
+                                                    </div>
+                                                </span>
                                         </button>
                                         </div>
                                     )
