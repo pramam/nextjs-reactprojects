@@ -13,9 +13,13 @@ export default function Menu() {
                 className="focus:outline-none border border-transparent"
                 onClick={menuHandler}>
                 {isMenuOpen ?
-                    <SVGX css="h-8 w-8 md:h-10 md:w-10 text-yellow-50" />
+                    <span aria-label="Close Menu">
+                        <SVGX aria-hidden="true" css="h-8 w-8 md:h-10 md:w-10 text-yellow-50" />
+                    </span>
                     :
-                    <SVGMenu css="h-8 w-8 md:h-10 md:w-10 text-yellow-50" />
+                    <span aria-label="Menu">
+                        <SVGMenu aria-hidden="true" css="h-8 w-8 md:h-10 md:w-10 text-yellow-50" />
+                    </span>
                 }
             </button>
         </div>)
