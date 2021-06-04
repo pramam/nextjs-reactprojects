@@ -191,7 +191,7 @@ export default function Slider({ slides }: IProps) {
                                     const inactive_dot_props = "px-0.5"
                                     // translate-y-148 md:translate-y-156 lg:translate-y-112
                                     // TODO-HEIGHT3: The translate-y-* values are eyeballed. If any TODO-HEIGHT changes, these may need to be changed.
-                                    const common_dot_props = "relative transform transition-all duration-700 ease-in-out translate-y-148 md:translate-y-156 lg:translate-y-112 z-40 bg-gray-50 py-0.5 mr-1 rounded-full"
+                                    const common_dot_props = "relative transform transition-all duration-700 ease-in-out translate-y-148 md:translate-y-156 lg:translate-y-112 z-40 bg-gray-50 py-0.5 ml-1.5 mr-1.5 rounded-full"
 
                                     return (
                                         <div key={index}>
