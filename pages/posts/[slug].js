@@ -1,7 +1,9 @@
 import fs from 'fs'
 import matter from 'gray-matter'
-import hydrate from 'next-mdx-remote/hydrate'
-import renderToString from 'next-mdx-remote/render-to-string'
+import { MDXRemote } from 'next-mdx-remote'
+import {serialize} from 'next-mdx-remote/serialize'
+// import hydrate from 'next-mdx-remote/hydrate'
+// import renderToString from 'next-mdx-remote/render-to-string'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -50,7 +52,7 @@ const components = {
 }
 
 export default function PostPage({ source, frontMatter }) {
-    const content = hydrate(source, { components })
+    // const content = hydrate(source, { components })
     // console.log(`[slug.js]: ${frontMatter.title} ${frontMatter.intro ? `intro is true` : `false`}`)
     return (
         <Layout>
@@ -74,7 +76,8 @@ export default function PostPage({ source, frontMatter }) {
                 )}
             </div>
             <main>
-                {content}
+                {/* {content} */}
+                <MDXRemote {...source} components={components}/>
                 {frontMatter.id ?
                 <BlogFooter id={frontMatter.id} />
                     : ''}
@@ -101,8 +104,8 @@ export const getStaticProps = async ({ params }) => {
 
     const { content, data } = matter(source)
 
-    const mdxSource = await renderToString(content, {
-        components,
+    const mdxSource = await serialize(content, {
+        // components,
         // Optionally pass remark/rehype plugins
         mdxOptions: {
             remarkPlugins: [],
