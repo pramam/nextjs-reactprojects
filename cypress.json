@@ -1,0 +1,9 @@
+{
+    "baseUrl": "http://localhost:3001",
+    "ignoreTestFiles": [
+        "**/cypress/integration/1-getting-started/*",
+        "**/cypress/integration/2-advanced-examples/*"
+    ],
+    "viewportWidth": 1920,
+    "viewportHeight": 1080
+}
