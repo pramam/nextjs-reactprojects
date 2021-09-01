@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Bubble() {
+export default function Bubble({testid}) {
     const [isClicked, setClicked] = useState(false)
     const clickHandler = () => {
         setClicked(!isClicked)
@@ -15,6 +15,7 @@ export default function Bubble() {
             <button
                 type="button"
                 {...button_props}
+                id={testid}
                 onClick={clickHandler}
             >
             </button>

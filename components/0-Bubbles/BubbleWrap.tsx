@@ -31,7 +31,7 @@ export default function BubbleWrap({ rows, cols }: IProps) {
             <div {...grid_props}>
                 {bubbles.map((rows, index) => (
                     <div key={index}>
-                        <Bubble></Bubble>
+                        <Bubble testid={`btn-id-${index}`}></Bubble>
                     </div>
 
                 ))}
